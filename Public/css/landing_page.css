@@ -1,0 +1,99 @@
+
+
+/* Landing header */
+#main-wrapper {
+    background-image: url(../imgs/bg-01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 850px;
+    margin-bottom: 5em;
+  }
+  
+  /* Landing */
+  .landing{
+    margin-top: 20em;
+  }
+  
+  .landing img{
+    margin-bottom: 2em;
+  }
+  
+  .text-center{
+    text-align: center;
+    margin: auto;
+  }
+  
+  /* about */
+  .about{
+    padding-top: 5em; 
+    height: 350px;
+  }
+  /* centros -----------*/
+  .centros{
+    padding-top: 5em;
+    background-color: #333;
+    height: 700px;
+  }
+  
+  .centros .container h2{
+    margin: 0 0 4em 0;
+  }
+  
+  
+  /* card */
+  .card{
+    padding: 15px;
+  }
+  #orange{
+    width: 30px;
+    border: 2px solid #EF7759;
+    float: left;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  
+  .image img{
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .star-rating {
+    line-height:32px;
+    font-size:1.25em;
+  }
+  
+  .star-rating .fa-star{
+    color: yellow;
+  }
+  
+  .sl-icon-star{
+    color: #EF7759;
+    font-size: 15px !important;
+  }
+  
+  
+  /* carousel */
+  .carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: none;
+    background-color: transparent;
+    filter: alpha(opacity=50);
+    opacity: 0;
+  }
+  
+  .carousel-control-prev{
+    left: -120px;
+    background-image: none !important;
+  }
+
+  .carousel-control-next{
+    right: -120px;
+  }
+ 

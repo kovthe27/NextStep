@@ -69,9 +69,9 @@ a.link:hover, a.link:focus {
 .stylish-table tbody tr:hover, .stylish-table tbody tr.active {
   border-left: 4px solid #398bf7; }
 
-  .text-themecolor {
-    color: #54B56B !important; 
-  }
+.text-themecolor {
+  color: #54B56B !important; 
+}
 
 .profile-tab li a.nav-link.active,
 .customtab li a.nav-link.active {
