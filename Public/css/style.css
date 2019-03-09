@@ -876,9 +876,9 @@ sidebar navigation
         font-size: 15px;
         font-weight: 400; }
         .sidebar-nav ul li a.active, .sidebar-nav ul li a:hover {
-          color: #20aee3; }
+          color: #54B56B !important; }
           .sidebar-nav ul li a.active i, .sidebar-nav ul li a:hover i {
-            color: #20aee3; }
+            color:#54B56B !important; }
         .sidebar-nav ul li a.active {
           font-weight: 500;
           color: #263238; }
@@ -913,16 +913,17 @@ sidebar navigation
     .sidebar-nav > ul > li > a.active {
       font-weight: 400;
       background: #242933;
-      color: #26c6da;
+      color: #54B56B !important;
       border-left: 3px solid #20aee3; }
   .sidebar-nav > ul > li {
     margin-bottom: 8px;
     margin-top: 8px; }
     .sidebar-nav > ul > li.active > a {
-      color: #20aee3;
+      color: #54B56B !important;
       font-weight: 500; }
+
       .sidebar-nav > ul > li.active > a i {
-        color: #20aee3; }
+        color: #54B56B !important; }
   .sidebar-nav .waves-effect {
     transition: none;
     -webkit-transition: none;
