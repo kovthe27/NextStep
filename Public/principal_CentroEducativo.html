@@ -1,87 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
-        <title>NextStep</title>
-        <!-- Bootstrap Core CSS -->
-        <link href="../admin-wrap/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
-        <!-- You can change the theme colors from here -->
-        <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
+    <title>NextStep</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../admin-wrap/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
 
-        <!-- Custom CSS -->
-        <link href="../admin-wrap/main/css/style.css" rel="stylesheet">
-        <!-- page css -->
-        <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
-        <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
+    <!-- calendario -->
+    <link href="../admin-wrap/assets/node_modules/calendar/dist/fullcalendar.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../admin-wrap/main/css/style.css" rel="stylesheet">
+    <!-- page css -->
+    <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
+    <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
 
     <title>NextStep</title>
 </head>
+
 <body class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
-        <div id="main-wrapper">
-            <header class="topbar">
-                <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
-                    <div class="navbar-header">
-                             <img src="../Public/imgs/logo-text-02.png" alt="homepage" class="dark-logo">
-                    </div>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
+                <div class="navbar-header">
+                    <img src="../Public/imgs/logo-text-02.png" alt="homepage" class="dark-logo">
+                </div>
 
-                    <div class="navbar-collapse">
-                        <!-- Barra de búsqueda -->
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
-                            <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
-                                <form class="app-search">
-                                    <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                            </li>
-                        </ul>
-                       
-                        <!-- Perfil -->
-                        <ul class="navbar-nav my-lg-0">
-                            <li class="nav-item dropdown u-pro">
-                                <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../admin-wrap/assets/images/users/1.jpg" alt="user" class=""> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span> </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="navbar-collapse">
+                    <!-- Barra de búsqueda -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i
+                                    class="sl-icon-menu"></i></a> </li>
+                        <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark"
+                                href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i
+                                        class="ti-close"></i></a> </form>
+                        </li>
+                    </ul>
+
+                    <!-- Perfil -->
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><img src="../admin-wrap/assets/images/users/1.jpg"
+                                    alt="user" class=""> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav active">
+                    <ul id="sidebarnav" class="in">
+                        <li class="nav-small-cap">------ MENÚ</li>
+                        <li class=""> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-bell"></i><span
+                                    class="hide-menu">Solicitudes <span class="label label-rounded label-danger">4</span></span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-home"></i><span
+                                    class="hide-menu">Centros educativos </span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-bar-chart-alt"></i><span
+                                    class="hide-menu">Reportes </span></a></li>
+                        <li class="active"> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-calendar"></i><span
+                                    class="hide-menu">Calendario </span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-cup"></i><span
+                                    class="hide-menu">Ranking </span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-write"></i><span
+                                    class="hide-menu">Lista de útiles </span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-user"></i><span
+                                    class="hide-menu">Mi perfil</span></a></li>
+                    </ul>
                 </nav>
-            </header>
+                <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                    <div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                </div>
+                <div class="ps__scrollbar-y-rail" style="top: 0px; height: 751px; right: 0px;">
+                    <div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 620px;"></div>
+                </div>
+            </div>
+        </aside>
 
 
 
-            <aside class="left-sidebar">
-                <!-- Sidebar scroll-->
-                <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
-                    <!-- Sidebar navigation-->
-                    <nav class="sidebar-nav active">
-                        <ul id="sidebarnav" class="in">
-                            <li class="nav-small-cap">------ MENÚ</li>
-                            <li class="active"> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-bell"></i><span class="hide-menu">Solicitudes <span class="label label-rounded label-danger">4</span></span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-home"></i><span class="hide-menu">Centros educativos </span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-bar-chart-alt"></i><span class="hide-menu">Reportes </span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-calendar"></i><span class="hide-menu">Calendario </span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-cup"></i><span class="hide-menu">Ranking </span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-write"></i><span class="hide-menu">Lista de útiles </span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-user"></i><span class="hide-menu">Mi perfil</span></a></li>
-                        </ul>
-                    </nav>
-                <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; height: 751px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 620px;"></div></div></div>
-            </aside>
-           
-           
-            <div class="page-wrapper" style="min-height: 900px;">
-                <div class="container-fluid">
-                    <div class="row page-titles">
-                        <div class="col-md-5 align-self-center">
-                            <h3 class="text-themecolor">Solicitudes de cuenta</h3>
-                            
+        <div class="page-wrapper" style="min-height: 633px;">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Calendario de</h3>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right d-none d-md-block">
+                        <button type="button" class="btn btn-info"><i class="fa fa-plus-circle"></i> Create New</button>
+                    </div>
+                    <div class="">
+                        <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i
+                                class="ti-settings text-white"></i></button>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="card-body">
+                                            <h4 class="card-title m-t-10">Drag &amp; Drop Event</h4>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div id="calendar-events" class="">
+                                                        <div class="calendar-events ui-draggable ui-draggable-handle"
+                                                            data-class="bg-info" style="position: relative;"><i class="fa fa-circle text-info"></i>
+                                                            My Event One</div>
+                                                        <div class="calendar-events ui-draggable ui-draggable-handle"
+                                                            data-class="bg-success" style="position: relative;"><i
+                                                                class="fa fa-circle text-success"></i> My Event Two</div>
+                                                        <div class="calendar-events ui-draggable ui-draggable-handle"
+                                                            data-class="bg-danger" style="position: relative;"><i class="fa fa-circle text-danger"></i>
+                                                            My Event Three</div>
+                                                        <div class="calendar-events ui-draggable ui-draggable-handle"
+                                                            data-class="bg-warning" style="position: relative;"><i
+                                                                class="fa fa-circle text-warning"></i> My Event Four</div>
+                                                    </div>
+                                                    <!-- checkbox -->
+                                                    <div class="checkbox m-t-20">
+                                                        <input id="drop-remove" type="checkbox">
+                                                        <label for="drop-remove">
+                                                            Remove after drop
+                                                        </label>
+                                                    </div>
+                                                    <a href="#" data-toggle="modal" data-target="#add-new-event" class="btn m-t-10 btn-info btn-block waves-effect waves-light">
+                                                        <i class="ti-plus"></i> Add New Event
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <div class="card-body b-l calender-sidebar">
+                                            <div id="calendar" class="fc fc-unthemed fc-ltr">
+                                                
+                                                <!-- <div class="fc-view-container" style="">
+                                                    <div class="fc-view fc-month-view fc-basic-view" style="">
+                                                     
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- BEGIN MODAL -->
+                <div class="modal none-border" id="my-event">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title"><strong>Add Event</strong></h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body"></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create
+                                    event</button>
+                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light"
+                                    data-dismiss="modal">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Add Category -->
+                <div class="modal fade none-border" id="add-new-event">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title"><strong>Add</strong> a category</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="control-label">Category Name</label>
+                                            <input class="form-control form-white" placeholder="Enter name" type="text"
+                                                name="category-name">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Choose Category Color</label>
+                                            <select class="form-control form-white" data-placeholder="Choose a color..."
+                                                name="category-color">
+                                                <option value="success">Success</option>
+                                                <option value="danger">Danger</option>
+                                                <option value="info">Info</option>
+                                                <option value="primary">Primary</option>
+                                                <option value="warning">Warning</option>
+                                                <option value="inverse">Inverse</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger waves-effect waves-light save-category"
+                                    data-dismiss="modal">Save</button>
+                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <div class="right-sidebar ps ps--theme_default" data-ps-id="21c4dd70-a9b0-b78a-a5fb-7da91b1ddd84">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span>
+                        </div>
+                        <div class="r-panel-body">
+                            <ul id="themecolors" class="m-t-20">
+                                <li><b>With Light sidebar</b></li>
+                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
+                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
+                                <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
+                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
+                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
+                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
+                                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                                <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme working">7</a></li>
+                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
+                                <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
+                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
+                                <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
+                                <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
+                            </ul>
+                            <ul class="m-t-20 chatonline">
+                                <li><b>Chat option</b></li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../admin-wrap/assets/images/users/1.jpg" alt="user-img"
+                                            class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../admin-wrap/assets/images/users/2.jpg" alt="user-img"
+                                            class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../admin-wrap/assets/images/users/3.jpg" alt="user-img"
+                                            class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../admin-wrap/assets/images/users/4.jpg" alt="user-img"
+                                            class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../admin-wrap/assets/images/users/5.jpg" alt="user-img"
+                                            class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../admin-wrap/assets/images/users/6.jpg" alt="user-img"
+                                            class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../admin-wrap/assets/images/users/7.jpg" alt="user-img"
+                                            class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../admin-wrap/assets/images/users/8.jpg" alt="user-img"
+                                            class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                        <div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                    </div>
+                    <div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;">
+                        <div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
             </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer">
+                © 2019 Admin Wrap Admin by themedesigner.in
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
         </div>
+
+
+
+
+        <div class="page-wrapper" style="min-height: 900px;">
+            <!-- <div class="container-fluid">
+                    <div class="row page-titles">
+                        <div class="col-md-5 align-self-center">
+                            <h3 class="text-themecolor">Calendario de citas</h3>
+                            
+                        </div>
+                    </div>
+                </div> -->
+
+
+        </div>
+    </div>
 
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>
     <script src="./assets/node_modules/bootstrap/js/popper.min.js"></script>
@@ -92,6 +348,14 @@
     <script src="./assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
     <script src="./assets/node_modules/prism/prism.js"></script>
     <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
-    
+
+
+    <!-- calendar -->
+    <script src="./assets/node_modules/calendar/jquery-ui.min.js"></script>
+    <script src="./assets/node_modules/moment/moment.js"></script>
+    <script src="./assets/node_modules/calendar/dist/fullcalendar.min.js"></script>
+    <script src="./assets/node_modules/calendar/dist/cal-init.js"></script>
+
 </body>
+
 </html>
