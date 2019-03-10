@@ -1,87 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
-        <title>NextStep</title>
-        <!-- Bootstrap Core CSS -->
-        <link href="../admin-wrap/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
-        <!-- You can change the theme colors from here -->
-        <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
+    <title>NextStep</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../admin-wrap/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
 
-        <!-- Custom CSS -->
-        <link href="../admin-wrap/main/css/style.css" rel="stylesheet">
-        <!-- page css -->
-        <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
-        <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../admin-wrap/main/css/style.css" rel="stylesheet">
+    <!-- page css -->
+    <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
+    <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
 
     <title>NextStep</title>
 </head>
+
 <body class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
-        <div id="main-wrapper">
-            <header class="topbar">
-                <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
-                    <div class="navbar-header">
-                             <img src="../Public/imgs/logo-text-02.png" alt="homepage" class="dark-logo">
-                    </div>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
+                <div class="navbar-header">
+                    <img src="../Public/imgs/logo-text-02.png" alt="homepage" class="dark-logo">
+                </div>
 
-                    <div class="navbar-collapse">
-                        <!-- Barra de búsqueda -->
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
-                            <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
-                                <form class="app-search">
-                                    <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                            </li>
-                        </ul>
-                       
-                        <!-- Perfil -->
-                        <ul class="navbar-nav my-lg-0">
-                            <li class="nav-item dropdown u-pro">
-                                <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../admin-wrap/assets/images/users/1.jpg" alt="user" class=""> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span> </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="navbar-collapse">
+                    <!-- Barra de búsqueda -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i
+                                    class="sl-icon-menu"></i></a> </li>
+                        <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark"
+                                href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i
+                                        class="ti-close"></i></a> </form>
+                        </li>
+                    </ul>
+
+                    <!-- Perfil -->
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><img src="../admin-wrap/assets/images/users/1.jpg"
+                                    alt="user" class=""> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav active">
+                    <ul id="sidebarnav" class="in">
+                        <li class="nav-small-cap">------ MENÚ</li>
+                        <li class="active"> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-bell"></i><span
+                                    class="hide-menu">Solicitudes <span class="label label-rounded label-danger">4</span></span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-home"></i><span
+                                    class="hide-menu">Centros educativos </span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-bar-chart-alt"></i><span
+                                    class="hide-menu">Reportes </span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-calendar"></i><span
+                                    class="hide-menu">Calendario </span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-cup"></i><span
+                                    class="hide-menu">Ranking </span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-write"></i><span
+                                    class="hide-menu">Lista de útiles </span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-user"></i><span
+                                    class="hide-menu">Mi perfil</span></a></li>
+                    </ul>
                 </nav>
-            </header>
+                <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                    <div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                </div>
+                <div class="ps__scrollbar-y-rail" style="top: 0px; height: 751px; right: 0px;">
+                    <div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 620px;"></div>
+                </div>
+            </div>
+        </aside>
 
 
+        <div class="page-wrapper" style="min-height: 900px;">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Solicitudes de cuenta</h3>
 
-            <aside class="left-sidebar">
-                <!-- Sidebar scroll-->
-                <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
-                    <!-- Sidebar navigation-->
-                    <nav class="sidebar-nav active">
-                        <ul id="sidebarnav" class="in">
-                            <li class="nav-small-cap">------ MENÚ</li>
-                            <li class="active"> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-bell"></i><span class="hide-menu">Solicitudes <span class="label label-rounded label-danger">4</span></span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-home"></i><span class="hide-menu">Centros educativos </span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-bar-chart-alt"></i><span class="hide-menu">Reportes </span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-calendar"></i><span class="hide-menu">Calendario </span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-cup"></i><span class="hide-menu">Ranking </span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-write"></i><span class="hide-menu">Lista de útiles </span></a></li>
-                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-user"></i><span class="hide-menu">Mi perfil</span></a></li>
-                        </ul>
-                    </nav>
-                <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; height: 751px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 620px;"></div></div></div>
-            </aside>
-           
-           
-            <div class="page-wrapper" style="min-height: 900px;">
-                <div class="container-fluid">
-                    <div class="row page-titles">
-                        <div class="col-md-5 align-self-center">
-                            <h3 class="text-themecolor">Solicitudes de cuenta</h3>
-                            
-                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
+                            data-tablesaw-mode="columntoggle" id="tablesaw-1093">
+                            <thead>
+                                <tr>
+                                    <th>Centro educativo</th>
+                                    <th>Número</th>
+                                    <th>Año de creación</th>
+                                    <th>Correo</th>
+                                    <th>Administrador</th>
+                                    <th>Respuesta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="title"><a class="link" href="javascript:void(0)">Avatar</a></td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">1</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">2009</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">83%</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">$2.7B</td>
+                                    <td><button type="button" class="btn btn-sm btn-info btn-circle"><i class="fa fa-check"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-danger btn-circle"><i class="fa fa-times"></i> </button></td>
+                                </tr>
+                                <tr>
+                                    <td class="title"><a class="link" href="javascript:void(0)">Titanic</a></td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">2</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">1997</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">88%</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">$2.1B</td>
+                                    <td><button type="button" class="btn btn-sm btn-info btn-circle"><i class="fa fa-check"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-danger btn-circle"><i class="fa fa-times"></i> </button></td>
+                                </tr>
+                                <tr>
+                                    <td class="title"><a class="link" href="javascript:void(0)">The Avengers</a></td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">3</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">2012</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">92%</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">$1.5B</td>
+                                    <td><button type="button" class="btn btn-sm btn-info btn-circle"><i class="fa fa-check"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-danger btn-circle"><i class="fa fa-times"></i> </button></td>
+                                </tr>
+                                <tr>
+                                    <td class="title"><a class="link" href="javascript:void(0)">Harry Potter and the
+                                            Deathly Hallows—Part 2</a></td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">4</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">2011</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">96%</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">$1.3B</td>
+                                    <td><button type="button" class="btn btn-sm btn-info btn-circle"><i class="fa fa-check"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-danger btn-circle"><i class="fa fa-times"></i> </button></td>
+                                </tr>
+                                <tr>
+                                    <td class="title"><a class="link" href="javascript:void(0)">Frozen</a></td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">5</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">2013</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">89%</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">$1.2B</td>
+                                    <td><button type="button" class="btn btn-sm btn-info btn-circle"><i class="fa fa-check"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-danger btn-circle"><i class="fa fa-times"></i> </button></td>
+                                </tr>
+                                <tr>
+                                    <td class="title"><a class="link" href="javascript:void(0)">Iron Man 3</a></td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">6</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">2013</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">78%</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">$1.2B</td>
+                                    <td><button type="button" class="btn btn-sm btn-info btn-circle"><i class="fa fa-check"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-danger btn-circle"><i class="fa fa-times"></i> </button></td>
+                                </tr>
+                                <tr>
+                                    <td class="title"><a class="link" href="javascript:void(0)">Transformers: Dark of
+                                            the Moon</a></td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">7</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">2011</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">36%</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">$1.1B</td>
+                                    <td><button type="button" class="btn btn-sm btn-info btn-circle"><i class="fa fa-check"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-danger btn-circle"><i class="fa fa-times"></i> </button></td>
+                                </tr>
+                                <tr>
+                                    <td class="title"><a class="link" href="javascript:void(0)">The Lord of the Rings:
+                                            The Return of the King</a></td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">8</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">2003</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">95%</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">$1.1B</td>
+                                    <td><button type="button" class="btn btn-sm btn-info btn-circle"><i class="fa fa-check"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-danger btn-circle"><i class="fa fa-times"></i> </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title"><a class="link" href="javascript:void(0)">Skyfall</a></td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">9</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">2012</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">92%</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">$1.1B</td>
+                                    <td><button type="button" class="btn btn-sm btn-info btn-circle"><i class="fa fa-check"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-danger btn-circle"><i class="fa fa-times"></i> </button></td>
+                                </tr>
+                                <tr>
+                                    <td class="title"><a class="link" href="javascript:void(0)">Transformers: Age of
+                                            Extinction</a></td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">10</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">2014</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">18%</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">$1.0B</td>
+                                    <td><button type="button" class="btn btn-sm btn-info btn-circle"><i class="fa fa-check"></i> </button>
+                                        <button type="button" class="btn btn-sm btn-danger btn-circle"><i class="fa fa-times"></i> </button></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>
     <script src="./assets/node_modules/bootstrap/js/popper.min.js"></script>
@@ -92,6 +229,8 @@
     <script src="./assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
     <script src="./assets/node_modules/prism/prism.js"></script>
     <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
-    
+    <!-- tabla -->
+
 </body>
+
 </html>
