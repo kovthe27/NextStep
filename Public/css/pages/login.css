@@ -67,3 +67,7 @@ Login register and recover password Page
 .btn-lg:hover{
   background-color: #00b96b;
 }
+.error_input{
+  border-bottom: solid 1px red !important;
+  background-image: none !important;
+}
