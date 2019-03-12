@@ -4,14 +4,14 @@
 .imagenCentro{
     background-image: url("../imgs/colegio.jpg");
     width: 100%;
-    height: 500px;
+    height: 400px;
     background-size: cover;
     z-index: -1;
 }
 
 .opacidad{
     z-index: 1;
-    height: 500px;
+    height: 400px;
     width: 100%;
     left: 0;
     background-color: #000000;
@@ -22,9 +22,36 @@
 .texto{
     z-index: 2;
     position: absolute;
-    bottom: 13em;
+    top: 20em;
+    margin-left: 1.5em;
 }
 
 .texto h2{
     color: white;
+}
+
+.star-rating{
+    color: white;
+    margin-bottom: 2em;
+}
+
+
+.linea{
+    width: 2px;
+    height: 220px;
+    background-color: #54B56B;
+    margin: 0 30px;
+}
+
+.acercaNosotros{
+    margin-bottom: 2em;
+    height: 257px;
+    padding: 1em 0;
+    background-color: white;
+}
+
+/* ------------ */
+.comentarios-noticias{
+    height: 865px;
+    background-color: white;
 }

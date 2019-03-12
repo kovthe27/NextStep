@@ -98,7 +98,7 @@ a.link:hover, a.link:focus {
   .btn-themecolor.active, .btn-themecolor:focus,
   .btn-themecolor.disabled.active,
   .btn-themecolor.disabled:focus {
-    background: #028ee1; }
+    background: #54B56B !important; }
 
 /*******************
 /*sidebar navigation
