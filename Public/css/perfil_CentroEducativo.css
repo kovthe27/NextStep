@@ -55,3 +55,11 @@
     height: 865px;
     background-color: white;
 }
+
+.altura {
+    height: 200px;
+}
+
+.error_input{
+    border-color: #ff5c6c;
+}

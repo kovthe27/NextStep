@@ -15,6 +15,7 @@ module.exports.registrar_servicio = (req, res) => {
                 success: false,
                 msg: `No se pudo guardar el servicio, por favor vuelva a intentarlo`
             });
+
         } else {
             res.json({
                 success: true,

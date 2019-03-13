@@ -1,67 +1,35 @@
 'use strict';
 
-const input_imagen = document.querySelector('#imagen_servicio');
-const input_titulo = document.querySelector('#txt_titulo');
-const input_descripcion = document.querySelector('#txt_descripcion');
-
-let validar = () => {
-    let error = false;
-
-    if (input_imagen.value == '') {
-        error = true;
-        input_imagen.classList.add('error_input');
-    } else {
-        input_imagen.classList.remove('error_input');
-    }
-
-    if (input_titulo.value == '') {
-        error = true;
-        input_titulo.classList.add('error_input');
-    } else {
-        input_titulo.classList.remove('error_input');
-    }
-
-    if (input_descripcion == '') {
-        error = true;
-        input_descripcion.classList.add('error_input');
-    } else {
-        input_descripcion.classList.remove('error_input');
-    }
-
-    return error;
-};
-
-let obtener_datos = () => {
-
-    if (validar() == false) {
-        // Se ejecuta solo si la validación no da error
-        let imagen = input_imagen.value;
-        let titulo = input_titulo.value;
-        let descripcion = input_descripcion.value;
-
-        registrar_actividad(imagen, titulo, descripcion);
-        
-       
-        
-
-    } else {
-        swal({
-            type: 'warning',
-            title: 'El servicio no fue creado',
-            text: 'Por favor revise los campos resaltados'
-        });
-    }
-
-};
-
-
-
-
-btn_enviar.addEventListener('click', obtener_datos);
-
-
-
-
+let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
+    let request = $.ajax({
+      url: "http://localhost:4000/api/registrar_servicio",
+      method: "POST",
+      data: {
+        imagen: pimagen,
+        titulo: ptitulo,
+        descripcion: pdescripcion
+      },
+      dataType: "json",
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+  
+    request.done(function (msg) {
+      swal({
+        type: 'success',
+        title: 'La actividad fue enviada',
+        text: 'Muchas gracias'
+      });
+    });
+  
+    request.fail(function (jqXHR, textStatus) {
+      swal({
+        type: 'error',
+        title: 'La actividad no pudo ser enviada',
+        text: 'Por favor inténtelo de nuevo'
+      });
+    });
+  };
+  
 
 
 let consultar_servicio = () => {
@@ -79,15 +47,16 @@ let consultar_servicio = () => {
     
       request.done(function (res) {
         lista_servicios = res;
+        console.log("success");
         
       });
     
       request.fail(function (jqXHR, textStatus) {
-        
+        console.log("fail");
       });
     
       return lista_servicios;
-     
+      
     };
     
     
