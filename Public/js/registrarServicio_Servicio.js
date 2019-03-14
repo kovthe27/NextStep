@@ -14,7 +14,7 @@ let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
     });
   
     request.done(function (msg) {
-      swal({
+      swal.fire({
         type: 'success',
         title: 'La actividad fue enviada',
         text: 'Muchas gracias'
@@ -22,7 +22,7 @@ let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
     });
   
     request.fail(function (jqXHR, textStatus) {
-      swal({
+      swal.fire({
         type: 'error',
         title: 'La actividad no pudo ser enviada',
         text: 'Por favor inténtelo de nuevo'

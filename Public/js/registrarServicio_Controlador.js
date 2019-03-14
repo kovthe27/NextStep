@@ -21,7 +21,7 @@ let validar = () => {
         input_titulo.classList.remove('error_input');
     }
 
-    if (input_descripcion == '') {
+    if (input_descripcion.value == '') {
         error = true;
         input_descripcion.classList.add('error_input');
     } else {
@@ -38,11 +38,13 @@ let obtener_datos = () => {
         let imagen = input_imagen.value;
         let titulo = input_titulo.value;
         let descripcion = input_descripcion.value;
-
-        registrar_actividad(imagen, titulo, descripcion);
+        
+        registrar_servicio(imagen, titulo, descripcion);
+        
+        $('#btn_enviar').click();
 
     } else {
-        swal({
+        swal.fire({
             type: 'warning',
             title: 'El servicio no fue creado',
             text: 'Por favor revise los campos resaltados'
@@ -53,6 +55,7 @@ let obtener_datos = () => {
 
 
 btn_enviar.addEventListener('click', obtener_datos);
+
 
 
 
