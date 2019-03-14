@@ -14,6 +14,9 @@
     <!-- You can change the theme colors from here -->
     <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
 
+    <!-- Subir imagen -->
+    <link rel="stylesheet" href="./assets/node_modules/dropify/dist/css/dropify.min.css">
+
     <!-- calendario -->
     <link href="../admin-wrap/assets/node_modules/calendar/dist/fullcalendar.css" rel="stylesheet">
 
@@ -23,6 +26,8 @@
     <!-- page css -->
     <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
     <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <title>NextStep</title>
 </head>
@@ -238,16 +243,16 @@
                                     </div>
                                 </div>
                                 <div class="card-body b-t">
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <textarea placeholder="Escriba su comentario" class="form-control b-0"></textarea>
-                                            </div>
-                                            <div class="col-2 text-right">
-                                                <button type="button" class="btn btn-warning btn-circle btn-lg"><i class="far fa-paper-plane"></i>
-                                                </button>
-                                            </div>
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <textarea placeholder="Escriba su comentario" class="form-control b-0"></textarea>
+                                        </div>
+                                        <div class="col-2 text-right">
+                                            <button type="button" class="btn btn-warning btn-circle btn-lg"><i class="far fa-paper-plane"></i>
+                                            </button>
                                         </div>
                                     </div>
+                                </div>
 
                             </div>
                             <div class="card col-md-3 float-left ">
@@ -291,9 +296,89 @@
                                     </div>
                                 </div>
 
-                               
+
                             </div>
                         </div>
+                    </section>
+
+                    <div class="clearfix"></div>
+
+                    <section id="cardServicio" class="servicios">
+                        <h4 class="card-title">Servicios que brinda el centro educativo</h4>
+                        <!-- Modal -->
+                        <div id="verticalcenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                            aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="vcenter">Creación de servicio</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="card">
+                                            <h4 class="card-title">Subir imagen</h4>
+                                            <div class="">
+                                                <div class="dropify-loader" style="display: none;"></div>
+                                                <div class="dropify-errors-container">
+                                                    <ul></ul>
+                                                </div><input type="file" id="input-file-disable-remove" class="dropify"
+                                                    data-show-remove="false">
+                                                <div class="dropify-preview" style="display: none;"><span class="dropify-render"></span>
+                                                    <div class="dropify-infos">
+                                                        <div class="dropify-infos-inner">
+                                                            <p class="dropify-filename"><span class="file-icon"></span>
+                                                                <span class="dropify-filename-inner"></span></p>
+                                                            <p class="dropify-infos-message">Arrastre la imagen o de
+                                                                click aquí para reemplazarla</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <input type="text" id="imagen_servicio" name="text" class="form-control"
+                                                required="true" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte un título">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_titulo" name="text" class="form-control"
+                                                required="true" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte un título">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <textarea name="textarea" id="txt_descripcions" class="form-control"
+                                                    required="" placeholder="Escriba una descripción"></textarea>
+                                                <div class="help-block"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="btn_enviar" type="submit" class="btn btn-warning waves-effect"
+                                            data-dismiss="modal">Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Botón -->
+                        <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#verticalcenter">Añadir
+                            servicio</button>
+                            <div class="clearfix"></div>
+
+                        <!-- <div class="card col-md-4">
+                            <img class="card-img-top img-responsive" src="" alt="">
+                            <div class="card-body">
+                                <h4 id="txt_imagen" class="card-title"></h4>
+                                <h4 id="txt_titulo" class="card-title"></h4>
+                                <p id="txt_descripcion" class="card-text"></p>
+                            </div>
+                        </div> -->
+
                     </section>
 
 
@@ -316,11 +401,52 @@
     <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
 
 
-    <!-- calendar -->
-    <script src="./assets/node_modules/calendar/jquery-ui.min.js"></script>
-    <script src="./assets/node_modules/moment/moment.js"></script>
-    <script src="./assets/node_modules/calendar/dist/fullcalendar.min.js"></script>
-    <script src="./assets/node_modules/calendar/dist/cal-init.js"></script>
+    <!-- subir imagen -->
+    <script src="./assets/node_modules/dropify/dist/js/dropify.min.js"></script>
+    <script>
+        $(function () {
+            // Basic
+            $('.dropify').dropify();
+
+            // Translated
+            $('.dropify-fr').dropify({
+                messages: {
+                    default: 'Glissez-déposez un fichier ici ou cliquez',
+                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                    remove: 'Supprimer',
+                    error: 'Désolé, le fichier trop volumineux'
+                }
+            });
+
+            // Used events
+            var drEvent = $('#input-file-events').dropify();
+
+            drEvent.on('dropify.beforeClear', function (event, element) {
+                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+            });
+
+            drEvent.on('dropify.afterClear', function (event, element) {
+                alert('File deleted');
+            });
+
+            drEvent.on('dropify.errors', function (event, element) {
+                console.log('Has Errors');
+            });
+
+            var drDestroy = $('#input-file-to-destroy').dropify();
+            drDestroy = drDestroy.data('dropify')
+            $('#toggleDropify').on('click', function (e) {
+                e.preventDefault();
+                if (drDestroy.isDropified()) {
+                    drDestroy.destroy();
+                } else {
+                    drDestroy.init();
+                }
+            })
+        });
+    </script>
+    <script src="js/registrarServicio_Servicio.js"></script>
+    <script src="js/registrarServicio_Controlador.js"></script>
 
 </body>
 
