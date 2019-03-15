@@ -67,6 +67,10 @@ app.use('/api', servicio);
 const noticia = require('./componentes/registrar_noticia/registrar_noticia.route');
 app.use('/api', noticia);
 
+const infoMatricula = require('./componentes/registrar_infoMatricula/registrar_infoMatricula.route');
+app.use('/api', infoMatricula);
+
+
 
 
 
