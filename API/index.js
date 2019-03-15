@@ -62,8 +62,10 @@ app.use( function(req, res, next) {
 
 
 const servicio = require('./componentes/registrar_servicio/registrar_servicio.route');
-
 app.use('/api', servicio);
+
+const noticia = require('./componentes/registrar_noticia/registrar_noticia.route');
+app.use('/api', noticia);
 
 
 

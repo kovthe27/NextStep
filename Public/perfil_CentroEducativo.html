@@ -67,7 +67,7 @@
         </header>
 
 
-
+<!-- Menu -->
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
@@ -100,9 +100,8 @@
             </div>
         </aside>
 
-
-
-        <div class="page-wrapper" style="min-height: 3000px;">
+<!-- Inicio -->        
+        <div class="page-wrapper" style="min-height: 3000px; overflow-y: scroll;">
             <div class="portada">
                 <div class="opacidad"></div>
                 <div class="imagenCentro"></div>
@@ -158,12 +157,17 @@
                     </section>
                     <div class="clearfix"></div>
 
-                    <section class="comentarios-noticias">
+
+
+
+                    <section id="cardComentarios-noticias" class="comentarios-noticias">
+<!-- Comentarios -->
                         <div class="widget-app-columns">
                             <div class="card col-md-9 float-left">
                                 <div class="card-body">
                                     <h4 class="card-title">Comentarios recientes</h4>
                                 </div>
+                                <!-- comentarios -->
                                 <div class="comment-widgets m-b-20">
                                     <!-- Comment Row -->
                                     <div class="d-flex flex-row comment-row">
@@ -242,6 +246,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- input comentario -->
                                 <div class="card-body b-t">
                                     <div class="row">
                                         <div class="col-md-10">
@@ -253,56 +258,80 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
+
+
+
+<!-- noticias -->
+
+
                             <div class="card col-md-3 float-left ">
                                 <div class="card-body">
                                     <h4 class="card-title">Noticias recientes</h4>
-                                </div>
 
-                                <div class="card">
+                                    <!-- Modal -->
+                                    <div id="agregarNoticia" class="modal fade" tabindex="-1" role="dialog"
+                                        aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="vcenter">Creación de noticia</h4>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">×</button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="form-group">
+                                                        <input type="text" id="txt_tituloNoticia" name="text" class="form-control"
+                                                            required="true" data-validation-required-message="This field is required"
+                                                            aria-invalid="false" placeholder="Inserte un título">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <input type="date" id="txt_fechaNoticia" data-date-format="DD MMMM YYYY" name="text" class="form-control"
+                                                            required="true" data-validation-required-message="This field is required"
+                                                            aria-invalid="false" placeholder="Inserte un título">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="controls">
+                                                            <textarea name="textarea" id="txt_descripcionNoticia" class="form-control"
+                                                                required="" placeholder="Escriba una descripción"></textarea>
+                                                            <div class="help-block"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button id="btn_enviarNoticia" type="submit" class="btn btn-warning waves-effect"
+                                                        data-dismiss="modal">Crear</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Botón -->
+                                    <button id="btn_enviarNoticia" class="btn btn-themecolor mb-3 mt-3" alt="default"
+                                        data-toggle="modal" data-target="#agregarNoticia">Añadir
+                                        noticia</button><hr>
+                                    <div class="clearfix"></div>
+
+                                    <!-- <div class="card">
                                     <div class="card-body collapse show">
-                                        <h4 class="card-title text-themecolor">Título</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">22|06|2019</h6>
+                                        <h4 id="txt_tituloNoticia" class="card-title text-themecolor">Título</h4>
+                                        <h6 id="txt_titulofecha" class="card-subtitle mb-2 text-muted">22|06|2019</h6>
                                         <p class="card-text">With supporting text below as a natural lead-in to
                                             additional content.</p>
                                     </div>
+                                </div> -->
+
                                 </div>
-
-                                <div class="card">
-                                    <div class="card-body collapse show">
-                                        <h4 class="card-title text-themecolor">Título</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">22|06|2019</h6>
-                                        <p class="card-text">With supporting text below as a natural lead-in to
-                                            additional content.</p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-body collapse show">
-                                        <h4 class="card-title text-themecolor">Título</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">22|06|2019</h6>
-                                        <p class="card-text">With supporting text below as a natural lead-in to
-                                            additional content.</p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-body collapse show">
-                                        <h4 class="card-title text-themecolor">Título</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">22|06|2019</h6>
-                                        <p class="card-text">With supporting text below as a natural lead-in to
-                                            additional content.</p>
-                                    </div>
-                                </div>
-
-
                             </div>
                         </div>
                     </section>
 
                     <div class="clearfix"></div>
 
+<!-- SERVICIOS -->
                     <section id="cardServicio" class="servicios">
                         <h4 class="card-title">Servicios que brinda el centro educativo</h4>
                         <!-- Modal -->
@@ -360,8 +389,8 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button id="btn_enviar" type="submit" class="btn btn-warning waves-effect"
-                                            data-dismiss="modal">Crear</button>
-                                                
+                                            >Crear</button>
+
                                     </div>
                                 </div>
                             </div>
@@ -369,7 +398,7 @@
                         <!-- Botón -->
                         <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#verticalcenter">Añadir
                             servicio</button>
-                            <div class="clearfix"></div>
+                        <div class="clearfix"></div>
 
                         <!-- <div class="card col-md-4">
                             <img class="card-img-top img-responsive" src="" alt="">
@@ -380,6 +409,59 @@
                             </div>
                         </div> -->
 
+                    </section>
+                    <div class="clearfix"></div>
+                    
+                    
+<!-- MATRICULA -->
+                    <section class="matricula">
+                        <h4 class="card-title">Información de matrícula</h4>
+                        <!-- Modal -->
+                        <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                            aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="vcenter">Información de matrícula</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_tituloMatricula" name="text" class="form-control"
+                                                required="true" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte un título">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <textarea name="textarea" id="txt_descripcionMatricula" class="form-control"
+                                                    required="" placeholder="Escriba una descripción"></textarea>
+                                                <div class="help-block"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="btn_enviar" type="submit" class="btn btn-warning waves-effect"
+                                            data-dismiss="modal">Crear</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- Botón -->
+                         <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#agregarMatricula">Añadir información</button>
+                        <div class="clearfix"></div>
+
+                        <div class="card col-md-4 card-outline-primary">
+                            <img class="card-img-top img-responsive" src="" alt="">
+                            <div class="card-body">
+                                <h4 id="txt_imagen" class="card-title"></h4>
+                                <h4 id="txt_titulo" class="card-title"></h4>
+                                <p id="txt_descripcion" class="card-text"></p>
+                            </div>
+                        </div>
                     </section>
 
 
@@ -446,9 +528,11 @@
             })
         });
     </script>
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/registrarServicio_Servicio.js"></script>
     <script src="js/registrarServicio_Controlador.js"></script>
+    <script src="js/registrarNoticia_Servicio.js"></script>
+    <script src="js/registrarNoticia_Controlador.js"></script>
 
 </body>
 
