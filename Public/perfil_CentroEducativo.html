@@ -27,6 +27,9 @@
     <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
     <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
 
+    <!-- card color -->
+    <link href="../admin-wrap/main/css/pages/ribbon-page.css" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <title>NextStep</title>
@@ -315,6 +318,7 @@
                                         noticia</button><hr>
                                     <div class="clearfix"></div>
 
+                                    
                                     <!-- <div class="card">
                                     <div class="card-body collapse show">
                                         <h4 id="txt_tituloNoticia" class="card-title text-themecolor">Título</h4>
@@ -335,7 +339,6 @@
                     <section id="cardServicio" class="servicios">
                         <h4 class="card-title">Servicios que brinda el centro educativo</h4>
                         <!-- Modal -->
-<<<<<<< HEAD
                         <div id="verticalcenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
                             aria-hidden="true" style="display: none;">
                             <div class="modal-dialog modal-dialog-centered">
@@ -396,9 +399,6 @@
                                 </div>
                             </div>
                         </div>
-=======
-                        
->>>>>>> d695dd6b675d012b3ee7514d1e5dbb1b5b451bcc
                         <!-- Botón -->
                         <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#verticalcenter">Añadir
                             servicio</button>
@@ -418,7 +418,7 @@
                     
                     
 <!-- MATRICULA -->
-                    <section class="matricula">
+                    <section id="cardMatricula" class="cardMatricula">
                         <h4 class="card-title">Información de matrícula</h4>
                         <!-- Modal -->
                         <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
@@ -446,7 +446,7 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button id="btn_enviar" type="submit" class="btn btn-warning waves-effect"
+                                        <button id="btn_enviarMatricula" type="submit" class="btn btn-warning waves-effect"
                                             data-dismiss="modal">Crear</button>
 
                                     </div>
@@ -458,14 +458,12 @@
                          <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#agregarMatricula">Añadir información</button>
                         <div class="clearfix"></div>
 
-                        <div class="card col-md-4 card-outline-primary">
-                            <img class="card-img-top img-responsive" src="" alt="">
-                            <div class="card-body">
-                                <h4 id="txt_imagen" class="card-title"></h4>
-                                <h4 id="txt_titulo" class="card-title"></h4>
-                                <p id="txt_descripcion" class="card-text"></p>
+                        <!-- <div class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
+                            <div class="ribbon-wrapper card">
+                                <div class="ribbon ribbon-warning">Ribbon</div>
+                                <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
                             </div>
-                        </div>
+                        </div> -->
                     </section>
 
 
@@ -537,6 +535,8 @@
     <script src="js/registrarServicio_Controlador.js"></script>
     <script src="js/registrarNoticia_Servicio.js"></script>
     <script src="js/registrarNoticia_Controlador.js"></script>
+    <script src="js/registrar_infoMatricula_Servicio.js"></script>
+    <script src="js/registrar_infoMatricula_Controlador.js"></script>
 
 </body>
 
