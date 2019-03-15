@@ -68,6 +68,12 @@ const noticia = require('./componentes/registrar_noticia/registrar_noticia.route
 app.use('/api', noticia);
 
 
+const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registrar_preguntas.route');
+const utilesAdmin = require('./componentes/registrar_utiles_admin/registrar_utiles.route');
+
+app.use('/api', servicio);
+app.use('/api', preguntasAdmin);
+app.use('/api', utilesAdmin);
 
 
 
