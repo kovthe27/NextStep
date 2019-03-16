@@ -1,11 +1,10 @@
 'use strict';
 
-let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
+let registrar_infoMatricula = (ptitulo, pdescripcion) => {
     let request = $.ajax({
-      url: "http://localhost:4000/api/registrar_servicio",
+      url: "http://localhost:4000/api/registrar_infoMatricula",
       method: "POST",
       data: {
-        imagen: pimagen,
         titulo: ptitulo,
         descripcion: pdescripcion
       },
@@ -16,7 +15,7 @@ let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
     request.done(function (msg) {
       swal.fire({
         type: 'success',
-        title: 'La actividad fue enviada',
+        title: 'La información de matrícula fue agregada',
         text: 'Muchas gracias'
       });
     });
@@ -24,7 +23,7 @@ let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
     request.fail(function (jqXHR, textStatus) {
       swal.fire({
         type: 'error',
-        title: 'La actividad no pudo ser enviada',
+        title: 'La información de matrícula no pudo ser registrada',
         text: 'Por favor inténtelo de nuevo'
       });
     });
@@ -32,11 +31,11 @@ let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
   
 
 
-let consultar_servicio = () => {
-    let lista_servicios = []; 
+let consultar_infoMatricula= () => {
+    let lista_infoMatricula = []; 
     
       let request = $.ajax({
-        url: "http://localhost:4000/api/consultar_servicio",
+        url: "http://localhost:4000/api/consultar_infoMatricula",
         method: "GET",
         data: {
         },
@@ -46,17 +45,15 @@ let consultar_servicio = () => {
       });
     
       request.done(function (res) {
-        lista_servicios = res;
-        console.log("success");
+        lista_infoMatricula = res;
+        // console.log("success");
         
       });
     
       request.fail(function (jqXHR, textStatus) {
-        console.log("fail");
+        // console.log("fail");
       });
     
-      return lista_servicios;
+      return lista_infoMatricula;
       
     };
-    
-    
