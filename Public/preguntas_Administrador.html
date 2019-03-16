@@ -35,8 +35,7 @@
                     <!-- Barra de búsqueda -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark"
-                                href="javascript:void(0)">
+                            <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
                                 <i class="sl-icon-menu"></i>
                             </a>
                         </li>
@@ -56,8 +55,8 @@
                     <!-- Perfil -->
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
                                 <img src="../admin-wrap/assets/images/users/1.jpg" alt="user" class="">
                                 <span id="txtUsuario" class="hidden-md-down">Mark Sanders &nbsp;
                                     <i class="fa fa-angle-down"></i>
@@ -73,15 +72,13 @@
 
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar ps ps--theme_default ps--active-y"
-                data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
+            <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav active">
                     <ul id="sidebarnav" class="in">
                         <li class="nav-small-cap">------ MENÚ</li>
                         <li class="">
-                            <a class="waves-effect waves-dark" href="principal_Administrador.html"
-                                aria-expanded="false">
+                            <a class="waves-effect waves-dark" href="principal_Administrador.html" aria-expanded="false">
                                 <i class="ti-bell"></i>
                                 <span class="hide-menu">Solicitudes
                                 </span>
@@ -94,8 +91,7 @@
                             </a>
                         </li>
                         <li class="">
-                            <a class=" waves-effect waves-dark" href="reportes_Administrador.html"
-                                aria-expanded="false">
+                            <a class=" waves-effect waves-dark" href="reportes_Administrador.html" aria-expanded="false">
                                 <i class=" ti-bar-chart-alt"></i>
                                 <span class="hide-menu">Reportes </span>
                             </a>
@@ -125,7 +121,7 @@
                             </a>
                         </li>
                         <li class="active">
-                            <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
+                            <a class=" waves-effect waves-dark" href="preguntas_Administrador.html" aria-expanded="false">
                                 <i class="ti-help"></i>
                                 <span class="hide-menu">Preguntas frecuentes </span>
                             </a>
@@ -151,16 +147,48 @@
                     </div>
 
                 </div>
-                <button id="btnAgregar" class="btn btn-themecolor">Agregar pregunta</button>
-                
+                <!-- Modal -->
+                <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="vcenter">Nueva pregunta</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <input type="text" id="txt_pregunta" name="text" class="form-control" required="true" data-validation-required-message="This field is required"
+                                        aria-invalid="false" placeholder="Inserte su pregunta">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="controls">
+                                        <textarea name="textarea" id="txt_respuesta" class="form-control" required="" placeholder="Escriba la respuesta"></textarea>
+                                        <div class="help-block"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btn_enviarMatricula" type="submit" class="btn btn-warning waves-effect" data-dismiss="modal">Crear</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón -->
+                <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#agregarMatricula">Añadir pregunta</button>
+                <div class="clearfix"></div>
+
             </div>
-                <div class="card-body">
+            <div class="card-body">
                 <!-- <h4 class="card-title">Faqs with accordion</h4> -->
                 <h6 class="card-subtitle"></h6>
                 <div id="accordion1" role="tablist" aria-multiselectable="true">
                     <!-- Se cargan las preguntas frecuentes cuando se crea la pagina -->
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -179,7 +207,7 @@
     <script src="js/MenuAdmin_Controlador.js"></script>
     <script src="js/preguntasAdmin_servicio.js"></script>
     <script src="js/preguntasAdmin_controlador.js"></script>
-  
+
 </body>
 
 </html>
