@@ -72,12 +72,12 @@ let mostrar_datos = () =>{
     // console.log(servicio);
 
     for(let i = 0; i < servicio.length; i++){
-        var card = "<div id=\"cardServicio\" class=\"card altura col-md-4 float-left\">"+ 
+        var card = "<div id=\"cardServicio\" class=\" altura col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left\">"+ 
         "<img class=\"card-img-top img-responsive\" src=\"\" alt=\"\">"+
-        "<div class=\"card-body\">"+
+        "<div class=\"card-body card\">"+
         // "<input type=\"file\" id=\"input-file-disable-remove\" class=\"dropify\" data-show-remove=\"false\">"+servicio[i].titulo+"</input>"+
         "<h4 id=\"imagen_servicio\" class=\"card-title\">"+servicio[i].imagen+"</h4>"+
-        "<h4 id=\"txt_titulo\" class=\"card-title\">"+servicio[i].titulo+"</h4>"+
+        "<h4 id=\"txt_titulo\" class=\"card-title text-themecolor\">"+servicio[i].titulo+"</h4>"+
         "<p id=\"txt_descripcion\" class=\"card-text\">"+servicio[i].descripcion+"</p>"+
         "</div></div>";
 
