@@ -73,7 +73,17 @@ let mostrar_datosNoticia = () =>{
 
     for(let i = 0; i < 4; i++){
         var cardNoticia =   "<div class=\"card col-md-3 float-left \">" +
-        "<div class=\"card-body\">"+
+        "<div class=\"card-body img-thumbnail\">"+
+          // dropdown
+          "<div class=\"btn-group float-right\">"+
+          "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
+          "<i class=\"fas fa-ellipsis-v\"></i>"+
+          "</button>"+
+          "<div class=\"dropdown-menu dropdown-menu-right\">"+
+            "<a class=\"dropdown-item\" href=\"#\" >Editar</a>"+
+            "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>"+
+         "</div></div>"+
+
             "<h4 id=\"txt_tituloNoticia\" class=\"card-title text-themecolor\">"+noticia[i].titulo+"</h4>" +
             "<h6 id=\"txt_fechaNoticia\" class=\"card-subtitle mb-2 text-muted\">"+noticia[i].fecha+"</h6>"+
             "<p id=\"txt_descripcionNoticia\" class=\"card-text\">"+noticia[i].descripcion+"</p>"+

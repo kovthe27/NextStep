@@ -70,7 +70,7 @@
         </header>
 
 
-<!-- Menu -->
+        <!-- Menu -->
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
@@ -84,7 +84,7 @@
                                     class="hide-menu">Centros educativos </span></a></li>
                         <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-bar-chart-alt"></i><span
                                     class="hide-menu">Reportes </span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-calendar"></i><span
+                        <li class=""> <a class=" waves-effect waves-dark" href="principal_CentroEducativo.html" aria-expanded="false"><i class=" ti-calendar"></i><span
                                     class="hide-menu">Calendario </span></a></li>
                         <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-cup"></i><span
                                     class="hide-menu">Ranking </span></a></li>
@@ -103,7 +103,7 @@
             </div>
         </aside>
 
-<!-- Inicio -->        
+        <!-- Inicio -->
         <div class="page-wrapper" style="min-height: 3000px; overflow-y: scroll;">
             <div class="portada">
                 <div class="opacidad"></div>
@@ -128,7 +128,7 @@
 
                         <button class="btn btn-light" type="button">Calificar</button>
                     </div>
-
+<!-- Acerca de nosotros -->
                     <section class="acercaNosotros">
                         <div class="card-body col-md-6 float-left">
                             <h4 class="card-title float-left">Acerca de nosotros</h4>
@@ -265,11 +265,9 @@
 
 
 
-<!-- noticias -->
-
-
-                            <div class="card col-md-3 float-left ">
-                                <div class="card-body">
+ <!-- noticias -->
+                            <div class="card col-md-3 float-left mt-4">
+                                <div class="">
                                     <h4 class="card-title">Noticias recientes</h4>
 
                                     <!-- Modal -->
@@ -291,8 +289,9 @@
                                                     </div>
 
                                                     <div class="form-group">
-                                                        <input type="date" id="txt_fechaNoticia" data-date-format="DD MMMM YYYY" name="text" class="form-control"
-                                                            required="true" data-validation-required-message="This field is required"
+                                                        <input type="date" id="txt_fechaNoticia" value="2017-06-01"
+                                                            name="text" class="form-control" required="true"
+                                                            data-validation-required-message="This field is required"
                                                             aria-invalid="false" placeholder="Inserte un título">
                                                     </div>
 
@@ -315,10 +314,11 @@
                                     <!-- Botón -->
                                     <button id="btn_enviarNoticia" class="btn btn-themecolor mb-3 mt-3" alt="default"
                                         data-toggle="modal" data-target="#agregarNoticia">Añadir
-                                        noticia</button><hr>
+                                        noticia</button>
+                                    <hr>
                                     <div class="clearfix"></div>
 
-                                    
+
                                     <!-- <div class="card">
                                     <div class="card-body collapse show">
                                         <h4 id="txt_tituloNoticia" class="card-title text-themecolor">Título</h4>
@@ -349,7 +349,7 @@
                                     </div>
                                     <div class="modal-body">
 
-                                        <div class="card">
+                                        <!-- <div class="card">
                                             <h4 class="card-title">Subir imagen</h4>
                                             <div class="">
                                                 <div class="dropify-loader" style="display: none;"></div>
@@ -368,13 +368,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
 
                                         <div class="form-group">
-                                            <input type="text" id="imagen_servicio" name="text" class="form-control"
-                                                required="true" data-validation-required-message="This field is required"
-                                                aria-invalid="false" placeholder="Inserte un título">
+                                            <button class="form-control btn-outline-warning" id="btnSeleccionarImagen">Cargar
+                                                imagen</button>
+                                        </div>
+
+                                        <div id="cargarImagen">
+                                            <img id="imgFoto">
                                         </div>
 
                                         <div class="form-group">
@@ -391,9 +394,9 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="modal-footer">
-                                        <button id="btn_enviar" type="submit" class="btn btn-warning waves-effect"
-                                            >Crear</button>
+                                        <button id="btn_enviar" type="submit" class="btn btn-warning waves-effect">Crear</button>
 
                                     </div>
                                 </div>
@@ -404,10 +407,28 @@
                             servicio</button>
                         <div class="clearfix"></div>
 
-                        <!-- <div class="card col-md-4">
-                            <img class="card-img-top img-responsive" src="" alt="">
+
+                        <!-- <div id="cardServicio altura" class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">"
+                               <img class="card-img-top img-fluid img-responsive img-thumbnail" src="">
+                                <div class="card-body card">
+                        
+                              <div class="btn-group float-right">
+                              <button type="button" class="btn text-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-ellipsis-v"></i>
+                              </button>
+                               <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item\" href="#" >Editar</a>
+                               <a class="dropdown-item\" href="#" >Eliminar</a>
+                               </div></div>
+                        
+                                <div class="float-left"> <h4 id="txt_titulo" class="card-title text-themecolor">"+servicio[i].titulo+"</h4>
+                                <p id="txt_descripcion" class="card-text">"+servicio[i].descripcion+"</p>
+                                </div></div> -->
+
+
+                        <!-- <div class=" altura col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
+                            <img id="txt-imagen" class="card-img-top img-fluid" src="../Public/imgs/colegio.jpg">
                             <div class="card-body">
-                                <h4 id="txt_imagen" class="card-title"></h4>
                                 <h4 id="txt_titulo" class="card-title"></h4>
                                 <p id="txt_descripcion" class="card-text"></p>
                             </div>
@@ -415,8 +436,8 @@
 
                     </section>
                     <div class="clearfix"></div>
-                    
-                    
+
+
 <!-- MATRICULA -->
                     <section id="cardMatricula" class="cardMatricula">
                         <h4 class="card-title">Información de matrícula</h4>
@@ -454,8 +475,9 @@
                             </div>
                         </div>
 
-                         <!-- Botón -->
-                         <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#agregarMatricula">Añadir información</button>
+                        <!-- Botón -->
+                        <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#agregarMatricula">Añadir
+                            información</button>
                         <div class="clearfix"></div>
 
                         <!-- <div class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
@@ -465,6 +487,58 @@
                             </div>
                         </div> -->
                     </section>
+                    <div class="clearfix"></div>
+
+<!-- LISTA DE ÚTILES -->
+                    <section id="cardMatricula" class=" carcard-body cardMatricula">
+                            <h4 class="card-title">Lista de útiles por nivel</h4>
+                            <!-- Modal -->
+                            <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                                aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="vcenter">Información de matrícula</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <button>Agregar útil</button>
+
+                                            <div class="form-group">
+                                                <input type="text" id="txt_tituloMatricula" name="text" class="form-control"
+                                                    required="true" data-validation-required-message="This field is required"
+                                                    aria-invalid="false" placeholder="Inserte un título">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="controls">
+                                                    <textarea name="textarea" id="txt_descripcionMatricula" class="form-control"
+                                                        required="" placeholder="Escriba una descripción"></textarea>
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button id="btn_enviarMatricula" type="submit" class="btn btn-warning waves-effect"
+                                                data-dismiss="modal">Crear</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botón -->
+                            <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#agregarMatricula">Añadir
+                                información</button>
+                            <div class="clearfix"></div>
+
+                            <!-- <div class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
+                                <div class="ribbon-wrapper card">
+                                    <div class="ribbon ribbon-warning">Ribbon</div>
+                                    <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                                </div>
+                            </div> -->
+                        </section>
 
 
                 </div>
@@ -487,49 +561,18 @@
 
 
     <!-- subir imagen -->
-    <script src="./assets/node_modules/dropify/dist/js/dropify.min.js"></script>
-    <script>
-        $(function () {
-            // Basic
-            $('.dropify').dropify();
-
-            // Translated
-            $('.dropify-fr').dropify({
-                messages: {
-                    default: 'Glissez-déposez un fichier ici ou cliquez',
-                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
-                    remove: 'Supprimer',
-                    error: 'Désolé, le fichier trop volumineux'
-                }
-            });
-
-            // Used events
-            var drEvent = $('#input-file-events').dropify();
-
-            drEvent.on('dropify.beforeClear', function (event, element) {
-                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
-            });
-
-            drEvent.on('dropify.afterClear', function (event, element) {
-                alert('File deleted');
-            });
-
-            drEvent.on('dropify.errors', function (event, element) {
-                console.log('Has Errors');
-            });
-
-            var drDestroy = $('#input-file-to-destroy').dropify();
-            drDestroy = drDestroy.data('dropify')
-            $('#toggleDropify').on('click', function (e) {
-                e.preventDefault();
-                if (drDestroy.isDropified()) {
-                    drDestroy.destroy();
-                } else {
-                    drDestroy.init();
-                }
-            })
-        });
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- Claudinary -->
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     </script>
+    <script>
+        cloudinary.setCloudName("nextstep");
+    </script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/registrarServicio_Servicio.js"></script>
     <script src="js/registrarServicio_Controlador.js"></script>

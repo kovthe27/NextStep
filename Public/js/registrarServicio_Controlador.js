@@ -1,17 +1,18 @@
 'use strict';
-const input_imagen = document.querySelector('#imagen_servicio');
+const input_imagen = document.querySelector('#imgFoto');
 const input_titulo = document.querySelector('#txt_titulo');
 const input_descripcion = document.querySelector('#txt_descripcion');
 const btn_enviar = document.querySelector('#btn_enviar');
+const carga_imagen = document.querySelector('#cargarImagen'); 
 
 let validar = () => {
     let error = false;
 
-    if (input_imagen.value == '') {
+    if (carga_imagen.value == '') {
         error = true;
-        input_imagen.classList.add('error_input');
+        carga_imagen.classList.add('error_input');
     } else {
-        input_imagen.classList.remove('error_input');
+        carga_imagen.classList.remove('error_input');
     }
 
     if (input_titulo.value == '') {
@@ -35,7 +36,7 @@ let obtener_datos = () => {
 
     if (validar() == false) {
         // Se ejecuta solo si la validación no da error
-        let imagen = input_imagen.value;
+        let imagen = input_imagen.src;
         let titulo = input_titulo.value;
         let descripcion = input_descripcion.value;
 
@@ -72,12 +73,22 @@ let mostrar_datos = () =>{
     // console.log(servicio);
 
     for(let i = 0; i < servicio.length; i++){
-        var card = "<div id=\"cardServicio\" class=\" altura col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left\">"+ 
-        "<img class=\"card-img-top img-responsive\" src=\"\" alt=\"\">"+
+        var card = "<div id=\"cardServicio altura\" class=\"col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left\">"+ 
+        // "<img class=\"card-img-top \" src=\"\" alt=\"\">"+
+        "<img class=\"card-img-top img-fluid img-responsive img-thumbnail\" src="+servicio[i].imagen+">"+
         "<div class=\"card-body card\">"+
-        // "<input type=\"file\" id=\"input-file-disable-remove\" class=\"dropify\" data-show-remove=\"false\">"+servicio[i].titulo+"</input>"+
-        "<h4 id=\"imagen_servicio\" class=\"card-title\">"+servicio[i].imagen+"</h4>"+
-        "<h4 id=\"txt_titulo\" class=\"card-title text-themecolor\">"+servicio[i].titulo+"</h4>"+
+
+          // dropdown
+          "<div class=\"btn-group float-right\">"+
+          "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
+          "<i class=\"fas fa-ellipsis-v\"></i>"+
+          "</button>"+
+          "<div class=\"dropdown-menu dropdown-menu-right\">"+
+            "<a class=\"dropdown-item\" href=\"#\" >Editar</a>"+
+            "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>"+
+         "</div></div>"+
+
+        "<div class=\"float-left\"> <h4 id=\"txt_titulo\" class=\"card-title text-themecolor\">"+servicio[i].titulo+"</h4>"+
         "<p id=\"txt_descripcion\" class=\"card-text\">"+servicio[i].descripcion+"</p>"+
         "</div></div>";
 
@@ -90,4 +101,7 @@ let mostrar_datos = () =>{
 
 
 mostrar_datos();
+
+
+
 
