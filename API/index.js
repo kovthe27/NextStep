@@ -65,10 +65,22 @@ const comentario = require('./componentes/crear_comentario/crear_comentario.rout
 app.use('/api', comentario);
 
 const servicio = require('./componentes/registrar_servicio/registrar_servicio.route');
-
 app.use('/api', servicio);
 
+const noticia = require('./componentes/registrar_noticia/registrar_noticia.route');
+app.use('/api', noticia);
 
+const infoMatricula = require('./componentes/registrar_infoMatricula/registrar_infoMatricula.route');
+app.use('/api', infoMatricula);
+
+
+
+const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registrar_preguntas.route');
+const utilesAdmin = require('./componentes/registrar_utiles_admin/registrar_utiles.route');
+
+app.use('/api', servicio);
+app.use('/api', preguntasAdmin);
+app.use('/api', utilesAdmin);
 
 
 

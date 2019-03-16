@@ -1,12 +1,12 @@
 'use strict';
 
-let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
+let registrar_noticia = (ptitulo, pfecha, pdescripcion) => {
     let request = $.ajax({
-      url: "http://localhost:4000/api/registrar_servicio",
+      url: "http://localhost:4000/api/registrar_noticia",
       method: "POST",
       data: {
-        imagen: pimagen,
         titulo: ptitulo,
+        fecha: pfecha,
         descripcion: pdescripcion
       },
       dataType: "json",
@@ -16,7 +16,7 @@ let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
     request.done(function (msg) {
       swal.fire({
         type: 'success',
-        title: 'La actividad fue enviada',
+        title: 'La noticia fue agregada',
         text: 'Muchas gracias'
       });
     });
@@ -24,7 +24,7 @@ let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
     request.fail(function (jqXHR, textStatus) {
       swal.fire({
         type: 'error',
-        title: 'La actividad no pudo ser enviada',
+        title: 'La noticia no pudo ser registrada',
         text: 'Por favor inténtelo de nuevo'
       });
     });
@@ -32,11 +32,11 @@ let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
   
 
 
-let consultar_servicio = () => {
-    let lista_servicios = []; 
+let consultar_noticia = () => {
+    let lista_noticias = []; 
     
       let request = $.ajax({
-        url: "http://localhost:4000/api/consultar_servicio",
+        url: "http://localhost:4000/api/consultar_noticia",
         method: "GET",
         data: {
         },
@@ -46,7 +46,7 @@ let consultar_servicio = () => {
       });
     
       request.done(function (res) {
-        lista_servicios = res;
+        lista_noticias = res;
         console.log("success");
         
       });
@@ -55,7 +55,7 @@ let consultar_servicio = () => {
         console.log("fail");
       });
     
-      return lista_servicios;
+      return lista_noticias;
       
     };
     
