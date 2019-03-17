@@ -1,3 +1,6 @@
+'use strict'
+
+// claudinary
 let imagenUrl = '';
 
 $(function() {
@@ -36,11 +39,12 @@ function processImage(id) {
     return  $.cloudinary.url(id, options);
 }
 
+// Consultar lista
 let consultar_utilesAdmin = () =>{
     let lista_utilesAdmin = [];
 
     let request = $.ajax({
-      url: "http://localhost:4000/api/consultar_utilesAdmin",
+      url: "http://localhost:4000/api/consultar_listaUtiles",
       method: "GET",
       data: {
       },
@@ -61,3 +65,38 @@ let consultar_utilesAdmin = () =>{
   
     return lista_utilesAdmin;
 };
+
+// Registrar lista
+let nuevaLista = (pcedula, pnombre, pfecha) => {
+
+    let request = $.ajax({
+      url: "http://localhost:4000/api/registrar_listaUtiles",
+      method: "POST",
+      data: {
+        cedula: pcedula,
+        nombre : pnombre,
+        creada: pfecha,
+        visible: false
+      },
+      dataType: "json",
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+    });
+  
+    request.done(function (msg) {
+      swal.fire({
+        type: 'success',
+        title: 'La pregunta ha sido agregada',
+        text: 'Muchas gracias'
+      });
+    });
+  
+    request.fail(function (jqXHR, textStatus) {
+      swal.fire({
+        type: 'error',
+        title: 'La pregunta no pudo ser agregada',
+        text: 'Por favor inténtelo de nuevo'
+      });
+    });
+    return true;
+  }
+  

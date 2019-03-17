@@ -1,6 +1,21 @@
 'use strcit';
 
 const card = document.querySelector("#accordion1");
+const inputPregunta = document.querySelector("#txt_pregunta");
+const inputRespuesta = document.querySelector('#txt_respuesta');
+const btnRegistrar = document.querySelector('#btn_registrar');
+
+let crearPregunta = () =>{
+    let preguntas = consultar_preguntaAdmin();
+    let pregunta = inputPregunta.value;
+    let respuesta = inputRespuesta.value;
+    let numero = preguntas.length + 1;
+
+    if(registrarPregunta(numero, pregunta, respuesta)){
+        window.location.reload();
+    }
+    
+}
 
 let construirTabla = () => {
     let preguntas = consultar_preguntaAdmin();
@@ -27,4 +42,5 @@ let construirTabla = () => {
 
 };
 
+btnRegistrar.addEventListener('click', crearPregunta);
 construirTabla();
