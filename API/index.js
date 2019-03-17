@@ -74,10 +74,12 @@ app.use('/api', infoMatricula);
 
 const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registrar_preguntas.route');
 const utilesAdmin = require('./componentes/registrar_utiles_admin/registrar_utiles.route');
+const listasUtiles = require('./componentes/registrar_listas_utiles/registrar_utiles_lista.route');
 
 app.use('/api', servicio);
 app.use('/api', preguntasAdmin);
 app.use('/api', utilesAdmin);
+app.use('/api', listasUtiles);
 
 
 

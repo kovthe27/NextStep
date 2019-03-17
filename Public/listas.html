@@ -147,7 +147,7 @@
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Lista de utiles</h3>
+                        <h3 class="text-themecolor" id="txt_titulo"></h3>
 
                     </div>
 
@@ -157,15 +157,25 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title" id="vcenter">Nueva lista</h4>
+                                <h4 class="modal-title" id="vcenter">Nuevo articulo</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             </div>
                             <div class="modal-body">
 
                                 <div class="form-group">
-                                    <input type="text" id="txt_nombre" name="text" class="form-control"
+                                    <input type="number" id="txt_cantidad" name="text" class="form-control"
                                         required="true" data-validation-required-message="This field is required"
-                                        aria-invalid="false" placeholder="Ingrese el nombre de la lista">
+                                        aria-invalid="false" placeholder="Cantidad">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="txt_articulo" name="text" class="form-control"
+                                        required="true" data-validation-required-message="This field is required"
+                                        aria-invalid="false" placeholder="Ingrese el nombre del articulo">
+                                </div>
+                                <div class="form-group">
+                                    <input type="textarea" id="txt_descripcion" name="text" class="form-control"
+                                        required="true" data-validation-required-message="This field is required"
+                                        aria-invalid="false" placeholder="Ingrese la descripcion">
                                 </div>
 
                             </div>
@@ -180,7 +190,7 @@
 
                 <!-- Botón -->
                 <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
-                    data-target="#agregarMatricula">Crear nueva lista</button>
+                    data-target="#agregarMatricula">Agregar articulo</button>
                 <div class="clearfix"></div>
             </div>
 
@@ -195,11 +205,9 @@
                         data-tablesaw-mode="columntoggle" id="tablesaw-1093">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Ultima actualizacion</th>
-                                <th>Visible</th>
-                                <th>Accion</th>
-
+                                <th>Cantidad</th>
+                                <th>Articulo</th>
+                                <th>Descripcion</th>
                             </tr>
                         </thead>
                         <tbody id="TblUtiles">
@@ -224,9 +232,9 @@
     <!-- tabla -->
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/MenuAdmin_Servicio.js"></script>
-    <script src="js/utilesAdmin_Servicio.js"></script>
     <script src="js/MenuAdmin_Controlador.js"></script>
-    <script src="js/utilesAdmin_controlador.js"></script>
+    <script src="js/listas_servicio.js"></script>
+    <script src="js/listas_controlador.js"></script>
     <!-- Sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <!-- Claudinary -->
