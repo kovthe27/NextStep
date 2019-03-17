@@ -42,7 +42,7 @@
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <section id="wrapper" class="login-register login-sidebar" style="background-image:url(./imgs/abc-alfabeto.jpg);">
+    <section id="wrapper" class="login-register login-sidebar" style="background-image:url(./imgs/books.jpg);">
         <div class="login-box card">
             <div class="card-body">
                 <form class="form-horizontal form-material" id="loginform" action="index.html">
@@ -53,42 +53,44 @@
                             <form>
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                        <input id="txt_NombrePadre" class="form-control" type="text" required="" placeholder="*Nombre Completo">
+                                        <input id="txt_NombreCentroEd" class="form-control" type="text" required="" placeholder="*Nombre Centro Educativo">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input id="txt_IdPadre" class="form-control" type="text" required="" placeholder="*Número de Identificación">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6">
-                                        <input id="txt_NacionPadre" class="form-control" type="text" required="" placeholder="*Nacionalidad">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input id="txt_DireccionPadre" class="form-control" type="text" required="" placeholder="*Dirección Exacta">
+                                        <input id="txt_CedJur" class="form-control" type="text" required="" placeholder="*Cédula Jurídica">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                        <input id="txt_EmailPadre" class="form-control" type="text" required="" placeholder="*Email">
+                                        <input id="txt_TipoCentro" class="form-control" type="text" required="" placeholder="*Tipo Centro Educativo">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input id="txt_TelPadre" class="form-control" type="text" required="" placeholder="*Teléfono">
+                                        <input id="txt_NivelCentro" class="form-control" type="text" required="" placeholder="*Nivel(es)">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6">
-                                        <input id="txt_CantHijos" class="form-control" type="text" required="" placeholder="Cantidad de hijos">
+                                        <input id="txt_NombreComercial" class="form-control" type="text" required="" placeholder="*Nombre Comercial">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input id="txt_AnnoFundacion" class="form-control" type="text" required="" placeholder="*Año de Fundación">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                        <input id="txt_TelCentro" class="form-control" type="text" required="" placeholder="Teléfono">
                                     </div>
                                     <div class="file-field col-sm-6">
-                                        <div class="btn btn-primary btn-sm float-left">
-                                          <span>Elegir Archivo</span>
-                                          <input type="file">
-                                        </div>
-                                        <div class="file-path-wrapper">
-                                          <input id="txt_FotoPadre" class="file-path form-control validate" type="text" placeholder="Subir foto">
-                                        </div>
-                                      </div>
+                                        <input id="txt_FaxCentro" class="form-control" type="text" required="" placeholder="Fax">
+                                    </div>
                                 </div>
+                                <div class="form-group row">
+                                        <div class="col-sm-6">
+                                            <input id="txt_SitioWeb" class="form-control" type="text" required="" placeholder="Sitio Web">
+                                        </div>
+                                        <div class="file-field col-sm-6">
+                                            <input id="txt_RedesSociales" class="form-control" type="text" required="" placeholder="Redes Sociales">
+                                        </div>
+                                    </div>
                                 <div class="form-group text-center m-t-20">
                                     <div class="col-xs-12">
                                         <button id="btn_RegistrarPadre" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Registrarse</button>
@@ -111,10 +113,6 @@
     <!-- ============================================================== -->
     <!-- ============================================================== -->
     <!-- All Jquery -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/registrarUsuario_servicio.js"></script>
-    <script src="js/registrarUsuario_controlador.js"></script> 
     <!-- ============================================================== -->
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->

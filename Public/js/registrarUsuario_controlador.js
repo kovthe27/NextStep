@@ -1,0 +1,87 @@
+'use strict';
+
+const input_NombrePadre = document.querySelector('#txt_NombrePadre');
+const input_IdPadre = document.querySelector('#txt_IdPadre');
+const input_NacionPadre = document.querySelector('#txt_NacionPadre');
+const input_DireccionPadre = document.querySelector('#txt_DireccionPadre');
+const input_EmailPadre = document.querySelector('#txt_EmailPadre');
+const input_TelPadre = document.querySelector('#txt_TelPadre');
+const input_CantHijos = document.querySelector('#txt_CantHijos');
+const input_FotoPadre = document.querySelector('#txt_FotoPadre');
+const boton_RegistroPadre = document.querySelector('#btn_RegistrarPadre');
+
+let validar = () => {
+    let error = false;
+
+    if (input_NombrePadre.value == '') {
+        error = true;
+        input_NombrePadre.classList.add('error_input');
+    } else {
+        input_NombrePadre.classList.remove('error_input');
+    }
+
+    if (input_IdPadre.value == '') {
+        error = true;
+        input_IdPadre.classList.add('error_input');
+    } else {
+        input_IdPadre.classList.remove('error_input');
+    }
+
+    if (input_NacionPadre.value == '') {
+        error = true;
+        input_NacionPadre.classList.add('error_input');
+    } else {
+        input_NacionPadre.classList.remove('error_input');
+    }
+
+    if (input_DireccionPadre.value == '') {
+        error = true;
+        input_DireccionPadre.classList.add('error_input');
+    } else {
+        input_DireccionPadre.classList.remove('error_input');
+    }
+
+    if (input_EmailPadre.value == '') {
+        error = true;
+        input_EmailPadre.classList.add('error_input');
+    } else {
+        input_EmailPadre.classList.remove('error_input');
+    }
+
+    if (input_TelPadre.value == '') {
+        error = true;
+        input_TelPadre.classList.add('error_input');
+    } else {
+        input_TelPadre.classList.remove('error_input');
+    }
+
+    return error;
+};
+
+let obtener_datosPadre = () => {
+
+    if (validar() == false) {
+        // Se ejecuta solo si la validación no da error
+        let nombrePadre = input_NombrePadre.value;
+        let idPadre = input_IdPadre.value;
+        let nacionPadre = input_NacionPadre.value;
+        let direccionPadre = input_DireccionPadre.value;
+        let emailPadre = input_EmailPadre.value;
+        let telPadre = input_TelPadre.value;
+        let cantHijos = input_CantHijos.value;
+        let fotoPadre = input_FotoPadre.value;
+
+     
+        registrar_Padre(nombrePadre, idPadre, nacionPadre, direccionPadre, emailPadre, telPadre, cantHijos, fotoPadre);
+        
+    } else {
+        swal.fire({
+            type: 'warning',
+            title: 'El usuario no fue registrado',
+            text: 'Por favor revise los campos resaltados'
+        });
+    }
+
+};
+
+boton_RegistroPadre.addEventListener('click', obtener_datosPadre);
