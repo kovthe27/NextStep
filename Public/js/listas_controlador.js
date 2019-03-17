@@ -40,15 +40,23 @@ let refrescarLista = () => {
     let user = "MEPAdmin1";
     let nombreLista = getNombreLista();
 
-    for (let i = 0; i < lista.length; i++) {
-        if (lista[i].cedula == user) {
-            if (lista[i].nivel == nombreLista) {
-                cantidad++
+    if (lista.length > 1) {
+        for (let i = 0; i < lista.length; i++) {
+            if (lista[i].cedula == user) {
+                if (lista[i].nivel == nombreLista) {
+                    cantidad++;
+                }
             }
         }
     }
-    for (let i = cantidad; i > 0; i--) {
-        document.querySelector("#TblUtiles").deleteRow(i);
+    if (cantidad > 0) {
+        for (let i = cantidad-1; i > 0; i--) {
+            document.querySelector("#TblUtiles").deleteRow(i);
+        }
+    } else {
+        if (cantidad == 0) {
+            document.querySelector("#TblUtiles").deleteRow(0);
+        }
     }
 }
 
@@ -57,43 +65,43 @@ let nuevoArticulo = () => {
     let cantidad = input_cantidad.value;
     let articulo = input_articulo.value;
     let descripcion = input_descripcion.value;
-    if(validar()==false){
+    if (validar() == false) {
         crearArticulo(cantidad, articulo, descripcion);
     }
-    else{
+    else {
         swal.fire({
             type: 'error',
             title: 'El articulo no fue registrado',
             text: 'Por favor inténtelo de nuevo'
-          })
+        })
     }
 }
 
 //valida que se ingreso informacion en todos los campos
-let validar = () =>{
+let validar = () => {
     let cantidad = input_cantidad.value;
     let articulo = input_articulo.value;
     let descripcion = input_descripcion.value;
-    let valido=false;
+    let valido = false;
 
-    if(cantidad==""){
+    if (cantidad == "") {
         input_cantidad.classList.add('error_input');
-        valido=true;
-    }else{
+        valido = true;
+    } else {
         input_cantidad.classList.remove('error_input');
     }
 
-    if(articulo==""){
+    if (articulo == "") {
         input_articulo.classList.add('error_input');
-        valido=true;
-    }else{
+        valido = true;
+    } else {
         input_articulo.classList.remove('error_input');
     }
 
-    if(descripcion==""){
+    if (descripcion == "") {
         input_descripcion.classList.add('error_input');
-        valido=true;
-    }else{
+        valido = true;
+    } else {
         input_descripcion.classList.remove('error_input');
     }
     return valido;
