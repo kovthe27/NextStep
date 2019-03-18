@@ -70,6 +70,9 @@ app.use('/api', noticia);
 const infoMatricula = require('./componentes/registrar_infoMatricula/registrar_infoMatricula.route');
 app.use('/api', infoMatricula);
 
+const acercaNosotros = require('./componentes/registrar_acercaNosotros/registrar_acercaNosotros.route');
+app.use('/api', acercaNosotros);
+
 
 
 const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registrar_preguntas.route');
