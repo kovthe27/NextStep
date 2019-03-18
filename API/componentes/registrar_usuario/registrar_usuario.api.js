@@ -1,5 +1,5 @@
 'use strict';
-const model_RegistroPadre = require('./registro_usuario.model');
+const model_RegistroPadre = require('./registrar_usuario.model');
 
 module.exports.registrar_Padre = (req, res) =>{
     let registro_Padre = new model_RegistroPadre(
@@ -15,7 +15,7 @@ module.exports.registrar_Padre = (req, res) =>{
         }
     );
     
-    padre_Nuevo.save(
+    registro_Padre.save(
         function(error){
             if(error){
                 res.json(

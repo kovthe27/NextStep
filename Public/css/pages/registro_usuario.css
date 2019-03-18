@@ -3,22 +3,28 @@ body {
 }
 /*Card Registro*/
 .login-sidebar .login-box {
-    background-color: rgba(0, 0, 0, .6);
-    color: #fff;
+    background-color: rgba(245, 245, 245, 0.78);
     width: 750px;
-    position: relative
+    position: relative;
+    color: #292b29;
 }
 
 .login-box h3, 
-.login-box ::placeholder {
-    color: #fff;
-}
+.login-box ::placeholder,
+.login-box select::placeholder,
+.form-control  {
+    color: #292b29;
+} 
 
 .login-box .form-material .form-control, 
 .login-box .form-material .form-control.focus, 
 .login-box .form-material .form-control:focus {
     background-image: linear-gradient(#00b96b, #00b96b), linear-gradient(#e9edf2, #e9edf2);
 }
+
+.form-control:focus {
+    color: #292b29;
+} 
 
 .form-wrapper {
     margin-top: 30px;
@@ -80,4 +86,13 @@ body {
 .btn-info {
     background: #00b96b;
     border: 1px solid #00b96b; 
+}
+
+.custom-select {
+    background: url(./assets/images/custom-select.png) right 0.75rem center no-repeat;
+}
+
+.error_input {
+    border-bottom: solid 1px red !important;
+    background-image: none !important;
 }

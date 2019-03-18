@@ -50,7 +50,7 @@ let listar_Padres = () => {
   });
 
   request.done(function (res) {
-    lista_Padres = res.registroPadreFamilia;
+    lista_Padres = res.registrar_Padre;
     
   });
 
