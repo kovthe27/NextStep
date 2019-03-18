@@ -61,6 +61,7 @@ app.use( function(req, res, next) {
   next();
 });
 
+
 const comentario = require('./componentes/crear_comentario/crear_comentario.route');
 app.use('/api', comentario);
 
@@ -74,11 +75,9 @@ const infoMatricula = require('./componentes/registrar_infoMatricula/registrar_i
 app.use('/api', infoMatricula);
 
 
-
 const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registrar_preguntas.route');
 const utilesAdmin = require('./componentes/registrar_utiles_admin/registrar_utiles.route');
 
-app.use('/api', servicio);
 app.use('/api', preguntasAdmin);
 app.use('/api', utilesAdmin);
 
