@@ -3,9 +3,9 @@ const model_cita = require('./registrar_cita.model');
 
 module.exports.registrar_cita = (req, res) => {
     let cita_nueva = new model_cita({
-        titulo: req.body.titulo,
+        nombre: req.body.nombre,
         fecha: req.body.fecha,
-        descripcion: req.body.descripcion
+        correo: req.body.correo
     });
     console.log(cita_nueva);
 

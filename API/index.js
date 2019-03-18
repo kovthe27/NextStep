@@ -73,6 +73,10 @@ app.use('/api', infoMatricula);
 const acercaNosotros = require('./componentes/registrar_acercaNosotros/registrar_acercaNosotros.route');
 app.use('/api', acercaNosotros);
 
+const cita = require('./componentes/registrar_cita/registrar_cita.route');
+app.use('/api', cita);
+
+
 
 
 const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registrar_preguntas.route');

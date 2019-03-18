@@ -108,7 +108,7 @@ let mostrar_infoCentro = () => {
         "<div class=\"col-md-7 float-left\">"+
         // "<p id=\"txt_cedulaJuridica\" class=\"card-text\">"+acercaNosotros[i].cedulaJuridica+"</p><br>"+
         "<p id=\"txt_descripcionCentro\" class=\"card-text\">"+acercaNosotros[i].descripcionCentro+"</p><br>"+
-            "<button class=\"btn btn-themecolor\">Agendar cita</button>"+
+            "<button class=\"btn btn-themecolor\" data-toggle=\"modal\" data-target=\"#registrarCita\">Agendar cita</button>"+
             "<button class=\"btn text-themecolor\">Solicitar información</button>"+
         "</div>"+
         "<div class=\"linea float-left\"></div>"+
