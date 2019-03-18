@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 let schema_cita = new mongoose.Schema(
     {
-        Nombre : {type : String, required: true},
+        nombre : {type : String, required: true},
         fecha : {type : Date, required : true},
         correo : {type: String, required: true}
     }
