@@ -2,10 +2,10 @@
 const input_imagen = document.querySelector('#imgFoto');
 const input_titulo = document.querySelector('#txt_titulo');
 const input_descripcion = document.querySelector('#txt_descripcion');
-const btn_enviar = document.querySelector('#btn_enviar');
+const btn_enviarServicio = document.querySelector('#btn_enviarServicio');
 const carga_imagen = document.querySelector('#cargarImagen'); 
 
-let validar = () => {
+let validarServicio = () => {
     let error = false;
 
     if (carga_imagen.value == '') {
@@ -32,19 +32,13 @@ let validar = () => {
     return error;
 };
 
-let obtener_datos = () => {
+let obtener_datosServicio = () => {
 
-    if (validar() == false) {
+    if (validarServicio() == false) {
         // Se ejecuta solo si la validación no da error
         let imagen = input_imagen.src;
         let titulo = input_titulo.value;
         let descripcion = input_descripcion.value;
-
-        swal.fire({
-            type: 'success',
-            title: 'El servicio fue creado',
-            text: 'Muchas gracias'
-        });
 
         registrar_servicio(imagen, titulo, descripcion);
         // $('#btn_enviar').click();
@@ -61,14 +55,14 @@ let obtener_datos = () => {
 };
 
 
-btn_enviar.addEventListener('click', obtener_datos);
+btn_enviarServicio.addEventListener('click', obtener_datosServicio);
 
 
 
 
 const card_servicio = document.querySelector('#cardServicio');
 
-let mostrar_datos = () =>{
+let mostrar_datosServicio = () =>{
     let servicio = consultar_servicio();
     // console.log(servicio);
 
@@ -100,7 +94,7 @@ let mostrar_datos = () =>{
 };
 
 
-mostrar_datos();
+mostrar_datosServicio();
 
 
 

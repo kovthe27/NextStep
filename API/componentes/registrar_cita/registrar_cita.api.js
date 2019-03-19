@@ -5,6 +5,7 @@ module.exports.registrar_cita = (req, res) => {
     let cita_nueva = new model_cita({
         nombre: req.body.nombre,
         fecha: req.body.fecha,
+        hora: req.body.hora,
         correo: req.body.correo
     });
     console.log(cita_nueva);
