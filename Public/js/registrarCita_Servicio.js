@@ -1,13 +1,14 @@
 'use strict';
 
-let registrar_noticia = (ptitulo, pfecha, pdescripcion) => {
+let registrar_cita = (pnombre, pfechaCita, phoraCita, pcorreoUsuario) => {
     let request = $.ajax({
-      url: "http://localhost:4000/api/registrar_noticia",
+      url: "http://localhost:4000/api/registrar_cita",
       method: "POST",
       data: {
-        titulo: ptitulo,
-        fecha: pfecha,
-        descripcion: pdescripcion
+        nombre: pnombre,
+        fecha: pfechaCita,
+        hora: phoraCita,
+        correo : pcorreoUsuario
       },
       dataType: "json",
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -16,7 +17,7 @@ let registrar_noticia = (ptitulo, pfecha, pdescripcion) => {
     request.done(function (msg) {
       swal.fire({
         type: 'success',
-        title: 'La noticia fue agregada',
+        title: 'La cita fue agregada',
         text: 'Muchas gracias'
       });
     });
@@ -24,7 +25,7 @@ let registrar_noticia = (ptitulo, pfecha, pdescripcion) => {
     request.fail(function (jqXHR, textStatus) {
       swal.fire({
         type: 'error',
-        title: 'La noticia no pudo ser registrada',
+        title: 'La cita no pudo ser registrada',
         text: 'Por favor inténtelo de nuevo'
       });
     });
@@ -32,11 +33,11 @@ let registrar_noticia = (ptitulo, pfecha, pdescripcion) => {
   
 
 
-let consultar_noticia = () => {
-    let lista_noticias = []; 
+let consultar_cita = () => {
+    let lista_citas = []; 
     
       let request = $.ajax({
-        url: "http://localhost:4000/api/consultar_noticia",
+        url: "http://localhost:4000/api/consultar_cita",
         method: "GET",
         data: {
         },
@@ -46,8 +47,8 @@ let consultar_noticia = () => {
       });
     
       request.done(function (res) {
-        lista_noticias = res;
-        // console.log("success");
+        lista_citas = res;
+        console.log("success");
         
       });
     
@@ -55,7 +56,7 @@ let consultar_noticia = () => {
         console.log("fail");
       });
     
-      return lista_noticias;
+      return lista_citas;
       
     };
     

@@ -61,13 +61,13 @@ let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
       });
     });
   
-    request.fail(function (jqXHR, textStatus) {
-      swal.fire({
-        type: 'error',
-        title: 'La actividad no pudo ser enviada',
-        text: 'Por favor inténtelo de nuevo'
-      });
-    });
+    // request.fail(function (jqXHR, textStatus) {
+    //   swal.fire({
+    //     type: 'error',
+    //     title: 'La actividad no pudo ser enviada',
+    //     text: 'Por favor inténtelo de nuevo'
+    //   });
+    // });
   };
   
 

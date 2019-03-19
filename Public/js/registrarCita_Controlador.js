@@ -1,8 +1,9 @@
 'use strict';
-const input_nombre = document.querySelector('#imgFoto');
-const input_fecha = document.querySelector('#txt_titulo');
-const input_correo = document.querySelector('#txt_descripcion');
-const btn_enviar = document.querySelector('#btn_enviar');
+const input_nombre = document.querySelector('#txt_nombre');
+const input_fechaCita = document.querySelector('#txt_fechaCita');
+const input_horaCita= document.querySelector('#txt_horaCita');
+const input_correoUsuario = document.querySelector('#txt_correoUsuario');
+const btn_enviarCita = document.querySelector('#btn_enviarCita');
 
 let validarCita = () => {
     let error = false;
@@ -14,18 +15,25 @@ let validarCita = () => {
         input_nombre.classList.remove('error_input');
     }
 
-    if (input_fecha.value == '') {
+    if (input_fechaCita.value == '') {
         error = true;
-        input_fecha.classList.add('error_input');
+        input_fechaCita.classList.add('error_input');
     } else {
-        input_fecha.classList.remove('error_input');
+        input_fechaCita.classList.remove('error_input');
     }
 
-    if (input_correo.value == '') {
+    if (input_horaCita.value == '') {
         error = true;
-        input_correo.classList.add('error_input');
+        input_horaCita.classList.add('error_input');
     } else {
-        input_correo.classList.remove('error_input');
+        input_horaCita.classList.remove('error_input');
+    }
+
+    if (input_correoUsuario.value == '') {
+        error = true;
+        input_correoUsuario.classList.add('error_input');
+    } else {
+        input_correoUsuario.classList.remove('error_input');
     }
 
     return error;
@@ -35,24 +43,25 @@ let obtener_datosCita = () => {
 
     if (validarCita() == false) {
         // Se ejecuta solo si la validación no da error
-        let imagen = input_imagen.src;
-        let titulo = input_titulo.value;
-        let descripcion = input_descripcion.value;
+        let nombre = input_nombre.value;
+        let fechaCita = input_fechaCita.value;
+        let horaCita = input_horaCita.value;
+        let correoUsuario = input_correoUsuario.value;
 
         swal.fire({
             type: 'success',
-            title: 'El servicio fue creado',
-            text: 'Muchas gracias'
+            title: 'La cita fue agendada',
+            text: 'En caso de cancelación se le enviará un correo electrónico. Muchas gracias.'
         });
 
-        registrar_servicio(imagen, titulo, descripcion);
+        registrar_servicio(nombre, fechaCita, horaCita, correoUsuario);
         // $('#btn_enviar').click();
         window.location.reload();
 
     } else {
         swal.fire({
             type: 'warning',
-            title: 'El servicio no fue creado',
+            title: 'La cita no fue agendada',
             text: 'Por favor revise los campos resaltados'
         });
     }
@@ -60,39 +69,23 @@ let obtener_datosCita = () => {
 };
 
 
-btn_enviar.addEventListener('click', obtener_datosCita);
+btn_enviarCita.addEventListener('click', obtener_datosCita);
 
 
 
 
-const card_servicio = document.querySelector('#cardServicio');
+const card_cita = document.querySelector('#cardCita');
 
 let mostrar_datosCita = () =>{
-    let servicio = consultar_servicio();
-    // console.log(servicio);
+    let cita = consultar_cita();
+    // console.log(cita);
 
-    for(let i = 0; i < servicio.length; i++){
-        var card = "<div id=\"cardServicio altura\" class=\"col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left\">"+ 
-        // "<img class=\"card-img-top \" src=\"\" alt=\"\">"+
-        "<img class=\"card-img-top img-fluid img-responsive img-thumbnail\" src="+servicio[i].imagen+">"+
-        "<div class=\"card-body card\">"+
+    for(let i = 0; i < cita.length; i++){
+        var card = 
+        "<div id=\"cardcita altura\" class=\"col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left\">";
 
-          // dropdown
-          "<div class=\"btn-group float-right\">"+
-          "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
-          "<i class=\"fas fa-ellipsis-v\"></i>"+
-          "</button>"+
-          "<div class=\"dropdown-menu dropdown-menu-right\">"+
-            "<a class=\"dropdown-item\" href=\"#\" >Editar</a>"+
-            "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>"+
-         "</div></div>"+
-
-        "<div class=\"float-left\"> <h4 id=\"txt_titulo\" class=\"card-title text-themecolor\">"+servicio[i].titulo+"</h4>"+
-        "<p id=\"txt_descripcion\" class=\"card-text\">"+servicio[i].descripcion+"</p>"+
-        "</div></div>";
-
-        $("#cardServicio").append(card)    // Append <li> to <ul> with id="myList"
-        servicio.reverse();
+        $("#cardcita").append(card)    // Append <li> to <ul> with id="myList"
+        cita.reverse();
     };
     
     
