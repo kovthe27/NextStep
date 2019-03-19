@@ -148,3 +148,10 @@ a.link:hover, a.link:focus {
 
     .sidebar-nav ul li a.active, .sidebar-nav ul li a:hover, .sidebar-nav ul li a:hover i {
       color: #54B56B !important; }
+
+#txt_search{
+  background: #343a40;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+}   

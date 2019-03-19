@@ -1,40 +1,39 @@
 'use strict';
-const input_imagen = document.querySelector('#imgFoto');
-const input_titulo = document.querySelector('#txt_titulo');
-const input_descripcion = document.querySelector('#txt_descripcion');
+const input_nombre = document.querySelector('#imgFoto');
+const input_fecha = document.querySelector('#txt_titulo');
+const input_correo = document.querySelector('#txt_descripcion');
 const btn_enviar = document.querySelector('#btn_enviar');
-const carga_imagen = document.querySelector('#cargarImagen'); 
 
-let validar = () => {
+let validarCita = () => {
     let error = false;
 
-    if (carga_imagen.value == '') {
+    if (input_nombre.value == '') {
         error = true;
-        carga_imagen.classList.add('error_input');
+        input_nombre.classList.add('error_input');
     } else {
-        carga_imagen.classList.remove('error_input');
+        input_nombre.classList.remove('error_input');
     }
 
-    if (input_titulo.value == '') {
+    if (input_fecha.value == '') {
         error = true;
-        input_titulo.classList.add('error_input');
+        input_fecha.classList.add('error_input');
     } else {
-        input_titulo.classList.remove('error_input');
+        input_fecha.classList.remove('error_input');
     }
 
-    if (input_descripcion.value == '') {
+    if (input_correo.value == '') {
         error = true;
-        input_descripcion.classList.add('error_input');
+        input_correo.classList.add('error_input');
     } else {
-        input_descripcion.classList.remove('error_input');
+        input_correo.classList.remove('error_input');
     }
 
     return error;
 };
 
-let obtener_datos = () => {
+let obtener_datosCita = () => {
 
-    if (validar() == false) {
+    if (validarCita() == false) {
         // Se ejecuta solo si la validación no da error
         let imagen = input_imagen.src;
         let titulo = input_titulo.value;
@@ -61,14 +60,14 @@ let obtener_datos = () => {
 };
 
 
-btn_enviar.addEventListener('click', obtener_datos);
+btn_enviar.addEventListener('click', obtener_datosCita);
 
 
 
 
 const card_servicio = document.querySelector('#cardServicio');
 
-let mostrar_datos = () =>{
+let mostrar_datosCita = () =>{
     let servicio = consultar_servicio();
     // console.log(servicio);
 
@@ -100,7 +99,7 @@ let mostrar_datos = () =>{
 };
 
 
-mostrar_datos();
+mostrar_datosCita();
 
 
 
