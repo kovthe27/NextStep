@@ -1,32 +1,50 @@
 'use strict';
-// const input_titulo = document.querySelector('#txt_titulo');
-// const input_descripcion = document.querySelector('#txt_descripcion');
-const txt_comentario = document.querySelector('#txt_comentario');
 
+// const cedulaJuridica ;
+// const nombre;
+const txt_fecha = document.querySelector('#txt_fecha');
+const txt_nuevo_comentario = document.querySelector('#txt_nuevo_comentario');
+// const btn_likes;
 const btn_comentar = document.querySelector('#btn_comentar');
 
-let validar = () => {
+let validarComentario = () => {
     let error = false;
 
-    if (txt_comentario.value == '') {
-        error = true;
-        txt_comentario.classList.add('error_input');
-    } else {
-        txt_comentario.classList.remove('error_input');
-    }
 
-    // if (input_titulo.value == '') {
+    // if (cedulaJuridica.value == '') {
     //     error = true;
-    //     input_titulo.classList.add('error_input');
+    //     cedulaJuridica.classList.add('error_input');
     // } else {
-    //     input_titulo.classList.remove('error_input');
+    //     cedulaJuridica.classList.remove('error_input');
     // }
 
-    // if (input_descripcion == '') {
+    // if (nombre.value == '') {
     //     error = true;
-    //     input_descripcion.classList.add('error_input');
+    //     nombre.classList.add('error_input');
     // } else {
-    //     input_descripcion.classList.remove('error_input');
+    //     nombre.classList.remove('error_input');
+    // }
+
+    // if (txt_fecha.value == '') {
+    //     error = true;
+    //     txt_fecha.classList.add('error_input');
+    // } else {
+    //     txt_fecha.classList.remove('error_input');
+    // }
+
+    if (txt_nuevo_comentario.value == '') {
+        error = true;
+        txt_nuevo_comentario.classList.add('error_input');
+    } else {
+        txt_nuevo_comentario.classList.remove('error_input');
+    }
+
+
+    // if (likes.value == '') {
+    //     error = true;
+    //     likes.classList.add('error_input');
+    // } else {
+    //     likes.classList.remove('error_input');
     // }
 
     return error;
@@ -34,16 +52,31 @@ let validar = () => {
 
 let obtener_datos = () => {
 
-    if (validar() == false) {
+    if (validarComentario() == false) {
         // Se ejecuta solo si la validación no da error
-        let comentario = input_comentario.value;
-        // let titulo = input_titulo.value;
-        // let descripcion = input_descripcion.value;
+        let cedulaJuridica = 11111;
+        let correo = "contact@laubits.com";
+        let nombre = "Laura Castillo";
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm =String(today.getMonth()).padStart(2, '0');
+        let yyyy = today.getFullYear();
+        let comentario = txt_nuevo_comentario.value;
+        let fecha = dd + '/' + mm + '/' + yyyy;
+        let likes = 2;
+      
 
-        registrar_comentario(imagen, titulo, descripcion);
+        crear_comentario(cedulaJuridica, correo, nombre, comentario, fecha, likes); 
+        swal.fire({
+            type: 'warning',
+            title: 'Su comentario fue creado',
+            text: 'Muchas gracias'
+        });
+        window.location.reload();
+
 
     } else {
-        swal({
+        swal.fire({
             type: 'warning',
             title: 'El comentario no fue registrado',
             text: 'Por favor revise los campos resaltados'
@@ -59,14 +92,29 @@ btn_comentar.addEventListener('click', obtener_datos);
 
 const card_comentario = document.querySelector('#cardComentario');
 
-let mostrar_datos = () =>{
+let mostrar_comentarios = () =>{
     let comentario = consultar_comentario();
     console.log(comentario);
 
     for(let i = 0; i < comentario.length; i++){
-        var card = 
+        var card = `<div class="d-flex flex-row comment-row">
+        <div class="p-2"><span class="round"><img src="../admin-wrap/assets/images/users/1.jpg"
+                    alt="user" width="50"></span></div>
+        <div class="comment-text w-100">
+            <h5>`+ comentario[i].nombre+ `</h5>
+            <div class="comment-footer">
+                <span class="date">`+ comentario[i].fecha +`</span>
+                <span class="action-icons">
+                    <a href="javascript:void(0)"><i class="mdi mdi-pencil-circle"></i></a>
+                    <a href="javascript:void(0)"><i class="mdi mdi-checkbox-marked-circle"></i></a>
+                    <a href="javascript:void(0)"><i class="mdi mdi-heart"></i></a>
+                </span>
+            </div>
+            <p class="m-b-5 m-t-10">`+ comentario[i].comentario+ `.</p>
+        </div>
+    </div>`
 
-        $("#cardcomentario").append(card)    // Append <li> to <ul> with id="myList"
+        $("#tablaComentarios").append(card)   
 
     };
 
@@ -75,5 +123,5 @@ let mostrar_datos = () =>{
 };
 
 
-mostrar_datos();
+mostrar_comentarios();
 
