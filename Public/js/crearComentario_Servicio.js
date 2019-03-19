@@ -1,12 +1,13 @@
 'use strict';
 
-let registrar_comentario = (pcedulaJuridica, pnombrePadreFamilia, pfecha, pcomentario, plikes) => {
+let crear_comentario = (pcedulaJuridica, pcorreo ,pnombre, pfecha, pcomentario, plikes) => {
     let request = $.ajax({
-      url: "http://localhost:4000/api/registrar_comentario",
+      url: "http://localhost:4000/api/crear_comentario",
       method: "POST",
       data: {
         cedulaJuridica: pcedulaJuridica,
-        nombrePadreFamilia: pnombrePadreFamilia,
+        correo: pcorreo,
+        nombre: pnombre,
         fecha: pfecha,
         comentario: pcomentario,
         likes: plikes

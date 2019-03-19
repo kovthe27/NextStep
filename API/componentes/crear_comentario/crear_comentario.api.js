@@ -4,7 +4,8 @@ const model_comentario = require('./crear_comentario.model');
 module.exports.crear_comentario = (req, res) => {
     let comentario_nuevo = new model_comentario({
         cedulaJuridica: req.body.cedulaJuridica,
-        nombrePadreFamilia: req.body.nombrePadreFamilia,
+        correo: req.body.correo,
+        nombre: req.body.nombre,
         fecha: req.body.fecha,
         comentario: req.body.comentario,
         likes: req.body.likes

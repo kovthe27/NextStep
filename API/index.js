@@ -15,7 +15,8 @@ const express = require('express'),
  */
 let db = mongoose.connection,
 
-dburl = 'mongodb://pabskun:1pabskun9@proyecto-shard-00-00-ev3z1.mongodb.net:27017,proyecto-shard-00-01-ev3z1.mongodb.net:27017,proyecto-shard-00-02-ev3z1.mongodb.net:27017/cocoa?ssl=true&replicaSet=proyecto-shard-0&authSource=admin&retryWrites=true', //usando mongoDb Atlas,
+dburl = 'mongodb://next_step:specta123@cluster0-shard-00-00-qldqx.mongodb.net:27017,cluster0-shard-00-01-qldqx.mongodb.net:27017,cluster0-shard-00-02-qldqx.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true',
+//mongodb://pabskun:1pabskun9@proyecto-shard-00-00-ev3z1.mongodb.net:27017,proyecto-shard-00-01-ev3z1.mongodb.net:27017,proyecto-shard-00-02-ev3z1.mongodb.net:27017/cocoa?ssl=true&replicaSet=proyecto-shard-0&authSource=admin&retryWrites=true', //usando mongoDb Atlas,
 //dburl = 'mongodb://pabs:1biblioteca9@ds163680.mlab.com:63680/bd_biblioteca' //usando mlab,
     port = 4000;
 
@@ -64,6 +65,7 @@ app.use( function(req, res, next) {
 
 const comentario = require('./componentes/crear_comentario/crear_comentario.route');
 app.use('/api', comentario);
+
 
 const servicio = require('./componentes/registrar_servicio/registrar_servicio.route');
 app.use('/api', servicio);
