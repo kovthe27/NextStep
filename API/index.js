@@ -62,15 +62,34 @@ app.use( function(req, res, next) {
 
 
 const servicio = require('./componentes/registrar_servicio/registrar_servicio.route');
+app.use('/api', servicio);
+
+const noticia = require('./componentes/registrar_noticia/registrar_noticia.route');
+app.use('/api', noticia);
+
+const infoMatricula = require('./componentes/registrar_infoMatricula/registrar_infoMatricula.route');
+app.use('/api', infoMatricula);
+
+const acercaNosotros = require('./componentes/registrar_acercaNosotros/registrar_acercaNosotros.route');
+app.use('/api', acercaNosotros);
+
+const cita = require('./componentes/registrar_cita/registrar_cita.route');
+app.use('/api', cita);
+
+
+
+
 const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registrar_preguntas.route');
 const utilesAdmin = require('./componentes/registrar_utiles_admin/registrar_utiles.route');
 const registroPadreFamilia = require('./componentes/registrar_usuario/registrar_usuario.route');
+const listasUtiles = require('./componentes/registrar_listas_utiles/registrar_utiles_lista.route');
 
 app.use('/api', servicio);
 app.use('/api', preguntasAdmin);
 app.use('/api', utilesAdmin);
 app.use('/api', registroPadreFamilia);
 
+app.use('/api', listasUtiles);
 
 
 

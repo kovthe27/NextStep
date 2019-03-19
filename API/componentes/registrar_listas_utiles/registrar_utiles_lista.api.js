@@ -1,16 +1,12 @@
 'use strict';
-const schema_TablaUtilesAdmin = require('./registrar_utiles.model');
+const schema_TablaListaUtiles = require('./registrar_utiles_lista.model');
 
-
-//Articulos
-module.exports.registrar_utilesAdmin = (req, res) => {
-    let utiles_nuevo = new schema_TablaUtilesAdmin({
+module.exports.registrar_listaUtiles = (req, res) => {
+    let utiles_nuevo = new schema_TablaListaUtiles({
         cedula: req.body.cedula,
-        cantidad: req.body.cantidad,
-        tipo: req.body.tipo,
-        descripcion: req.body.descripcion,
-        nivel: req.body.nivel,
-        fecha: req.body.fecha
+        nombre: req.body.nombre,
+        creada: req.body.creada,
+        visible: req.body.visible,
     });
     console.log(utiles_nuevo);
 
@@ -30,8 +26,8 @@ module.exports.registrar_utilesAdmin = (req, res) => {
     });
 };
 
-module.exports.consultar_utilesAdmin = function(req, res) {
-    schema_TablaUtilesAdmin.find().then(
+module.exports.consultar_listaUtiles = function(req, res) {
+    schema_TablaListaUtiles.find().then(
         function (utilesAdmin) {
             res.send(utilesAdmin)
         });

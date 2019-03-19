@@ -45,7 +45,6 @@
 
 .acercaNosotros{
     margin-bottom: 2em;
-    height: 257px;
     padding: 1em 0;
     background-color: white;
 }
@@ -62,4 +61,15 @@
 
 .error_input{
     border-color: #ff5c6c;
+}
+
+.ribbon-warning {
+    background: #e7934d !important;
+}
+
+#imgFoto{
+    width: 100%;
+    border: 1px solid #cfd4da;
+    border-radius: 5px;
+    margin-bottom: 27px;
 }

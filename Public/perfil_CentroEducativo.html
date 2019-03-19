@@ -27,6 +27,9 @@
     <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
     <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
 
+    <!-- card color -->
+    <link href="../admin-wrap/main/css/pages/ribbon-page.css" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <title>NextStep</title>
@@ -67,7 +70,7 @@
         </header>
 
 
-
+        <!-- Menu -->
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
@@ -81,8 +84,9 @@
                                     class="hide-menu">Centros educativos </span></a></li>
                         <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-bar-chart-alt"></i><span
                                     class="hide-menu">Reportes </span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-calendar"></i><span
-                                    class="hide-menu">Calendario </span></a></li>
+                        <li class=""> <a class=" waves-effect waves-dark" href="principal_CentroEducativo.html"
+                                aria-expanded="false"><i class=" ti-calendar"></i><span class="hide-menu">Calendario
+                                </span></a></li>
                         <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-cup"></i><span
                                     class="hide-menu">Ranking </span></a></li>
                         <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-write"></i><span
@@ -100,9 +104,8 @@
             </div>
         </aside>
 
-
-
-        <div class="page-wrapper" style="min-height: 3000px;">
+        <!-- Inicio -->
+        <div class="page-wrapper" style="min-height: 3000px; overflow-y: scroll;">
             <div class="portada">
                 <div class="opacidad"></div>
                 <div class="imagenCentro"></div>
@@ -126,44 +129,174 @@
 
                         <button class="btn btn-light" type="button">Calificar</button>
                     </div>
-
+                    <!-- Acerca de nosotros -->
                     <section class="acercaNosotros">
-                        <div class="card-body col-md-6 float-left">
-                            <h4 class="card-title float-left">Acerca de nosotros</h4>
-                            <a href="#" class="btn-sm text-themecolor float-left mr-1"><i class="ti-pencil"></i></a>
+
+                        <div id="cardInfo" class="card-body col-md-12 float-left">
+                            <!-- <div class="col-md-6"> -->
+                             <h4 class="card-title float-left">Acerca de nosotros</h4>
+                             <div class="clearfix"></div>
+                             <button class="btn text-warning mb-3 mt-3" alt="default" data-toggle="modal" data-target="#acercaNosotros">Añadir
+                                    información</button>
+                            </div>
+                            
+
+                            <!-- modal registrar información -->
+                            <div id="acercaNosotros" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                                aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="vcenter">Acerca de nosotros</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body">
+                                                <div class="form-group">
+                                                        <div class="controls">
+                                                            <textarea name="textarea" id="txt_cedulaJuridica" class="form-control"
+                                                                required="" placeholder="Escriba la cédula juridica"></textarea>
+                                                            <div class="help-block"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    
+                                            <div class="form-group">
+                                                <div class="controls">
+                                                    <textarea name="textarea" id="txt_descripcionCentro" class="form-control"
+                                                        required="" placeholder="Escriba una descripción del centro educativo"></textarea>
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" id="txt_ubicacion" name="text" class="form-control"
+                                                    required="true" data-validation-required-message="This field is required"
+                                                    aria-invalid="false" placeholder="Inserte la ubicacion">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" id="txt_contacto" name="text" class="form-control"
+                                                    required="true" data-validation-required-message="This field is required"
+                                                    aria-invalid="false" placeholder="Inserte el nombre del contacto del centro">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" id="txt_correo" name="text" class="form-control"
+                                                    required="true" data-validation-required-message="This field is required"
+                                                    aria-invalid="false" placeholder="Inserte el correo del centro educativo">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="number" id="txt_telefono" name="text" class="form-control"
+                                                    required="false" data-validation-required-message="This field is required"
+                                                    aria-invalid="false" placeholder="Inserte el teléfono del centro educativo">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" id="txt_facebook" name="text" class="form-control"
+                                                    required="false" data-validation-required-message="This field is required"
+                                                    aria-invalid="false" placeholder="Inserte el link de facebook">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" id="txt_instagram" name="text" class="form-control"
+                                                    required="false" data-validation-required-message="This field is required"
+                                                    aria-invalid="false" placeholder="Inserte el link de instagram">
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <input type="text" id="txt_twitter" name="text" class="form-control"
+                                                    required="false" data-validation-required-message="This field is required"
+                                                    aria-invalid="false" placeholder="Inserte el link de twitter">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" id="txt_pagina" name="text" class="form-control"
+                                                    required="false" data-validation-required-message="This field is required"
+                                                    aria-invalid="false" placeholder="Inserte el link de la página web">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button id="btn-enviarInfo" type="submit" class="btn btn-warning waves-effect"
+                                                data-dismiss="modal">Crear</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- modal registrar cita -->
+                            <div id="registrarCita" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                            aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="vcenter">Solicitar una cita</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_nombre" name="text" class="form-control"
+                                                required="true" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte su nombre completo">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <input type="date" id="txt_fecha" class="form-control"
+                                                    required="" placeholder="Seleccione la fecha de la cita"></textarea>
+                                                <div class="help-block"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                                <div class="controls">
+                                                    <input type="text"  id="txt_correo" class="form-control"
+                                                        required="" placeholder="Escriba su correo"></textarea>
+                                                    <div class="help-block"></div>
+                                                </div>
+                                            </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button id="btn_enviar" type="submit" class="btn btn-warning waves-effect">Crear</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Botón -->
+                        <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#registrarCita">Añadir
+                            servicio</button> -->
+
+
+
+                            <!-- Botón -->
+                            <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#acercaNosotros">Añadir
+                                información</button> -->
+
+                            <!-- <a href="#" class="btn-sm btn-outline-themecolor text-themecolor float-right mr-1" data-toggle="modal" data-target="#acercaNosotros"><i class="ti-pencil"></i>Añadir información</a> -->
+
                             <div class="clearfix"></div>
-                            <p class="card-text">Misión: ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                enim ad minim veniam, quis nostrud Ut wisi enim ad minim veniam, quis nostrud.Ut wisi
-                                enim ad minim veniam, quis nostrud.Ut wisi enim ad minim veniam, quis nostrud.</p>
-                            <button class="btn btn-themecolor">Agendar cita</button>
-                            <button class="btn text-themecolor">Solicitar información</button>
-                        </div>
-                        <div class="linea float-left"></div>
-                        <div class="col-md-5 float-left información card-body">
-                            <p><i class="sl-icon-location-pin"></i> Ubicación: <span id="ubicación">ipsum dolor sit
-                                    amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                                    laoreet dolore magna aliquam erat volutpat.</span></p>
-                            <p><i class="sl-icon-user"></i> Encargado: <span id="nombreContacto">Fulanito Rojas</span></p>
-                            <p><i class="sl-icon-envelope-open"></i> Correo<span id="correo">fulanito@gmail.com</span></p>
-                            <a href="#" class="btn btn-sm btn-circle btn-outline-dark text-themecolor float-left mr-1"><i
-                                    class="ti-facebook"></i></a>
-                            <a href="#" class="btn btn-sm btn-circle btn-outline-dark text-themecolor float-left mr-1"><i
-                                    class="ti-instagram"></i></a>
-                            <a href="#" class="btn btn-sm btn-circle btn-outline-dark text-themecolor float-left mr-1"><i
-                                    class="ti-twitter"></i></a>
-                            <a href="#" class="btn btn-sm btn-circle btn-outline-dark text-themecolor float-left mr-1"><i
-                                    class="ti-world"></i></a>
-                        </div>
+
+                            
+
                     </section>
                     <div class="clearfix"></div>
 
-                    <section class="comentarios-noticias">
+
+
+
+                    <section id="cardComentarios-noticias" class="comentarios-noticias">
+                        <!-- Comentarios -->
                         <div class="widget-app-columns">
                             <div class="card col-md-9 float-left">
                                 <div class="card-body">
                                     <h4 class="card-title">Comentarios recientes</h4>
                                 </div>
+                                <!-- comentarios -->
                                 <div class="comment-widgets m-b-20">
                                     <!-- Comment Row -->
                                     <div class="d-flex flex-row comment-row">
@@ -242,6 +375,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- input comentario -->
                                 <div class="card-body b-t">
                                     <div class="row">
                                         <div class="col-md-10">
@@ -253,74 +387,283 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-                            <div class="card col-md-3 float-left ">
-                                <div class="card-body">
+
+
+
+                            <!-- noticias -->
+                            <div class="card col-md-3 float-left mt-4">
+                                <div class="">
                                     <h4 class="card-title">Noticias recientes</h4>
-                                </div>
 
-                                <div class="card">
+                                    <!-- Modal -->
+                                    <div id="agregarNoticia" class="modal fade" tabindex="-1" role="dialog"
+                                        aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="vcenter">Creación de noticia</h4>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">×</button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="form-group">
+                                                        <input type="text" id="txt_tituloNoticia" name="text" class="form-control"
+                                                            required="true" data-validation-required-message="This field is required"
+                                                            aria-invalid="false" placeholder="Inserte un título">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <input type="date" id="txt_fechaNoticia" value="2017-06-01"
+                                                            name="text" class="form-control" required="true"
+                                                            data-validation-required-message="This field is required"
+                                                            aria-invalid="false" placeholder="Inserte un título">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="controls">
+                                                            <textarea name="textarea" id="txt_descripcionNoticia" class="form-control"
+                                                                required="" placeholder="Escriba una descripción"></textarea>
+                                                            <div class="help-block"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button id="btn_enviarNoticia" type="submit" class="btn btn-warning waves-effect"
+                                                        data-dismiss="modal">Crear</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Botón -->
+                                    <button id="btn_enviarNoticia" class="btn btn-themecolor mb-3 mt-3" alt="default"
+                                        data-toggle="modal" data-target="#agregarNoticia">Añadir
+                                        noticia</button>
+                                    <hr>
+                                    <div class="clearfix"></div>
+
+
+                                    <!-- <div class="card">
                                     <div class="card-body collapse show">
-                                        <h4 class="card-title text-themecolor">Título</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">22|06|2019</h6>
+                                        <h4 id="txt_tituloNoticia" class="card-title text-themecolor">Título</h4>
+                                        <h6 id="txt_titulofecha" class="card-subtitle mb-2 text-muted">22|06|2019</h6>
                                         <p class="card-text">With supporting text below as a natural lead-in to
                                             additional content.</p>
                                     </div>
+                                </div> -->
+
                                 </div>
-
-                                <div class="card">
-                                    <div class="card-body collapse show">
-                                        <h4 class="card-title text-themecolor">Título</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">22|06|2019</h6>
-                                        <p class="card-text">With supporting text below as a natural lead-in to
-                                            additional content.</p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-body collapse show">
-                                        <h4 class="card-title text-themecolor">Título</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">22|06|2019</h6>
-                                        <p class="card-text">With supporting text below as a natural lead-in to
-                                            additional content.</p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-body collapse show">
-                                        <h4 class="card-title text-themecolor">Título</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">22|06|2019</h6>
-                                        <p class="card-text">With supporting text below as a natural lead-in to
-                                            additional content.</p>
-                                    </div>
-                                </div>
-
-
                             </div>
                         </div>
                     </section>
 
                     <div class="clearfix"></div>
 
+                    <!-- SERVICIOS -->
                     <section id="cardServicio" class="servicios">
                         <h4 class="card-title">Servicios que brinda el centro educativo</h4>
                         <!-- Modal -->
-                        
+                        <div id="verticalcenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                            aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="vcenter">Creación de servicio</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <!-- <div class="card">
+                                            <h4 class="card-title">Subir imagen</h4>
+                                            <div class="">
+                                                <div class="dropify-loader" style="display: none;"></div>
+                                                <div class="dropify-errors-container">
+                                                    <ul></ul>
+                                                </div><input type="file" id="input-file-disable-remove" class="dropify"
+                                                    data-show-remove="false">
+                                                <div class="dropify-preview" style="display: none;"><span class="dropify-render"></span>
+                                                    <div class="dropify-infos">
+                                                        <div class="dropify-infos-inner">
+                                                            <p class="dropify-filename"><span class="file-icon"></span>
+                                                                <span class="dropify-filename-inner"></span></p>
+                                                            <p class="dropify-infos-message">Arrastre la imagen o de
+                                                                click aquí para reemplazarla</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+
+                                        <div class="form-group">
+                                            <button class="form-control btn-outline-warning" id="btnSeleccionarImagen">Cargar
+                                                imagen</button>
+                                        </div>
+
+                                        <div id="cargarImagen">
+                                            <img id="imgFoto">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_titulo" name="text" class="form-control"
+                                                required="true" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte un título">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <textarea name="textarea" id="txt_descripcion" class="form-control"
+                                                    required="" placeholder="Escriba una descripción"></textarea>
+                                                <div class="help-block"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button id="btn_enviar" type="submit" class="btn btn-warning waves-effect">Crear</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Botón -->
                         <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#verticalcenter">Añadir
                             servicio</button>
-                            <div class="clearfix"></div>
+                        <div class="clearfix"></div>
 
-                        <!-- <div class="card col-md-4">
-                            <img class="card-img-top img-responsive" src="" alt="">
+
+                        <!-- <div id="cardServicio altura" class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">"
+                               <img class="card-img-top img-fluid img-responsive img-thumbnail" src="">
+                                <div class="card-body card">
+                        
+                              <div class="btn-group float-right">
+                              <button type="button" class="btn text-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-ellipsis-v"></i>
+                              </button>
+                               <div class="dropdown-menu dropdown-menu-right">
+                              <a class="dropdown-item\" href="#" >Editar</a>
+                               <a class="dropdown-item\" href="#" >Eliminar</a>
+                               </div></div>
+                        
+                                <div class="float-left"> <h4 id="txt_titulo" class="card-title text-themecolor">"+servicio[i].titulo+"</h4>
+                                <p id="txt_descripcion" class="card-text">"+servicio[i].descripcion+"</p>
+                                </div></div> -->
+
+
+                        <!-- <div class=" altura col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
+                            <img id="txt-imagen" class="card-img-top img-fluid" src="../Public/imgs/colegio.jpg">
                             <div class="card-body">
-                                <h4 id="txt_imagen" class="card-title"></h4>
                                 <h4 id="txt_titulo" class="card-title"></h4>
                                 <p id="txt_descripcion" class="card-text"></p>
                             </div>
                         </div> -->
 
+                    </section>
+                    <div class="clearfix"></div>
+
+
+                    <!-- MATRICULA -->
+                    <section id="cardMatricula" class="cardMatricula">
+                        <h4 class="card-title">Información de matrícula</h4>
+                        <!-- Modal -->
+                        <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                            aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="vcenter">Información de matrícula</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_tituloMatricula" name="text" class="form-control"
+                                                required="true" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte un título">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <textarea name="textarea" id="txt_descripcionMatricula" class="form-control"
+                                                    required="" placeholder="Escriba una descripción"></textarea>
+                                                <div class="help-block"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="btn_enviarMatricula" type="submit" class="btn btn-warning waves-effect"
+                                            data-dismiss="modal">Crear</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botón -->
+                        <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#agregarMatricula">Añadir
+                            información</button>
+                        <div class="clearfix"></div>
+
+                        <!-- <div class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
+                            <div class="ribbon-wrapper card">
+                                <div class="ribbon ribbon-warning">Ribbon</div>
+                                <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                            </div>
+                        </div> -->
+                    </section>
+                    <div class="clearfix"></div>
+
+                    <!-- LISTA DE ÚTILES -->
+                    <section id="cardMatricula" class=" carcard-body cardMatricula">
+                        <h4 class="card-title">Lista de útiles por nivel</h4>
+                        <!-- Modal -->
+                        <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                            aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="vcenter">Información de matrícula</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <button>Agregar útil</button>
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_tituloMatricula" name="text" class="form-control"
+                                                required="true" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte un título">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <textarea name="textarea" id="txt_descripcionMatricula" class="form-control"
+                                                    required="" placeholder="Escriba una descripción"></textarea>
+                                                <div class="help-block"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="btn_enviarMatricula" type="submit" class="btn btn-warning waves-effect"
+                                            data-dismiss="modal">Crear</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botón -->
+                        <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#agregarMatricula">Añadir
+                            información</button>
+                        <div class="clearfix"></div>
+
+                        <!-- <div class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
+                                <div class="ribbon-wrapper card">
+                                    <div class="ribbon ribbon-warning">Ribbon</div>
+                                    <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                                </div>
+                            </div> -->
                     </section>
 
 
@@ -344,51 +687,29 @@
 
 
     <!-- subir imagen -->
-    <script src="./assets/node_modules/dropify/dist/js/dropify.min.js"></script>
-    <script>
-        $(function () {
-            // Basic
-            $('.dropify').dropify();
-
-            // Translated
-            $('.dropify-fr').dropify({
-                messages: {
-                    default: 'Glissez-déposez un fichier ici ou cliquez',
-                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
-                    remove: 'Supprimer',
-                    error: 'Désolé, le fichier trop volumineux'
-                }
-            });
-
-            // Used events
-            var drEvent = $('#input-file-events').dropify();
-
-            drEvent.on('dropify.beforeClear', function (event, element) {
-                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
-            });
-
-            drEvent.on('dropify.afterClear', function (event, element) {
-                alert('File deleted');
-            });
-
-            drEvent.on('dropify.errors', function (event, element) {
-                console.log('Has Errors');
-            });
-
-            var drDestroy = $('#input-file-to-destroy').dropify();
-            drDestroy = drDestroy.data('dropify')
-            $('#toggleDropify').on('click', function (e) {
-                e.preventDefault();
-                if (drDestroy.isDropified()) {
-                    drDestroy.destroy();
-                } else {
-                    drDestroy.init();
-                }
-            })
-        });
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- Claudinary -->
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+        crossorigin="anonymous">
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     </script>
+    <script>
+        cloudinary.setCloudName("nextstep");
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/registrarServicio_Servicio.js"></script>
     <script src="js/registrarServicio_Controlador.js"></script>
+    <script src="js/registrarNoticia_Servicio.js"></script>
+    <script src="js/registrarNoticia_Controlador.js"></script>
+    <script src="js/registrar_infoMatricula_Servicio.js"></script>
+    <script src="js/registrar_infoMatricula_Controlador.js"></script>
+    <script src="js/registrarAcercaNosotros_Servicio.js"></script>
+    <script src="js/registrarAcercaNosotros_Controlador.js"></script>
+    <script src="js/registrarCita_Servicio.js"></script>
+    <script src="js/registrarCita_Controlador.js"></script>
 
 </body>
 
