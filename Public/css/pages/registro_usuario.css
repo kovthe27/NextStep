@@ -3,7 +3,7 @@ body {
 }
 /*Card Registro*/
 .login-sidebar .login-box {
-    background-color: rgba(245, 245, 245, 0.78);
+    background-color: #fcfcfc;
     width: 750px;
     position: relative;
     color: #292b29;
@@ -20,6 +20,7 @@ body {
 .login-box .form-material .form-control.focus, 
 .login-box .form-material .form-control:focus {
     background-image: linear-gradient(#00b96b, #00b96b), linear-gradient(#e9edf2, #e9edf2);
+    background-color: #fcfcfc;
 }
 
 .form-control:focus {
