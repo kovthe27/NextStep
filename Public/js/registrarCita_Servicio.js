@@ -1,20 +1,14 @@
 'use strict';
 
-let registrar_acercaNosotros = (pcedulaJuridica, pdescripcion, pubicacion, pencargado, pcorreo, ptelefono, pfacebook, pinstagram, ptwitter, ppagina) => {
+let registrar_cita = (pnombre, pfechaCita, phoraCita, pcorreoUsuario) => {
     let request = $.ajax({
-      url: "http://localhost:4000/api/registrar_acercaNosotros",
+      url: "http://localhost:4000/api/registrar_cita",
       method: "POST",
       data: {
-        cedulaJuridica: pcedulaJuridica,
-        descripcion: pdescripcion,
-        ubicacion : pubicacion,
-        encargado: pencargado,
-        correo: pcorreo,
-        telefono : ptelefono,
-        facebook : pfacebook, 
-        instagram : pinstagram,
-        twitter : ptwitter,
-        pagina : ppagina
+        nombre: pnombre,
+        fecha: pfechaCita,
+        hora: phoraCita,
+        correo : pcorreoUsuario
       },
       dataType: "json",
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -23,7 +17,7 @@ let registrar_acercaNosotros = (pcedulaJuridica, pdescripcion, pubicacion, penca
     request.done(function (msg) {
       swal.fire({
         type: 'success',
-        title: 'La información fue agregada',
+        title: 'La cita fue agregada',
         text: 'Muchas gracias'
       });
     });
@@ -31,7 +25,7 @@ let registrar_acercaNosotros = (pcedulaJuridica, pdescripcion, pubicacion, penca
     request.fail(function (jqXHR, textStatus) {
       swal.fire({
         type: 'error',
-        title: 'La información no pudo ser registrada',
+        title: 'La cita no pudo ser registrada',
         text: 'Por favor inténtelo de nuevo'
       });
     });
@@ -39,11 +33,11 @@ let registrar_acercaNosotros = (pcedulaJuridica, pdescripcion, pubicacion, penca
   
 
 
-let consultar_acercaNosotros = () => {
-    let lista_acercaNosotros = []; 
+let consultar_cita = () => {
+    let lista_citas = []; 
     
       let request = $.ajax({
-        url: "http://localhost:4000/api/consultar_acercaNosotros",
+        url: "http://localhost:4000/api/consultar_cita",
         method: "GET",
         data: {
         },
@@ -53,7 +47,7 @@ let consultar_acercaNosotros = () => {
       });
     
       request.done(function (res) {
-        lista_acercaNosotros = res;
+        lista_citas = res;
         // console.log("success");
         
       });
@@ -62,7 +56,7 @@ let consultar_acercaNosotros = () => {
         console.log("fail");
       });
     
-      return lista_acercaNosotros;
+      return lista_citas;
       
     };
     

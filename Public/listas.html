@@ -34,9 +34,9 @@
                     <!-- Barra de búsqueda -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item search-box">
-                            <input type="text" id="txt_search" name="text" class="form-control" 
-                            aria-invalid="false" placeholder='Buscar'>
-                            
+                            <input type="text" id="txt_search" name="text" class="form-control" aria-invalid="false"
+                                placeholder='Buscar'>
+
                         </li>
 
                     </ul>
@@ -145,7 +145,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title" id="vcenter">Nuevo articulo</h4>
+                                <h4 class="modal-title" id="vcenter">Lista de utiles</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             </div>
                             <div class="modal-body">
@@ -156,9 +156,12 @@
                                         aria-invalid="false" placeholder="Cantidad">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="txt_articulo" name="text" class="form-control"
-                                        required="true" data-validation-required-message="This field is required"
-                                        aria-invalid="false" placeholder="Ingrese el nombre del articulo">
+                                    <select id="slt_articulos"class="form-control custom-select" data-placeholder="Seleccione un tipo de articulo"
+                                        tabindex="1">
+                                        <option value="Category">--Seleccione un tipo de articulo--</option>
+                                    </select>
+                                    <button class="btn btn-sm btn-themecolor mt-3" alt="default" data-toggle="modal"
+                                        data-target="#agregarTipo">Agregar nuevo tipo</button>
                                 </div>
                                 <div class="form-group">
                                     <input type="textarea" id="txt_descripcion" name="text" class="form-control"
@@ -175,11 +178,37 @@
                         </div>
                     </div>
                 </div>
+                <!-- Modal tipo de articulo -->
+
+                <div id="agregarTipo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                    aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="vcenter">Nuevo articulo</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <input type="select" id="txt_articulo" name="text" class="form-control"
+                                        required="true" data-validation-required-message="This field is required"
+                                        aria-invalid="false" placeholder="Nombre del nuevo articulo">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btn_registrartipo" type="submit" class="btn btn-warning waves-effect"
+                                    data-dismiss="modal">Añadir</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Botón -->
                 <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
-                    data-target="#agregarMatricula">Agregar articulo</button>
+                    data-target="#agregarMatricula">Agregar a la lista</button>
                 <div class="clearfix"></div>
+
             </div>
 
 

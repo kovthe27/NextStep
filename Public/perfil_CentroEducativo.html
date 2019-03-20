@@ -15,7 +15,7 @@
     <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
 
     <!-- Subir imagen -->
-    <link rel="stylesheet" href="./assets/node_modules/dropify/dist/css/dropify.min.css">
+    <!-- <link rel="stylesheet" href="./assets/node_modules/dropify/dist/css/dropify.min.css"> -->
 
     <!-- calendario -->
     <link href="../admin-wrap/assets/node_modules/calendar/dist/fullcalendar.css" rel="stylesheet">
@@ -49,7 +49,8 @@
                         <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i
                                     class="sl-icon-menu"></i></a> </li>
                         <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i></a>
+                                href="javascript:void(0)"><i class="icon-Magnifi-Glass2"></i>
+                            </a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i
                                         class="ti-close"></i></a> </form>
@@ -109,10 +110,28 @@
             <div class="portada">
                 <div class="opacidad"></div>
                 <div class="imagenCentro"></div>
+                <div>
+                        <ul class="nav nav-tabs customtab" role="tablist">
+                            <li class=""> <a class="nav-link text-white" data-toggle="" href="#cardLista" role=""
+                                    aria-selected="true"><span class="hidden-sm-up"><i class="ti-home"></i></span>
+                                    <span class="hidden-xs-down">Lista de útiles</span></a> </li>
+                            <li class=""> <a class="nav-link text-white" data-toggle="" href="#cardServicio" role=""
+                                    aria-selected="false"><span class="hidden-sm-up"><i class="ti-user"></i></span>
+                                    <span class="hidden-xs-down">Servicios</span></a> </li>
+                            <li class=""> <a class="nav-link text-white" data-toggle="" href="#cardMatricula" role=""
+                                    aria-selected="false"><span class="hidden-sm-up"><i class="ti-email"></i></span>
+                                    <span class="hidden-xs-down">Información de matrícula</span></a> </li>
+                        </ul>
+                    </div>
 
                 <div class="container-fluid">
+                   
                     <div class="texto">
                         <h2>Nombre del centro educativo</h2>
+                        <p><small class="text-white">Etiqueta1</small> |
+                            <small class="text-white">Etiqueta1</small> |
+                            <small class="text-white">Etiqueta1</small> |
+                            <small class="text-white">Etiqueta1</small></p>
                         <div class="star-rating">
                             <span class="fa fa-star" data-rating="1"></span>
                             <span class="fa fa-star" data-rating="2"></span>
@@ -134,100 +153,125 @@
 
                         <div id="cardInfo" class="card-body col-md-12 float-left">
                             <!-- <div class="col-md-6"> -->
-                             <h4 class="card-title float-left">Acerca de nosotros</h4>
-                             <div class="clearfix"></div>
-                             <button class="btn text-warning mb-3 mt-3" alt="default" data-toggle="modal" data-target="#acercaNosotros">Añadir
-                                    información</button>
-                            </div>
-                            
-
-                            <!-- modal registrar información -->
-                            <div id="acercaNosotros" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
-                                aria-hidden="true" style="display: none;">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title" id="vcenter">Acerca de nosotros</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                        </div>
-                                        <div class="modal-body">
-                                                <div class="form-group">
-                                                        <div class="controls">
-                                                            <textarea name="textarea" id="txt_cedulaJuridica" class="form-control"
-                                                                required="" placeholder="Escriba la cédula juridica"></textarea>
-                                                            <div class="help-block"></div>
-                                                        </div>
-                                                    </div>
-
-                                                    
-                                            <div class="form-group">
-                                                <div class="controls">
-                                                    <textarea name="textarea" id="txt_descripcionCentro" class="form-control"
-                                                        required="" placeholder="Escriba una descripción del centro educativo"></textarea>
-                                                    <div class="help-block"></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="text" id="txt_ubicacion" name="text" class="form-control"
-                                                    required="true" data-validation-required-message="This field is required"
-                                                    aria-invalid="false" placeholder="Inserte la ubicacion">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="text" id="txt_contacto" name="text" class="form-control"
-                                                    required="true" data-validation-required-message="This field is required"
-                                                    aria-invalid="false" placeholder="Inserte el nombre del contacto del centro">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="text" id="txt_correo" name="text" class="form-control"
-                                                    required="true" data-validation-required-message="This field is required"
-                                                    aria-invalid="false" placeholder="Inserte el correo del centro educativo">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="number" id="txt_telefono" name="text" class="form-control"
-                                                    required="false" data-validation-required-message="This field is required"
-                                                    aria-invalid="false" placeholder="Inserte el teléfono del centro educativo">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="text" id="txt_facebook" name="text" class="form-control"
-                                                    required="false" data-validation-required-message="This field is required"
-                                                    aria-invalid="false" placeholder="Inserte el link de facebook">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="text" id="txt_instagram" name="text" class="form-control"
-                                                    required="false" data-validation-required-message="This field is required"
-                                                    aria-invalid="false" placeholder="Inserte el link de instagram">
-                                            </div>
+                            <h4 class="card-title float-left">Acerca de nosotros</h4>
+                            <div class="clearfix"></div>
+                            <button class="btn text-warning mb-3 mt-3" alt="default" data-toggle="modal" data-target="#acercaNosotros">Añadir
+                                información</button> 
+                        </div>
 
 
-                                            <div class="form-group">
-                                                <input type="text" id="txt_twitter" name="text" class="form-control"
-                                                    required="false" data-validation-required-message="This field is required"
-                                                    aria-invalid="false" placeholder="Inserte el link de twitter">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="text" id="txt_pagina" name="text" class="form-control"
-                                                    required="false" data-validation-required-message="This field is required"
-                                                    aria-invalid="false" placeholder="Inserte el link de la página web">
+                        <!-- modal registrar información -->
+                        <div id="acercaNosotros" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                            aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="vcenter">Acerca de nosotros</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <textarea name="textarea" id="txt_cedulaJuridica" class="form-control"
+                                                    required="" placeholder="Escriba la cédula juridica"></textarea>
+                                                <div class="help-block"></div>
                                             </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button id="btn-enviarInfo" type="submit" class="btn btn-warning waves-effect"
-                                                data-dismiss="modal">Crear</button>
 
+
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <textarea name="textarea" id="txt_descripcionCentro" class="form-control"
+                                                    required="" placeholder="Escriba una descripción del centro educativo"></textarea>
+                                                <div class="help-block"></div>
+                                            </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_ubicacion" name="text" class="form-control"
+                                                required="true" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte la ubicacion">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_contacto" name="text" class="form-control"
+                                                required="true" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte el nombre del contacto del centro">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_correo" name="text" class="form-control"
+                                                required="true" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte el correo del centro educativo">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="number" id="txt_telefono" name="text" class="form-control"
+                                                required="false" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte el teléfono del centro educativo">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_facebook" name="text" class="form-control"
+                                                required="false" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte el link de facebook">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_instagram" name="text" class="form-control"
+                                                required="false" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte el link de instagram">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_twitter" name="text" class="form-control"
+                                                required="false" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte el link de twitter">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" id="txt_pagina" name="text" class="form-control"
+                                                required="false" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte el link de la página web">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="btn-enviarInfo" type="submit" class="btn btn-warning waves-effect"
+                                            data-dismiss="modal">Crear</button>
+
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- modal registrar cita -->
-                            <div id="registrarCita" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                        <!-- modal registrar información -->
+                        <!-- <div id="boletin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                            aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="vcenter">Solicitar más información</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <input type="file" id="" name="text" class="form-control"
+                                                required="false" data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte el link de la página web">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="btn-enviarSolicitud" type="submit" class="btn btn-warning waves-effect"
+                                            data-dismiss="modal">Subir</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- modal registrar cita -->
+                        <div id="registrarCita" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
                             aria-hidden="true" style="display: none;">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -245,23 +289,31 @@
 
                                         <div class="form-group">
                                             <div class="controls">
-                                                <input type="date" id="txt_fecha" class="form-control"
-                                                    required="" placeholder="Seleccione la fecha de la cita"></textarea>
+                                                <input type="date" id="txt_fechaCita" class="form-control" required=""
+                                                    placeholder="Seleccione la fecha de la cita"></inputfre>
                                                 <div class="help-block"></div>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                                <div class="controls">
-                                                    <input type="text"  id="txt_correo" class="form-control"
-                                                        required="" placeholder="Escriba su correo"></textarea>
-                                                    <div class="help-block"></div>
-                                                </div>
+                                            <div class="controls">
+                                                <input type="time" id="txt_horaCita" class="form-control" required=""
+                                                    placeholder="Seleccione la hora de la cita"></inputfre>
+                                                <div class="help-block"></div>
                                             </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <input type="text" id="txt_correoUsuario" class="form-control" required=""
+                                                    placeholder="Escriba su correo"></inputfre>
+                                                <div class="help-block"></div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button id="btn_enviar" type="submit" class="btn btn-warning waves-effect">Crear</button>
+                                        <button id="btn_enviarCita" type="submit" class="btn btn-warning waves-effect">Crear</button>
 
                                     </div>
                                 </div>
@@ -273,15 +325,15 @@
 
 
 
-                            <!-- Botón -->
-                            <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#acercaNosotros">Añadir
+                        <!-- Botón -->
+                        <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#acercaNosotros">Añadir
                                 información</button> -->
 
-                            <!-- <a href="#" class="btn-sm btn-outline-themecolor text-themecolor float-right mr-1" data-toggle="modal" data-target="#acercaNosotros"><i class="ti-pencil"></i>Añadir información</a> -->
+                        <!-- <a href="#" class="btn-sm btn-outline-themecolor text-themecolor float-right mr-1" data-toggle="modal" data-target="#acercaNosotros"><i class="ti-pencil"></i>Añadir información</a> -->
 
-                            <div class="clearfix"></div>
+                        <div class="clearfix"></div>
 
-                            
+
 
                     </section>
                     <div class="clearfix"></div>
@@ -464,6 +516,7 @@
                     <!-- SERVICIOS -->
                     <section id="cardServicio" class="servicios">
                         <h4 class="card-title">Servicios que brinda el centro educativo</h4>
+
                         <!-- Modal -->
                         <div id="verticalcenter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
                             aria-hidden="true" style="display: none;">
@@ -474,29 +527,6 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                     </div>
                                     <div class="modal-body">
-
-                                        <!-- <div class="card">
-                                            <h4 class="card-title">Subir imagen</h4>
-                                            <div class="">
-                                                <div class="dropify-loader" style="display: none;"></div>
-                                                <div class="dropify-errors-container">
-                                                    <ul></ul>
-                                                </div><input type="file" id="input-file-disable-remove" class="dropify"
-                                                    data-show-remove="false">
-                                                <div class="dropify-preview" style="display: none;"><span class="dropify-render"></span>
-                                                    <div class="dropify-infos">
-                                                        <div class="dropify-infos-inner">
-                                                            <p class="dropify-filename"><span class="file-icon"></span>
-                                                                <span class="dropify-filename-inner"></span></p>
-                                                            <p class="dropify-infos-message">Arrastre la imagen o de
-                                                                click aquí para reemplazarla</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
-
-
                                         <div class="form-group">
                                             <button class="form-control btn-outline-warning" id="btnSeleccionarImagen">Cargar
                                                 imagen</button>
@@ -507,7 +537,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="text" id="txt_titulo" name="text" class="form-control"
+                                            <input type="text" id="txt_tituloServicio" name="text" class="form-control"
                                                 required="true" data-validation-required-message="This field is required"
                                                 aria-invalid="false" placeholder="Inserte un título">
                                         </div>
@@ -522,7 +552,7 @@
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button id="btn_enviar" type="submit" class="btn btn-warning waves-effect">Crear</button>
+                                        <button id="btn_enviarServicio" type="submit" class="btn btn-warning waves-effect">Crear</button>
 
                                     </div>
                                 </div>
@@ -533,6 +563,97 @@
                             servicio</button>
                         <div class="clearfix"></div>
 
+                        <div class="container border">
+                            <!-- <h2 class="text-themecolor text-center">Ranking de <a class="text-white" href="#" aria-expanded="false"><span
+                                            class="hide-menu">Colegios privados</span></a></h2> -->
+                            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-item active" id="carousel" role="listbox"></div>
+                                <div class="carousel-item" id="carousel2"></div>
+                                <div class="carousel-item" id="carousel3"></div>
+
+<!--                                
+
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a> -->
+                                <div class="clearfix"></div>
+                                <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators2" data-slide-to="0" class=""></li>
+                                        <li data-target="#carouselExampleIndicators2" data-slide-to="1" class=""></li>
+                                        <li data-target="#carouselExampleIndicators2" data-slide-to="2" class="active"></li>
+                                    </ol>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="container">
+                            <div id="carruselCmpleto" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+
+                                    <div class="carousel-item active" id="carousel">
+                                        <div class="col-lg-4 col-md-6 float-left">
+                                            <div class="card">
+                                                <div class="el-card-item card-body">
+                                                    <h3 class="col-md-10">Titulo del servicio</h3>
+
+                                                    <div class="btn-group float-right">
+                                                        <button type="button" class="btn text-right" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
+                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item\" href="#">Editar</a>
+                                                            <a class="dropdown-item\" href="#">Eliminar</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="image">
+                                                        <img class="card-img-top img-fluid img-responsive img-thumbnail"
+                                                            src="../Public/imgs/colegio.jpg">
+                                                    </div>
+                                                    <div class="el-card-content">
+                                                        <p class="mt-3">subtitle of project</p>
+                                                        <br>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item" id="carousel2"></div>
+                                    <div class="carousel-item" id="carousel3"></div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carruselCompleto" role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"><i class="far fa-arrow-alt-circle-left"></i></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carruselCompleto" role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                            <a class="carousel-control-prev" href="#carruselCompleto" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="far fa-arrow-alt-circle-left"></i></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carruselCompleto" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div> -->
 
                         <!-- <div id="cardServicio altura" class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">"
                                <img class="card-img-top img-fluid img-responsive img-thumbnail" src="">
@@ -616,10 +737,10 @@
                     <div class="clearfix"></div>
 
                     <!-- LISTA DE ÚTILES -->
-                    <section id="cardMatricula" class=" carcard-body cardMatricula">
+                    <section id="cardLista" class=" carcard-body cardLista">
                         <h4 class="card-title">Lista de útiles por nivel</h4>
                         <!-- Modal -->
-                        <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                        <div id="agregarLista" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
                             aria-hidden="true" style="display: none;">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -631,21 +752,21 @@
                                         <button>Agregar útil</button>
 
                                         <div class="form-group">
-                                            <input type="text" id="txt_tituloMatricula" name="text" class="form-control"
+                                            <input type="text" id="txt_tituloLista" name="text" class="form-control"
                                                 required="true" data-validation-required-message="This field is required"
                                                 aria-invalid="false" placeholder="Inserte un título">
                                         </div>
 
                                         <div class="form-group">
                                             <div class="controls">
-                                                <textarea name="textarea" id="txt_descripcionMatricula" class="form-control"
+                                                <textarea name="textarea" id="txt_descripcionLista" class="form-control"
                                                     required="" placeholder="Escriba una descripción"></textarea>
                                                 <div class="help-block"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button id="btn_enviarMatricula" type="submit" class="btn btn-warning waves-effect"
+                                        <button id="btn_enviarLista" type="submit" class="btn btn-warning waves-effect"
                                             data-dismiss="modal">Crear</button>
 
                                     </div>
@@ -684,6 +805,8 @@
     <script src="./assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
     <script src="./assets/node_modules/prism/prism.js"></script>
     <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 
 
     <!-- subir imagen -->

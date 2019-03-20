@@ -47,7 +47,7 @@ let consultar_noticia = () => {
     
       request.done(function (res) {
         lista_noticias = res;
-        console.log("success");
+        // console.log("success");
         
       });
     

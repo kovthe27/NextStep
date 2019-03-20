@@ -14,8 +14,9 @@ const express = require('express'),
  * Se definen las variables necesarias para la conexión con MongoDB
  */
 let db = mongoose.connection,
-    dburl = 'mongodb://pabskun:1pabskun9@proyecto-shard-00-00-ev3z1.mongodb.net:27017,proyecto-shard-00-01-ev3z1.mongodb.net:27017,proyecto-shard-00-02-ev3z1.mongodb.net:27017/cocoa?ssl=true&replicaSet=proyecto-shard-0&authSource=admin&retryWrites=true', //usando mongoDb Atlas,
+    // dburl = 'mongodb://pabskun:1pabskun9@proyecto-shard-00-00-ev3z1.mongodb.net:27017,proyecto-shard-00-01-ev3z1.mongodb.net:27017,proyecto-shard-00-02-ev3z1.mongodb.net:27017/cocoa?ssl=true&replicaSet=proyecto-shard-0&authSource=admin&retryWrites=true', //usando mongoDb Atlas,
     //dburl = 'mongodb://pabs:1biblioteca9@ds163680.mlab.com:63680/bd_biblioteca' //usando mlab,
+    dburl = 'mongodb://next_step:specta123@cluster0-shard-00-00-qldqx.mongodb.net:27017,cluster0-shard-00-01-qldqx.mongodb.net:27017,cluster0-shard-00-02-qldqx.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true', 
     port = 4000;
 
 /**
@@ -83,6 +84,7 @@ const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registra
 const utilesAdmin = require('./componentes/registrar_utiles_admin/registrar_utiles.route');
 const registroPadreFamilia = require('./componentes/registrar_usuario/registrar_usuario.route');
 const listasUtiles = require('./componentes/registrar_listas_utiles/registrar_utiles_lista.route');
+const listaTipos = require ('./componentes/registrar_articulos/registrar_articulos.route');
 
 app.use('/api', servicio);
 app.use('/api', preguntasAdmin);
@@ -90,6 +92,7 @@ app.use('/api', utilesAdmin);
 app.use('/api', registroPadreFamilia);
 
 app.use('/api', listasUtiles);
+app.use('/api', listaTipos);
 
 
 
