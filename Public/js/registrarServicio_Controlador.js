@@ -1,9 +1,9 @@
 'use strict';
 const input_imagen = document.querySelector('#imgFoto');
-const input_titulo = document.querySelector('#txt_titulo');
+const input_titulo = document.querySelector('#txt_tituloServicio');
 const input_descripcion = document.querySelector('#txt_descripcion');
 const btn_enviarServicio = document.querySelector('#btn_enviarServicio');
-const carga_imagen = document.querySelector('#cargarImagen'); 
+const carga_imagen = document.querySelector('#cargarImagen');
 
 let validarServicio = () => {
     let error = false;
@@ -41,6 +41,11 @@ let obtener_datosServicio = () => {
         let descripcion = input_descripcion.value;
 
         registrar_servicio(imagen, titulo, descripcion);
+        // swal.fire({
+        //     type: 'success',
+        //     title: 'El servicio fue creado',
+        //     text: 'Muchas gracias'
+        // });
         // $('#btn_enviar').click();
         window.location.reload();
 
@@ -60,41 +65,122 @@ btn_enviarServicio.addEventListener('click', obtener_datosServicio);
 
 
 
-const card_servicio = document.querySelector('#cardServicio');
+const card_servicio = document.querySelector('#carouselExampleIndicators2');
 
-let mostrar_datosServicio = () =>{
+let mostrar_datosServicio = () => {
     let servicio = consultar_servicio();
     // console.log(servicio);
+    // let numeroCarrusel = 0;
 
-    for(let i = 0; i < servicio.length; i++){
-        var card = "<div id=\"cardServicio altura\" class=\"col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left\">"+ 
-        // "<img class=\"card-img-top \" src=\"\" alt=\"\">"+
-        "<img class=\"card-img-top img-fluid img-responsive img-thumbnail\" src="+servicio[i].imagen+">"+
-        "<div class=\"card-body card\">"+
+    // if (numeroCarrusel < 4) {
+        for (let i = 0; i < 3; i++) {
+            var card =
 
-          // dropdown
-          "<div class=\"btn-group float-right\">"+
-          "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
-          "<i class=\"fas fa-ellipsis-v\"></i>"+
-          "</button>"+
-          "<div class=\"dropdown-menu dropdown-menu-right\">"+
-            "<a class=\"dropdown-item\" href=\"#\" >Editar</a>"+
-            "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>"+
-         "</div></div>"+
+                "<div class=\"col-lg-4 col-md-6 float-left\">" +
+                "<div class=\"card\">" +
+                "<div class=\"el-card-item card-body\">" +
+                "<h3 id=\"txt_tituloServicio\">" + servicio[i].titulo +"</h3>" +
 
-        "<div class=\"float-left\"> <h4 id=\"txt_titulo\" class=\"card-title text-themecolor\">"+servicio[i].titulo+"</h4>"+
-        "<p id=\"txt_descripcion\" class=\"card-text\">"+servicio[i].descripcion+"</p>"+
-        "</div></div>";
+                //     "<div class=\"btn-group float-right\">"+
+                //         "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
+                //             "<i class=\"fas fa-ellipsis-v\"></i>"+
+                //         "</button>"+
+                //         "<div class=\"dropdown-menu dropdown-menu-right\">"+
+                //             "<a class=\"dropdown-item\" href=\"\">Editar</a>"+
+                //             "<a class=\"dropdown-item\" href=\"\">Eliminar</a>"+
+                //         "</div>"+
+                //    "</div>"+
 
-        $("#cardServicio").append(card)    // Append <li> to <ul> with id="myList"
-        servicio.reverse();
-    };
+                "<div class=\"image\">" +
+                "<img id=\"imgFoto\" class=\"card-img-top img-fluid img-responsive img-thumbnail\" src=" + servicio[i].imagen + ">" +
+                "</div>" +
+                "<div class=\"el-card-content\">" +
+                "<p id=\"txt_descripcion\">" + servicio[i].descripcion + "</p>" +
+                "<br>" +
+                "</div>" +
+
+                "</div> </div> </div>"
+
+            $("#carousel").append(card)
+            // numeroCarrusel++;
+            // servicio.reverse();
+        };
+    // } 
     
+    // else{
+        // if (numeroCarrusel>4 && numeroCarrusel<8){
+            for (let i = 4; i < 7; i++) {
+                var card =
     
+                    "<div class=\"col-lg-4 col-md-6 float-left\">" +
+                    "<div class=\"card\">" +
+                    "<div class=\"el-card-item card-body\">" +
+                    "<h3 id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h3>" +
+    
+                    //     "<div class=\"btn-group float-right\">"+
+                    //         "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
+                    //             "<i class=\"fas fa-ellipsis-v\"></i>"+
+                    //         "</button>"+
+                    //         "<div class=\"dropdown-menu dropdown-menu-right\">"+
+                    //             "<a class=\"dropdown-item\" href=\"\">Editar</a>"+
+                    //             "<a class=\"dropdown-item\" href=\"\">Eliminar</a>"+
+                    //         "</div>"+
+                    //    "</div>"+
+    
+                    "<div class=\"image\">" +
+                    "<img id=\"imgFoto\" class=\"card-img-top img-fluid img-responsive img-thumbnail\" src=" + servicio[i].imagen + ">" +
+                    "</div>" +
+                    "<div class=\"el-card-content\">" +
+                    "<p id=\"txt_descripcion\">" + servicio[i].descripcion + "</p>" +
+                    "<br>" +
+                    "</div>" +
+    
+                    "</div> </div> </div>"
+    
+                $("#carousel2").append(card)
+                // numeroCarrusel++;
+                // servicio.reverse();
+            };
+
+
+            for (let i = 7; i < 10; i++) {
+                var card =
+    
+                    "<div class=\"col-lg-4 col-md-6 float-left\">" +
+                    "<div class=\"card\">" +
+                    "<div class=\"el-card-item card-body\">" +
+                    "<h3 id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h3>" +
+    
+                    //     "<div class=\"btn-group float-right\">"+
+                    //         "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
+                    //             "<i class=\"fas fa-ellipsis-v\"></i>"+
+                    //         "</button>"+
+                    //         "<div class=\"dropdown-menu dropdown-menu-right\">"+
+                    //             "<a class=\"dropdown-item\" href=\"\">Editar</a>"+
+                    //             "<a class=\"dropdown-item\" href=\"\">Eliminar</a>"+
+                    //         "</div>"+
+                    //    "</div>"+
+    
+                    "<div class=\"image\">" +
+                    "<img id=\"imgFoto\" class=\"card-img-top img-fluid img-responsive img-thumbnail\" src=" + servicio[i].imagen + ">" +
+                    "</div>" +
+                    "<div class=\"el-card-content\">" +
+                    "<p id=\"txt_descripcion\">" + servicio[i].descripcion + "</p>" +
+                    "<br>" +
+                    "</div>" +
+    
+                    "</div> </div> </div>"
+    
+                $("#carousel3").append(card)
+                // numeroCarrusel++;
+                // servicio.reverse();
+            };
+
+        // }
+    // }
+
+
 };
 
 
 mostrar_datosServicio();
-
-
-

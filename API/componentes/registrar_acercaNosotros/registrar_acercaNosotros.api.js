@@ -6,7 +6,7 @@ module.exports.registrar_acercaNosotros = (req, res) => {
         cedulaJuridica: req.body.cedulaJuridica,
         descripcionCentro: req.body.descripcionCentro,
         ubicacion : req.body.ubicacion,
-        contacto : req.body.contacto,
+        encargado : req.body.encargado,
         correo : req.body.correo,
         telefono : req.body.telefono,
         facebook : req.body.facebook,
