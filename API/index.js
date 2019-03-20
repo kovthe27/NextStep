@@ -82,11 +82,13 @@ app.use('/api', cita);
 const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registrar_preguntas.route');
 const utilesAdmin = require('./componentes/registrar_utiles_admin/registrar_utiles.route');
 const listasUtiles = require('./componentes/registrar_listas_utiles/registrar_utiles_lista.route');
+const listaTipos = require ('./componentes/registrar_articulos/registrar_articulos.route');
 
 app.use('/api', servicio);
 app.use('/api', preguntasAdmin);
 app.use('/api', utilesAdmin);
 app.use('/api', listasUtiles);
+app.use('/api', listaTipos);
 
 
 
