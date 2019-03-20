@@ -8,6 +8,9 @@ const input_EmailPadre = document.querySelector('#txt_EmailPadre');
 const input_TelPadre = document.querySelector('#txt_TelPadre');
 const input_CantHijos = document.querySelector('#txt_CantHijos');
 const input_FotoPadre = document.querySelector('#txt_FotoPadre');
+const input_ProvinciaPadre = document.querySelector('#slt_provincias');
+const input_CantonPadre = document.querySelector('#slt_cantones');
+const input_DistritoPadre = document.querySelector('#slt_distritos');
 const boton_RegistroPadre = document.querySelector('#btn_RegistrarPadre');
 
 let validar = () => {
@@ -54,6 +57,29 @@ let validar = () => {
     } else {
         input_TelPadre.classList.remove('error_input');
     }
+
+    if (input_ProvinciaPadre.value == '') {
+        error = true;
+        input_ProvinciaPadre.classList.add('error_input');
+    } else {
+        input_ProvinciaPadre.classList.remove('error_input');
+    }
+
+    if (input_CantonPadre.value == '') {
+        error = true;
+        input_CantonPadre.classList.add('error_input');
+    } else {
+        input_CantonPadre.classList.remove('error_input');
+    }
+
+    if (input_DistritoPadre.value == '') {
+        error = true;
+        input_DistritoPadre.classList.add('error_input');
+    } else {
+        input_DistritoPadre.classList.remove('error_input');
+    }
+
+
 
     return error;
 };

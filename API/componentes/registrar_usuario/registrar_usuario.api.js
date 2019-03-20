@@ -11,7 +11,10 @@ module.exports.registrar_Padre = (req, res) =>{
             email: req.body.email,
             telefono: req.body.telefono,
             cantHijos: req.body.cantHijos,
-            foto: req.body.foto
+            foto: req.body.foto,
+            provincia: req.body.provincia,
+            canton: req.body.canton,
+            distrito: req.body.distrito
         }
     );
     

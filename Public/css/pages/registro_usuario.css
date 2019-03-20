@@ -5,7 +5,6 @@ body {
 .login-sidebar .login-box {
     background-color: #fcfcfc;
     width: 750px;
-    position: relative;
     color: #292b29;
 }
 
@@ -96,4 +95,21 @@ body {
 .error_input {
     border-bottom: solid 1px red !important;
     background-image: none !important;
+}
+
+.btn-file {
+    text-transform: capitalize !important;
+    background: #00b96b;
+}
+
+.btn-container {
+    padding: 0;
+}
+
+#btn_RegistrarPadre {
+    text-transform: capitalize !important;
+}
+
+.dir-container {
+    padding: 0 15px;
 }

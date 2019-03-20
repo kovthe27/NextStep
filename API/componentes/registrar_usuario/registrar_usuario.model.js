@@ -10,7 +10,10 @@ let schema_RegistroPadre = new mongoose.Schema(
         emailPadre : {type: String, required: true},
         telPadre : {type: Number, required: true},
         cantHijos : {type: Number, required: false},
-        fotoPadre : {type: String, required: false}
+        fotoPadre : {type: String, required: false},
+        provinciaPadre : {type: String,require: true},
+        cantonPadre : {type: String, require: true},
+        distritoPadre : {type: String, require: true}
     }
 );
 
