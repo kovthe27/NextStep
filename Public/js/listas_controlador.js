@@ -1,12 +1,15 @@
 'use strict';
 const input_cantidad = document.querySelector("#txt_cantidad");
-const input_articulo = document.querySelector("#txt_articulo");
+const input_articulo = document.querySelector("#slt_articulos");
 const input_descripcion = document.querySelector("#txt_descripcion");
+const input_nuevoTipo = document.querySelector("#txt_articulo");
 const btn_registrar = document.querySelector("#btn_registrar");
+const btn_registrartipo = document.querySelector('#btn_registrartipo');
 
 //Carga la lista inicial con los utiles asociados a la lista
 let crearLista = () => {
     let nombreLista = getNombreLista();
+    let listaTipos = getListaTipos();
     let user = "MEPAdmin1";
     let lista = getLista();
     document.querySelector("#txt_titulo").innerHTML = "Lista: " + nombreLista;
@@ -31,33 +34,42 @@ let crearLista = () => {
             }
         }
     };
+
+    for (let i = 0; i < listaTipos.length; i++) {
+
+        let tipos =
+            `<option value="` + listaTipos[i].nombre + `">` + listaTipos[i].nombre + `</option>`
+
+        $("#slt_articulos").append(tipos)
+    };
 }
 
 //Limpia la tabla 
 let refrescarLista = () => {
-    let lista = getLista();
-    let cantidad = -1;
-    let user = "MEPAdmin1";
-    let nombreLista = getNombreLista();
+    // let lista = getLista();
+    // let cantidad = -1;
+    // let user = "MEPAdmin1";
+    // let nombreLista = getNombreLista();
 
-    if (lista.length > 1) {
-        for (let i = 0; i < lista.length; i++) {
-            if (lista[i].cedula == user) {
-                if (lista[i].nivel == nombreLista) {
-                    cantidad++;
-                }
-            }
-        }
-    }
-    if (cantidad > 0) {
-        for (let i = cantidad-1; i > 0; i--) {
-            document.querySelector("#TblUtiles").deleteRow(i);
-        }
-    } else {
-        if (cantidad == 0) {
-            document.querySelector("#TblUtiles").deleteRow(0);
-        }
-    }
+    // if (lista.length > 1) {
+    //     for (let i = 0; i < lista.length; i++) {
+    //         if (lista[i].cedula == user) {
+    //             if (lista[i].nivel == nombreLista) {
+    //                 cantidad++;
+    //             }
+    //         }
+    //     }
+    // }
+    // if (cantidad > 0) {
+    //     for (let i = cantidad - 1; i > 0; i--) {
+    //         document.querySelector("#TblUtiles").deleteRow(i);
+    //     }
+    // } else {
+    //     if (cantidad == 0) {
+    //         document.querySelector("#TblUtiles").deleteRow(0);
+    //     }
+    // }
+    window.location.reload();
 }
 
 //Registra un nuevo articulo a la lista de utiles
@@ -75,6 +87,21 @@ let nuevoArticulo = () => {
             text: 'Por favor inténtelo de nuevo'
         })
     }
+}
+
+let nuevoTipo = () => {
+    let nombre = input_nuevoTipo.value;
+
+    if (nombre == "") {
+        swal.fire({
+            type: 'error',
+            title: 'Nuevo tipo de articulo no registrado',
+            text: 'Por favor indique un nombre para el nuevo articulo'
+        })
+    }else{
+        crearTipo(nombre);
+    }
+
 }
 
 //valida que se ingreso informacion en todos los campos
@@ -110,3 +137,4 @@ let validar = () => {
 
 crearLista();
 btn_registrar.addEventListener('click', nuevoArticulo);
+btn_registrartipo.addEventListener('click', nuevoTipo);
