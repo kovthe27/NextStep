@@ -48,7 +48,7 @@ let consultar_cita = () => {
     
       request.done(function (res) {
         lista_citas = res;
-        console.log("success");
+        // console.log("success");
         
       });
     

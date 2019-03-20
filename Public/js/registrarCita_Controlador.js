@@ -84,7 +84,7 @@ let mostrar_datosCita = () =>{
         var card = 
         "<div id=\"cardcita altura\" class=\"col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left\">";
 
-        $("#cardcita").append(card)    // Append <li> to <ul> with id="myList"
+        $("#cardcita").append(card) 
         cita.reverse();
     };
     

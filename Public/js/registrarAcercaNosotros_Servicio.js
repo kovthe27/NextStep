@@ -1,13 +1,14 @@
 'use strict';
 
-let registrar_acercaNosotros = (pdescripcion, pubicacion, pcontacto, pcorreo, ptelefono, pfacebook, pinstagram, ptwitter, ppagina) => {
+let registrar_acercaNosotros = (pcedulaJuridica, pdescripcion, pubicacion, pencargado, pcorreo, ptelefono, pfacebook, pinstagram, ptwitter, ppagina) => {
     let request = $.ajax({
       url: "http://localhost:4000/api/registrar_acercaNosotros",
       method: "POST",
       data: {
+        cedulaJuridica: pcedulaJuridica,
         descripcion: pdescripcion,
         ubicacion : pubicacion,
-        contacto: pcontacto,
+        encargado: pencargado,
         correo: pcorreo,
         telefono : ptelefono,
         facebook : pfacebook, 
@@ -53,7 +54,7 @@ let consultar_acercaNosotros = () => {
     
       request.done(function (res) {
         lista_acercaNosotros = res;
-        console.log("success");
+        // console.log("success");
         
       });
     
