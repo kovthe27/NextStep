@@ -2,7 +2,7 @@
 
 //Registra las transacciones en la bitacora 
 
-let bitacora = (pUsuario, pDescripcion) => {
+let bitacora = (pUsuario, pAccion, pDescripcion) => {
     let usuario = pUsuario;
     let descripcion = pDescripcion;
     let fecha;
@@ -21,16 +21,17 @@ let bitacora = (pUsuario, pDescripcion) => {
     let segundos = String(today.getSeconds()).padStart(2, '0');
     tiempo = hora + ":" + minutos + ":" + segundos;
 
-    RegistrarBitacora(pUsuario, pDescripcion, fecha, tiempo);
+    RegistrarBitacora(pUsuario, pAccion, pDescripcion, fecha, tiempo);
 }
 
-let RegistrarBitacora = (pUsuario, pDescripcion, fecha, tiempo) => {
+let RegistrarBitacora = (pUsuario, pAccion, pDescripcion, fecha, tiempo) => {
 
     let request = $.ajax({
         url: "http://localhost:4000/api/registrar_bitacora",
         method: "POST",
         data: {
             usuario: pUsuario,
+            accion: pAccion,
             descripcion: pDescripcion,
             fecha: fecha,
             hora: tiempo

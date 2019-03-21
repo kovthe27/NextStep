@@ -6,6 +6,7 @@ const schema_TablaBitacora = require('./registrar_bitacora.model');
 module.exports.registrar_bitacora = (req, res) => {
     let utiles_nuevo = new schema_TablaBitacora({
         usuario: req.body.usuario,
+        accion: req.body.accion,
         descripcion: req.body.descripcion,
         fecha: req.body.fecha,
         hora: req.body.hora,
