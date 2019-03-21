@@ -3,6 +3,7 @@ const model_infoMatricula = require('./registrar_infoMatricula.model');
 
 module.exports.registrar_infoMatricula = (req, res) => {
     let infoMatricula_nuevo = new model_infoMatricula({
+        cedulaJuridica: req.body.cedulaJuridica,
         titulo: req.body.titulo,
         descripcion: req.body.descripcion
     });
