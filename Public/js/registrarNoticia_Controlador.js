@@ -69,7 +69,7 @@ btn_enviarNoticia.addEventListener('click', obtener_datosNoticia);
 
 let mostrar_datosNoticia = () => {
     let noticia = consultar_noticia();
-    console.log(noticia);
+    // console.log(noticia);
 
     for (let i = noticia.length - 1; i > noticia.length - 5; i--) {
         var cardNoticia = "<div class=\"card col-md-3 float-left \">" +

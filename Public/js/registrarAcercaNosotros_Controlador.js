@@ -106,7 +106,6 @@ let mostrar_infoCentro = () => {
         "<p class=\"card-text\">"+acercaNosotros[i].descripcionCentro+"</p><br>"+
             "<button class=\"btn btn-themecolor\" data-toggle=\"modal\" data-target=\"#registrarCita\">Agendar cita</button>"+
             "<button class=\"btn text-themecolor\">Solicitar información</button>"+
-            "<button class=\"btn text-secondary\" alt=\"default\" data-toggle=\"modal\" data-target=\"#boletin\">Subir boletín</button>"+
         "</div>"+
         "<div class=\"linea float-left\"></div>"+
         "<div class=\"col-md-4 float-left información\">"+
