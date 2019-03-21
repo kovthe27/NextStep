@@ -83,13 +83,14 @@ const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registra
 const utilesAdmin = require('./componentes/registrar_utiles_admin/registrar_utiles.route');
 const listasUtiles = require('./componentes/registrar_listas_utiles/registrar_utiles_lista.route');
 const listaTipos = require ('./componentes/registrar_articulos/registrar_articulos.route');
+const bitacora = require ('./componentes/registrar_bitacora/registrar_bitacora.route');
 
 app.use('/api', servicio);
 app.use('/api', preguntasAdmin);
 app.use('/api', utilesAdmin);
 app.use('/api', listasUtiles);
 app.use('/api', listaTipos);
-
+app.use('/api', bitacora);
 
 
 // Se guarda todo lo que se ha realizado

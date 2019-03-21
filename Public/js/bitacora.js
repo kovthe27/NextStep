@@ -31,7 +31,7 @@ let RegistrarBitacora = (pUsuario, pDescripcion, fecha, tiempo) => {
         method: "POST",
         data: {
             usuario: pUsuario,
-            descripcion: pdescripcion,
+            descripcion: pDescripcion,
             fecha: fecha,
             hora: tiempo
         },
@@ -39,3 +39,29 @@ let RegistrarBitacora = (pUsuario, pDescripcion, fecha, tiempo) => {
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
     });
 }
+
+let consultarBitacora = () =>{
+    let lista_bitacora = [];
+
+    let request = $.ajax({
+      url: "http://localhost:4000/api/consultar_bitacora",
+      method: "GET",
+      data: {
+      },
+      dataType: "json",
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      async: false
+    });
+  
+    request.done(function (res) {
+        lista_bitacora = res;
+      console.log("success");
+  
+    });
+  
+    request.fail(function (jqXHR, textStatus) {
+      console.log("fail");
+    });
+  
+    return lista_bitacora;
+};
