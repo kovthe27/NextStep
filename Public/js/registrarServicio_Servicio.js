@@ -40,11 +40,12 @@ function processImage(id) {
 
 
 
-let registrar_servicio = (pimagen, ptitulo, pdescripcion) => {
+let registrar_servicio = (pCedulaJuridica, pimagen, ptitulo, pdescripcion) => {
     let request = $.ajax({
       url: "http://localhost:4000/api/registrar_servicio",
       method: "POST",
       data: {
+        cedulaJuridica: pCedulaJuridica,
         imagen: pimagen,
         titulo: ptitulo,
         descripcion: pdescripcion

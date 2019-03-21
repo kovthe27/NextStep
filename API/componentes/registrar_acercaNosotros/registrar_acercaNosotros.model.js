@@ -16,4 +16,4 @@ let schema_acercaNosotros= new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('AcercaNosotros12', schema_acercaNosotros);
+module.exports = mongoose.model('AcercaNosotros', schema_acercaNosotros);

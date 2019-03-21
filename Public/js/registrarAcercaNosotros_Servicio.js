@@ -6,7 +6,7 @@ let registrar_acercaNosotros = (pcedulaJuridica, pdescripcion, pubicacion, penca
       method: "POST",
       data: {
         cedulaJuridica: pcedulaJuridica,
-        descripcion: pdescripcion,
+        descripcionCentro: pdescripcion,
         ubicacion : pubicacion,
         encargado: pencargado,
         correo: pcorreo,
