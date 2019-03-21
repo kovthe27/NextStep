@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 let schema_utiles= new mongoose.Schema(
     {
-        nombre: {type: string, require: true}
+        nombre: {type: String, require: true}
     }
 );
 
