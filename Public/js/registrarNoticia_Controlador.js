@@ -71,8 +71,8 @@ let mostrar_datosNoticia = () =>{
     let noticia = consultar_noticia();
     console.log(noticia);
 
-    for(let i = 0; i < 4; i++){
-        var cardNoticia =   "<div class=\"card col-md-3 float-left \">" +
+    for(let i = 0; i < 3; i++){
+        var cardNoticia =   "<div class=\"card \">" +
         "<div class=\"card-body img-thumbnail\">"+
           // dropdown
           "<div class=\"btn-group float-right\">"+
@@ -90,7 +90,7 @@ let mostrar_datosNoticia = () =>{
         "</div> </div>";
 
 
-        $("#cardComentarios-noticias").append(cardNoticia)    // Append <li> to <ul> with id="myList"
+        $("#cardNoticias").append(cardNoticia)    // Append <li> to <ul> with id="myList"
         noticia.reverse();
     };
 

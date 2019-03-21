@@ -107,3 +107,10 @@
 .carousel-indicators li{
     background-color: orange;
 }
+.modal-backdrop{
+    z-index: unset;
+}
+
+#calificar_comentar .star-rating{
+    color: #54B56B;
+}

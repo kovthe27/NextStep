@@ -61,6 +61,8 @@ app.use( function(req, res, next) {
   next();
 });
 
+const comentario = require('./componentes/crear_comentario/crear_comentario.route');
+app.use('/api', comentario);
 
 const servicio = require('./componentes/registrar_servicio/registrar_servicio.route');
 app.use('/api', servicio);
