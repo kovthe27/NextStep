@@ -38,7 +38,8 @@ let construirTabla = () => {
 let construirLista = (pnombre) =>{
     // localStorage.setItem('ListaUsuario', JSON.stringify(pcedula));
     localStorage.setItem('ListaNombre', JSON.stringify(pnombre));
-    window.location.assign("./listas.html")
+    // window.location.assign("./listas.html")
+    window.location.assign("./listas_CentroEducativo.html")
 }
 
 let registrarLista = () => {
@@ -53,6 +54,10 @@ let registrarLista = () => {
     let fecha = dd + '/' + mm + '/' + yyyy;
 
     nuevaLista(cedula, nombre, fecha);
+
+    //Registro de bitacora
+    bitacora(cedula, "Registro", "Se agrego la lista: "+nombre);
+
     window.location.reload();
 }
 

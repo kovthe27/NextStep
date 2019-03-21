@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 let schema_TablaBitacora = new mongoose.Schema(
     {
         usuario: {type: String, require: true},
+        accion: {type: String, require: true},
         descripcion: {type: String, require: true},
         fecha: {type: String, require: true},
         hora: {type: String, require: true}

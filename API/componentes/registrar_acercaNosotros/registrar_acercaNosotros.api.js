@@ -12,7 +12,7 @@ module.exports.registrar_acercaNosotros = (req, res) => {
         facebook : req.body.facebook,
         instagram : req.body.instagram,
         twitter : req.body.twitter,
-       pagina : req.body.pagina
+        pagina : req.body.pagina
     });
 
     acercaNosotros_nuevo.save(function (error) {

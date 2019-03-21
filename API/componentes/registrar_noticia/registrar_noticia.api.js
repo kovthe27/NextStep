@@ -3,6 +3,7 @@ const model_noticia = require('./registrar_noticia.model');
 
 module.exports.registrar_noticia = (req, res) => {
     let noticia_nueva = new model_noticia({
+        cedulaJuridica : req.body.cedulaJuridica,
         titulo: req.body.titulo,
         fecha: req.body.fecha,
         descripcion: req.body.descripcion
