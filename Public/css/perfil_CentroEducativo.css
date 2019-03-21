@@ -40,8 +40,8 @@
 .linea {
     width: 2px;
     height: 220px;
-    background-color: #54B56B;
-    margin: 0 30px;
+    background-color: transparent;
+    margin: 0px 43px;
 }
 
 .acercaNosotros {
@@ -106,4 +106,13 @@
 
 .carousel-indicators li{
     background-color: orange;
+}
+
+.form-control {
+    min-height: 40px;
+}
+
+hr{
+    margin-top: 0;
+    margin-bottom: 20px;
 }
