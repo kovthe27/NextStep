@@ -62,6 +62,8 @@ app.use( function(req, res, next) {
   next();
 });
 
+const comentario = require('./componentes/crear_comentario/crear_comentario.route');
+app.use('/api', comentario);
 
 const comentario = require('./componentes/crear_comentario/crear_comentario.route');
 app.use('/api', comentario);
@@ -87,10 +89,12 @@ app.use('/api', cita);
 const preguntasAdmin = require('./componentes/registrar_preguntas_admin/registrar_preguntas.route');
 const utilesAdmin = require('./componentes/registrar_utiles_admin/registrar_utiles.route');
 const listasUtiles = require('./componentes/registrar_listas_utiles/registrar_utiles_lista.route');
+const listaTipos = require ('./componentes/registrar_articulos/registrar_articulos.route');
 
 app.use('/api', preguntasAdmin);
 app.use('/api', utilesAdmin);
 app.use('/api', listasUtiles);
+app.use('/api', listaTipos);
 
 
 

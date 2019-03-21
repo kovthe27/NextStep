@@ -34,7 +34,7 @@ let validarNoticia = () => {
 let obtener_datosNoticia = () => {
 
     if (validarNoticia() == false) {
-        let titulo = input_tituloNoticia.value;
+        let titulo= input_tituloNoticia.value;
         let fecha = input_fechaNoticia.value;
         let descripcion = input_descripcionNoticia.value;
         
@@ -65,14 +65,14 @@ btn_enviarNoticia.addEventListener('click', obtener_datosNoticia);
 
 
 
-const card_noticia = document.querySelector('#cardnoticia');
+// const card_noticia = document.querySelector('#cardnoticia');
 
 let mostrar_datosNoticia = () =>{
     let noticia = consultar_noticia();
     console.log(noticia);
 
-    for(let i = 0; i < 4; i++){
-        var cardNoticia =   "<div class=\"card col-md-3 float-left \">" +
+    for(let i = 0; i < 3; i++){
+        var cardNoticia =   "<div class=\"card \">" +
         "<div class=\"card-body img-thumbnail\">"+
           // dropdown
           "<div class=\"btn-group float-right\">"+
@@ -84,13 +84,13 @@ let mostrar_datosNoticia = () =>{
             "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>"+
          "</div></div>"+
 
-            "<h4 id=\"txt_tituloNoticia\" class=\"card-title text-themecolor\">"+noticia[i].titulo+"</h4>" +
-            "<h6 id=\"txt_fechaNoticia\" class=\"card-subtitle mb-2 text-muted\">"+noticia[i].fecha+"</h6>"+
-            "<p id=\"txt_descripcionNoticia\" class=\"card-text\">"+noticia[i].descripcion+"</p>"+
+            "<h4  class=\"card-title text-themecolor\">"+noticia[i].titulo+"</h4>" +
+            "<h6  class=\"card-subtitle mb-2 text-muted\">"+noticia[i].fecha+"</h6>"+
+            "<p class=\"card-text\">"+noticia[i].descripcion+"</p>"+
         "</div> </div>";
 
 
-        $("#cardComentarios-noticias").append(cardNoticia)    // Append <li> to <ul> with id="myList"
+        $("#cardNoticias").append(cardNoticia)    // Append <li> to <ul> with id="myList"
         noticia.reverse();
     };
 
