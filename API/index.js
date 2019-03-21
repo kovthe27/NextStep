@@ -77,6 +77,9 @@ app.use('/api', acercaNosotros);
 const cita = require('./componentes/registrar_cita/registrar_cita.route');
 app.use('/api', cita);
 
+const boletin = require('./componentes/registrar_boletin/registrar_boletin.route');
+app.use('/api', boletin);
+
 
 
 
