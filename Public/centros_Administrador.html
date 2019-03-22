@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="../admin-wrap/main/css/style.css" rel="stylesheet">
+    <link href="css/listas.css" rel="stylesheet">
     <!-- page css -->
     <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
     <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
@@ -34,22 +35,7 @@
                 <div class="navbar-collapse">
                     <!-- Barra de búsqueda -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
-                                <i class="sl-icon-menu"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item hidden-xs-down search-box">
-                            <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
-                                <i class="icon-Magnifi-Glass2"></i>
-                            </a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter">
-                                <a class="srh-btn">
-                                    <i class="ti-close"></i>
-                                </a>
-                            </form>
-                        </li>
+                        
                     </ul>
 
                     <!-- Perfil -->
@@ -96,12 +82,21 @@
                                 <span class="hide-menu">Reportes </span>
                             </a>
                         </li>
+
                         <li class="">
+                                <a class=" waves-effect waves-dark" href="bitacora.html" aria-expanded="false">
+                                     <i class="icon-Receipt-4"></i>
+                                    <span class="hide-menu">Bitácora</span>
+                                </a>
+                            </li>
+
+
+                        <!-- <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class=" ti-calendar"></i>
                                 <span class="hide-menu">Calendario </span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class="ti-cup"></i>
@@ -114,12 +109,12 @@
                                 <span class="hide-menu">Lista de útiles </span>
                             </a>
                         </li>
-                        <li class="">
+                        <!-- <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class=" ti-user"></i>
                                 <span class="hide-menu">Mi perfil</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class="ti-help"></i>
@@ -139,14 +134,62 @@
 
         <!-- Titulo -->
         <div class="page-wrapper" style="min-height: 900px;">
-            <div class="container-fluid">
-                <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Centros educativos</h3>
+                <div class="container-fluid">
+                    <div class="row page-titles">
+                        <div class="col-md-8 align-self-center">
+                            <h3 class="text-themecolor">Centros educativos</h3>
+                        </div>
+
+                        <!-- Search -->
+
+                <div class="input-group mb-3 col-md-4 float-right mt-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
+                        </div>
+                        <input type="text" id="txt_search" class="form-control" placeholder="Buscar" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+    
+                    </div>
+    
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle" data-tablesaw-mode="columntoggle"
+                                id="tablesaw-1093">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre del centro</th>
+                                        <th>Cédula jurídica</th>
+                                        <th>Fecha</th>
+                                        <th>Correo</th>
+                                        <th>Administrador</th>
+                                        <th>Edición</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">Nombre del centro</td>
+                                        <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">Cédula jurídica</td>
+                                        <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">Fecha</td>
+                                        <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">Correo</td>
+                                        <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">Nombre del administrador</td>
+                                        <td>
+                                                <button type="button" class="btn btn-sm btn-danger mr-1 btn-circle">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-info mr-1 btn-circle">
+                                                    <i class=" fas fa-info"></i>
+                                                </button>
+                                            </td>
+
+                                    </tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
     </div>
