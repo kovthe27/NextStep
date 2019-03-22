@@ -7,11 +7,8 @@ const txt_nuevo_comentario = document.querySelector('#txt_nuevo_comentario');
 // const btn_likes;
 const btn_comentar = document.querySelector('#btn_comentar');
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> development
 let validarComentario = () => {
     let error = false;
 
@@ -55,11 +52,7 @@ let validarComentario = () => {
     return error;
 };
 
-<<<<<<< HEAD
-let obtener_datos = () => {
-=======
 let obtener_datosComentario = () => {
->>>>>>> development
 
     if (validarComentario() == false) {
         // Se ejecuta solo si la validación no da error
@@ -95,45 +88,16 @@ let obtener_datosComentario = () => {
 };
 
 
-<<<<<<< HEAD
-btn_comentar.addEventListener('click', obtener_datos);
-
-
-
-const card_comentario = document.querySelector('#cardComentario');
-=======
 btn_comentar.addEventListener('click', obtener_datosComentario);
 
 
 
 const card_comentario = document.querySelector('#cardComentarios');
->>>>>>> development
 
 let mostrar_comentarios = () =>{
     let comentario = consultar_comentario();
     console.log(comentario);
 
-<<<<<<< HEAD
-    for(let i = 0; i < comentario.length; i++){
-        var card = `<div class="d-flex flex-row comment-row">
-        <div class="p-2"><span class="round"><img src="../admin-wrap/assets/images/users/1.jpg"
-                    alt="user" width="50"></span></div>
-        <div class="comment-text w-100">
-            <h5>`+ comentario[i].nombre+ `</h5>
-            <div class="comment-footer">
-                <span class="date">`+ comentario[i].fecha +`</span>
-                <span class="action-icons">
-                    <a href="javascript:void(0)"><i class="mdi mdi-pencil-circle"></i></a>
-                    <a href="javascript:void(0)"><i class="mdi mdi-checkbox-marked-circle"></i></a>
-                    <a href="javascript:void(0)"><i class="mdi mdi-heart"></i></a>
-                </span>
-            </div>
-            <p class="m-b-5 m-t-10">`+ comentario[i].comentario+ `.</p>
-        </div>
-    </div>`
-
-        $("#tablaComentarios").append(card)   
-=======
     for(let i = 0; i < 4; i++){
         var card = `<div class="d-flex flex-row comment-row">
                         <div class="p-2"><span class="round"><img src="../admin-wrap/assets/images/users/1.jpg"
@@ -155,7 +119,6 @@ let mostrar_comentarios = () =>{
         $("#cardComentarios").append(card)  
         comentario.reverse();
  
->>>>>>> development
 
     };
 
