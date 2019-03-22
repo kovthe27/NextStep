@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
+    <title>NextStep</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../admin-wrap/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
+    <!-- <link href="../admin-wrap/assets/node_modules/sidebar-nav/src/metisMenu.css" rel="stylesheet"> -->
+    <!-- You can change the theme colors from here -->
+    <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
+
+    <!-- Subir imagen -->
+    <!-- <link rel="stylesheet" href="./assets/node_modules/dropify/dist/css/dropify.min.css"> -->
+
+    <!-- calendario -->
+    <!-- <link href="../admin-wrap/assets/node_modules/calendar/dist/fullcalendar.css" rel="stylesheet"> -->
+
+    <link href="css/pages/inbox.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="../admin-wrap/main/css/style.css" rel="stylesheet">
+    <link href="css/principal_padres.css" rel="stylesheet">
+    <!-- <link href="./css/perfil_CentroEducativo.css" rel="stylesheet"> -->
+    <!-- page css -->
+    <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
+    <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
+
+    <!-- card color -->
+    <link href="../admin-wrap/main/css/pages/ribbon-page.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>NextStep</title>
+</head>
+
+<body class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
+                <div class="navbar-header">
+                    <img src="../Public/imgs/logo-text-02.png" alt="homepage" class="dark-logo">
+                </div>
+
+                <div class="navbar-collapse">
+                    <!-- Barra de búsqueda -->
+                    <ul class="navbar-nav mr-auto">
+                    </ul>
+
+                    <!-- Perfil -->
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src="../admin-wrap/assets/images/users/1.jpg" alt="user" class=""> <span
+                                    class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+        <!-- Menu -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar ps ps--theme_default ps--active-y"
+                data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
+
+                <nav class="sidebar-nav active">
+                    <ul id="sidebarnav" class="in">
+                        <li class="nav-small-cap">------ FILTROS DE BÚSQUEDA</li>
+                        <!-- Primaria-secundaria -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Grado académico</h5>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Primaria</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Secundaria</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Otro</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Publica-privada -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Tipo de educación</h5>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Pública</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Privada</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ubicación -->
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Ubicación</h5>
+
+                                <!-- Provincia -->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle text-small"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Provincia
+                                    </button>
+                                    <div class="dropdown-menu animated fadelnDown">
+                                        <a class="dropdown-item text-small" href="#">San José</a>
+                                        <a class="dropdown-item text-small" href="#">Heredia</a>
+                                        <a class="dropdown-item text-small" href="#">Alajuela</a>
+                                        <a class="dropdown-item text-small" href="#">Guanacaste</a>
+                                        <a class="dropdown-item text-small" href="#">Cartago</a>
+                                        <a class="dropdown-item text-small" href="#">Limón</a>
+                                    </div>
+                                </div>
+
+                                <!-- Cantón -->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle text-small"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Cantón
+                                    </button>
+                                    <div class="dropdown-menu animated fadelnDown">
+                                        <a class="dropdown-item text-small" href="#">San José</a>
+                                        <a class="dropdown-item text-small" href="#">Heredia</a>
+                                        <a class="dropdown-item text-small" href="#">Alajuela</a>
+                                        <a class="dropdown-item text-small" href="#">Guanacaste</a>
+                                        <a class="dropdown-item text-small" href="#">Cartago</a>
+                                        <a class="dropdown-item text-small" href="#">Limón</a>
+                                    </div>
+                                </div>
+
+
+                                <!-- Distrito -->
+                                <div class="btn-group mt-3">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle text-small"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Distrito
+                                    </button>
+                                    <div class="dropdown-menu animated fadelnDown">
+                                        <a class="dropdown-item text-small" href="#">San José</a>
+                                        <a class="dropdown-item text-small" href="#">Heredia</a>
+                                        <a class="dropdown-item text-small" href="#">Alajuela</a>
+                                        <a class="dropdown-item text-small" href="#">Guanacaste</a>
+                                        <a class="dropdown-item text-small" href="#">Cartago</a>
+                                        <a class="dropdown-item text-small" href="#">Limón</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Publica-privada -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Idiomas</h5>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Español</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Inglés</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Portugués</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Alemán</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Otro</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Servicios brindados -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Servicios brindados</h5>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Español</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Servicios brindados -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Tipo de centro educativo</h5>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Femenino</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Masculino</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-small" for="customCheck1">Mixto</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Religión -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Tipo de religión</h5>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle text-small"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Religión
+                                    </button>
+                                    <div class="dropdown-menu animated fadelnDown">
+                                        <a class="dropdown-item text-small" href="#">Católica</a>
+                                        <a class="dropdown-item text-small" href="#">Evangélica</a>
+                                        <a class="dropdown-item text-small" href="#">Protestante</a>
+                                        <a class="dropdown-item text-small" href="#">Otra</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </ul>
+                </nav>
+
+
+                <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                    <div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                </div>
+                <div class="ps__scrollbar-y-rail" style="top: 0px; height: 751px; right: 0px;">
+                    <div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 620px;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Inicio -->
+        <div class="page-wrapper" style="min-height: 3000px; overflow-y: scroll;">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Centros educativos</h3>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 float-left">
+                    <div class="card">
+                        <div class="card-body">
+                        <div class="el-card-item">
+                            <div class="image mb-3 mt-4">
+                                <img src="../Public/imgs/colegio.jpg" width="100%" alt="user">
+                            </div>
+                            <div class="el-card-content mb-3">
+                                <h4 class="box-title">Project title</h4> <small>subtitle of project</small>
+                                <br>
+                            </div>
+                            <hr class="orange">
+                            <div class="mb-3 botones">
+                                <a href="#" class="text-warning text-small float-left">Agregar a favoritos</a>
+                                <p class="float-right"><i class="fa fa-star"></i> 3</p>
+                            </div>
+                            
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./assets/node_modules/jquery/jquery.min.js"></script>
+    <script src="./assets/node_modules/bootstrap/js/popper.min.js"></script>
+    <script src="./assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/node_modules/ps/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../admin-wrap/main/js/waves.js"></script>
+    <script src="./assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="./assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
+    <script src="./assets/node_modules/prism/prism.js"></script>
+    <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="js/js animaciones/sidebarmenu.js"></script>
+</body>
