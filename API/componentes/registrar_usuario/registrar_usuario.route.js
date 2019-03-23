@@ -2,6 +2,7 @@
 const express = require('express');
 const router =  express.Router();
 const padre_api = require('./registrar_usuario.api');
+const centro_api = require('./registrar_usuario.api');
 
 router.route('/registrar_padre')
     .post(
@@ -11,10 +12,13 @@ router.route('/registrar_padre')
     );
 
 router.route('/consultar_padre')
-        .get(
-            function(req, res){
-                padre_api.listar_TodosPadres(req, res);
-            }
-        )
+    .get(
+        function(req, res){
+            padre_api.listar_TodosPadres(req, res);
+        }
+    )
+
+
+
 
 module.exports = router;
