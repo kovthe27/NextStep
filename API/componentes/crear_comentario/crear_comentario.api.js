@@ -3,6 +3,7 @@ const model_comentario = require('./crear_comentario.model');
 
 module.exports.crear_comentario = (req, res) => {
     let comentario_nuevo = new model_comentario({
+        rate : req.body.rate,
         cedulaJuridica: req.body.cedulaJuridica,
         correo: req.body.correo,
         nombre: req.body.nombre,

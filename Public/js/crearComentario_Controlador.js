@@ -2,15 +2,23 @@
 
 // const cedulaJuridica ;
 // const nombre;
+const input_rate = document.querySelector('#slt_rate');
 const txt_fecha = document.querySelector('#txt_fecha');
 const txt_nuevo_comentario = document.querySelector('#txt_nuevo_comentario');
-// const btn_likes;
+const btn_likes = document.querySelector('#btn_like');
 const btn_comentar = document.querySelector('#btn_comentar');
 
 
 
 let validarComentario = () => {
     let error = false;
+
+    if (input_rate.value == '') {
+        error = true;
+        input_rate.classList.add('error_input');
+    } else {
+        input_rate.classList.remove('error_input');
+    }
 
 
     // if (cedulaJuridica.value == '') {
@@ -42,12 +50,12 @@ let validarComentario = () => {
     }
 
 
-    // if (likes.value == '') {
-    //     error = true;
-    //     likes.classList.add('error_input');
-    // } else {
-    //     likes.classList.remove('error_input');
-    // }
+    if (likes.value == '') {
+        error = true;
+        likes.classList.add('error_input');
+    } else {
+        likes.classList.remove('error_input');
+    }
 
     return error;
 };
@@ -56,7 +64,8 @@ let obtener_datosComentario = () => {
 
     if (validarComentario() == false) {
         // Se ejecuta solo si la validación no da error
-        let cedulaJuridica = 11111;
+        let rate = slt_rate.value;
+        let cedulaJuridica = '11111';
         let correo = "contact@laubits.com";
         let nombre = "Laura Castillo";
         let today = new Date();
@@ -68,7 +77,7 @@ let obtener_datosComentario = () => {
         let likes = 2;
       
 
-        crear_comentario(cedulaJuridica, correo, nombre, comentario, fecha, likes); 
+        crear_comentario(rate, cedulaJuridica, correo, nombre, comentario, fecha, likes); 
         swal.fire({
             type: 'warning',
             title: 'Su comentario fue creado',
@@ -109,7 +118,7 @@ let mostrar_comentarios = () =>{
                                 <span class="action-icons">
                                     <a href="javascript:void(0)"><i class="mdi mdi-pencil-circle"></i></a>
                                     <a href="javascript:void(0)"><i class="mdi mdi-checkbox-marked-circle"></i></a>
-                                    <a href="javascript:void(0)"><i class="mdi mdi-heart"></i></a>
+                                    <a  id= "btn_like" href="javascript:agregarLikes('`+ comentario[i].correo +`' )"><i class="mdi mdi-heart"></i></a>
                                 </span>
                             </div>
                             <p class="m-b-5 m-t-10">`+ comentario[i].comentario+ `.</p>
@@ -129,3 +138,20 @@ let mostrar_comentarios = () =>{
 
 mostrar_comentarios();
 
+let agregarLikes = (correo) => {
+    let comentario = consultar_comentario();
+    for(let i = 0; i < comentario.length; i ++) {
+        if(consultar_comentario[i].cedulaJuridica == '11111'){
+            if(consultar_comentario[i].correo  == correo) {
+                consultar_comentario[i].likes ++;
+            }
+        }
+
+
+
+    };
+};
+
+
+
+// btn_likes.addEventListener('click', agregarLikes);
