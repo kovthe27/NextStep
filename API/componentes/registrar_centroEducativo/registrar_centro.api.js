@@ -1,5 +1,5 @@
 'use strict';
-const model_RegistroPadre = require('./registrar_usuario.model');
+const model_RegistroCentro = require('./registrar_centro.model');
 const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
@@ -14,44 +14,47 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-module.exports.registrar_Padre = (req, res) =>{
-    let registro_Padre = new model_RegistroPadre(
+module.exports.registrar_Centro = (req, res) =>{
+    let registro_Centro = new model_RegistroCentro(
         {
-            nombreUsuario: req.body.nombreUsuario,
-            apellidoUsuario: req.body.apellidoUsuario,
-            seg_ApellidoUsuario: req.body.seg_ApellidoUsuario,
-            idUsuario: req.body.idUsuario,
-            nacionUsuario: req.body.nacionUsuario,
-            direccionUsuario: req.body.direccionUsuario,
-            emailUsuario: req.body.emailUsuario,
-            telUsuario: req.body.telUsuario,
-            cantHijos: req.body.cantHijos,
-            fotoUsuario: req.body.fotoUsuario,
-            provinciaUsuario: req.body.provinciaUsuario,
-            cantonUsuario: req.body.cantonUsuario,
-            distritoUsuario: req.body.distritoUsuario,
-            contrasenaUsuario: GeneratedGui(),
-            estadoUsuario:  'activo' 
+            nombreCentro: req.body.nombreCentro,
+            nombreComercial: req.body.nombreComercial,
+            cedJuridica: req.body.cedJuridica,
+            provinciaCentro: req.body.provinciaCentro,
+            cantonCentro: req.body.cantonCentro,
+            distritoCentro: req.body.distritoCentro,
+            direccionCentro: req.body.direccionCentro,
+            emailCentro: req.body.emailCentro,
+            contrasenaCentro: GeneratedGui(),
+            telCentro: req.body.telCentro,
+            faxCentro: req.body.faxCentro,
+            fotoCentro: req.body.fotoCentro,
+            sitioWeb: req.body.sitioWeb,
+            tipoCentro: req.body.tipoCentro,
+            gradoAcademico: req.body.gradoAcademico,
+            annoFundCentro: req.body.annoFundCentro,
+            referenciaHistorica: req.body.referenciaHistorica,
+            archivosCentro: req.body.archivosCentro
         }
     );
     
-    registro_Padre.save(
+    registro_Centro.save(
         function(error){
             if(error){
                 res.json(
                     {
                         success : false,
-                        msg : `No se pudo registrar su usuario, ocurrió el siguiente error ${error}`
+                        msg : `No se pudo registrar el centro educativo, ocurrió el siguiente error ${error}`
                     }
                 )
             }else{
                 let mailOptions = {
                     from: 'specta.grupo@gmail.com',
-                    to: registro_Padre.emailUsuario,
+                    to: registro_Centro.emailCentro,
                     subject: 'Código de inicio de sesión Next Step',
-                    html: `<h1 style="color:#6F1E51;">Saludos ${registro_Padre.nombreUsuario} </h1>
+                    html: `<h1 style="color:#6F1E51;">Saludos ${registro_Centro.nombreCentro} </h1>
                     <p>Bienvenido a Next Steps!</p>
-                    <p>Este es tu código temporal ${contrasenaUsuario.GeneratedGui()}</p>
+                    <p>Este es tu código temporal ${GeneratedGui()}</p>
                     <p>Ingresa a la aplicación y digita el código temporal al iniciar sesión</p>
                     `
                 };
@@ -65,7 +68,7 @@ module.exports.registrar_Padre = (req, res) =>{
                 res.json(
                     {
                         success : true,
-                        msg : `Se registró su usuario de forma correcta`
+                        msg : `Se registró el centro educativo de forma correcta`
                     }
                 )
             }
@@ -88,21 +91,21 @@ function GeneratedGui(){
 }
 
 
-module.exports.listar_TodosPadres = (req ,res) =>{
-    model_RegistroPadre.find().then(
-        function(padres){
-            if(padres.length > 0){
+module.exports.listar_TodosCentros = (req ,res) =>{
+    model_RegistroCentro.find().then(
+        function(centros){
+            if(centros.length > 0){
                 res.json(
                     {
                         success: true,
-                        padres: padres
+                        centros: centros
                     }
                 )
             }else{
                 res.json(
                     {
                         success: false,
-                        padres: 'No se encontraron padres registrados'
+                        centros: 'No se encontraron centros registrados'
                     }
                 )
             }

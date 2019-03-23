@@ -2,7 +2,6 @@
 const express = require('express');
 const router =  express.Router();
 const padre_api = require('./registrar_usuario.api');
-const centro_api = require('./registrar_usuario.api');
 
 router.route('/registrar_padre')
     .post(
