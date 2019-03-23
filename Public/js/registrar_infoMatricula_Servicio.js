@@ -1,10 +1,11 @@
 'use strict';
 
-let registrar_infoMatricula = (ptitulo, pdescripcion) => {
+let registrar_infoMatricula = (pcedulaJuridica, ptitulo, pdescripcion) => {
     let request = $.ajax({
       url: "http://localhost:4000/api/registrar_infoMatricula",
       method: "POST",
       data: {
+        cedulaJuridica : pcedulaJuridica,
         titulo: ptitulo,
         descripcion: pdescripcion
       },

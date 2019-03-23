@@ -3,6 +3,7 @@ const model_servicio = require('./registrar_servicio.model');
 
 module.exports.registrar_servicio = (req, res) => {
     let servicio_nuevo = new model_servicio({
+        cedulaJuridica: req.body.cedulaJuridica,
         imagen: req.body.imagen,
         titulo: req.body.titulo,
         descripcion: req.body.descripcion

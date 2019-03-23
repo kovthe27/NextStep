@@ -69,7 +69,7 @@ let obtener_datosCentro = () => {
 
         registrar_acercaNosotros(cedulaJuridica, descripcionCentro, ubicacion, encargado, correo, telefono, facebook, instagram, twitter, pagina);
         swal.fire({
-            type: 'warning',
+            type: 'success',
             title: 'La información ha sido añadida',
             text: 'Muchas gracias'
         });
