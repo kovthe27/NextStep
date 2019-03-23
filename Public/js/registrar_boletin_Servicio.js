@@ -1,6 +1,6 @@
 'use strict';
 
-let imagenUrl = '';
+let pdfUrl = '';
 
 $(function() {
     // Configure Cloudinary
@@ -9,7 +9,7 @@ $(function() {
     $.cloudinary.config({ cloud_name: 'nextstep', api_key: '514151394451531'});
 
     // Upload button
-    let uploadButton = $('#btnSeleccionarImagen');
+    let uploadButton = $('#btnSeleccionarBoletin');
 
     // Upload button event
     uploadButton.on('click', function(e){
@@ -21,12 +21,12 @@ $(function() {
             let id = result[0].public_id;
             //  console.log(id);
             
-            imagenUrl = processImage(id);
-            // console.log(imagenUrl);
+            pdfUrl = processImage(id);
+            // console.log(pdfUrl);
 
-            imagenUrl = imagenUrl.replace('file', 'http');
-            document.querySelector('#imgFoto').src = imagenUrl;
-            return imagenUrl;
+            pdfUrl = pdfUrl.replace('file', 'http');
+            document.querySelector('#pdfBoletin').href = pdfUrl;
+            return pdfUrl;
         });
     });
 })
@@ -40,15 +40,14 @@ function processImage(id) {
 
 
 
-let registrar_servicio = (pCedulaJuridica, pimagen, ptitulo, pdescripcion) => {
+let registrar_boletin = (pcedulaJuridica, pboletin, pnombre) => {
     let request = $.ajax({
-      url: "http://localhost:4000/api/registrar_servicio",
+      url: "http://localhost:4000/api/registrar_boletin",
       method: "POST",
       data: {
-        cedulaJuridica: pCedulaJuridica,
-        imagen: pimagen,
-        titulo: ptitulo,
-        descripcion: pdescripcion
+        cedulaJuridica: pcedulaJuridica,
+        boletin: pboletin,
+        nombre: pnombre
       },
       dataType: "json",
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -57,27 +56,19 @@ let registrar_servicio = (pCedulaJuridica, pimagen, ptitulo, pdescripcion) => {
     request.done(function (msg) {
       swal.fire({
         type: 'success',
-        title: 'La actividad fue enviada',
+        title: 'El boletín fue cargado',
         text: 'Muchas gracias'
       });
     });
-  
-    // request.fail(function (jqXHR, textStatus) {
-    //   swal.fire({
-    //     type: 'error',
-    //     title: 'La actividad no pudo ser enviada',
-    //     text: 'Por favor inténtelo de nuevo'
-    //   });
-    // });
   };
   
 
 
-let consultar_servicio = () => {
-    let lista_servicios = []; 
+let consultar_boletin = () => {
+    let lista_boletines = []; 
     
       let request = $.ajax({
-        url: "http://localhost:4000/api/consultar_servicio",
+        url: "http://localhost:4000/api/consultar_boletin",
         method: "GET",
         data: {
         },
@@ -87,7 +78,7 @@ let consultar_servicio = () => {
       });
     
       request.done(function (res) {
-        lista_servicios = res;
+        lista_boletines = res;
         console.log("success");
         
       });
@@ -96,7 +87,7 @@ let consultar_servicio = () => {
         console.log("fail");
       });
     
-      return lista_servicios;
+      return lista_boletines;
       
     };
     

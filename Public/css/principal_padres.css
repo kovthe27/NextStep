@@ -1,0 +1,34 @@
+.card-body{
+    padding: 0.2rem 1.25rem !important;
+}
+
+/* .btn-group label.btn-secondary{
+    color: #53b56a !important;
+} */
+
+
+.active{
+    background-color: #53b56a !important;
+    border-color: #53b56a !important;
+    color: white !important;
+}
+
+.text-small{
+    font-size: 12px;
+}
+
+.custom-control-label{
+    color: #727d83;
+}
+
+.orange{
+    border: 2px solid #e8944e;
+}
+
+.botones{
+    height: 30px;
+}
+
+.card{
+    border-radius: .35rem !important;
+}

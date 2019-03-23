@@ -30,6 +30,7 @@ let obtener_datosMatricula = () => {
 
     if (validarMatricula() == false) {
         // Se ejecuta solo si la validación no da error
+        let cedulaJuridica = 8346;
         let titulo = input_tituloMatricula.value;
         let descripcion = input_descripcionMatricula.value;
 
@@ -39,7 +40,7 @@ let obtener_datosMatricula = () => {
             text: 'Muchas gracias'
         });
 
-        registrar_infoMatricula(titulo, descripcion);
+        registrar_infoMatricula(cedulaJuridica, titulo, descripcion);
         window.location.reload();
 
     } else {
@@ -70,7 +71,6 @@ let mostrar_datosMatricula = () =>{
         "</div></div>";
 
         $("#cardMatricula").append(card);
-        matricula.reverse();
     };
     
     

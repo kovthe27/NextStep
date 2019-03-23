@@ -77,6 +77,9 @@ app.use('/api', acercaNosotros);
 const cita = require('./componentes/registrar_cita/registrar_cita.route');
 app.use('/api', cita);
 
+const boletin = require('./componentes/registrar_boletin/registrar_boletin.route');
+app.use('/api', boletin);
+
 
 
 
@@ -85,6 +88,8 @@ const utilesAdmin = require('./componentes/registrar_utiles_admin/registrar_util
 const registroPadreFamilia = require('./componentes/registrar_usuario/registrar_usuario.route');
 const listasUtiles = require('./componentes/registrar_listas_utiles/registrar_utiles_lista.route');
 const listaTipos = require ('./componentes/registrar_articulos/registrar_articulos.route');
+const bitacora = require ('./componentes/registrar_bitacora/registrar_bitacora.route');
+const etiqueta = require ('./componentes/registrar_etiquetas/registrar_etiquetas.route');
 
 app.use('/api', servicio);
 app.use('/api', preguntasAdmin);
@@ -93,7 +98,8 @@ app.use('/api', registroPadreFamilia);
 
 app.use('/api', listasUtiles);
 app.use('/api', listaTipos);
-
+app.use('/api', bitacora);
+app.use('/api', etiqueta);
 
 
 // Se guarda todo lo que se ha realizado

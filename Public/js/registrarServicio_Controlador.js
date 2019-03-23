@@ -36,17 +36,18 @@ let obtener_datosServicio = () => {
 
     if (validarServicio() == false) {
         // Se ejecuta solo si la validación no da error
+        let cedulaJuridica = 12345;
         let imagen = input_imagen.src;
         let titulo = input_titulo.value;
         let descripcion = input_descripcion.value;
 
-        registrar_servicio(imagen, titulo, descripcion);
-        // swal.fire({
-        //     type: 'success',
-        //     title: 'El servicio fue creado',
-        //     text: 'Muchas gracias'
-        // });
-        // $('#btn_enviar').click();
+        registrar_servicio(cedulaJuridica, imagen, titulo, descripcion);
+        swal.fire({
+            type: 'success',
+            title: 'El servicio fue creado',
+            text: 'Muchas gracias'
+        });
+        $('#btn_enviar').click();
         window.location.reload();
 
     } else {
