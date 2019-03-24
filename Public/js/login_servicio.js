@@ -1,4 +1,5 @@
 'use strict'
+let ubicacionUsuario;
 
 let verificarUsuario = (pUsuario, pContrasena) => {
     let success = false;
@@ -44,12 +45,14 @@ let cargarUsuario = (pUsuario) => {
     let usuarios = consultar_listaUsuario();
     let tipo;
 
+
     for (let i = 0; i < usuarios.length; i++) {
         if (usuarios[i].emailUsuario == pUsuario) {
             tipo = usuarios[i].tipo;
         }
     }
     if (tipo == "Padre") {
+        bitacora(pUsuario, "Inicio de sesion", "Sistema operativo: "+ navigator.platform);
         window.location.assign("principal_padres.html");
     } else {
         if (tipo == "Administrador") {
@@ -62,3 +65,5 @@ let cargarUsuario = (pUsuario) => {
     }
 
 }
+
+
