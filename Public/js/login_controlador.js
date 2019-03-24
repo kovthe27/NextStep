@@ -30,10 +30,12 @@ let obtenerDatos = () => {
     if (validarInputs(usuario, contrasena)==false) {
         //Verifica si es usuario esta en la base de datos    
         if (verificarUsuario(usuario, contrasena) == true) {
+
             //Guarda el user validado en localstorage 
             localStorage.setItem('cliente', JSON.stringify(usuario));
+            swal("AWOOOO");
             //Carga el menu dependiendo del tipo de usuario
-            cargarUsuario(usuario);
+            // cargarUsuario(usuario);
         } else {
             //alerta de contrasena o usuario incorrecto
             localStorage.setItem('cliente', JSON.stringify(usuario));

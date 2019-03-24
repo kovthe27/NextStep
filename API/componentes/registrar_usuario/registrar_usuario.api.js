@@ -31,7 +31,8 @@ module.exports.registrar_Padre = (req, res) =>{
             cantonUsuario: req.body.cantonUsuario,
             distritoUsuario: req.body.distritoUsuario,
             contrasenaUsuario: GeneratedGui(),
-            estadoUsuario:  'activo' 
+            estadoUsuario: req.body.estadoUsuario,
+            tipo: req.body.tipo
         }
     );
     
@@ -75,7 +76,7 @@ module.exports.registrar_Padre = (req, res) =>{
 
 };
 
-//GUI - generated User Identifier
+// GUI - generated User Identifier
 function GeneratedGui(){
     var min=0; 
     var max=9;  
@@ -91,21 +92,7 @@ function GeneratedGui(){
 module.exports.listar_TodosPadres = (req ,res) =>{
     model_RegistroPadre.find().then(
         function(padres){
-            if(padres.length > 0){
-                res.json(
-                    {
-                        success: true,
-                        padres: padres
-                    }
-                )
-            }else{
-                res.json(
-                    {
-                        success: false,
-                        padres: 'No se encontraron padres registrados'
-                    }
-                )
-            }
+            res.send(padres)
         }
 
     )
