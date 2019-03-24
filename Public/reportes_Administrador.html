@@ -55,13 +55,28 @@
                     <!-- Perfil -->
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <img src="../admin-wrap/assets/images/users/1.jpg" alt="user" class="">
-                                <span id="txtUsuario" class="hidden-md-down">Mark Sanders &nbsp;
-                                    <i class="fa fa-angle-down"></i>
-                                </span>
-                            </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="imgPerfil"
+                                    src="" class=""> <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;<i
+                                        class="fa fa-angle-down"></i></span> </a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img align-self-center"><img id="imgPerfil2" src=""></div>
+                                            <div class="u-text  text-align: center">
+                                                <h4 id="nombrePerfil2">Steave Jobs</h4>
+                                                <p id="correo" class="text-muted"></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="ti-user"></i> Mi perfil</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar
+                                            sesion</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -90,6 +105,7 @@
                                 <span class="hide-menu">Centros educativos </span>
                             </a>
                         </li>
+                        
                         <li class="active">
                             <a class=" waves-effect waves-dark" href="reportes_Administrador.html" aria-expanded="false">
                                 <i class=" ti-bar-chart-alt"></i>
@@ -97,11 +113,17 @@
                             </a>
                         </li>
                         <li class="">
+                            <a class=" waves-effect waves-dark" href="bitacora.html" aria-expanded="false">
+                                <i class="icon-Receipt-4"></i>
+                                <span class="hide-menu">Bitácora</span>
+                            </a>
+                        </li>
+                        <!-- <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class=" ti-calendar"></i>
                                 <span class="hide-menu">Calendario </span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class="ti-cup"></i>
@@ -114,12 +136,12 @@
                                 <span class="hide-menu">Lista de útiles </span>
                             </a>
                         </li>
-                        <li class="">
+                        <!-- <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class=" ti-user"></i>
                                 <span class="hide-menu">Mi perfil</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class="ti-help"></i>
@@ -161,14 +183,18 @@
     <script src="./assets/node_modules/prism/prism.js"></script>
     <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
     <!-- tabla -->
-    <script src="js/MenuAdmin_Servicio.js"></script>
-    <script src="js/MenuAdmin_Controlador.js"></script>
     <!-- Claudinary -->
-    <script src="js/ejercicios/jquery-3.3.1.js"></script>
     <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
         crossorigin="anonymous">
     <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+
+    <script src="./assets/node_modules/tablesaw-master/dist/tablesaw.jquery.js"></script>
+    <script src="./assets/node_modules/tablesaw-master/dist/tablesaw-init.js"></script>
+    <script src="js/MenuAdmin_Servicio.js"></script>
+    <script src="js/bitacora.js"></script>
+    <script src="js/MenuAdmin_Controlador.js"></script>
+
 
 </body>
 
