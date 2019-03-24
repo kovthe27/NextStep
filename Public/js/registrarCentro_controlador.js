@@ -19,8 +19,6 @@ const input_Archivos = document.querySelector('#txt_Archivos');
 const input_imagen = document.querySelector('#imgFoto');
 const carga_imagen = document.querySelector('#cargarImagen');
 
-const boton_RegistroCentro = document.querySelector('#btn_RegistrarCentro');
-
 
 let validar = () => {
     let error = false;
@@ -166,5 +164,3 @@ let obtener_datosCentro = () => {
     }
 
 };
-
-boton_RegistroCentro.addEventListener('click', obtener_datosCentro);
