@@ -3,6 +3,7 @@ const model_etiquetasCentro = require('./registrar_etiquetasCentro.model');
 
 module.exports.registrar_etiquetasCentro = (req, res) => {
     let etiquetasCentro_nuevo = new model_etiquetasCentro({
+        cedulaJuridica: req.body.cedulaJuridica,
         etiqueta1: req.body.etiqueta1,
         etiqueta2: req.body.etiqueta2,
         etiqueta3: req.body.etiqueta3,

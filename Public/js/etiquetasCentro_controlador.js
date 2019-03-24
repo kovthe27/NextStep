@@ -2,82 +2,42 @@
 
 // import { registrar_infoMatricula, consultar_infoMatricula } from "../../API/componentes/registrar_infoMatricula/registrar_infoMatricula.api";
 
-const input_tituloMatricula = document.querySelector('#txt_tituloMatricula');
-const input_descripcionMatricula = document.querySelector('#txt_descripcionMatricula');
-const btn_enviarMatricula = document.querySelector('#btn_enviarMatricula');
+const input_etiqueta1 = document.querySelector('#etiquetaCentro1');
+const input_etiqueta2 = document.querySelector('#etiquetaCentro2');
+const input_etiqueta3 = document.querySelector('#etiquetaCentro3');
+const input_etiqueta4 = document.querySelector('#etiquetaCentro4');
 
-let validarMatricula = () => {
-    let error = false;
+const btn_enviarEtiquetas = document.querySelector('#btn_enviarEtiquetas');
 
-    if (input_tituloMatricula.value == '') {
-        error = true;
-        input_tituloMatricula.classList.add('error_input');
-    } else {
-        input_tituloMatricula.classList.remove('error_input');
-    }
+let obtener_datosEtiquetas = () => {
+    let cedulaJuridica = "6789";
+    let etiqueta1 = input_etiqueta1.value;
+    let etiqueta2 = input_etiqueta2.value;
+    let etiqueta3 = input_etiqueta3.value;
+    let etiqueta4 = input_etiqueta4.value;
 
-    if (input_descripcionMatricula.value == '') {
-        error = true;
-        input_descripcionMatricula.classList.add('error_input');
-    } else {
-        input_descripcionMatricula.classList.remove('error_input');
-    }
-
-    return error;
-};
-
-let obtener_datosMatricula = () => {
-
-    if (validarMatricula() == false) {
-        // Se ejecuta solo si la validación no da error
-        let cedulaJuridica = 8346;
-        let titulo = input_tituloMatricula.value;
-        let descripcion = input_descripcionMatricula.value;
-
-        swal.fire({
-            type: 'success',
-            title: 'La información de matrícula fue creada',
-            text: 'Muchas gracias'
-        });
-
-        registrar_infoMatricula(cedulaJuridica, titulo, descripcion);
-        window.location.reload();
-
-    } else {
-        swal.fire({
-            type: 'warning',
-            title: 'La información de matrícula no fue creada',
-            text: 'Por favor revise los campos resaltados'
-        });
-    }
-
+    registrar_etiquetasCentro(cedulaJuridica, etiqueta1, etiqueta2, etiqueta3, etiqueta4);
 };
 
 
-btn_enviarMatricula.addEventListener('click', obtener_datosMatricula);
+btn_enviarEtiquetas.addEventListener('click', obtener_datosEtiquetas);
 
+let mostrar_datosEtiquetas = () => {
+    let etiqueta = consultar_etiquetasCentro();
 
-const card_matricula = document.querySelector('#cardMatricula');
+    for (let i = 0; i < etiqueta.length; i++) {
+        if (etiqueta[i].cedulaJuridica == "9999") {
+            var etiquetaCentro =
+                "<small class=\"text-white\">" + etiqueta[i].etiqueta1 + "</small> | "+
+                "<small class=\"text-white\">" + etiqueta[i].etiqueta2 + "</small> | "+
+                "<small class=\"text-white\">" + etiqueta[i].etiqueta3 + "</small> | "+
+                "<small class=\"text-white\">" + etiqueta[i].etiqueta4 + "</small> "
 
-let mostrar_datosMatricula = () =>{
-    let matricula = consultar_infoMatricula();
-    // console.log(servicio);
+            $("#creacionEtiquetas").append(etiquetaCentro);
+        };
 
-    for(let i = 0; i < matricula.length; i++){
-        var card = "<div class=\"col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left\">"+
-        "<div class=\"ribbon-wrapper card\">"+
-            "<div class=\"ribbon ribbon-default\">"+matricula[i].titulo+"</div>"+
-            "<p class=\"ribbon-content\">"+matricula[i].descripcion+"</p>"+
-        "</div></div>";
-
-        $("#cardMatricula").append(card);
-    };
-    
-    
+    }
 };
 
 
-mostrar_datosMatricula();
-
-
-
+mostrar_datosEtiquetas();

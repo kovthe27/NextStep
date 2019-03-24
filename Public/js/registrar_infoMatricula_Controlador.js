@@ -65,7 +65,7 @@ let mostrar_datosMatricula = () =>{
 
     for(let i = 0; i < matricula.length; i++){
         var card = "<div class=\"col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left\">"+
-        "<div class=\"ribbon-wrapper card\">"+
+        "<div class=\"ribbon-wrapper border card\">"+
             "<div class=\"ribbon ribbon-default\">"+matricula[i].titulo+"</div>"+
             "<p class=\"ribbon-content\">"+matricula[i].descripcion+"</p>"+
         "</div></div>";

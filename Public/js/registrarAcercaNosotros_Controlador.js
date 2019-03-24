@@ -104,8 +104,9 @@ let mostrar_infoCentro = () => {
         "<div class=\"clearfix\"></div>"+
         "<div class=\"col-md-7 float-left\">"+
         "<p class=\"card-text\">"+acercaNosotros[i].descripcionCentro+"</p><br>"+
-            "<button class=\"btn btn-themecolor\" data-toggle=\"modal\" data-target=\"#registrarCita\">Agendar cita</button>"+
-            "<button class=\"btn text-themecolor\">Solicitar información</button>"+
+            "<button class=\"btn btn-themecolor mr-1\" data-toggle=\"modal\" data-target=\"#calificarCentro\">Calificar centro</button>"+
+            "<button class=\"btn btn-secondary mr-1\" data-toggle=\"modal\" data-target=\"#registrarCita\">Agendar cita</button>"+
+            "<button class=\"btn btn-secondary mr-1\">Solicitar información</button>"+
         "</div>"+
         "<div class=\"linea float-left\"></div>"+
         "<div class=\"col-md-4 float-left información\">"+

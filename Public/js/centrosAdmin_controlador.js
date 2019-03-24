@@ -26,6 +26,14 @@ let mostrarTablaEtiquetas = () => {
                 </td>
     </tr>`
         $("#tbodyEtiquetas").append(nuevaEtiqueta);
+
+        // mostrar etiqueta en Centro educativo
+        let nuevaEtiquetaCentro =
+        "<option class=\"text-small\" value='"+listaEtiquetas[i].nombre+"'> "+listaEtiquetas[i].nombre+" </option>"
+        $("#etiquetaCentro1").append(nuevaEtiquetaCentro);
+        $("#etiquetaCentro2").append(nuevaEtiquetaCentro);
+        $("#etiquetaCentro3").append(nuevaEtiquetaCentro);
+        $("#etiquetaCentro4").append(nuevaEtiquetaCentro);
     }
 }
 
