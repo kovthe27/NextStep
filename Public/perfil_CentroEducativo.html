@@ -92,7 +92,7 @@
                         <li class=""> <a class=" waves-effect waves-dark" href="principal_CentroEducativo.html"
                                 aria-expanded="false"><i class=" ti-calendar"></i><span class="hide-menu">Calendario
                                 </span></a></li>
-                      
+
                         <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i
                                     class="ti-cup"></i><span class="hide-menu">Ranking </span></a></li>
                         <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i
@@ -133,10 +133,12 @@
 
                     <div class="texto">
                         <h2>Nombre del centro educativo</h2>
-                        <p><small class="text-white">Etiqueta1</small> |
+                        <button type="button" id="seleccionar etiquetas" 
+                            class="btn btn-sm btn-outline-warning mb-3" data-toggle="modal" data-target="#registrarEtiquetasCentro">Añadir etiquetas</button>
+                        <!-- <p><small class="text-white">Etiqueta1</small> |
                             <small class="text-white">Etiqueta1</small> |
                             <small class="text-white">Etiqueta1</small> |
-                            <small class="text-white">Etiqueta1</small></p>
+                            <small class="text-white">Etiqueta1</small></p> -->
                         <div class="star-rating">
                             <span class="fa fa-star" data-rating="1"></span>
                             <span class="fa fa-star" data-rating="2"></span>
@@ -151,8 +153,40 @@
                             <input type="hidden" name="whatever1" class="rating-value" value="2.56">
                         </div>
 
-                        <button class="btn btn-light" type="button">Calificar</button>
+                        <button class="btn btn-light" type="button" >Calificar</button>
                     </div>
+
+                    <!-- modal tags -->
+                    <div id="registrarEtiquetasCentro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                        aria-hidden="true" style="display: none;">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="vcenter">Añadir etiquetas</h4>
+                                    <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">×</button>
+                                </div>
+                                <div class="modal-body">
+                                        <div class="card"> 
+                                            <div class="card-body" id="etiquetasAdmin"> <!-- se cargan los tags -->
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                    <label class="custom-control-label text-small" for="customCheck1">Primaria</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button id="btn_enviarCita" type="submit"
+                                        class="btn btn-warning waves-effect">Guardar</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <!-- Acerca de nosotros -->
                     <section class="acercaNosotros">
 
@@ -161,18 +195,19 @@
                             <h4 class="card-title float-left">Acerca de nosotros</h4>
                             <div class="clearfix"></div>
                             <div class="col-md-4 float-right">
+                                <div class="">
                                     <div class="">
-                                            <div class="">
-                                <button class="btn btn-outline-secondary float-left" alt="default" data-toggle="modal"
-                                    data-target="#boletin"><i class="ti-zip"></i></button>
+                                        <button class="btn btn-outline-secondary float-left" alt="default"
+                                            data-toggle="modal" data-target="#boletin"><i class="ti-zip"></i></button>
                                     </div>
-                                    <a  class="form-control col-md-8 float-left" id="linkPdf" href="">Nombre</a>
+                                    <a class="form-control col-md-8 float-left" id="linkPdf" href="">Nombre</a>
                                 </div>
                             </div>
 
                             <button class="btn text-warning mb-3 mt-3" alt="default" data-toggle="modal"
                                 data-target="#acercaNosotros">Añadir
-                                información</button><hr>
+                                información</button>
+                            <hr>
                         </div>
 
 
@@ -290,11 +325,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                                <input type="text" id="txt_nombrePDF" name="text" class="form-control"
-                                                    required="true"
-                                                    data-validation-required-message="This field is required"
-                                                    aria-invalid="false" placeholder="Inserte el nombre del archivo">
-                                            </div>
+                                            <input type="text" id="txt_nombrePDF" name="text" class="form-control"
+                                                required="true"
+                                                data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte el nombre del archivo">
+                                        </div>
 
                                         <div class="form-group">
                                             <button class="form-control btn-outline-warning"
