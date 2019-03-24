@@ -56,9 +56,11 @@ let cargarUsuario = (pUsuario) => {
         window.location.assign("principal_padres.html");
     } else {
         if (tipo == "Administrador") {
+            bitacora(pUsuario, "Inicio de sesion", "Sistema operativo: "+ navigator.platform);
             window.location.assign("principal_administrador.html");
         } else {
             if (tipo == "Centro") {
+                bitacora(pUsuario, "Inicio de sesion", "Sistema operativo: "+ navigator.platform);
                 window.location.assign("principal_CentroEducativo.html");
             }
         }
