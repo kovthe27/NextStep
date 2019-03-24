@@ -80,6 +80,10 @@ app.use('/api', cita);
 const boletin = require('./componentes/registrar_boletin/registrar_boletin.route');
 app.use('/api', boletin);
 
+const etiquetasCentro = require('./componentes/registrar_etiquetasCentro/registrar_etiquetasCentro.route');
+app.use('/api', etiquetasCentro);
+
+
 
 
 
