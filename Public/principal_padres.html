@@ -79,7 +79,7 @@
                         <li class="nav-small-cap">------ FILTROS DE BÚSQUEDA</li>
                         <!-- Primaria-secundaria -->
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" id="filtroGrado">
                                 <h5 class="card-title">Grado académico</h5>
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -101,7 +101,7 @@
                         <!-- Publica-privada -->
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Tipo de educación</h5>
+                                <h5 class="card-title">Tipo de centro</h5>
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="publica">
                                     <label class="custom-control-label text-small" for="publica">Pública</label>
@@ -110,6 +110,16 @@
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="privada">
                                     <label class="custom-control-label text-small" for="privada">Privada</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="científico">
+                                    <label class="custom-control-label text-small" for="científico">Científico</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="tecnico">
+                                    <label class="custom-control-label text-small" for="tecnico">Técnico</label>
                                 </div>
                             </div>
                         </div>
@@ -121,53 +131,47 @@
                                 <h5 class="card-title">Ubicación</h5>
 
                                 <!-- Provincia -->
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-secondary dropdown-toggle text-small"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Provincia
-                                    </button>
-                                    <div class="dropdown-menu animated fadelnDown">
-                                        <a class="dropdown-item text-small" href="#">San José</a>
-                                        <a class="dropdown-item text-small" href="#">Heredia</a>
-                                        <a class="dropdown-item text-small" href="#">Alajuela</a>
-                                        <a class="dropdown-item text-small" href="#">Guanacaste</a>
-                                        <a class="dropdown-item text-small" href="#">Cartago</a>
-                                        <a class="dropdown-item text-small" href="#">Limón</a>
-                                    </div>
-                                </div>
+                                <!-- <div class=""> -->
+                                    <label class="control-label text-small text-dark mt-3">Provincia</label>
+                                    <select class="form-control text-small custom-select" id="provincia" data-placeholder="Escoja una provincia" tabindex="0">
+                                        <option class="text-small" value="San_Jose">San José</option>
+                                        <option class="text-small" value="Heredia">Heredia</option>
+                                        <option class="text-small" value="Cartago">Cartago</option>
+                                        <option class="text-small" value="Alajuela">Alajuela</option>
+                                        <option class="text-small" value="Limon">Limón</option>
+                                        <option class="text-small" value="Guanacaste">Guanacaste</option>
+                                        <option class="text-small" value="Alajuela">Alajuela</option>
+                                    </select>
+                                <!-- </div> -->
 
                                 <!-- Cantón -->
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-secondary dropdown-toggle text-small"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Cantón
-                                    </button>
-                                    <div class="dropdown-menu animated fadelnDown">
-                                        <a class="dropdown-item text-small" href="#">San José</a>
-                                        <a class="dropdown-item text-small" href="#">Heredia</a>
-                                        <a class="dropdown-item text-small" href="#">Alajuela</a>
-                                        <a class="dropdown-item text-small" href="#">Guanacaste</a>
-                                        <a class="dropdown-item text-small" href="#">Cartago</a>
-                                        <a class="dropdown-item text-small" href="#">Limón</a>
-                                    </div>
-                                </div>
+                                <!-- <div class=""> -->
+                                    <label class="control-label text-small text-dark mt-3">Cantón</label>
+                                    <select class="form-control text-small custom-select" data-placeholder="Escoja una provincia" tabindex="1">
+                                        <option class="text-small" value="San_Jose">San José</option>
+                                        <option class="text-small" value="Heredia">Heredia</option>
+                                        <option class="text-small" value="Cartago">Cartago</option>
+                                        <option class="text-small" value="Alajuela">Alajuela</option>
+                                        <option class="text-small" value="Limon">Limón</option>
+                                        <option class="text-small" value="Guanacaste">Guanacaste</option>
+                                        <option class="text-small" value="Alajuela">Alajuela</option>
+                                    </select>
+                                <!-- </div> -->
 
 
                                 <!-- Distrito -->
-                                <div class="btn-group mt-3">
-                                    <button type="button" class="btn btn-secondary dropdown-toggle text-small"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Distrito
-                                    </button>
-                                    <div class="dropdown-menu animated fadelnDown">
-                                        <a class="dropdown-item text-small" href="#">San José</a>
-                                        <a class="dropdown-item text-small" href="#">Heredia</a>
-                                        <a class="dropdown-item text-small" href="#">Alajuela</a>
-                                        <a class="dropdown-item text-small" href="#">Guanacaste</a>
-                                        <a class="dropdown-item text-small" href="#">Cartago</a>
-                                        <a class="dropdown-item text-small" href="#">Limón</a>
-                                    </div>
-                                </div>
+                                <!-- <div class=""> -->
+                                    <label class="control-label text-small text-dark mt-3">Distrito</label>
+                                    <select class="form-control text-small custom-select" data-placeholder="Escoja una provincia" tabindex="1">
+                                        <option class="text-small" value="San_Jose">San José</option>
+                                        <option class="text-small" value="Heredia">Heredia</option>
+                                        <option class="text-small" value="Cartago">Cartago</option>
+                                        <option class="text-small" value="Alajuela">Alajuela</option>
+                                        <option class="text-small" value="Limon">Limón</option>
+                                        <option class="text-small" value="Guanacaste">Guanacaste</option>
+                                        <option class="text-small" value="Alajuela">Alajuela</option>
+                                    </select>
+                                <!-- </div> -->
 
                             </div>
                         </div>
@@ -206,31 +210,20 @@
                         <!-- Servicios brindados -->
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Servicios brindados</h5>
+                                <h5 class="card-title">Género</h5>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label text-small" for="customCheck1">Español</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Servicios brindados -->
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Tipo de centro educativo</h5>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label text-small" for="customCheck1">Femenino</label>
+                                    <input type="checkbox" class="custom-control-input" id="mujeres">
+                                    <label class="custom-control-label text-small" for="mujeres">Sólo mujeres</label>
                                 </div>
 
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label text-small" for="customCheck1">Masculino</label>
+                                    <input type="checkbox" class="custom-control-input" id="hombres">
+                                    <label class="custom-control-label text-small" for="hombres">Sólo hombres</label>
                                 </div>
 
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label text-small" for="customCheck1">Mixto</label>
+                                    <input type="checkbox" class="custom-control-input" id="mixto">
+                                    <label class="custom-control-label text-small" for="mixto">Mixto</label>
                                 </div>
                             </div>
                         </div>
@@ -309,6 +302,8 @@
                         </div>
                     </div>
                 </div>
+
+                
             </div>
         </div>
     </div>
