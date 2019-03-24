@@ -15,6 +15,7 @@ let mostrarTablaCentrosAdmin = () => {
             <td class="tablesaw-priority-2">01/01/0001</td>
             <td class="tablesaw-priority-1">`+listaCentros[i].emailCentro+`</td>
             <td class="tablesaw-priority-1">Desconocido</td>
+            <td class="tablesaw-priority-1">Desconocido</td>
             <td class="tablesaw-priority-1">
                 <button type="button" class="btn btn-sm btn-danger mr-1 btn-circle">
                     <i class="fas fa-trash"></i>
