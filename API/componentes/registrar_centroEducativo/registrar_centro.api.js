@@ -95,22 +95,6 @@ function GeneratedGui(){
 module.exports.listar_TodosCentros = (req ,res) =>{
     model_RegistroCentro.find().then(
         function(centros){
-            if(centros.length > 0){
-                res.json(
-                    {
-                        success: true,
-                        centros: centros
-                    }
-                )
-            }else{
-                res.json(
-                    {
-                        success: false,
-                        centros: 'No se encontraron centros registrados'
-                    }
-                )
-            }
-        }
-
-    )
+            res.send(centros)
+        });
 };
