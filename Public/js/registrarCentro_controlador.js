@@ -19,6 +19,7 @@ const input_Archivos = document.querySelector('#txt_Archivos');
 const input_imagen = document.querySelector('#imgFoto');
 const carga_imagen = document.querySelector('#cargarImagen');
 
+const boton_RegistroCentro = document.querySelector('#btn_RegistrarCentro');
 
 let validar = () => {
     let error = false;
@@ -56,13 +57,6 @@ let validar = () => {
         input_TelCentro.classList.add('error_input');
     } else {
         input_TelCentro.classList.remove('error_input');
-    }
-
-    if (input_FaxCentro.value == '') {
-        error = true;
-        input_FaxCentro.classList.add('error_input');
-    } else {
-        input_FaxCentro.classList.remove('error_input');
     }
 
     if (input_AnnoCentro.value == '') {
@@ -121,13 +115,6 @@ let validar = () => {
         input_RefHistorica.classList.remove('error_input');
     }
 
-    if (input_Archivos.value == '') {
-        error = true;
-        input_Archivos.classList.add('error_input');
-    } else {
-        input_Archivos.classList.remove('error_input');
-    }
-
     return error;
 };
 
@@ -164,3 +151,5 @@ let obtener_datosCentro = () => {
     }
 
 };
+
+boton_RegistroCentro.addEventListener('click', obtener_datosCentro);

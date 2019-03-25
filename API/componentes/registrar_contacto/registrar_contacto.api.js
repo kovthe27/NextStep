@@ -5,13 +5,14 @@ const model_RegistroContacto = require('./registrar_contacto.model');
 module.exports.registrar_Contacto = (req, res) =>{
     let registro_Contacto = new model_RegistroContacto(
         {
-            nombreEncargado: req.body.nombreUsuario,
+            nombreEncargado: req.body.nombreEncargado,
             idEncargado: req.body.idEncargado,
             dptoEncargado: req.body.dptoEncargado,
             telEncargado: req.body.telEncargado,
             extEncargado: req.body.extEncargado,
             emailEncargado: req.body.emailEncargado,
-            fotoEncargado: req.body.fotoEncargado
+            fotoEncargado: req.body.fotoEncargado,
+            centroEducativoId: req.body.centroEducativoId
         }
     );
     

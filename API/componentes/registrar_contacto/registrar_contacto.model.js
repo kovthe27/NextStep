@@ -10,7 +10,8 @@ let schema_RegistroContacto = new mongoose.Schema(
         telEncargado : {type: Number, required: true},
         extEncargado : {type: Number, required: false},
         emailEncargado : {type: String, required: true},
-        fotoEncargado : {type: String, required: false}
+        fotoEncargado : {type: String, required: false},
+        centroEducativoId : {type: String, required: true}
     }
 );
 

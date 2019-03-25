@@ -93,7 +93,7 @@ body {
 }
 
 .error_input {
-    border-bottom: solid 1px red !important;
+    border: solid 1px red !important;
     background-image: none !important;
 }
 
@@ -140,4 +140,20 @@ body {
 
 #cargarImagen img {
     width: 100%;
+}
+
+.container-fluid {
+    width: 80%;
+}
+
+.card-header.bg-info {
+    background-color: #00b96b!important;
+}
+
+.btn-container {
+    margin: 0 auto;
+}
+
+#txt_Archivos {
+    width: 108px;
 }

@@ -21,7 +21,7 @@ let schema_RegistroCentro = new mongoose.Schema(
         gradoAcademico : {type: String, required: true},
         annoFundCentro : {type: Number, required: true},
         referenciaHistorica : {type: String, required: true},
-        archivosCentro : {type: String, required: true}
+        archivosCentro : {type: String, required: false}
     }
 );
 
