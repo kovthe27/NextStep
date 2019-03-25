@@ -67,7 +67,10 @@ let registrar_Padre = (pnombrePadre, papellidoPadre, papellidoDosPadre, pidPadre
     swal.fire({
       type: 'success',
       title: 'El usuario fue registrado',
-      text: 'Le estaremos enviando un código de verificación a su coreo electrónico para que pueda iniciar sesión'
+      text: 'Le estaremos enviando un código de verificación a su coreo electrónico para que pueda iniciar sesión',
+      onClose: () => {
+        window.location.href = "http://localhost:3000/public/login.html";
+      }
     });
   });
 

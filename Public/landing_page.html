@@ -34,7 +34,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ml-auto stylish-nav">
-                            <li class="nav-item"> <a class="m-t-5 btn nav-link text-white font-13" href="#" target="_blank">Crear
+                            <li class="nav-item"> <a class="m-t-5 btn nav-link text-white font-13" data-toggle="modal" data-target="#registroModal" href="#registroModal" target="_blank">Crear
                                     cuenta</a> </li>
                             <li class="nav-item"> <a class="m-t-5 btn text-themecolor font-13" href="login.html" style="width:120px;">Ingresar</a>
                             </li>
@@ -43,6 +43,29 @@
                 </nav>
             </div>
         </header>
+        <div class="modal fade" id="registroModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Elija el tipo de usuario que desea Registrar</h4>
+                </div>
+                <div class="modal-body">
+                    <a href="registro_PadreFamilia.html">
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal">
+                            Padre de Familia
+                        </button>
+                    </a>
+                    
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal">
+                        <a href="registro_CentroEducativo.html">Centro Educativo</a> 
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
         <div class="container landing">
             <div class="col-md-5">
                 <img src="imgs/logoBig-02.png" width="200">

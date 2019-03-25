@@ -6,9 +6,9 @@ $(function(){
         enableAllSteps: true,
         transitionEffectSpeed: 500,
         labels: {
-            finish: "Submit",
-            next: "Forward",
-            previous: "Backward"
+            finish: "Registrar",
+            next: "Siguiente",
+            previous: "Anterior"
         }
     });
     $('.wizard > .steps li a').click(function(){
@@ -23,10 +23,14 @@ $(function(){
     $('.backward').click(function(){
         $("#wizard").steps('previous');
     })
-    // Select Dropdown
-    $('html').click(function() {
-        $('.select .dropdown').hide(); 
+    $("#wizard").find(".actions a[href$='#finish']").parent().click(function(){
+    	obtener_datosCentro()
     });
+    // finish.onclick = obtener_datosCentro();
+    // Select Dropdown
+   /*  $('html').click(function() {
+        $('.select .dropdown').hide(); 
+    }); */
     $('.select').click(function(event){
         event.stopPropagation();
     });

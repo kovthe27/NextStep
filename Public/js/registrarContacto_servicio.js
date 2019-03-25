@@ -1,6 +1,6 @@
 'use strict';
 
-let imagenUrl = '';
+let imgUrl = '';
 
 $(function() {
     // Configure Cloudinary
@@ -21,12 +21,12 @@ $(function() {
             let id = result[0].public_id;
             //  console.log(id);
             
-            imagenUrl = processImage(id);
+            imgUrl = processImage(id);
             // console.log(imagenUrl);
 
-            imagenUrl = imagenUrl.replace('file', 'http');
-            document.querySelector('#imgFoto').src = imagenUrl;
-            return imagenUrl;
+            imgUrl = imgUrl.replace('file', 'http');
+            document.querySelector('#imgFoto').src = imgUrl;
+            return imgUrl;
         });
     });
 })
@@ -40,7 +40,8 @@ function processImage(id) {
 
 //Registro Contacto
 
-let registrar_Contacto = (pnombreEncargado, pidEncargado, pemailEncargado, pdptoEncargado, ptelEncargado, pextEncargado, pfotoEncargado) => {
+let registrar_Contacto = (pnombreEncargado, pidEncargado, pemailEncargado, pdptoEncargado, ptelEncargado, pextEncargado, pfotoEncargado, pcentroEducativoId) => {
+  debugger;
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_contacto",
     method: "POST",
@@ -51,7 +52,8 @@ let registrar_Contacto = (pnombreEncargado, pidEncargado, pemailEncargado, pdpto
         dptoEncargado: pdptoEncargado,
         telEncargado: ptelEncargado,
         extEncargado: pextEncargado,
-        fotoEncargado: pfotoEncargado
+        fotoEncargado: pfotoEncargado,
+        centroEducativoId : pcentroEducativoId
     },
     dataType: "json",
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -60,7 +62,11 @@ let registrar_Contacto = (pnombreEncargado, pidEncargado, pemailEncargado, pdpto
   request.done(function (msg) {
     swal.fire({
       type: 'success',
-      title: 'El contacto fue registrado'
+      title: 'El centro educativo fue registrado',
+      text: 'Le estaremos enviando un código de verificación a su correo electrónico para que pueda iniciar sesión',
+      onClose: () => {
+        window.location.href = "http://localhost:3000/public/login.html";
+      }
     });
   });
 

@@ -39,7 +39,7 @@ module.exports.registrar_Centro = (req, res) =>{
     );
     
     registro_Centro.save(
-        function(error){
+        function(error, centro){
             if(error){
                 res.json(
                     {
@@ -68,6 +68,7 @@ module.exports.registrar_Centro = (req, res) =>{
                 res.json(
                     {
                         success : true,
+                        centro : centro,
                         msg : `Se registró el centro educativo de forma correcta`
                     }
                 )
