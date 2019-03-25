@@ -20,17 +20,27 @@ let crearLista = () => {
                 let nuevalista =
                     `<tr>
                 <td class="title">
-                    <a class="link" id="lista`+ i + `" href="javascript:voide(0)">` + lista[i].cantidad + `</a>
+                    <a class="link" id="lista` + i + `" href="javascript:voide(0)">` + lista[i].cantidad + `</a>
                 </td>
                 <td class="title">
-                    <a class="link" id="lista`+ i + `" href="javascript:voide(0)">` + lista[i].tipo + `</a>
+                    <a class="link" id="lista` + i + `" href="javascript:voide(0)">` + lista[i].tipo + `</a>
                 </td>
                 <td class="title">
-                    <a class="link" id="lista`+ i + `" href="javascript:voide(0)">` + lista[i].descripcion + `</a>
+                    <a class="link" id="lista` + i + `" href="javascript:voide(0)">` + lista[i].descripcion + `</a>
                 </td>
                 </tr>`
 
                 $("#TblUtiles").append(nuevalista)
+
+                 //    "<div class=\"col-lg-3 col-md-6 float-left\"><div class=\"card\">" +
+                //  "<div class=\"el-card-content card-body\">" +
+                //    " <h3 class=\"box-title\">" + nombreLista + "</h3>" +
+                //    "<a class=\"btn waves-effect text-white btn-rounded btn-sm btn-warning\" data-toggle=\"modal\" data-target=\'#" + nombreLista + "\'><i class=\"sl-icon-magnifier\"></i> Ver lista</a>" +
+                //         "</div></div>"
+
+
+            
+
             }
         }
     };
@@ -43,6 +53,27 @@ let crearLista = () => {
         $("#slt_articulos").append(tipos)
     };
 }
+
+
+
+// Mostrar listas en centro educativo
+let listas = consultar_utilesAdmin();
+let cedula = "11111";
+for (let i = 0; i < lista.length; i++) {
+    if (listas[i].cedula == cedula) {
+
+            // mostrar listas en el centro educativo
+                let lista_enCentro =
+                   "<p class=\"float-left mr-5\">"+ lista[i].tipo +"</p>"+
+                   "<p class=\"float-left mr-5\">"+ lista[i].descripcion+"</p>"+
+                   "<p class=\"float-left mr-5\">"+ lista[i].cantidad +"</p>"
+
+                $("#contenidoLista").append(lista_enCentro)
+    }
+}
+
+
+
 
 //Limpia la tabla 
 let refrescarLista = () => {
@@ -81,9 +112,8 @@ let nuevoArticulo = () => {
     let nombreLista = getNombreLista();
     if (validar() == false) {
         crearArticulo(cantidad, articulo, descripcion);
-        bitacora(cedula, "Registro", "Se agrego un articulo a la lista: "+nombreLista);
-    }
-    else {
+        bitacora(cedula, "Registro", "Se agrego un articulo a la lista: " + nombreLista);
+    } else {
         swal.fire({
             type: 'error',
             title: 'El articulo no fue registrado',
@@ -101,7 +131,7 @@ let nuevoTipo = () => {
             title: 'Nuevo tipo de articulo no registrado',
             text: 'Por favor indique un nombre para el nuevo articulo'
         })
-    }else{
+    } else {
         crearTipo(nombre);
     }
 
