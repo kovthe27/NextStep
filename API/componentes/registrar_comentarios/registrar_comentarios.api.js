@@ -4,12 +4,11 @@ const model_comentario = require('./registrar_comentarios.model');
 module.exports.registrar_comentarios = (req, res) => {
     let comentario_nueva = new model_comentario({
         cedulaJuridica : req.body.cedulaJuridica,
-        nombreUsuario : req.body.nombreUsuario,
-        fotoUsuario : req.body.fotoUsuario,
         correoUsuario : req.body.correoUsuario,
         calificacion : req.body.calificacion,
         fecha : req.body.fecha,
-        comentario: req.body.comentario
+        comentario: req.body.comentario,
+        likes: req.body.likes
     });
     console.log(comentario_nueva);
 

@@ -1,13 +1,11 @@
 'use strict';
 
-let registrar_comentarios = (pcedulaJuridica, pnombreUsuario, pfotoUsuario,  pcorreoUsuario, pcalificacion, pfecha, pcomentario ) => {
+let registrar_comentarios = (pcedulaJuridica, pcorreoUsuario, pcalificacion, pfecha, pcomentario ) => {
     let request = $.ajax({
       url: "http://localhost:4000/api/registrar_comentarios",
       method: "POST",
       data: {
         cedulaJuridica : pcedulaJuridica,
-        nombreUsuario: pnombreUsuario,
-        fotoUsuario: pfotoUsuario,
         correoUsuario: pcorreoUsuario,
         calificacion: pcalificacion,
         fecha: pfecha,
@@ -63,3 +61,61 @@ let consultar_comentarios= () => {
       return lista_comentario;
       
     };
+
+
+
+
+
+    let consultar_usuarios = ()=>{
+      let lista_usuarios = []; 
+    
+      let request = $.ajax({
+        url: "http://localhost:4000/api/consultar_padre",
+        method: "GET",
+        data: {
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async : false
+      });
+    
+      request.done(function (res) {
+        lista_usuarios = res;
+        // console.log("success");
+        
+      });
+    
+      request.fail(function (jqXHR, textStatus) {
+        // console.log("fail");
+      });
+    
+      return lista_usuarios;
+      
+    };
+
+
+    let getFotoUsuario = (correo) => {
+      let foto = "";
+      let lista = consultar_usuarios();
+
+      for (let i = 0; i < lista.length; i++ ) {
+        if (lista[i].emailUsuario == correo){
+          foto = lista[i].fotoUsuario;
+        }
+      };
+
+      return foto;
+    }
+
+    let getNombreUsuario = (correo) => {
+      let nombre = "";
+      let lista = consultar_usuarios();
+
+      for (let i = 0; i < lista.length; i++ ) {
+        if (lista[i].emailUsuario == correo){
+          nombre = lista[i].nombreUsuario;
+        }
+      };
+
+      return nombre;
+    }

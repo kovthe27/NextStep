@@ -33,10 +33,8 @@ let obtener_datosComentario = () => {
 
     if (validarComentario() == false) {
         // Se ejecuta solo si la validación no da error
-        let cedulaJuridica = "8346";
-        let nombreUsuario = "Evelyn";
-        let fotoUsuario = "../admin-wrap/assets/images/users/1.jpg";
-        let correoUsuario = "Evelyn@gmail.com";
+        let cedulaJuridica = JSON.parse(localStorage.getItem('centro'));
+        let correoUsuario = JSON.parse(localStorage.getItem('cliente'));
         let calificacion = input_calificacion.value;
         let fecha = '';
         let today = new Date();
@@ -45,6 +43,7 @@ let obtener_datosComentario = () => {
         let yyyy = today.getFullYear();
         fecha = dd + '/' + mm + '/' + yyyy;
         let comentario = input_comentario.value;
+        let likes = 0;
 
         swal.fire({
             type: 'success',
@@ -52,7 +51,7 @@ let obtener_datosComentario = () => {
             text: 'Muchas gracias'
         });
 
-        registrar_comentarios(cedulaJuridica, nombreUsuario, fotoUsuario, correoUsuario, calificacion, fecha, comentario);
+        registrar_comentarios(cedulaJuridica, correoUsuario, calificacion, fecha, comentario,likes);
         window.location.reload();
 
     } else {
@@ -73,26 +72,43 @@ const card_Comentario = document.querySelector('#cardComentarios');
 
 let mostrar_datosComentario = () =>{
     let Comentario = consultar_comentarios();
+    // let Usuarios = consultar_usuarios ();
+    let cedulaJuridica = "903";
+    // JSON.parse(localStorage.getItem('centro'));
 
     for(let i = Comentario.length -1; i > Comentario.length  -5; i--){
+
+        if (Comentario[i].cedulaJuridica == cedulaJuridica ) {
+        let nombreUsuario = getNombreUsuario(Comentario[i].correoUsuario);
+        let fotoUsuario =  getFotoUsuario(Comentario[i].correoUsuario);
         var card = 
         // let i = noticia.length - 1; i > noticia.length - 5; i--
-        "<div class=\"d-flex flex-row comment-row\">"+
-        "<div class=\"p-2\"><span class=\"round\"><img src=\"" + Comentario[i].fotoUsuario + "\"   alt=\"user\"  width=\"50\"></span></div>"+
+        "<div class=\"d-flex flex-row comment-row mb-3 bg-light\">"+
+        "<div class=\"p-2\"><span class=\"round\"><img src=\"" + fotoUsuario + "\"   alt=\"user\"  width=\"50\"></span></div>"+
         "<div class=\"comment-text w-100\">"+
-            "<h5>"+ Comentario[i].nombreUsuario+ "</h5><div class=\"float-right text-warning\"><span>"+Comentario[i].calificacion +"</span><i class=\"ti-star text-warning\"></i></div>"+
+            "<h5>"+ nombreUsuario+ "</h5><div class=\"float-right text-warning\"><span>"+Comentario[i].calificacion +"</span><i class=\"ti-star text-warning\"></i></div>"+
             "<div class=\"comment-footer\">"+
                 "<span class=\"date\">" + Comentario[i].fecha + "</span>"+
             "</div>"+
-            "<p class=\"m-b-5 m-t-10\">" + Comentario[i].comentario + "</p>"+
-        "</div></div>"
+            "<p class=\"m-b-5 m-t-10\">" + Comentario[i].comentario + "</p><hr class= \"mb-2 mt-2\">"+
+        "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-warning btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes" 
+        "</div>"+
+       
+       "</div>"
 
 
         $("#cardComentarios").append(card);
     };
-    
-    
 };
+};
+
+// let darLikes = () =>{
+//     let like = consultar_comentarios ();
+//     for(let i = 0; i < like.length; i++){
+//         var meGusta = 0;
+//          $("#mostrarLikes").append(meGusta);
+// }
+// };
 
 
 mostrar_datosComentario();
