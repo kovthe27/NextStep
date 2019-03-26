@@ -1,6 +1,6 @@
-  @font-face {
+  /* @font-face {
     font-family: "Muli-SemiBold";
-    src: url("../fonts/muli/Muli-SemiBold.ttf"); }
+    src: url("../fonts/muli/Muli-SemiBold.ttf"); } */
   * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -51,7 +51,7 @@
   .wizard > .steps {
         position: absolute;
         margin: auto;
-        top: 27.44%;
+        top: 10%;
         right: 40%;
         text-align: center;
         /* transform: translateX(50%); */
@@ -117,7 +117,7 @@
   
   .form-content {
     width: 100%;
-    padding-top: 65px;
+    padding-top: 0;
     padding-left: 51px;
     padding-right: 51px; }
   
@@ -407,4 +407,11 @@
       bottom: 3%; } }
   
   /*# sourceMappingURL=style.css.map */
+  .actions li:last-child a{
+    display: none !important;
+  }
+
+.clearfix{
+  clear: both;
+}
   
