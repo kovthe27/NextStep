@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 let schema_cita = new mongoose.Schema(
     {
+        cedulaJuridica : {type: String, required: true},
         nombre : {type : String, required: true},
         fecha : {type : Date, required : true},
         hora : {type : String, required : true},
