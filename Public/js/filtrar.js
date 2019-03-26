@@ -5,10 +5,6 @@ document.querySelector('#txt_search').onkeyup = function(){
     filtrarTabla('#tabla', this.value);
 }
 
-// utiles_Administrador
-document.querySelector('#txt_search').onkeyup(filtrarTabla('#TblUtiles', this.value));
-
-
 let filtrarTabla = (id, value) =>{
     var rows = document.querySelectorAll(id + ' tbody tr');
     

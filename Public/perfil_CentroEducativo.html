@@ -133,12 +133,14 @@
 
                     <div class="texto">
                         <h2>Nombre del centro educativo</h2>
-                        <button type="button" id="seleccionar etiquetas" 
-                            class="btn btn-sm btn-outline-warning mb-3" data-toggle="modal" data-target="#registrarEtiquetasCentro">Añadir etiquetas</button>
-                        <!-- <p><small class="text-white">Etiqueta1</small> |
+                        <button type="button" id="seleccionar_etiquetas" class="btn btn-sm btn-outline-warning mb-3"
+                            data-toggle="modal" data-target="#registrarEtiquetasCentro">Añadir etiquetas</button>
+                        <p id="creacionEtiquetas">
+                            <!-- <small class="text-white">Etiqueta1</small> |
                             <small class="text-white">Etiqueta1</small> |
                             <small class="text-white">Etiqueta1</small> |
-                            <small class="text-white">Etiqueta1</small></p> -->
+                            <small class="text-white">Etiqueta1</small> -->
+                        </p>
                         <div class="star-rating">
                             <span class="fa fa-star" data-rating="1"></span>
                             <span class="fa fa-star" data-rating="2"></span>
@@ -152,13 +154,11 @@
                             <span class="icon sl-icon-star" data-rating="10"></span>
                             <input type="hidden" name="whatever1" class="rating-value" value="2.56">
                         </div>
-
-                        <button class="btn btn-light" type="button" >Calificar</button>
                     </div>
 
                     <!-- modal tags -->
-                    <div id="registrarEtiquetasCentro" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
-                        aria-hidden="true" style="display: none;">
+                    <div id="registrarEtiquetasCentro" class="modal fade" tabindex="-1" role="dialog"
+                        aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -167,19 +167,45 @@
                                         aria-hidden="true">×</button>
                                 </div>
                                 <div class="modal-body">
-                                        <div class="card"> 
-                                            <div class="card-body" id="etiquetasAdmin"> <!-- se cargan los tags -->
-                                                <!-- <div class="custom-control custom-checkbox">
+                                    <div class="card">
+                                        <div class="card-body" id="etiquetasAdmin">
+                                            <!-- se cargan los tags -->
+                                            <label class="control-label text-small text-dark mt-3">Etiqueta 1</label>
+                                            <select class="form-control text-small custom-select" id="etiquetaCentro1"
+                                                data-placeholder="Escoja una etiqueta" tabindex="0">
+                                                <option class="text-small" value=""></option>
+                                            </select>
+
+                                            <label class="control-label text-small text-dark mt-3">Etiqueta 2</label>
+                                            <select class="form-control text-small custom-select" id="etiquetaCentro2"
+                                                data-placeholder="Escoja una etiqueta" tabindex="0">
+                                                <option class="text-small" value=""></option>
+                                            </select>
+
+                                            <label class="control-label text-small text-dark mt-3">Etiqueta 3</label>
+                                            <select class="form-control text-small custom-select" id="etiquetaCentro3"
+                                                data-placeholder="Escoja una etiqueta" tabindex="0">
+                                                <option class="text-small" value=""></option>
+                                            </select>
+
+                                            <label class="control-label text-small text-dark mt-3">Etiqueta 4</label>
+                                            <select class="form-control text-small custom-select" id="etiquetaCentro4"
+                                                data-placeholder="Escoja una etiqueta" tabindex="0">
+                                                <option class="text-small" value=""></option>
+                                            </select>
+
+
+                                            <!-- <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                                                     <label class="custom-control-label text-small" for="customCheck1">Primaria</label>
                                                 </div> -->
-                                            </div>
                                         </div>
+                                    </div>
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button id="btn_enviarCita" type="submit"
-                                        class="btn btn-warning waves-effect">Guardar</button>
+                                    <button id="btn_enviarEtiquetas" type="submit" class="btn btn-warning waves-effect"
+                                        data-dismiss="modal">Guardar</button>
 
                                 </div>
                             </div>
@@ -207,6 +233,9 @@
                             <button class="btn text-warning mb-3 mt-3" alt="default" data-toggle="modal"
                                 data-target="#acercaNosotros">Añadir
                                 información</button>
+
+
+                            <!-- <button class="btn btn-warning" type="button">Calificar</button> -->
                             <hr>
                         </div>
 
@@ -309,6 +338,8 @@
                             </div>
                         </div>
 
+
+
                         <!-- modal subir boletín -->
                         <div id="boletin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
                             aria-hidden="true" style="display: none;">
@@ -321,7 +352,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <div id="cargarBoletin">
-                                            <a id="pdfBoletin" href="">Hello</a>
+                                            <a id="pdfBoletin" href=""></a>
                                         </div>
 
                                         <div class="form-group">
@@ -426,187 +457,7 @@
 
 
 
-                    <section id="cardComentarios-noticias" class="comentarios-noticias">
-                        <!-- Comentarios -->
-                        <div class="widget-app-columns container">
-                            <div class="card col-md-9 float-left">
-                                <div class="card-body">
-                                    <h4 class="card-title">Comentarios recientes</h4>
-                                </div>
-                                <!-- comentarios -->
-                                <div class="comment-widgets m-b-20">
-                                    <!-- Comment Row -->
-                                    <div class="d-flex flex-row comment-row">
-                                        <div class="p-2"><span class="round"><img
-                                                    src="../admin-wrap/assets/images/users/1.jpg" alt="user"
-                                                    width="50"></span></div>
-                                        <div class="comment-text w-100">
-                                            <h5>James Anderson</h5>
-                                            <div class="comment-footer">
-                                                <span class="date">April 14, 2016</span>
-                                                <span class="action-icons">
-                                                    <a href="javascript:void(0)"><i
-                                                            class="mdi mdi-pencil-circle"></i></a>
-                                                    <a href="javascript:void(0)"><i
-                                                            class="mdi mdi-checkbox-marked-circle"></i></a>
-                                                    <a href="javascript:void(0)"><i class="mdi mdi-heart"></i></a>
-                                                </span>
-                                            </div>
-                                            <p class="m-b-5 m-t-10">Lorem Ipsum is simply dummy text of the printing
-                                                and type setting industry. Lorem Ipsum has beenorem Ipsum is simply
-                                                dummy text of the printing and type setting industry.</p>
-                                        </div>
-                                    </div>
-                                    <!-- Comment Row -->
-                                    <div class="d-flex flex-row comment-row ">
-                                        <div class="p-2"><span class="round"><img
-                                                    src="../admin-wrap/assets/images/users/2.jpg" alt="user"
-                                                    width="50"></span></div>
-                                        <div class="comment-text active w-100">
-                                            <h5>Michael Jorden</h5>
-                                            <div class="comment-footer">
-                                                <span class="date">April 14, 2016</span>
-                                                <span class="action-icons active">
-                                                    <a href="javascript:void(0)"><i
-                                                            class="mdi mdi-pencil-circle"></i></a>
-                                                    <a href="javascript:void(0)"><i
-                                                            class="mdi mdi-checkbox-marked-circle text-success"></i></a>
-                                                    <a href="javascript:void(0)"><i
-                                                            class="mdi mdi-heart text-danger"></i></a>
-                                                </span>
-                                            </div>
-                                            <p class="m-b-5 m-t-10">Lorem Ipsum is simply dummy text of the printing
-                                                and type setting industry. Lorem Ipsum has beenorem Ipsum is simply
-                                                dummy text of the printing and type setting industry..</p>
-                                        </div>
-                                    </div>
-                                    <!-- Comment Row -->
-                                    <div class="d-flex flex-row comment-row">
-                                        <div class="p-2"><span class="round"><img
-                                                    src="../admin-wrap/assets/images/users/3.jpg" alt="user"
-                                                    width="50"></span></div>
-                                        <div class="comment-text w-100">
-                                            <h5>Johnathan Doeting</h5>
-                                            <div class="comment-footer">
-                                                <span class="date">April 14, 2016</span>
-                                                <span class="action-icons">
-                                                    <a href="javascript:void(0)"><i
-                                                            class="mdi mdi-pencil-circle"></i></a>
-                                                    <a href="javascript:void(0)"><i
-                                                            class="mdi mdi-checkbox-marked-circle"></i></a>
-                                                    <a href="javascript:void(0)"><i class="mdi mdi-heart"></i></a>
-                                                </span>
-                                            </div>
-                                            <p class="m-b-5 m-t-10">Lorem Ipsum is simply dummy text of the printing
-                                                and type setting industry. Lorem Ipsum has beenorem Ipsum is simply
-                                                dummy text of the printing and type setting industry.</p>
-                                        </div>
-                                    </div>
-                                    <!-- Comment Row -->
-                                    <div class="d-flex flex-row comment-row">
-                                        <div class="p-2"><span class="round"><img
-                                                    src="../admin-wrap/assets/images/users/4.jpg" alt="user"
-                                                    width="50"></span></div>
-                                        <div class="comment-text w-100">
-                                            <h5>James Anderson</h5>
-                                            <div class="comment-footer">
-                                                <span class="date">April 14, 2016</span>
-                                                <span class="action-icons">
-                                                    <a href="javascript:void(0)"><i
-                                                            class="mdi mdi-pencil-circle"></i></a>
-                                                    <a href="javascript:void(0)"><i
-                                                            class="mdi mdi-checkbox-marked-circle"></i></a>
-                                                    <a href="javascript:void(0)"><i class="mdi mdi-heart"></i></a>
-                                                </span>
-                                            </div>
-                                            <p class="m-b-5 m-t-10">Lorem Ipsum is simply dummy text of the printing
-                                                and type setting industry. Lorem Ipsum has beenorem Ipsum is simply
-                                                dummy text of the printing and type setting industry..</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- input comentario -->
-                                <div class="card-body b-t">
-                                    <div class="row">
-                                        <div class="col-md-10">
-                                            <textarea placeholder="Escriba su comentario"
-                                                class="form-control b-0"></textarea>
-                                        </div>
-                                        <div class="col-2 text-right">
-                                            <button type="button" class="btn btn-warning btn-circle btn-lg"><i
-                                                    class="far fa-paper-plane"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-
-
-                            <!-- noticias -->
-                            <div class="card col-md-3 float-left mt-4">
-                                <div class="">
-                                    <h4 class="card-title">Noticias recientes</h4>
-
-                                    <!-- Modal -->
-                                    <div id="agregarNoticia" class="modal fade" tabindex="-1" role="dialog"
-                                        aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title" id="vcenter">Creación de noticia</h4>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-hidden="true">×</button>
-                                                </div>
-                                                <div class="modal-body">
-
-                                                    <div class="form-group">
-                                                        <input type="text" id="txt_tituloNoticia" name="text"
-                                                            class="form-control" required="true"
-                                                            data-validation-required-message="This field is required"
-                                                            aria-invalid="false" placeholder="Inserte un título">
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div class="controls">
-                                                            <textarea name="textarea" id="txt_descripcionNoticia"
-                                                                class="form-control" required=""
-                                                                placeholder="Escriba una descripción"></textarea>
-                                                            <div class="help-block"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button id="btn_enviarNoticia" type="submit"
-                                                        class="btn btn-warning waves-effect"
-                                                        data-dismiss="modal">Crear</button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Botón -->
-                                    <button id="btn_enviarNoticia" class="btn btn-themecolor mb-3 mt-3" alt="default"
-                                        data-toggle="modal" data-target="#agregarNoticia">Añadir
-                                        noticia</button>
-                                    <div class="clearfix"></div>
-
-
-                                    <!-- <div class="card">
-                                    <div class="card-body collapse show">
-                                        <h4 id="txt_tituloNoticia" class="card-title text-themecolor">Título</h4>
-                                        <h6 id="txt_titulofecha" class="card-subtitle mb-2 text-muted">22|06|2019</h6>
-                                        <p class="card-text">With supporting text below as a natural lead-in to
-                                            additional content.</p>
-                                    </div>
-                                </div> -->
-
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="clearfix"></div>
 
                     <!-- SERVICIOS -->
                     <section id="cardServicio" class="servicios">
@@ -786,59 +637,233 @@
 
 
                     <!-- MATRICULA -->
-                    <section id="cardMatricula" class="cardMatricula">
-                        <h4 class="card-title">Información de matrícula</h4>
-                        <!-- Modal -->
-                        <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog"
-                            aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="vcenter">Información de matrícula</h4>
-                                        <button type="button" class="close" data-dismiss="modal"
-                                            aria-hidden="true">×</button>
-                                    </div>
-                                    <div class="modal-body">
-
-                                        <div class="form-group">
-                                            <input type="text" id="txt_tituloMatricula" name="text" class="form-control"
-                                                required="true"
-                                                data-validation-required-message="This field is required"
-                                                aria-invalid="false" placeholder="Inserte un título">
+                    <div class="card card-body">
+                        <section id="cardMatricula" class="cardMatricula">
+                            <h4 class="card-title">Información de matrícula</h4>
+                            <!-- Modal -->
+                            <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog"
+                                aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="vcenter">Información de matrícula</h4>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true">×</button>
                                         </div>
+                                        <div class="modal-body">
 
-                                        <div class="form-group">
-                                            <div class="controls">
-                                                <textarea name="textarea" id="txt_descripcionMatricula"
-                                                    class="form-control" required=""
-                                                    placeholder="Escriba una descripción"></textarea>
-                                                <div class="help-block"></div>
+                                            <div class="form-group">
+                                                <input type="text" id="txt_tituloMatricula" name="text"
+                                                    class="form-control" required="true"
+                                                    data-validation-required-message="This field is required"
+                                                    aria-invalid="false" placeholder="Inserte un título">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="controls">
+                                                    <textarea name="textarea" id="txt_descripcionMatricula"
+                                                        class="form-control" required=""
+                                                        placeholder="Escriba una descripción"></textarea>
+                                                    <div class="help-block"></div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button id="btn_enviarMatricula" type="submit"
-                                            class="btn btn-warning waves-effect" data-dismiss="modal">Crear</button>
+                                        <div class="modal-footer">
+                                            <button id="btn_enviarMatricula" type="submit"
+                                                class="btn btn-warning waves-effect" data-dismiss="modal">Crear</button>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Botón -->
-                        <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
-                            data-target="#agregarMatricula">Añadir
-                            información</button>
-                        <div class="clearfix"></div>
+                            <!-- Botón -->
+                            <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
+                                data-target="#agregarMatricula">Añadir
+                                información</button>
+                            <div class="clearfix"></div>
 
-                        <!-- <div class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
-                            <div class="ribbon-wrapper card">
-                                <div class="ribbon ribbon-warning">Ribbon</div>
-                                <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
-                            </div>
-                        </div> -->
-                    </section>
+                            <!-- <div class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
+                                <div class="ribbon-wrapper card">
+                                    <div class="ribbon ribbon-warning">Ribbon</div>
+                                    <p class="ribbon-content">Duis mollis, est non commodo luctus, nisi erat porttitor ligula</p>
+                                </div>
+                            </div> -->
+                        </section>
+
+                    </div>
                     <div class="clearfix"></div>
+
+
+                    <!-- COMENTARIOS -->
+                    <section id="cardComentarios-noticias" class="comentarios-noticias">
+                        <!-- Comentarios -->
+                        <div class="widget-app-columns container">
+                            <div class="card col-md-9 float-left">
+                                <div class="card-body">
+                                    <h4 class="card-title">Comentarios recientes</h4>
+                                </div>
+                                <!-- comentarios -->
+                                <div class="comment-widgets m-b-20" id="cardComentarios">
+                                    <!-- Comment Row -->
+                                    <!-- <div class="d-flex flex-row comment-row">
+                                            <div class="p-2"><span class="round"><img
+                                                        src="../admin-wrap/assets/images/users/1.jpg" alt="user"
+                                                        width="50"></span></div>
+                                            <div class="comment-text w-100">
+                                                <h5>James Anderson</h5><div class="float-right text-warning"><span>5</span><i class="ti-star text-warning"></i></div>
+                                                <div class="comment-footer">
+                                                    <span class="date">April 14, 2016</span>
+                                                    <span class="action-icons">
+                                                        <a href="javascript:void(0)"><i
+                                                                class="mdi mdi-pencil-circle"></i></a>
+                                                        <a href="javascript:void(0)"><i
+                                                                class="mdi mdi-checkbox-marked-circle"></i></a>
+                                                        <a href="javascript:void(0)"><i class="mdi mdi-heart"></i></a>
+                                                    </span>
+                                                </div>
+                                                <p class="m-b-5 m-t-10">Lorem Ipsum is simply dummy text of the printing
+                                                    and type setting industry. Lorem Ipsum has beenorem Ipsum is simply
+                                                    dummy text of the printing and type setting industry.</p>
+                                            </div>
+                                        </div> -->
+                                </div>
+                                <!-- Modal -->
+                                <div id="registrarComentario" class="modal fade" tabindex="-1" role="dialog"
+                                    aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="vcenter">Calificar al centro educativo</h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">×</button>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <div class="form-group">
+                                                    <div class="btn-group">
+
+                                                         <select class="form-control text-small custom-select" id="txt_calificacion"
+                                                            data-placeholder="Seleccione una calificación" tabindex="1">
+                                                            <option class="text-small" value="1 Estrella">1 Estrella</option>
+                                                            <option class="text-small" value="2 Estrellas">2 Estrellas</option>
+                                                            <option class="text-small" value="3 Estrellas">3 Estrella</option>
+                                                            <option class="text-small" value="4 Estrellas">4 Estrellas</option>
+                                                            <option class="text-small" value="5 Estrellas">5 Estrellas</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="controls">
+                                                        <textarea name="textarea" id="txt_comentario"
+                                                            class="form-control" required=""
+                                                            placeholder="Escriba un comentario acerca del centro educativo"></textarea>
+                                                        <div class="help-block"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button id="btn_enviarComentario" type="submit"
+                                                    class="btn btn-warning waves-effect"
+                                                    data-dismiss="modal">Calificar centro</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- input comentario -->
+                                <!-- <div class="card-body b-t">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <textarea placeholder="Escriba su comentario"
+                                                    class="form-control b-0"></textarea>
+                                            </div>
+                                            <div class="col-2 text-right">
+                                                <button type="button" class="btn btn-warning btn-circle btn-lg"><i
+                                                        class="far fa-paper-plane"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                            </div>
+
+
+
+                            <!-- noticias -->
+                            <div class="card col-md-3 float-left mt-4">
+                                <div class="">
+                                    <h4 class="card-title">Noticias recientes</h4>
+
+                                    <!-- Botón -->
+                                    <button id="btn_enviarNoticia" class="btn btn-themecolor mb-3 mt-3" alt="default"
+                                        data-toggle="modal" data-target="#agregarNoticia">Añadir
+                                        noticia</button>
+
+                                    <div class="card float-left" id="cargaNoticias">
+
+                                    </div>
+
+                                    <!-- Modal -->
+                                    <div id="agregarNoticia" class="modal fade" tabindex="-1" role="dialog"
+                                        aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="vcenter">Creación de noticia</h4>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">×</button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="form-group">
+                                                        <input type="text" id="txt_tituloNoticia" name="text"
+                                                            class="form-control" required="true"
+                                                            data-validation-required-message="This field is required"
+                                                            aria-invalid="false" placeholder="Inserte un título">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="controls">
+                                                            <textarea name="textarea" id="txt_descripcionNoticia"
+                                                                class="form-control" required=""
+                                                                placeholder="Escriba una descripción"></textarea>
+                                                            <div class="help-block"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button id="btn_enviarNoticia" type="submit"
+                                                        class="btn btn-warning waves-effect"
+                                                        data-dismiss="modal">Crear</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="clearfix"></div>
+
+
+                                    <!-- <div class="card">
+                                        <div class="card-body collapse show">
+                                            <h4 id="txt_tituloNoticia" class="card-title text-themecolor">Título</h4>
+                                            <h6 id="txt_titulofecha" class="card-subtitle mb-2 text-muted">22|06|2019</h6>
+                                            <p class="card-text">With supporting text below as a natural lead-in to
+                                                additional content.</p>
+                                        </div>
+                                    </div> -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="clearfix"></div>
+
+
+
 
                     <!-- LISTA DE ÚTILES -->
                     <section id="cardLista" class=" carcard-body cardLista">
@@ -943,8 +968,12 @@
     <script src="js/registrarCita_Controlador.js"></script>
     <script src="js/registrar_boletin_Servicio.js"></script>
     <script src="js/registrar_boletin_Controlador.js"></script>
-    <script src="js/centrosAdmin_servicio.js"></script>
+    <script src="js/centrosAdmin_servcio.js"></script>
     <script src="js/centrosAdmin_controlador.js"></script>
+    <script src="js/etiquetasCentro_servicio.js"></script>
+    <script src="js/etiquetasCentro_controlador.js"></script>
+    <script src="js/registrar_comentario_servicio.js"></script>
+    <script src="js/registrar_comentario_controlador.js"></script>
 </body>
 
 </html>

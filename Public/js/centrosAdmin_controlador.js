@@ -2,10 +2,31 @@
 const input_nombreEtiqueta = document.querySelector("#txt_nombreEtiqueta");
 const btn_registrarEtiqueta = document.querySelector("#btn_registrarEtiqueta");
 
+// TAB-> CENTROS
 
+let mostrarTablaCentrosAdmin = () => {
+    let listaCentros = consultar_listaCentrosAdmin();
 
+    for(let i=0; i<listaCentros.length; i++){
+        let nuevoCentro =
+        `<tr>
+            <td class="title"><a class="link" href="javascript:void(0)">`+listaCentros[i].nombreCentro+`</a></td>
+            <td class="tablesaw-priority-3">`+listaCentros[i].cedJuridica+`</td>
+            <td class="tablesaw-priority-2">01/01/0001</td>
+            <td class="tablesaw-priority-1">`+listaCentros[i].emailCentro+`</td>
+            <td class="tablesaw-priority-1">Desconocido</td>
+            <td class="tablesaw-priority-1">Desconocido</td>
+            <td class="tablesaw-priority-1">
+                <button type="button" class="btn btn-sm btn-danger mr-1 btn-circle">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </td>
+        </tr>`
+        $("#tablaListaCentrosAdmin").append(nuevoCentro);
+    }
+}
 
-// ETIQUETAS
+// TAB -> ETIQUETAS
 let mostrarTablaEtiquetas = () => {
     let listaEtiquetas = consultar_etiquetasAdmin();
 
@@ -27,16 +48,13 @@ let mostrarTablaEtiquetas = () => {
     </tr>`
         $("#tbodyEtiquetas").append(nuevaEtiqueta);
 
-
-           // mostrar etiqueta en Centro educativo
-           let nuevaEtiquetaCentro =
-           "<div class=\"custom-control custom-checkbox\">"+
-           "<input type=\"checkbox\" class=\"custom-control-input\" id="+listaEtiquetas[i].nombre+">"+
-           "<label class=\"custom-control-label text-small\" for="+listaEtiquetas[i].nombre+">"+listaEtiquetas[i].nombre+"</label>"+
-           "</div>"
-   
-   
-           $("#etiquetasAdmin").append(nuevaEtiquetaCentro);
+        // mostrar etiqueta en Centro educativo
+        let nuevaEtiquetaCentro =
+        "<option class=\"text-small\" value='"+listaEtiquetas[i].nombre+"'> "+listaEtiquetas[i].nombre+" </option>"
+        $("#etiquetaCentro1").append(nuevaEtiquetaCentro);
+        $("#etiquetaCentro2").append(nuevaEtiquetaCentro);
+        $("#etiquetaCentro3").append(nuevaEtiquetaCentro);
+        $("#etiquetaCentro4").append(nuevaEtiquetaCentro);
     }
 }
 
@@ -66,4 +84,5 @@ let crearEtiqueta = () =>{
 
 // Eventos
 mostrarTablaEtiquetas();
+mostrarTablaCentrosAdmin();
 btn_registrarEtiqueta.addEventListener('click', crearEtiqueta);

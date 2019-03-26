@@ -1,13 +1,16 @@
 'use strict';
 
 const input_NombrePadre = document.querySelector('#txt_NombrePadre');
+const input_ApellidoPadre = document.querySelector('#txt_1ApellidoPadre');
+const input_SegApellidoPadre = document.querySelector('#txt_2ApellidoPadre');
 const input_IdPadre = document.querySelector('#txt_IdPadre');
 const input_NacionPadre = document.querySelector('#txt_NacionPadre');
 const input_DireccionPadre = document.querySelector('#txt_DireccionPadre');
 const input_EmailPadre = document.querySelector('#txt_EmailPadre');
 const input_TelPadre = document.querySelector('#txt_TelPadre');
 const input_CantHijos = document.querySelector('#txt_CantHijos');
-const input_FotoPadre = document.querySelector('#txt_FotoPadre');
+const input_imagen = document.querySelector('#imgFoto');
+const carga_imagen = document.querySelector('#cargarImagen');
 const input_ProvinciaPadre = document.querySelector('#slt_provincias');
 const input_CantonPadre = document.querySelector('#slt_cantones');
 const input_DistritoPadre = document.querySelector('#slt_distritos');
@@ -21,6 +24,13 @@ let validar = () => {
         input_NombrePadre.classList.add('error_input');
     } else {
         input_NombrePadre.classList.remove('error_input');
+    }
+
+    if (input_ApellidoPadre.value == '') {
+        error = true;
+        input_ApellidoPadre.classList.add('error_input');
+    } else {
+        input_ApellidoPadre.classList.remove('error_input');
     }
 
     if (input_IdPadre.value == '') {
@@ -89,16 +99,18 @@ let obtener_datosPadre = () => {
     if (validar() == false) {
         // Se ejecuta solo si la validación no da error
         let nombrePadre = input_NombrePadre.value;
+        let apellidoPadre = input_ApellidoPadre.value;
+        let seg_ApellidoPadre = input_SegApellidoPadre.value;
         let idPadre = input_IdPadre.value;
         let nacionPadre = input_NacionPadre.value;
         let direccionPadre = input_DireccionPadre.value;
         let emailPadre = input_EmailPadre.value;
         let telPadre = input_TelPadre.value;
         let cantHijos = input_CantHijos.value;
-        let fotoPadre = input_FotoPadre.value;
+        let fotoPadre = input_imagen.src;
 
      
-        registrar_Padre(nombrePadre, idPadre, nacionPadre, direccionPadre, emailPadre, telPadre, cantHijos, fotoPadre);
+        registrar_Padre(nombrePadre, apellidoPadre, seg_ApellidoPadre,  idPadre, nacionPadre, direccionPadre, emailPadre, telPadre, cantHijos, fotoPadre);
         
     } else {
         swal.fire({

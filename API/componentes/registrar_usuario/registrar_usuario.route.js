@@ -11,10 +11,13 @@ router.route('/registrar_padre')
     );
 
 router.route('/consultar_padre')
-        .get(
-            function(req, res){
-                padre_api.listar_TodosPadres(req, res);
-            }
-        )
+    .get(
+        function(req, res){
+            padre_api.listar_TodosPadres(req, res);
+        }
+    )
+
+
+
 
 module.exports = router;

@@ -6,6 +6,8 @@ const schema_TablaEtiquetas = require('./registrar_etiquetas.model');
 module.exports.registrar_etiqueta = (req, res) => {
     let utiles_nuevo = new schema_TablaEtiquetas({
         nombre: req.body.nombre,
+        fecha: req.body.fecha,
+        usuarios: req.body.usuarios,
     });
     console.log(utiles_nuevo);
 

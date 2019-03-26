@@ -83,6 +83,8 @@ app.use('/api', boletin);
 const etiquetasCentro = require('./componentes/registrar_etiquetasCentro/registrar_etiquetasCentro.route');
 app.use('/api', etiquetasCentro);
 
+const comentarios = require('./componentes/registrar_comentarios/registrar_comentarios.route');
+app.use('/api', comentarios);
 
 
 
@@ -94,11 +96,16 @@ const listasUtiles = require('./componentes/registrar_listas_utiles/registrar_ut
 const listaTipos = require ('./componentes/registrar_articulos/registrar_articulos.route');
 const bitacora = require ('./componentes/registrar_bitacora/registrar_bitacora.route');
 const etiqueta = require ('./componentes/registrar_etiquetas/registrar_etiquetas.route');
+const registroCentroEducativo = require('./componentes/registrar_centroEducativo/registrar_centro.route');
+const registroContacto = require('./componentes/registrar_contacto/registrar_contacto.route');
+
 
 app.use('/api', servicio);
 app.use('/api', preguntasAdmin);
 app.use('/api', utilesAdmin);
 app.use('/api', registroPadreFamilia);
+app.use('/api', registroCentroEducativo);
+app.use('/api', registroContacto);
 
 app.use('/api', listasUtiles);
 app.use('/api', listaTipos);

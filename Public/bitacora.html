@@ -41,12 +41,27 @@
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../admin-wrap/assets/images/users/1.jpg" alt="user" class="">
-                                <span id="txtUsuario" class="hidden-md-down">Mark Sanders &nbsp;
-                                    <i class="fa fa-angle-down"></i>
-                                </span>
-                            </a>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="imgPerfil"
+                                    src="" class=""> <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;<i
+                                        class="fa fa-angle-down"></i></span> </a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img align-self-center"><img id="imgPerfil2" src=""></div>
+                                            <div class="u-text  text-align: center">
+                                                <h4 id="nombrePerfil2">Steave Jobs</h4>
+                                                <p id="correo" class="text-muted"></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="ti-user"></i> Mi perfil</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar
+                                            sesion</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -86,7 +101,7 @@
                         </li>
                         <li class="active">
                             <a class=" waves-effect waves-dark" href="bitacora.html" aria-expanded="false">
-                                <i class="icon-Receipt-4"></i>
+                                <i class="ti-receipt"></i>
                                 <span class="hide-menu">Bitácora</span>
                             </a>
                         </li>
@@ -142,38 +157,34 @@
                     </div>
                     <!-- Search -->
 
-                <div class="input-group mb-3 col-md-4 float-right mt-3">
+                    <div class="input-group mb-3 col-md-4 float-right mt-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
                         </div>
-                        <input type="text" id="txt_search" class="form-control" placeholder="Buscar" aria-label="Username"
-                            aria-describedby="basic-addon1">
+                        <input type="text" id="txt_search" class="form-control" placeholder="Buscar"
+                            aria-label="Username" aria-describedby="basic-addon1">
                     </div>
-                    
+
                 </div>
 
-                
+
 
                 <div class="card">
                     <div class="card-body">
-                        <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
+                        <table id="TablaBitacora2"
+                            class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
                             data-tablesaw-mode="columntoggle" id="tablesaw-1093">
                             <thead>
                                 <tr>
                                     <th>Usuario</th>
                                     <th>Trámite</th>
                                     <th>Fecha</th>
+                                    <th>Hora</th>
                                     <th>Descripción</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">Nombre del usuario</td>
-                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">Nombre del trámite</td>
-                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">Fecha</td>
-                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">Descripción</td>
-                                </tr>
-                                </tr>
+                            <tbody id="TablaBitacora">
+
                             </tbody>
                         </table>
                     </div>
@@ -194,6 +205,10 @@
     <!-- tabla -->
     <!-- <script src="js/MenuAdmin_Servicio.js"></script>
     <script src="js/MenuAdmin_Controlador.js"></script> -->
+    <script src="js/bitacora.js"></script>
+    <script src="js/bitacora_controlador.js"></script>
+    <script src="js/MenuAdmin_Servicio.js"></script>
+    <script src="js/MenuAdmin_Controlador.js"></script>
 
 </body>
 

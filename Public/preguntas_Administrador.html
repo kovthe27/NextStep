@@ -40,12 +40,27 @@
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../admin-wrap/assets/images/users/1.jpg" alt="user" class="">
-                                <span id="txtUsuario" class="hidden-md-down">Mark Sanders &nbsp;
-                                    <i class="fa fa-angle-down"></i>
-                                </span>
-                            </a>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="imgPerfil"
+                                    src="" class=""> <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;<i
+                                        class="fa fa-angle-down"></i></span> </a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img align-self-center"><img id="imgPerfil2" src=""></div>
+                                            <div class="u-text  text-align: center">
+                                                <h4 id="nombrePerfil2">Steave Jobs</h4>
+                                                <p id="correo" class="text-muted"></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="ti-user"></i> Mi perfil</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar
+                                            sesion</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -84,11 +99,11 @@
                             </a>
                         </li>
                         <li class="">
-                                <a class=" waves-effect waves-dark" href="bitacora.html" aria-expanded="false">
-                                     <i class="icon-Receipt-4"></i>
-                                    <span class="hide-menu">Bitácora</span>
-                                </a>
-                            </li>
+                            <a class=" waves-effect waves-dark" href="bitacora.html" aria-expanded="false">
+                                <i class="ti-receipt"></i>
+                                <span class="hide-menu">Bitácora</span>
+                            </a>
+                        </li>
 
                         <!-- <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
@@ -139,7 +154,6 @@
                         <h3 class="text-themecolor">Preguntas frecuentes</h3>
 
                     </div>
-
                 </div>
                 <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
                     aria-hidden="true" style="display: none;">
@@ -159,8 +173,8 @@
 
                                 <div class="form-group">
                                     <div class="controls">
-                                        <textarea name="textarea" id="txt_respuesta" class="form-control"
-                                            required="" placeholder="Escriba la respuesta"></textarea>
+                                        <textarea name="textarea" id="txt_respuesta" class="form-control" required=""
+                                            placeholder="Escriba la respuesta"></textarea>
                                         <div class="help-block"></div>
                                     </div>
                                 </div>
@@ -173,7 +187,7 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="clearfix"></div>
                 <!-- Botón -->
                 <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
                     data-target="#agregarMatricula">Añadir pregunta</button>

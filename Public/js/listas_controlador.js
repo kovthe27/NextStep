@@ -77,8 +77,11 @@ let nuevoArticulo = () => {
     let cantidad = input_cantidad.value;
     let articulo = input_articulo.value;
     let descripcion = input_descripcion.value;
+    let cedula = "MEPAdmin1"
+    let nombreLista = getNombreLista();
     if (validar() == false) {
         crearArticulo(cantidad, articulo, descripcion);
+        bitacora(cedula, "Registro", "Se agrego un articulo a la lista: "+nombreLista);
     }
     else {
         swal.fire({
