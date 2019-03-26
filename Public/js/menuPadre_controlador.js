@@ -27,11 +27,14 @@ let cerrarSesion = () => {
     localStorage.setItem('cliente', JSON.stringify("Notlogin"));
     window.location.assign("landing_page.html");
 }
+let crearFavoritos = () =>{
+    window.location.assign("favoritos.html");
+}
 
 let cargarCentros = () => {
     let listaCentros = consultarListaCentrosPadres();
 
-    for (let i = 0; i<listaCentros.length; i++) {
+    for (let i = 0; i < listaCentros.length; i++) {
 
         let cardCentro =
             `<div class="col-lg-3 col-md-6 float-left">
@@ -39,15 +42,15 @@ let cargarCentros = () => {
                 <div class="card-body">
                     <div class="el-card-item">
                         <div class="image mb-3 mt-4">
-                            <img src="`+listaCentros[i].fotoCentro+`" width=100%>
+                            <img src="`+ listaCentros[i].fotoCentro + `" width=100%>
                         </div>
                         <div class="el-card-content mb-3">
-                            <h4 class="box-title"><a href=javascript:verPerfilCentro(`+listaCentros[i].cedJuridica+`)>`+listaCentros[i].nombreCentro+`</a></h4> <small>`+listaCentros[i].emailCentro+`</small>
+                            <h4 class="box-title"><a href=javascript:verPerfilCentro(`+ listaCentros[i].cedJuridica + `)>` + listaCentros[i].nombreCentro + `</a></h4> <small>` + listaCentros[i].emailCentro + `</small>
                             <br>
                         </div>
                         <hr class="orange">
                         <div class="mb-3 botones">
-                            <a href="#" class="text-warning text-small float-left">Agregar a favoritos</a>
+                            <a href="javascript:agregarFavorito(`+ listaCentros[i].cedJuridica + `)" class="text-warning text-small float-left">Agregar a favoritos</a>
                             <p class="float-right"><i class="fa fa-star"></i> 3</p>
                         </div>
 
@@ -62,10 +65,49 @@ let cargarCentros = () => {
     }
 }
 
-let verPerfilCentro = (cedulaJuridica) =>{
+let cargarFavoritos = () => {
+    let listaFavoritos = consultarListaFavoritosPadres();
+    let usuario = getUsuario();
+
+    for (let i = 0; i < listaFavoritos.length; i++) {
+        if (listaFavoritos[i].correo == usuario) {
+            let fotoCentro = getFotoCentro(listaFavoritos[i].cedulaJuridica);
+            let nombreCentro = getNombreCentro(listaFavoritos[i].cedulaJuridica);
+            let correoCentro = getCorreoCentro(listaFavoritos[i].cedulaJuridica);
+
+            let vcard =
+            `<div class="col-lg-3 mt-4 col-md-6">
+            <div class="card">
+                <div class="el-card-item">
+                    <div class="el-card-avatar el-overlay-1"> <img src="`+fotoCentro+`" alt="user">
+                        <div class="el-overlay scrl-up">
+                            <ul class="el-info">
+                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="`+fotoCentro+`"><i class="sl-icon-magnifier"></i></a></li>
+                                <li><a class="btn default btn-outline" href="javascript:void(0);"><i class="sl-icon-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="el-card-content">
+                        <h3 class="box-title">`+nombreCentro+`</h3> <small>`+correoCentro+`</small>
+                        <br> </div>
+                </div>
+            </div>
+        </div>`
+
+            $(favoritosPadres).append(vcard);
+        }
+    }
+}
+
+let verPerfilCentro = (cedulaJuridica) => {
     localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
     window.location.assign("perfil_CentroEducativo.html");;
 
+}
+
+let agregarFavorito = (cedulaJuridica) =>{
+    let usuario=getUsuario();
+    registrarFavorito(usuario, cedulaJuridica);
 }
 
 //Se construye el menu automaticamente con el usuasio en el local storage
