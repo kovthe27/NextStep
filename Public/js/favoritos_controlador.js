@@ -64,7 +64,7 @@ let crearMenu = () => {
 
 let verPerfil = (cedulaJuridica) => {
     localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
-    window.open("perfil_CentroEducativo.html",'_blank')
+    window.open("perfil_Centro-padre.html",'_blank')
 }
 
 cargarFavoritos();
