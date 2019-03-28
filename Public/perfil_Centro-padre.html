@@ -26,6 +26,7 @@
     <!-- page css -->
     <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
     <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
+    <link href="css/perfil_Centro-padre.css" rel="stylesheet">
 
     <!-- card color -->
     <link href="../admin-wrap/main/css/pages/ribbon-page.css" rel="stylesheet">
@@ -46,72 +47,44 @@
                 <div class="navbar-collapse">
                     <!-- Barra de búsqueda -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
-                        <li class="nav-item hidden-xs-down search-box"> <a
-                                class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
-                                    class="icon-Magnifi-Glass2"></i>
-                            </a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
                     </ul>
 
                     <!-- Perfil -->
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="../admin-wrap/assets/images/users/1.jpg" alt="user" class=""> <span
-                                    class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span>
-                            </a>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="imgPerfil"
+                                    src="" class=""> <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;<i
+                                        class="fa fa-angle-down"></i></span> </a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img align-self-center"><img id="imgPerfil2" src=""></div>
+                                            <div class="u-text  text-align: center">
+                                                <h4 id="nombrePerfil2">Steave Jobs</h4>
+                                                <p id="correo" class="text-muted"></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="principal_padres.html"><i class="fas fa-home"></i> Inicio</a></li>
+                                    <li><a href="#"><i class="ti-user"></i> Mi perfil</a></li>
+                                    <!-- <li role="separator" class="divider"></li> -->
+                                    <li><a href="javascript:crearFavoritos()"><i class="fas fa-heart"></i> favoritos</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar
+                                            sesion</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
 
-
-        <!-- Menu -->
-        <aside class="left-sidebar">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar ps ps--theme_default ps--active-y"
-                data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav active">
-                    <ul id="sidebarnav" class="in">
-                        <li class="nav-small-cap">------ MENÚ</li>
-                        <li class=""> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="ti-bell"></i><span class="hide-menu">Solicitudes <span
-                                        class="label label-rounded label-danger">4</span></span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="ti-home"></i><span class="hide-menu">Centros educativos </span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class=" ti-bar-chart-alt"></i><span class="hide-menu">Reportes </span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="principal_CentroEducativo.html"
-                                aria-expanded="false"><i class=" ti-calendar"></i><span class="hide-menu">Calendario
-                                </span></a></li>
-
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class="ti-cup"></i><span class="hide-menu">Ranking </span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class=" ti-write"></i><span class="hide-menu">Lista de útiles </span></a></li>
-                        <li class="active"> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                    class=" ti-user"></i><span class="hide-menu">Mi perfil</span></a></li>
-                    </ul>
-                </nav>
-                <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
-                    <div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                </div>
-                <div class="ps__scrollbar-y-rail" style="top: 0px; height: 751px; right: 0px;">
-                    <div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 620px;"></div>
-                </div>
-            </div>
-        </aside>
-
         <!-- Inicio -->
-        <div class="page-wrapper" style="min-height: 3000px; overflow-y: scroll;">
+        <div class="page-wrapper" style="min-height: 3000px;">
             <div class="portada">
                 <div class="opacidad"></div>
                 <div class="imagenCentro"></div>
@@ -131,7 +104,7 @@
 
                 <div class="container-fluid">
 
-                    <div class="texto">
+                    <div class="texto titulo">
                         <h2>Nombre del centro educativo</h2>
                         <button type="button" id="seleccionar_etiquetas" class="btn btn-sm btn-outline-warning mb-3"
                             data-toggle="modal" data-target="#registrarEtiquetasCentro">Añadir etiquetas</button>
@@ -212,7 +185,7 @@
                         </div>
                     </div>
 
-
+                    <div class="col-md-10 centrar">
                     <!-- Acerca de nosotros -->
                     <section class="acercaNosotros">
 
@@ -220,7 +193,7 @@
                             <!-- <div class="col-md-6"> -->
                             <h4 class="card-title float-left">Acerca de nosotros</h4>
                             <div class="clearfix"></div>
-                            <div class="col-md-4 float-right">
+                            <!-- <div class="col-md-4 float-right">
                                 <div class="">
                                     <div class="">
                                         <button class="btn btn-outline-secondary float-left" alt="default"
@@ -228,11 +201,11 @@
                                     </div>
                                     <a class="form-control col-md-8 float-left" id="linkPdf" href="">Nombre</a>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <button class="btn text-warning mb-3 mt-3" alt="default" data-toggle="modal"
+                            <!-- <button class="btn text-warning mb-3 mt-3" alt="default" data-toggle="modal"
                                 data-target="#acercaNosotros">Añadir
-                                información</button>
+                                información</button> -->
 
 
                             <!-- <button class="btn btn-warning" type="button">Calificar</button> -->
@@ -435,17 +408,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Botón -->
-                        <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#registrarCita">Añadir
-                            servicio</button> -->
-
-
-
-                        <!-- Botón -->
-                        <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#acercaNosotros">Añadir
-                                información</button> -->
-
-                        <!-- <a href="#" class="btn-sm btn-outline-themecolor text-themecolor float-right mr-1" data-toggle="modal" data-target="#acercaNosotros"><i class="ti-pencil"></i>Añadir información</a> -->
 
                         <div class="clearfix"></div>
 
@@ -509,31 +471,18 @@
                             </div>
                         </div>
                         <!-- Botón -->
-                        <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
+                        <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
                             data-target="#verticalcenter">Añadir
-                            servicio</button>
+                            servicio</button> -->
                         <div class="clearfix"></div>
 
                         <div class="container border">
-                            <!-- <h2 class="text-themecolor text-center">Ranking de <a class="text-white" href="#" aria-expanded="false"><span
-                                            class="hide-menu">Colegios privados</span></a></h2> -->
+
                             <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-item active" id="carousel" role="listbox"></div>
                                 <div class="carousel-item" id="carousel2"></div>
                                 <div class="carousel-item" id="carousel3"></div>
 
-                                <!--                                
-
-                                <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button"
-                                    data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button"
-                                    data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a> -->
                                 <div class="clearfix"></div>
                                 <ol class="carousel-indicators">
                                     <li data-target="#carouselExampleIndicators2" data-slide-to="0" class=""></li>
@@ -544,93 +493,6 @@
                         </div>
 
 
-                        <!-- <div class="container">
-                            <div id="carruselCmpleto" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner" role="listbox">
-
-                                    <div class="carousel-item active" id="carousel">
-                                        <div class="col-lg-4 col-md-6 float-left">
-                                            <div class="card">
-                                                <div class="el-card-item card-body">
-                                                    <h3 class="col-md-10">Titulo del servicio</h3>
-
-                                                    <div class="btn-group float-right">
-                                                        <button type="button" class="btn text-right" data-toggle="dropdown"
-                                                            aria-haspopup="true" aria-expanded="false">
-                                                            <i class="fas fa-ellipsis-v"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item\" href="#">Editar</a>
-                                                            <a class="dropdown-item\" href="#">Eliminar</a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="image">
-                                                        <img class="card-img-top img-fluid img-responsive img-thumbnail"
-                                                            src="../Public/imgs/colegio.jpg">
-                                                    </div>
-                                                    <div class="el-card-content">
-                                                        <p class="mt-3">subtitle of project</p>
-                                                        <br>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item" id="carousel2"></div>
-                                    <div class="carousel-item" id="carousel3"></div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carruselCompleto" role="button"
-                                    data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"><i class="far fa-arrow-alt-circle-left"></i></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carruselCompleto" role="button"
-                                    data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-
-                            <a class="carousel-control-prev" href="#carruselCompleto" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="far fa-arrow-alt-circle-left"></i></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carruselCompleto" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div> -->
-
-                        <!-- <div id="cardServicio altura" class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">"
-                               <img class="card-img-top img-fluid img-responsive img-thumbnail" src="">
-                                <div class="card-body card">
-                        
-                              <div class="btn-group float-right">
-                              <button type="button" class="btn text-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fas fa-ellipsis-v"></i>
-                              </button>
-                               <div class="dropdown-menu dropdown-menu-right">
-                              <a class="dropdown-item\" href="#" >Editar</a>
-                               <a class="dropdown-item\" href="#" >Eliminar</a>
-                               </div></div>
-                        
-                                <div class="float-left"> <h4 id="txt_titulo" class="card-title text-themecolor">"+servicio[i].titulo+"</h4>
-                                <p id="txt_descripcion" class="card-text">"+servicio[i].descripcion+"</p>
-                                </div></div> -->
-
-
-                        <!-- <div class=" altura col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
-                            <img id="txt-imagen" class="card-img-top img-fluid" src="../Public/imgs/colegio.jpg">
-                            <div class="card-body">
-                                <h4 id="txt_titulo" class="card-title"></h4>
-                                <p id="txt_descripcion" class="card-text"></p>
-                            </div>
-                        </div> -->
 
                     </section>
                     <div class="clearfix"></div>
@@ -678,9 +540,9 @@
                             </div>
 
                             <!-- Botón -->
-                            <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
+                            <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
                                 data-target="#agregarMatricula">Añadir
-                                información</button>
+                                información</button> -->
                             <div class="clearfix"></div>
 
                             <!-- <div class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
@@ -698,7 +560,7 @@
                     <!-- COMENTARIOS -->
                     <section id="cardComentarios-noticias" class="comentarios-noticias">
                         <!-- Comentarios -->
-                        <div class="widget-app-columns container">
+                        <div class="">
                             <div class="card col-md-9 float-left">
                                 <div class="card-body">
                                     <h4 class="card-title">Comentarios recientes</h4>
@@ -743,13 +605,19 @@
                                                 <div class="form-group">
                                                     <div class="btn-group">
 
-                                                         <select class="form-control text-small custom-select" id="txt_calificacion"
+                                                        <select class="form-control text-small custom-select"
+                                                            id="txt_calificacion"
                                                             data-placeholder="Seleccione una calificación" tabindex="1">
-                                                            <option class="text-small" value="1 Estrella">1 Estrella</option>
-                                                            <option class="text-small" value="2 Estrellas">2 Estrellas</option>
-                                                            <option class="text-small" value="3 Estrellas">3 Estrella</option>
-                                                            <option class="text-small" value="4 Estrellas">4 Estrellas</option>
-                                                            <option class="text-small" value="5 Estrellas">5 Estrellas</option>
+                                                            <option class="text-small" value="1 Estrella">1 Estrella
+                                                            </option>
+                                                            <option class="text-small" value="2 Estrellas">2 Estrellas
+                                                            </option>
+                                                            <option class="text-small" value="3 Estrellas">3 Estrella
+                                                            </option>
+                                                            <option class="text-small" value="4 Estrellas">4 Estrellas
+                                                            </option>
+                                                            <option class="text-small" value="5 Estrellas">5 Estrellas
+                                                            </option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -765,8 +633,8 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button id="btn_enviarComentario" type="submit"
-                                                    class="btn btn-warning waves-effect"
-                                                    data-dismiss="modal">Calificar centro</button>
+                                                    class="btn btn-warning waves-effect" data-dismiss="modal">Calificar
+                                                    centro</button>
 
                                             </div>
                                         </div>
@@ -797,9 +665,9 @@
                                     <h4 class="card-title">Noticias recientes</h4>
 
                                     <!-- Botón -->
-                                    <button id="btn_enviarNoticia" class="btn btn-themecolor mb-3 mt-3" alt="default"
+                                    <!-- <button id="btn_enviarNoticia" class="btn btn-themecolor mb-3 mt-3" alt="default"
                                         data-toggle="modal" data-target="#agregarNoticia">Añadir
-                                        noticia</button>
+                                        noticia</button> -->
 
                                     <div class="card float-left" id="cargaNoticias">
 
@@ -842,7 +710,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="clearfix"></div>
 
 
@@ -874,14 +742,26 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title" id="vcenter">Lista de útiles</h4>
+                                        <h4 class="modal-title" id="vcenter">Información de matrícula</h4>
                                         <button type="button" class="close" data-dismiss="modal"
                                             aria-hidden="true">×</button>
                                     </div>
                                     <div class="modal-body">
+                                        <button>Agregar útil</button>
 
-                                        <div>
-                                            
+                                        <div class="form-group">
+                                            <input type="text" id="txt_tituloLista" name="text" class="form-control"
+                                                required="true"
+                                                data-validation-required-message="This field is required"
+                                                aria-invalid="false" placeholder="Inserte un título">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="controls">
+                                                <textarea name="textarea" id="txt_descripcionLista" class="form-control"
+                                                    required="" placeholder="Escriba una descripción"></textarea>
+                                                <div class="help-block"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -894,10 +774,8 @@
                         </div>
 
                         <!-- Botón -->
-                        <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
-                            data-target="#agregarListaLanding">Añadir
-                            información</button>
-                        <div class="clearfix"></div> -->
+                        
+                        <div class="clearfix"></div>
 
                         <!-- <div class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
                                 <div class="ribbon-wrapper card">
@@ -906,7 +784,7 @@
                                 </div>
                             </div> -->
                     </section>
-
+                </div>
 
                 </div>
             </div>
@@ -926,7 +804,7 @@
     <script src="./assets/node_modules/prism/prism.js"></script>
     <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+    <script src="js/js animaciones/sidebarmenu.js"></script>
 
 
     <!-- subir imagen -->
@@ -945,23 +823,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/registrarServicio_Servicio.js"></script>
-    <script src="js/registrarServicio_Controlador.js"></script>
     <script src="js/registrarNoticia_Servicio.js"></script>
-    <script src="js/registrarNoticia_Controlador.js"></script>
     <script src="js/registrar_infoMatricula_Servicio.js"></script>
-    <script src="js/registrar_infoMatricula_Controlador.js"></script>
     <script src="js/registrarAcercaNosotros_Servicio.js"></script>
-    <script src="js/registrarAcercaNosotros_Controlador.js"></script>
     <script src="js/registrarCita_Servicio.js"></script>
-    <script src="js/registrarCita_Controlador.js"></script>
     <script src="js/registrar_boletin_Servicio.js"></script>
-    <script src="js/registrar_boletin_Controlador.js"></script>
     <script src="js/centrosAdmin_servcio.js"></script>
-    <script src="js/centrosAdmin_controlador.js"></script>
     <script src="js/etiquetasCentro_servicio.js"></script>
-    <script src="js/etiquetasCentro_controlador.js"></script>
     <script src="js/registrar_comentario_servicio.js"></script>
-    <script src="js/registrar_comentario_controlador.js"></script>
+    <script src="js/centro_perfilPadre_controlador.js"></script>
 </body>
 
 </html>

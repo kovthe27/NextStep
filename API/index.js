@@ -83,6 +83,8 @@ app.use('/api', boletin);
 const etiquetasCentro = require('./componentes/registrar_etiquetasCentro/registrar_etiquetasCentro.route');
 app.use('/api', etiquetasCentro);
 
+const comentarios = require('./componentes/registrar_comentarios/registrar_comentarios.route');
+app.use('/api', comentarios);
 
 
 
@@ -96,6 +98,8 @@ const bitacora = require ('./componentes/registrar_bitacora/registrar_bitacora.r
 const etiqueta = require ('./componentes/registrar_etiquetas/registrar_etiquetas.route');
 const registroCentroEducativo = require('./componentes/registrar_centroEducativo/registrar_centro.route');
 const registroContacto = require('./componentes/registrar_contacto/registrar_contacto.route');
+const listaFavorito = require('./componentes/registrar_favortios/registrar_favoritos.route');
+
 
 app.use('/api', servicio);
 app.use('/api', preguntasAdmin);
@@ -108,7 +112,7 @@ app.use('/api', listasUtiles);
 app.use('/api', listaTipos);
 app.use('/api', bitacora);
 app.use('/api', etiqueta);
-
+app.use('/api', listaFavorito);
 
 // Se guarda todo lo que se ha realizado
 module.exports = app;

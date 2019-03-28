@@ -1,30 +1,43 @@
-// 'use strict';
-// const mongoose = require('mongoose');
-// const mongooseFindAndFilter = require('mongoose-find-and-filter');
- 
-// mongoose.plugin(mongooseFindAndFilter);
+'use strict';
 
-// const model_acercaNosotros = require('./registrar_acercaNosotros.model');
+// if(document.getElementById("primaria").value == true){
 
-// let query = { ubicacion: { $gte: 1 } };
-// let queryParams = req.query;
+//   var cedulaJuridica = JSON.parse(localStorage.getItem('centro'));
+//   var provincias = listar_TodosCentros (provinciaCentro);
 
-// let populate = [{
-//     path: 'registrar_acercaNosotros',
-//     model: 'registrar_acercaNosotros',
-//   },
-//   { path: 'registrar_acercaNosotros', model: 'registrar_acercaNosotros' }
-// ];
+//   function filtrarProvincias (){
+//     document.getElementById("slt_provincias").innerHTML = provincias.filter(listar_TodosCentros);
+//     return provincias == true;
+//   }
+// }
 
 
-// model_acercaNosotros
-//   .findAndFilter(query, queryParams, populate)
-//   .then((acercaNosotros_nuevo) => {
-//     res.status(200).json(acercaNosotros_nuevo);
-//   })
-//   .catch((err) => {
-//     return next(err);
-//   });
 
 
- 
+
+// if (document.getElementById("primaria").value == provinciaCentro){
+// var provincias = listar_TodosCentros (provinciaCentro);
+
+// const provinciaFiltrada = 
+//   provincias.filter (function(provincias){
+//     return provincias == document.querySelector("#slt_provincias").value;
+// })
+
+// provinciaFiltrada ();
+// }
+
+
+
+
+// $('#primaria').click(function() {
+//   if(this.checked) {
+//     var provincias = listar_TodosCentros (provinciaCentro);
+
+//     const provinciaFiltrada = 
+//       provincias.filter (function(provincias){
+//         return provincias == document.querySelector("#slt_provincias").value;
+//     })
+    
+//     provinciaFiltrada ();
+// }
+// });

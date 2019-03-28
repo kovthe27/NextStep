@@ -34,8 +34,9 @@
 
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ml-auto stylish-nav">
-                            <li class="nav-item"> <a class="m-t-5 btn nav-link text-white font-13" data-toggle="modal" data-target="#registroModal" href="#registroModal" target="_blank">Crear
-                                    cuenta</a> </li>
+                                <li class="nav-item"> <a class="m-t-5 btn nav-link text-white font-13 mr-1" href="preguntasFrecuentes_landing.html" target="_blank">Preguntas frecuentes</a> </li>
+                                    <li class="nav-item"> <a class="m-t-5 btn nav-link text-white font-13" data-toggle="modal" data-target="#registroModal" href="#registroModal" target="_blank">Crear
+                                            cuenta</a> </li>
                             <li class="nav-item"> <a class="m-t-5 btn text-themecolor font-13" href="login.html" style="width:120px;">Ingresar</a>
                             </li>
                         </ul>
@@ -50,16 +51,16 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="myModalLabel">Elija el tipo de usuario que desea Registrar</h4>
+                    <h4 class="modal-title" id="myModalLabel">Elija el tipo de usuario que desea registrar</h4>
                 </div>
                 <div class="modal-body">
                     <a href="registro_PadreFamilia.html">
-                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal">
+                        <button type="button" class="btn btn-primary" data-toggle="modal">
                             Padre de Familia
                         </button>
                     </a>
                     
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal">
+                    <button type="button" class="btn btn-primary" data-toggle="modal">
                         <a href="registro_CentroEducativo.html">Centro Educativo</a> 
                     </button>
                 </div>
@@ -77,11 +78,10 @@
 
     <section class="about">
         <div class="container">
-            <div class="col-md-6 text-center">
+            <div class="col-md-7 text-center">
                 <h2 class="text-themecolor">Acerca de nosotros</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit sint iusto et recusandae, facere
-                    similique amet iste cupiditate, odit eveniet fugiat beatae, voluptate nostrum dicta reprehenderit
-                    libero voluptatibus quam magni!</p>
+                <p>Somos una plataforma educativa creada con el fin de ayudar a los padres de familia a buscar centros educativos 
+                    para sus hijos de acuerdo a sus necesidades. Además permite que los centros educativos se den a conocer y permitan destacarse más fácilmente.</p>
             </div>
         </div>
     </section>
@@ -89,8 +89,24 @@
 
     <section class="centros">
         <div class="container">
-            <h2 class="text-themecolor text-center">Ranking de <a class="text-white" href="#" aria-expanded="false"><span
-                        class="hide-menu">Colegios privados</span></a></h2>
+            <h2 class="text-themecolor text-center">Ranking de  
+                    <div class="btn-group">
+                            <button type="button" class="btn border text-white dropdown-toggle text-small"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                centros educativos
+                            </button>
+                            <div class="dropdown-menu animated fadelnDown">
+                                <a class="dropdown-item text-small" href="#">Colegios públicos</a>
+                                <a class="dropdown-item text-small" href="#">Colegios privados</a>
+                                <a class="dropdown-item text-small" href="#">Colegios semiprivados</a>
+                                <a class="dropdown-item text-small" href="#">Colegios técnicos</a>
+                                <a class="dropdown-item text-small" href="#">Colegios nocturnos</a>
+                            </div>
+                        </div>
+            </h2>
+                        
+                       
+
             <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item">
@@ -390,108 +406,8 @@
     </section>
 
     <section class="listas">
-        <div class="container">
+        <div class="container" id="listasLanding">
             <h2 class="text-themecolor text-center">Listas de útiles escolares</h2>
-            <div class="col-lg-3 col-md-6 float-left">
-                <div class="card">
-                    <div class="el-card-content">
-                        <h3 class="box-title">Nivel 1</h3>
-                        <a class="btn waves-effect waves-light btn-rounded btn-sm btn-warning image-popup-vertical-fit"
-                            href="./imgs/colegio.jpg"><i class="sl-icon-magnifier"></i>Ver</a>
-                        <a class="btn waves-effect waves-light btn-rounded btn-sm btn-outline-warning" href=""><i class="sl-icon-link"></i>Descargar</a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 float-left">
-                <div class="card">
-                    <div class="el-card-content">
-                        <h3 class="box-title">Nivel 2</h3>
-                        <a class="btn waves-effect waves-light btn-rounded btn-sm btn-warning image-popup-vertical-fit"
-                            href="./imgs/colegio.jpg"><i class="sl-icon-magnifier"></i>Ver</a>
-                        <a class="btn waves-effect waves-light btn-rounded btn-sm btn-outline-warning" href=""><i class="sl-icon-link"></i>Descargar</a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-3 col-md-6 float-left">
-                <div class="card">
-                    <div class="el-card-content">
-                        <h3 class="box-title">Nivel 3</h3>
-                        <a class="btn waves-effect waves-light btn-rounded btn-sm btn-warning image-popup-vertical-fit"
-                            href="./imgs/colegio.jpg"><i class="sl-icon-magnifier"></i>Ver</a>
-                        <a class="btn waves-effect waves-light btn-rounded btn-sm btn-outline-warning" href=""><i class="sl-icon-link"></i>Descargar</a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-3 col-md-6 float-left">
-                <div class="card">
-                    <div class="el-card-content">
-                        <h3 class="box-title">Nivel 4</h3>
-                        <a class="btn waves-effect waves-light btn-rounded btn-sm btn-warning image-popup-vertical-fit"
-                            href="./imgs/colegio.jpg"><i class="sl-icon-magnifier"></i>Ver</a>
-                        <a class="btn waves-effect waves-light btn-rounded btn-sm btn-outline-warning" href=""><i class="sl-icon-link"></i>Descargar</a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 float-left">
-                    <div class="card">
-                        <div class="el-card-content">
-                            <h3 class="box-title">Nivel 5</h3>
-                            <a class="btn waves-effect waves-light btn-rounded btn-sm btn-warning image-popup-vertical-fit"
-                                href="./imgs/colegio.jpg"><i class="sl-icon-magnifier"></i>Ver</a>
-                            <a class="btn waves-effect waves-light btn-rounded btn-sm btn-outline-warning" href=""><i class="sl-icon-link"></i>Descargar</a>
-                            <br>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-lg-3 col-md-6 float-left">
-                    <div class="card">
-                        <div class="el-card-content">
-                            <h3 class="box-title">Nivel 6</h3>
-                            <a class="btn waves-effect waves-light btn-rounded btn-sm btn-warning image-popup-vertical-fit"
-                                href="./imgs/colegio.jpg"><i class="sl-icon-magnifier"></i>Ver</a>
-                            <a class="btn waves-effect waves-light btn-rounded btn-sm btn-outline-warning" href=""><i class="sl-icon-link"></i>Descargar</a>
-                            <br>
-                        </div>
-                    </div>
-                </div>
-    
-    
-                <div class="col-lg-3 col-md-6 float-left">
-                    <div class="card">
-                        <div class="el-card-content">
-                            <h3 class="box-title">Nivel 7</h3>
-                            <a class="btn waves-effect waves-light btn-rounded btn-sm btn-warning image-popup-vertical-fit"
-                                href="./imgs/colegio.jpg"><i class="sl-icon-magnifier"></i>Ver</a>
-                            <a class="btn waves-effect waves-light btn-rounded btn-sm btn-outline-warning" href=""><i class="sl-icon-link"></i>Descargar</a>
-                            <br>
-                        </div>
-                    </div>
-                </div>
-    
-    
-                <div class="col-lg-3 col-md-6 float-left">
-                    <div class="card">
-                        <div class="el-card-content">
-                            <h3 class="box-title">Nivel 8</h3>
-                            <a class="btn waves-effect waves-light btn-rounded btn-sm btn-warning image-popup-vertical-fit"
-                                href="./imgs/colegio.jpg"><i class="sl-icon-magnifier"></i>Ver</a>
-                            <a class="btn waves-effect waves-light btn-rounded btn-sm btn-outline-warning" href=""><i class="sl-icon-link"></i>Descargar</a>
-                            <br>
-                        </div>
-                    </div>
-                </div>
-        </div>
     </section>
 
 
@@ -517,9 +433,10 @@
     <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
 
     <!-- listas -->
-    <script src="../admin-wrap/main/js/custom.min.js"></script>
-    <script src="./assets/node_modules/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
-    <script src="./assets/node_modules/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
+    <script src="js/mostrarListas_landing_servicio.js"></script>
+    <script src="js/mostrarListas_landing_controlador.js"></script>
+
+
 
 </body>
 
