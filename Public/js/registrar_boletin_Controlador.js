@@ -21,7 +21,7 @@ let validarBoletin = () => {
 let obtener_datosBoletin = () => {
 
     if (validarBoletin() == false) {
-        let cedulaJuridica = '294881';
+        let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));;
         let boletin = input_boletin.href;
         let nombre = input_nombrePdf.value;
 
@@ -48,7 +48,7 @@ let mostrar_datosBoletin = () =>{
     // console.log(servicio);
 
     for(let i = 0; i < pdf_boletin.length; i++){
-        if(pdf_boletin[i].cedulaJuridica == '294881'){
+        if(pdf_boletin[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))){
             a_linkPdf.href = pdf_boletin[i].boletin;
             a_linkPdf.innerHTML = pdf_boletin[i].nombre;
         }

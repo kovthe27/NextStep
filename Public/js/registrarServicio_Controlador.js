@@ -36,7 +36,7 @@ let obtener_datosServicio = () => {
 
     if (validarServicio() == false) {
         // Se ejecuta solo si la validación no da error
-        let cedulaJuridica = 12345;
+        let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));;
         let imagen = input_imagen.src;
         let titulo = input_titulo.value;
         let descripcion = input_descripcion.value;
@@ -69,116 +69,101 @@ btn_enviarServicio.addEventListener('click', obtener_datosServicio);
 const card_servicio = document.querySelector('#carouselExampleIndicators2');
 
 let mostrar_datosServicio = () => {
-    let servicio = consultar_servicio();
-    // console.log(servicio);
-    // let numeroCarrusel = 0;
+    let servicioTodos = consultar_servicio();
+    let servicio  = [];
+    for(let i=0; i<servicioTodos.length; i++){
+        if(servicioTodos[i].cedulaJuridica ==  JSON.parse(localStorage.getItem('centroEducativo'))){
+            servicio.push(servicioTodos[i]);
+        }
+    }
+    let imagen;
+    let titulo;
+    let descripcion;
+    for (let i = 0; i < 3; i++) {
+        if (servicio[i].imagen == "undefined") {
+            imagen = "/imgs/placeholder.png";
+        }else{
+            imagen= servicio[i].imagen;
+        }
+        var card =
 
-    // if (numeroCarrusel < 4) {
-        for (let i = 0; i < 3; i++) {
-            var card =
+            "<div class=\"col-lg-4 col-md-6 float-left\">" +
+            "<div class=\"card\">" +
+            "<div class=\"el-card-item card-body\">" +
+            "<h3 id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h3>" +
+            "<div class=\"image\">" +
+            "<img id=\"imgFoto\" class=\"card-img-top img-fluid img-responsive img-thumbnail\" src=" + imagen + ">" +
+            "</div>" +
+            "<div class=\"el-card-content\">" +
+            "<p id=\"txt_descripcion\">" + servicio[i].descripcion + "</p>" +
+            "<br>" +
+            "</div>" +
 
-                "<div class=\"col-lg-4 col-md-6 float-left\">" +
-                "<div class=\"card\">" +
-                "<div class=\"el-card-item card-body\">" +
-                "<h3 id=\"txt_tituloServicio\">" + servicio[i].titulo +"</h3>" +
+            "</div> </div> </div>"
 
-                //     "<div class=\"btn-group float-right\">"+
-                //         "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
-                //             "<i class=\"fas fa-ellipsis-v\"></i>"+
-                //         "</button>"+
-                //         "<div class=\"dropdown-menu dropdown-menu-right\">"+
-                //             "<a class=\"dropdown-item\" href=\"\">Editar</a>"+
-                //             "<a class=\"dropdown-item\" href=\"\">Eliminar</a>"+
-                //         "</div>"+
-                //    "</div>"+
+        $("#carousel").append(card)
+        // numeroCarrusel++;
+        // servicio.reverse();
+    };
+    
+    for (let i = 4; i < 7; i++) {
+        if (servicio[i].imagen == "undefined") {
+            imagen = ".\imgs\placeholder.png";
+        }else{
+            imagen= servicio[i].imagen;
+        }
+        var card =
 
-                "<div class=\"image\">" +
-                "<img id=\"imgFoto\" class=\"card-img-top img-fluid img-responsive img-thumbnail\" src=" + servicio[i].imagen + ">" +
-                "</div>" +
-                "<div class=\"el-card-content\">" +
-                "<p id=\"txt_descripcion\">" + servicio[i].descripcion + "</p>" +
-                "<br>" +
-                "</div>" +
+            "<div class=\"col-lg-4 col-md-6 float-left\">" +
+            "<div class=\"card\">" +
+            "<div class=\"el-card-item card-body\">" +
+            "<h3 id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h3>" +
+            "<div class=\"image\">" +
+            "<img id=\"imgFoto\" class=\"card-img-top img-fluid img-responsive img-thumbnail\" src=" + imagen + ">" +
+            "</div>" +
+            "<div class=\"el-card-content\">" +
+            "<p id=\"txt_descripcion\">" + servicio[i].descripcion + "</p>" +
+            "<br>" +
+            "</div>" +
 
-                "</div> </div> </div>"
+            "</div> </div> </div>"
 
-            $("#carousel").append(card)
-            // numeroCarrusel++;
-            // servicio.reverse();
-        };
-    // } 
-    
-    // else{
-        // if (numeroCarrusel>4 && numeroCarrusel<8){
-            for (let i = 4; i < 7; i++) {
-                var card =
-    
-                    "<div class=\"col-lg-4 col-md-6 float-left\">" +
-                    "<div class=\"card\">" +
-                    "<div class=\"el-card-item card-body\">" +
-                    "<h3 id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h3>" +
-    
-                    //     "<div class=\"btn-group float-right\">"+
-                    //         "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
-                    //             "<i class=\"fas fa-ellipsis-v\"></i>"+
-                    //         "</button>"+
-                    //         "<div class=\"dropdown-menu dropdown-menu-right\">"+
-                    //             "<a class=\"dropdown-item\" href=\"\">Editar</a>"+
-                    //             "<a class=\"dropdown-item\" href=\"\">Eliminar</a>"+
-                    //         "</div>"+
-                    //    "</div>"+
-    
-                    "<div class=\"image\">" +
-                    "<img id=\"imgFoto\" class=\"card-img-top img-fluid img-responsive img-thumbnail\" src=" + servicio[i].imagen + ">" +
-                    "</div>" +
-                    "<div class=\"el-card-content\">" +
-                    "<p id=\"txt_descripcion\">" + servicio[i].descripcion + "</p>" +
-                    "<br>" +
-                    "</div>" +
-    
-                    "</div> </div> </div>"
-    
-                $("#carousel2").append(card)
-                // numeroCarrusel++;
-                // servicio.reverse();
-            };
+        $("#carousel2").append(card)
+        // numeroCarrusel++;
+        // servicio.reverse();
+    };
 
 
-            for (let i = 7; i < 10; i++) {
-                var card =
-    
-                    "<div class=\"col-lg-4 col-md-6 float-left\">" +
-                    "<div class=\"card\">" +
-                    "<div class=\"el-card-item card-body\">" +
-                    "<h3 id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h3>" +
-    
-                    //     "<div class=\"btn-group float-right\">"+
-                    //         "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">"+
-                    //             "<i class=\"fas fa-ellipsis-v\"></i>"+
-                    //         "</button>"+
-                    //         "<div class=\"dropdown-menu dropdown-menu-right\">"+
-                    //             "<a class=\"dropdown-item\" href=\"\">Editar</a>"+
-                    //             "<a class=\"dropdown-item\" href=\"\">Eliminar</a>"+
-                    //         "</div>"+
-                    //    "</div>"+
-    
-                    "<div class=\"image\">" +
-                    "<img id=\"imgFoto\" class=\"card-img-top img-fluid img-responsive img-thumbnail\" src=" + servicio[i].imagen + ">" +
-                    "</div>" +
-                    "<div class=\"el-card-content\">" +
-                    "<p id=\"txt_descripcion\">" + servicio[i].descripcion + "</p>" +
-                    "<br>" +
-                    "</div>" +
-    
-                    "</div> </div> </div>"
-    
-                $("#carousel3").append(card)
-                // numeroCarrusel++;
-                // servicio.reverse();
-            };
+    for (let i = 7; i < 10; i++) {
+        if (i < servicio.length) {
+            imagen= servicio[i].imagen;
+            titulo = servicio[i].titulo;
+            descripcion = servicio[i].descripcion;
+        }else{
+            imagen = "imgs/placeholder.png";
+            titulo = "Servicio por asignar";
+            descripcion = "Servicio por asignar"
+        }
+        var card =
 
-        // }
-    // }
+            "<div class=\"col-lg-4 col-md-6 float-left\">" +
+            "<div class=\"card\">" +
+            "<div class=\"el-card-item card-body\">" +
+            "<h3 id=\"txt_tituloServicio\">" + titulo + "</h3>" +
+            "<div class=\"image\">" +
+            "<img id=\"imgFoto\" class=\"card-img-top img-fluid img-responsive img-thumbnail\" src=" + imagen + ">" +
+            "</div>" +
+            "<div class=\"el-card-content\">" +
+            "<p id=\"txt_descripcion\">" + descripcion + "</p>" +
+            "<br>" +
+            "</div>" +
+
+            "</div> </div> </div>"
+
+        $("#carousel3").append(card)
+        // numeroCarrusel++;
+        // servicio.reverse();
+    };
 
 
 };
