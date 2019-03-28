@@ -2,3 +2,11 @@
 .page-wrapper {
     margin-left: 0px;
 }
+
+.centrar{
+    margin: auto;
+}
+
+.titulo{
+    margin-left: 10em !important;
+}
