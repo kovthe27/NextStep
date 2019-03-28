@@ -63,7 +63,7 @@ let cargarCentros = () => {
 }
 
 let verPerfilCentro = (cedulaJuridica) =>{
-    localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
+    localStorage.setItem('centroEducativo_admin', JSON.stringify(cedulaJuridica));
     window.location.assign("perfil_CentroEducativo.html");;
 
 }
