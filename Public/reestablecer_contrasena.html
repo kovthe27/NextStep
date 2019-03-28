@@ -34,65 +34,43 @@
             <div class="card-body">
                 <form class="form-horizontal form-material" id="loginform" action="landing_page.html">
                     <a href="landing_page.html" class="text-center db">
-                        <img src="imgs/logoBig-02.png" width="40%" alt="Home"  />
+                        <img src="imgs/logoBig-02.png" width="40%" alt="Home">
                     </a>
                     <div class="form-group m-t-40">
                         <div class="col-xs-12">
-                            <input class="form-control text-white" id="txtUsuario" type="text" required="" placeholder="Usuario">
+                            <input class="form-control text-white" id="txtUsuarioReestablecer" type="text" required="" placeholder="Usuario">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input class="form-control text-white" id="txtContrasena" type="password" required="" placeholder="Contraseña">
+                            <input class="form-control text-white" id="txtContrasenaNueva" type="password" required="" placeholder="Contraseña">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <a href="javascript:void(0)" id="to-recover" class="text-white pull-right">
-                                <i class="fa fa-lock m-r-5 text-white"></i> ¿Olvido su contraseña?</a>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <input class="form-control text-white" id="txtConfirmarContrasena" type="password" required="" placeholder="Confirmar Contraseña">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <p id="msgError" style="display:none;color:#ff9041;">El formato de la contraseña es incorrecto. Debe ser de 8 dígitos, al menos un dígito, una minúscula y una mayúscula.</p>
                         </div>
                     </div>
                     <div class="form-group text-center m-t-20">
                         <div class="col-xs-12">
-                            <button type="button" id = 'btnIngresar' class="btn btn-themecolor btn-block text-uppercase" >Ingresar</button>
+                            <button type="button" id="btnReestablecerContrasena" class="btn btn-themecolor btn-block text-uppercase">Ingresar</button>
                         </div>
                     </div>
                     <div class="form-group m-b-0">
                         <div class="col-sm-12 text-center">
-                            No tiene una cuenta?
-                            <a data-toggle="modal" data-target="#registroModal" href="#registroModal" target="_blank" href="#registroModal" class="text-themecolor m-l-5">
-                                <b>Registrese</b>
-                            </a>
+                            <p style="color:#fff;">La contraseña debe tener 8 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.</p>
                         </div>
                     </div>
-                    <div class="modal fade" id="registroModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <h4 class="modal-title" id="myModalLabel">Elija el tipo de usuario que desea Registrar</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <a href="registro_PadreFamilia.html">
-                                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal">
-                                            Padre de Familia
-                                        </button>
-                                    </a>
-                                    
-                                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal">
-                                        <a href="registro_CentroEducativo.html">Centro Educativo</a> 
-                                    </button>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
                 </form>
                 <form class="form-horizontal" id="recoverform" action="index.html">
                     <div class="form-group ">
                         <div class="col-xs-12">
-                            <h3>Recuperar contraseña</h3>
+                            <h3>Recuperar contrasena</h3>
                             <p class="text-dark">Ingrese su correo electronico y le enviaremos una clave temporal! </p>
                         </div>
                     </div>
@@ -117,6 +95,7 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     <script src="assets/node_modules/jquery/jquery.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
     <!-- Bootstrap tether Core JavaScript -->
     <script src="assets/node_modules/bootstrap/js/popper.min.js"></script>
     <script src="assets/node_modules/bootstrap/js/bootstrap.min.js"></script>

@@ -15,7 +15,15 @@ router.route('/consultar_padre')
         function(req, res){
             padre_api.listar_TodosPadres(req, res);
         }
-    )
+    );
+
+router.route('/actualizarcontrasena_Padre')
+.post(
+    function(req, res){
+        padre_api.actualizarcontrasena_Padre(req, res);
+    }
+)
+
 
 
 
