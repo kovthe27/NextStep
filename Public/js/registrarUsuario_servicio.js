@@ -40,7 +40,7 @@ function processImage(id) {
 
 //Registro Padre
 
-let registrar_Padre = (pnombrePadre, papellidoPadre, papellidoDosPadre, pidPadre, pnacionPadre, pdireccionPadre, pemailPadre, ptelPadre, pcantHijos, pfotoPadre, pprovinciaPadre, pcantonPadre, pdistritoPadre) => {
+let registrar_Padre = (pnombrePadre, papellidoPadre, papellidoDosPadre, pidPadre, pnacionPadre, pdireccionPadre, pemailPadre, ptelPadre, pcantHijos, pfotoPadre, pprovinciaPadre, pcantonPadre, pdistritoPadre, pestadoUsuario, ptipo, pregistroCompletado) => {
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_padre",
     method: "POST",
@@ -57,7 +57,10 @@ let registrar_Padre = (pnombrePadre, papellidoPadre, papellidoDosPadre, pidPadre
         fotoUsuario: pfotoPadre,
         provinciaUsuario : pprovinciaPadre,
         cantonUsuario : pcantonPadre,
-        distritoUsuario : pdistritoPadre
+        distritoUsuario : pdistritoPadre,
+        estadoUsuario: pestadoUsuario,
+        tipo: ptipo,
+        registroCompletado: pregistroCompletado
     },
     dataType: "json",
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -67,7 +70,7 @@ let registrar_Padre = (pnombrePadre, papellidoPadre, papellidoDosPadre, pidPadre
     swal.fire({
       type: 'success',
       title: 'El usuario fue registrado',
-      text: 'Le estaremos enviando un código de verificación a su coreo electrónico para que pueda iniciar sesión',
+      text: 'Le estaremos enviando un código de verificación a su correo electrónico para que pueda iniciar sesión',
       onClose: () => {
         window.location.href = "http://localhost:3000/public/login.html";
       }
