@@ -81,7 +81,7 @@ let nuevoArticulo = () => {
     let nombreLista = getNombreLista();
     if (validar() == false) {
         crearArticulo(cantidad, articulo, descripcion);
-        bitacora(cedula, "Registro", "Se agrego un articulo a la lista: "+nombreLista);
+        bitacora(cedula, "Registro", "se agregó un articulo a la lista: "+nombreLista);
     }
     else {
         swal.fire({
