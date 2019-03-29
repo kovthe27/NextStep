@@ -11,7 +11,8 @@ let schema_RegistroContacto = new mongoose.Schema(
         extEncargado : {type: Number, required: false},
         emailEncargado : {type: String, required: true},
         fotoEncargado : {type: String, required: false},
-        centroEducativoId : {type: String, required: true}
+        centroEducativoId : {type: String, required: true},
+        cedulaJuridica : {type: String, unique: true, required: true}
     }
 );
 

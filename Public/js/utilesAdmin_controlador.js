@@ -56,7 +56,7 @@ let registrarLista = () => {
     nuevaLista(cedula, nombre, fecha);
 
     //Registro de bitacora
-    bitacora(cedula, "Registro", "Se agrego la lista: "+nombre);
+    bitacora(cedula, "Registro", "se agregó la lista: "+nombre);
 
     window.location.reload();
 }

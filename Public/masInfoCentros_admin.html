@@ -62,7 +62,7 @@
                                     <li><a href="#"><i class="ti-user"></i> Mi perfil</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar
-                                            sesion</a></li>
+                                            sesión</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -154,132 +154,89 @@
         </aside>
 
         <!-- Titulo -->
-        <div class="page-wrapper" style="min-height: 900px;">
-
-            <div class="container-fluid ">
-
-                <!-- Titulo -->
-                <div class="col-md-8 align-self-center">
-                    <h3 class="text-themecolor">Centros educativos</h3>
-                </div>
-
-                <!-- Tabs -->
-                <div class="col-md-12 mt-4">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item"> <a class="nav-link active text-themecolor" data-toggle="tab" href="#home2" role="tab"
-                                aria-selected="true"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span
-                                    class="hidden-xs-down">Lista de centros</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link text-themecolor" data-toggle="tab" href="#messages" role="tab"
-                                aria-selected="false"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span
-                                    class="hidden-xs-down">Evaluaciones</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link text-themecolor" data-toggle="tab" href="#profile2" role="tab"
-                                aria-selected="false"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span
-                                    class="hidden-xs-down">Etiquetas</span></a> </li>
-                    </ul>
-                </div>
-                <!-- Buscar -->
-                <div class="input-group mb-3 col-md-4 float-right mt-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
+        <div class="page-wrapper" style="min-height: 611px;">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">Más información del centro educativo</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="centros_Administrador.html">Lista de centros</a></li>
+                            <li class="breadcrumb-item active">Más información</li>
+                        </ol>
                     </div>
-                    <input type="text" id="txt_search" class="form-control" placeholder="Buscar" aria-label="Username"
-                        aria-describedby="basic-addon1">
                 </div>
-
-                <!-- Contenido de tabs -->
-                <div class="tab-content tabcontent-border">
-                    <!-- Tab1 -->
-                    <div class="tab-pane p-20 active" id="home2" role="tabpanel">
-                        <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
-                            data-tablesaw-mode="columntoggle" id="tablesaw-6684">
-                            <thead>
-                                <tr>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="persist">
-                                        Nombre del centro</th>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-sortable-default-col=""
-                                        data-tablesaw-priority="3" class="tablesaw-priority-3">Cédula jurídica</th>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2"
-                                        class="tablesaw-priority-2">Fecha de registro</th>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
-                                        class="tablesaw-priority-1">Correo
-                                    </th>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
-                                        class="tablesaw-priority-1">Administrador
-                                    </th>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
-                                        class="tablesaw-priority-1">Estado
-                                    </th>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
-                                        class="tablesaw-priority-1">Edición
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody id="tablaListaCentrosAdmin">
-                                <!-- Se llena dinamicamente -->
-                            </tbody>
-                        </table>
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-5">
+                        <div class="card" id="infoGeneral">
+                            <!-- <div class="card-body">
+                                <center class="m-t-30"> <img src="imgs/abc-alfabeto.jpg" class="img-circle" width="150" height="150">
+                                    <h4 class="card-title mt-5">Nombre centro educativo</h4>
+                                </center>
+                            </div>
+                            <div>
+                                <hr> </div>
+                            <div class="card-body"> <small class="text-muted">Correo </small>
+                                <h6>hannagover@gmail.com</h6> <small class="text-muted p-t-30 db">Teléfno</small>
+                                <h6>+91 654 784 547</h6> <small class="text-muted p-t-30 db">Dirección</small>
+                                <h6>71 Pilgrim Avenue Chevy Chase, MD 20815</h6>
+                                
+                                <br>
+                                <button class="btn btn-circle btn-secondary"><i class="fab fa-facebook"></i></button>
+                                <button class="btn btn-circle btn-secondary"><i class="fab fa-twitter"></i></button>
+                                <button class="btn btn-circle btn-secondary"><i class="fab fa-youtube"></i></button>
+                            </div> -->
+                        </div>
                     </div>
-                    <!-- Tab3 -->
-                    <div class="tab-pane p-20" id="profile2" role="tabpanel">
-                        <!-- Boton crear etiqueta -->
-                        <button class="btn btn-themecolor" alt="default" data-toggle="modal"
-                            data-target="#agregarEtiqueta">Crear nueva etiqueta</button>
-                        <!-- Modal agregar etiqueta -->
-                        <div id="agregarEtiqueta" class="modal fade" tabindex="-1" role="dialog"
-                            aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="vcenter">Nueva etiqueta</h4>
-                                        <button type="button" class="close" data-dismiss="modal"
-                                            aria-hidden="true">×</button>
-                                    </div>
-                                    <div class="modal-body">
-
-                                        <div class="form-group">
-                                            <input type="text" id="txt_nombreEtiqueta" name="text" class="form-control"
-                                                required="true"
-                                                data-validation-required-message="This field is required"
-                                                aria-invalid="false" placeholder="Ingrese el nombre de la etiqueta">
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                        <div class="card">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs profile-tab" role="tablist">
+                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Más información</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Permisos</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#encargado" role="tab">Encargado</a> </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="home" role="tabpanel">
+                                    <div class="card-body">
+                                        <div class="profiletimeline" id="textoInformativo">
                                         </div>
-
                                     </div>
-                                    <div class="modal-footer">
-                                        <button id="btn_registrarEtiqueta" type="submit"
-                                            class="btn btn-warning waves-effect" data-dismiss="modal">Añadir</button>
+                                </div>
+                                <!--second tab-->
+                                <div class="tab-pane" id="profile" role="tabpanel">
+                                    <div class="card-body">
+                                        <div class="card" id="permisos">
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <!-- Tercer tab -->
+                                <div class="tab-pane" id="encargado" role="tabpanel">
+                                    <div class="card-body">
+                                            <div class="profiletimeline" id="infoEncargado">
+                                                </div>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Tabla etiquetas -->
-                        <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
-                            data-tablesaw-mode="columntoggle" id="tablesaw-6684">
-                            <thead>
-                                <tr>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="persist">
-                                        Etiqueta</th>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-sortable-default-col=""
-                                        data-tablesaw-priority="3" class="tablesaw-priority-3">Fecha de creación</th>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2"
-                                        class="tablesaw-priority-2">Número de usuarios</th>
-                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
-                                        class="tablesaw-priority-1">
-                                        Edición
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbodyEtiquetas">
-                                <!-- Se genera dinamicamente -->
-                            </tbody>
-                        </table>
-
                     </div>
-                    <!-- Tab2 -->
-                    <div class="tab-pane p-20" id="messages" role="tabpanel"></div>
                 </div>
+               
             </div>
         </div>
+
+
     </div>
 
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>

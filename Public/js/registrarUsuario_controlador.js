@@ -108,17 +108,9 @@ let obtener_datosPadre = () => {
         let telPadre = input_TelPadre.value;
         let cantHijos = input_CantHijos.value;
         let fotoPadre = input_imagen.src;
-        let provinciaUsuario = input_ProvinciaPadre.value;
-        let cantonUsuario = input_CantonPadre.value;
-        let distritoUsuario = input_DistritoPadre.value;
-        let estadoUsuario = "Nuevo";
-        let tipo = "Padre";
-        let registroCompletado = false;
 
      
-        registrar_Padre(nombrePadre, apellidoPadre, seg_ApellidoPadre,  idPadre, nacionPadre, direccionPadre,
-             emailPadre, telPadre, cantHijos, fotoPadre, provinciaUsuario, cantonUsuario, distritoUsuario,
-              estadoUsuario,tipo, registroCompletado);
+        registrar_Padre(nombrePadre, apellidoPadre, seg_ApellidoPadre,  idPadre, nacionPadre, direccionPadre, emailPadre, telPadre, cantHijos, fotoPadre);
         
     } else {
         swal.fire({
