@@ -60,7 +60,7 @@ let registrar_boletin = (pcedulaJuridica, pboletin, pnombre) => {
         text: 'Muchas gracias'
       });
     });
-    bitacora(pcedulaJuridica, + "Boletín", + pcedulaJuridica, +  "Agregó boletín informativo");
+    bitacora(pcedulaJuridica, "Boletín",  pcedulaJuridica +  "agregó boletín informativo");
   };
   
 

@@ -36,7 +36,7 @@ let registrar_acercaNosotros = (pcedulaJuridica, pdescripcion, pubicacion, penca
       });
     });
 
-    bitacora(pcedulaJuridica, + "Acerca nosotros", + pcedulaJuridica, +  "Agregó información del centro");
+    bitacora(pcedulaJuridica, + "Acerca nosotros", pcedulaJuridica +  "agregó información del centro");
   };
   
 

@@ -31,7 +31,7 @@ let registrar_comentarios = (pcedulaJuridica, pcorreoUsuario, pcalificacion, pfe
         text: 'Por favor inténtelo de nuevo'
       });
     });
-    bitacora(pcorreoUsuario, + "Comentario", + pcorreoUsuario, +  "Agregó un comentario a" + pcedulaJuridica);
+    bitacora(pcorreoUsuario, "Comentario", pcorreoUsuario + "agregó un comentario a" + pcedulaJuridica);
   };
   
 
