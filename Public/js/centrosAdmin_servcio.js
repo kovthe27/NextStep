@@ -82,28 +82,3 @@ let consultar_listaCentrosAdmin = () => {
 
   return lista_etiquetasCentro; 
 };
-
-let listar_TodosContactos = () => {
-  let lista_Contactos = [];
-
-  let request = $.ajax({
-    url: "http://localhost:4000/api/consultar_contacto",
-    method: "GET",
-    data: {
-    },
-    dataType: "json",
-    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-    async : false
-  });
-
-  request.done(function (res) {
-    lista_Contactos = res;
-    
-  });
-
-  request.fail(function (jqXHR, textStatus) {
-    
-  });
-  return lista_Contactos;
- 
-};

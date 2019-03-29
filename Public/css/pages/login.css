@@ -55,7 +55,6 @@ Login register and recover password Page
 #txtUsuario, #txtContrasena {
   color: #292b29;
   background-color: transparent !important;
-  padding: 10px;
 }
 
 #txtCorreo{
