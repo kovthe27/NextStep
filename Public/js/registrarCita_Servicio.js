@@ -1,11 +1,10 @@
 'use strict';
 
-let registrar_cita = (pcedulaJuridica, pnombre, pfechaCita, phoraCita, pcorreoUsuario) => {
+let registrar_cita = (pnombre, pfechaCita, phoraCita, pcorreoUsuario) => {
     let request = $.ajax({
       url: "http://localhost:4000/api/registrar_cita",
       method: "POST",
       data: {
-        cedulaJuridica : pcedulaJuridica,
         nombre: pnombre,
         fecha: pfechaCita,
         hora: phoraCita,

@@ -72,9 +72,8 @@ let mostrar_datosNoticia = () => {
     // console.log(noticia);
 
     for (let i = noticia.length - 1; i > noticia.length - 5; i--) {
-        var cardNoticia = 
-        // "<div class=\"card col-md-3 float-left \">" +
-            "<div class=\"card-body img-thumbnail mb-2\">" +
+        var cardNoticia = "<div class=\"card col-md-3 float-left \">" +
+            "<div class=\"card-body img-thumbnail\">" +
             // dropdown
             "<div class=\"btn-group float-right\">" +
             "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">" +
@@ -88,11 +87,10 @@ let mostrar_datosNoticia = () => {
             "<h4  class=\"card-title text-themecolor\">" + noticia[i].titulo + "</h4>" +
             "<h6  class=\"card-subtitle mb-2 text-muted\">" + noticia[i].fecha + "</h6>" +
             "<p class=\"card-text\">" + noticia[i].descripcion + "</p>" +
-            "</div>" ;
-            // </div>"
+            "</div> </div>";
 
 
-        $("#cargaNoticias").append(cardNoticia) // Append <li> to <ul> with id="myList"
+        $("#cardComentarios-noticias").append(cardNoticia) // Append <li> to <ul> with id="myList"
 
     };
 

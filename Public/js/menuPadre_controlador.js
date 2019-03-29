@@ -63,6 +63,7 @@ let cargarCentros = () => {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 let verPerfilCentro = (cedulaJuridica) =>{
     localStorage.setItem('centroEducativo_admin', JSON.stringify(cedulaJuridica));
     window.location.assign("perfil_CentroEducativo.html");;
@@ -103,17 +104,23 @@ let cargarFavoritos = () => {
 }
 
 let verPerfilCentro = (cedulaJuridica) => {
+=======
+let verPerfilCentro = (cedulaJuridica) =>{
+>>>>>>> parent of ff7e3a6... merge development branch en branch confirmarCuenta
     localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
-    window.location.assign("perfil_Centro-padre.html");;
+    window.location.assign("perfil_CentroEducativo.html");;
 
 }
 
+<<<<<<< HEAD
 let agregarFavorito = (cedulaJuridica) => {
     let usuario = getUsuario();
     registrarFavorito(usuario, cedulaJuridica);
 >>>>>>> parent of 469c5f3... Merge pull request #38 from kovthe27/cargarMasInfoCentro
 }
 
+=======
+>>>>>>> parent of ff7e3a6... merge development branch en branch confirmarCuenta
 //Se construye el menu automaticamente con el usuasio en el local storage
 crearMenu();
 cargarCentros();

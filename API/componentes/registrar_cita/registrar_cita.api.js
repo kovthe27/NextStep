@@ -3,7 +3,6 @@ const model_cita = require('./registrar_cita.model');
 
 module.exports.registrar_cita = (req, res) => {
     let cita_nueva = new model_cita({
-        cedulaJuridica: req.body.cedulaJuridica,
         nombre: req.body.nombre,
         fecha: req.body.fecha,
         hora: req.body.hora,
