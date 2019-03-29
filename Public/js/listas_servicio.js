@@ -80,7 +80,7 @@ let crearArticulo = (pcantidad, particulo, pdescripcion) => {
   // request.done(function (msg) {
   //   swal.fire({
   //     type: 'success',
-  //     title: 'El articulo se agrego con exito',
+  //     title: 'El articulo se agregó con exito',
   //     text: 'Muchas gracias'
   //   });
   // });
@@ -120,7 +120,7 @@ let crearTipo = (pNombre) => {
   request.done(function (msg) {
     swal.fire({
       type: 'success',
-      title: 'El articulo se agrego con exito',
+      title: 'El articulo se agregó con exito',
       text: 'Muchas gracias'
     });
   });

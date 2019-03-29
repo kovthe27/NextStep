@@ -135,7 +135,7 @@ let registrarFavorito = (pcorreo, pcedula) => {
   request.done(function (msg) {
     swal({
       type: 'success',
-      title: 'Se agrego a favoritos',
+      title: 'se agregó a favoritos',
       // text: 'Muchas gracias'
     });
   });

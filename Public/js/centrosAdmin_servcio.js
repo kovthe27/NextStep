@@ -43,7 +43,7 @@ let registrarEtiqueta = (pnombre, pfecha, pusuarios) => {
       title: 'La etiqueta ha sido agregada',
       text: 'Muchas gracias'
     });
-    bitacora("MEPAdmin1", "Registro", "Se agrego la etiqueta: " + pnombre);
+    bitacora("MEPAdmin1", "Registro", "se agregó la etiqueta: " + pnombre);
   });
 
   request.fail(function (jqXHR, textStatus) {
