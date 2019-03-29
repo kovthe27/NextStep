@@ -114,6 +114,7 @@ let cargarCentros = () => {
     }
 }
 
+<<<<<<< HEAD
 let cargarFavoritos = () => {
     let listaFavoritos = consultarListaFavoritosPadres();
     let usuario = getUsuario();
@@ -157,6 +158,12 @@ let verPerfilCentro = (cedulaJuridica) => {
 let agregarFavorito = (cedulaJuridica) => {
     let usuario = getUsuario();
     registrarFavorito(usuario, cedulaJuridica);
+=======
+let verPerfilCentro = (cedulaJuridica) =>{
+    localStorage.setItem('centroEducativo_admin', JSON.stringify(cedulaJuridica));
+    window.location.assign("perfil_CentroEducativo.html");;
+
+>>>>>>> parent of 3037211... quitando4
 }
 
 //Se construye el menu automaticamente con el usuasio en el local storage
