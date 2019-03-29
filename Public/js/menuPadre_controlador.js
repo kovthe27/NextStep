@@ -1,7 +1,5 @@
 'use strcit';
 
-'use strict';
-
 const select_provincias = document.querySelector('#slt_provincias');
 const select_cantones = document.querySelector('#slt_cantones');
 const select_distritos = document.querySelector('#slt_distritos');
@@ -93,7 +91,7 @@ let cargarCentros = () => {
                     <div class="el-overlay scrl-up">
                         <ul class="el-info">
                             <li><a class="btn default btn-outline image-popup-vertical-fit" href="`+ listaCentros[i].fotoCentro + `"><i class="sl-icon-magnifier"></i></a></li>
-                            <li><a class="btn default btn-outline" href="javascript:verPerfil(`+ listaCentros[i].cedulaJuridica + `)"><i class=" fas fa-arrow-alt-circle-right"></i></a></li>
+                            <li><a class="btn default btn-outline" href="javascript:verPerfil(`+ listaCentros[i].cedJuridica + `)"><i class=" fas fa-arrow-alt-circle-right"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -101,7 +99,7 @@ let cargarCentros = () => {
                     <h3 class="box-title">`+ listaCentros[i].nombreCentro + `</h3> <small>` + listaCentros[i].emailCentro + `</small>
                     <br>
                     <hr class="orange">
-                    <a href="#" class="text-warning text-small float-left">Eliminar de favoritos</a>
+                    <a href="javascript:agregarFavorito(`+listaCentros[i].cedJuridica+`)" class="text-warning text-small float-left">Agregar a favoritos</a>
                         <p class="float-right"><i class="fas fa-heart"></i></p>
                 </div>
                     
@@ -273,7 +271,7 @@ let filtroFinal = () => {
                         <div class="el-overlay scrl-up">
                             <ul class="el-info">
                                 <li><a class="btn default btn-outline image-popup-vertical-fit" href="`+ listaFiltrada[i].nombreCentro + `"><i class="sl-icon-magnifier"></i></a></li>
-                                <li><a class="btn default btn-outline" href="javascript:verPerfil(`+ listaFiltrada[i].nombreCentro + `);"><i class=" fas fa-arrow-alt-circle-right"></i></a></li>
+                                <li><a class="btn default btn-outline" href="javascript:verPerfil(`+ listaFiltrada[i].cedJuridica + `);"><i class=" fas fa-arrow-alt-circle-right"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -281,7 +279,7 @@ let filtroFinal = () => {
                         <h3 class="box-title">`+ listaFiltrada[i].nombreCentro + `</h3> <small>` + listaFiltrada[i].nombreCentro + `</small>
                         <br>
                         <hr class="orange">
-                        <a href="#" class="text-warning text-small float-left">Eliminar de favoritos</a>
+                        <a href="javascript:agregarFavorito(`+listaFiltrada[i].cedJuridica+`)" class="text-warning text-small float-left">Agregar a favoritos</a>
                             <p class="float-right"><i class="fas fa-heart"></i></p>
                     </div>
                         
@@ -291,6 +289,11 @@ let filtroFinal = () => {
 
         $(CentrosUser).append(vcard);
     }
+}
+
+let verPerfil = (cedulaJuridica) => {
+    localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
+    window.open("perfil_Centro-padre.html",'_blank')
 }
 
 document.querySelector("#btnFiltrar").addEventListener('click', filtroFinal)

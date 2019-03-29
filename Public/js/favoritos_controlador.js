@@ -13,7 +13,7 @@ let cargarFavoritos = () => {
             let vcard =
             `<div class="col-lg-3 mt-4 col-md-6">
             <div class="card">
-                <div class="el-card-item">
+                <div class="el-card-item bounce animated">
                     <div class="el-card-avatar el-overlay-1"> <img src="`+fotoCentro+`" alt="user">
                         <div class="el-overlay scrl-up">
                             <ul class="el-info">
