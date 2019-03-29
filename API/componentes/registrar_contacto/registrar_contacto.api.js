@@ -12,8 +12,7 @@ module.exports.registrar_Contacto = (req, res) =>{
             extEncargado: req.body.extEncargado,
             emailEncargado: req.body.emailEncargado,
             fotoEncargado: req.body.fotoEncargado,
-            centroEducativoId: req.body.centroEducativoId,
-            cedulaJuridica : req.body.cedulaJuridica
+            centroEducativoId: req.body.centroEducativoId
         }
     );
     
@@ -43,7 +42,23 @@ module.exports.registrar_Contacto = (req, res) =>{
 
 module.exports.listar_TodosContactos = (req ,res) =>{
     model_RegistroContacto.find().then(
-        function (contactos) {
-            res.send(contactos)
-        });
+        function(contactos){
+            if(contactos.length > 0){
+                res.json(
+                    {
+                        success: true,
+                        contactos: contactos
+                    }
+                )
+            }else{
+                res.json(
+                    {
+                        success: false,
+                        contactos: 'No se encontraron contactos registrados'
+                    }
+                )
+            }
+        }
+
+    )
 };

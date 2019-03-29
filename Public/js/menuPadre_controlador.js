@@ -114,7 +114,6 @@ let cargarCentros = () => {
     }
 }
 
-
 let cargarFavoritos = () => {
     let listaFavoritos = consultarListaFavoritosPadres();
     let usuario = getUsuario();
@@ -151,7 +150,8 @@ let cargarFavoritos = () => {
 
 let verPerfilCentro = (cedulaJuridica) => {
     localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
-    window.location.assign("perfil_Centro-padre.html");
+    window.location.assign("perfil_Centro-padre.html");;
+
 }
 
 let agregarFavorito = (cedulaJuridica) => {
