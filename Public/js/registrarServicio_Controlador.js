@@ -74,6 +74,7 @@ let mostrar_datosServicio = () => {
     for(let i=0; i<servicioTodos.length; i++){
         if(servicioTodos[i].cedulaJuridica ==  JSON.parse(localStorage.getItem('centroEducativo'))){
             servicio.push(servicioTodos[i]);
+            console.log(servicio);
         }
     }
     let imagen;

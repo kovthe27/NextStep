@@ -1,7 +1,7 @@
 'use strict';
 const input_tituloNoticia = document.querySelector('#txt_tituloNoticia');
 const input_descripcionNoticia = document.querySelector('#txt_descripcionNoticia');
-const btn_enviarNoticia = document.querySelector('#btn_enviarNoticia');
+const btn_enviarNoticia = document.querySelector('#btn_enviarNoticia1');
 
 let validarNoticia = () => {
     let error = false;
@@ -39,14 +39,8 @@ let obtener_datosNoticia = () => {
         let descripcion = input_descripcionNoticia.value;
 
         registrar_noticia(cedulaJuridica, titulo, fecha, descripcion);
-        swal.fire({
-            type: 'success',
-            title: 'La noticia fue creada',
-            text: 'Muchas gracias'
-        });
 
         window.location.reload();
-        // $('#btn_enviarNoticia').click();
 
     } else {
         swal.fire({
@@ -62,10 +56,6 @@ let obtener_datosNoticia = () => {
 
 btn_enviarNoticia.addEventListener('click', obtener_datosNoticia);
 
-
-
-
-// const card_noticia = document.querySelector('#cardnoticia');
 
 let mostrar_datosNoticia = () => {
     let noticiasCentro = consultar_noticia();
