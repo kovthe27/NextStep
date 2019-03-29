@@ -1,7 +1,7 @@
 'use strict';
 const input_tituloNoticia = document.querySelector('#txt_tituloNoticia');
 const input_descripcionNoticia = document.querySelector('#txt_descripcionNoticia');
-const btn_enviarNoticia = document.querySelector('#btn_enviarNoticia');
+const btn_enviarNoticia = document.querySelector('#btn_enviarNoticia1');
 
 let validarNoticia = () => {
     let error = false;
@@ -26,7 +26,7 @@ let validarNoticia = () => {
 let obtener_datosNoticia = () => {
 
     if (validarNoticia() == false) {
-        let cedulaJuridica = 9876;
+        let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
         let titulo = input_tituloNoticia.value;
         let fecha = '';
         let today = new Date();
@@ -39,14 +39,8 @@ let obtener_datosNoticia = () => {
         let descripcion = input_descripcionNoticia.value;
 
         registrar_noticia(cedulaJuridica, titulo, fecha, descripcion);
-        swal.fire({
-            type: 'success',
-            title: 'La noticia fue creada',
-            text: 'Muchas gracias'
-        });
 
         window.location.reload();
-        // $('#btn_enviarNoticia').click();
 
     } else {
         swal.fire({
@@ -63,17 +57,18 @@ let obtener_datosNoticia = () => {
 btn_enviarNoticia.addEventListener('click', obtener_datosNoticia);
 
 
-
-
-// const card_noticia = document.querySelector('#cardnoticia');
-
 let mostrar_datosNoticia = () => {
-    let noticia = consultar_noticia();
-    // console.log(noticia);
+    let noticiasCentro = consultar_noticia();
+    let noticia = [];
+    for (let i = 0; i < noticiasCentro.length; i++) {
+        if (noticiasCentro[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
+            noticia.push(noticiasCentro[i]);
+        }
+    }
+    for (let i = 0; i < noticia.length; i++) {
 
-    for (let i = noticia.length - 1; i > noticia.length - 5; i--) {
-        var cardNoticia = 
-        // "<div class=\"card col-md-3 float-left \">" +
+        var cardNoticia =
+            // "<div class=\"card col-md-3 float-left \">" +
             "<div class=\"card-body img-thumbnail mb-2\">" +
             // dropdown
             "<div class=\"btn-group float-right\">" +
@@ -88,11 +83,12 @@ let mostrar_datosNoticia = () => {
             "<h4  class=\"card-title text-themecolor\">" + noticia[i].titulo + "</h4>" +
             "<h6  class=\"card-subtitle mb-2 text-muted\">" + noticia[i].fecha + "</h6>" +
             "<p class=\"card-text\">" + noticia[i].descripcion + "</p>" +
-            "</div>" ;
-            // </div>"
+            "</div>";
+        // </div>"
 
 
         $("#cargaNoticias").append(cardNoticia) // Append <li> to <ul> with id="myList"
+
 
     };
 

@@ -111,24 +111,26 @@ let mostrarEncargado = () => {
         
         if (listaEncargados[k].cedulaJuridica== "234324543") {
             let infoEncargado =
-                "<small class=\"text-muted p-t-10 db\">Nombre encargado</small>" +
+                "<small class=\"text-muted p-t-10 db\">Nombre comercial</small>" +
                 "<p>" + listaEncargados[k].nombreEncargado + "</p>" +
                 "<hr>" +
-                "<small class=\"text-muted p-t-10 db\">ID del encargado</small>" +
+                "<small class=\"text-muted p-t-10 db\">Dirección del centro</small>" +
                 "<p>" + listaEncargados[k].idEncargado + "</p>" +
                 "<hr>" +
-                "<small class=\"text-muted p-t-10 db\">Departamento en que trabaja</small>" +
+                "<small class=\"text-muted p-t-10 db\">Dirección del centro</small>" +
                 "<p>" + listaEncargados[k].dptoEncargado + "</p>" +
                 "<hr>" +
-                "<small class=\"text-muted p-t-10 db\">Teléfono del encargado</small>" +
+                "<small class=\"text-muted p-t-10 db\">Dirección del centro</small>" +
                 "<p>" + listaEncargados[k].telEncargado + "</p>" +
                 "<hr>" +
-                "<small class=\"text-muted p-t-10 db\">Número de extensión</small>" +
+                "<small class=\"text-muted p-t-10 db\">Tipo de centro</small>" +
                 "<p>" + listaEncargados[k].extEncargado + "</p>" +
                 "<hr>" +
-                "<small class=\"text-muted p-t-10 db\">Correo</small>" +
+                "<small class=\"text-muted p-t-10 db\">Grado académico</small>" +
                 "<p>" + listaEncargados[k].emailEncargado + "</p>" +
-                "<hr>"
+                "<hr>" +
+                "<small class=\"text-muted p-t-10 db\">Año de fundación</small>" +
+                "<p>" + listaEncargados[k].centroEducativoId + "</p>"
 
             $("#infoEncargado").append(infoEncargado);
         }

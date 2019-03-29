@@ -86,34 +86,34 @@ let cargarCentros = () => {
     for (let i = 0; i < listaCentros.length; i++) {
 
         let cardCentro =
-            `<div class="col-lg-3 col-md-6 float-left">
-            <div class="card">
-                <div class="card-body">
-                    <div class="el-card-item">
-                        <div class="image mb-3 mt-4">
-                            <img src="`+ listaCentros[i].fotoCentro + `" width=100%>
-                        </div>
-                        <div class="el-card-content mb-3">
-                            <h4 class="box-title"><a href=javascript:verPerfilCentro(`+ listaCentros[i].cedJuridica + `)>` + listaCentros[i].nombreCentro + `</a></h4> <small>` + listaCentros[i].emailCentro + `</small>
-                            <br>
-                        </div>
-                        <hr class="orange">
-                        <div class="mb-3 botones">
-                            <a href="javascript:agregarFavorito(`+ listaCentros[i].cedJuridica + `)" class="text-warning text-small float-left">Agregar a favoritos</a>
-                            <p class="float-right"><i class="fa fa-star"></i> 3</p>
-                        </div>
-
-
+        `<div class="col-lg-3 mt-4 col-md-6">
+        <div class="card">
+            <div class="el-card-item bounce animated">
+                <div class="el-card-avatar el-overlay-1"> <img src="`+ listaCentros[i].fotoCentro + `" alt="user" width=100%>
+                    <div class="el-overlay scrl-up">
+                        <ul class="el-info">
+                            <li><a class="btn default btn-outline image-popup-vertical-fit" href="`+ listaCentros[i].fotoCentro + `"><i class="sl-icon-magnifier"></i></a></li>
+                            <li><a class="btn default btn-outline" href="javascript:verPerfil(`+ listaCentros[i].cedulaJuridica + `)"><i class=" fas fa-arrow-alt-circle-right"></i></a></li>
+                        </ul>
                     </div>
                 </div>
+                <div class="card-body">
+                    <h3 class="box-title">`+ listaCentros[i].nombreCentro + `</h3> <small>` + listaCentros[i].emailCentro + `</small>
+                    <br>
+                    <hr class="orange">
+                    <a href="#" class="text-warning text-small float-left">Eliminar de favoritos</a>
+                        <p class="float-right"><i class="fas fa-heart"></i></p>
+                </div>
+                    
             </div>
-        </div>`
+            </div>
+    </div>`
+
 
         $(CentrosUser).append(cardCentro);
         console.log(listaCentros[0].nombreCentro);
     }
 }
-
 
 let cargarFavoritos = () => {
     let listaFavoritos = consultarListaFavoritosPadres();
@@ -151,7 +151,8 @@ let cargarFavoritos = () => {
 
 let verPerfilCentro = (cedulaJuridica) => {
     localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
-    window.location.assign("perfil_Centro-padre.html");
+    window.location.assign("perfil_Centro-padre.html");;
+
 }
 
 let agregarFavorito = (cedulaJuridica) => {
@@ -267,7 +268,7 @@ let filtroFinal = () => {
         let vcard =
             `<div class="col-lg-3 mt-4 col-md-6">
             <div class="card">
-                <div class="el-card-item">
+                <div class="el-card-item bounce animated">
                     <div class="el-card-avatar el-overlay-1"> <img src="`+ listaFiltrada[i].fotoCentro + `" alt="user" width=100%>
                         <div class="el-overlay scrl-up">
                             <ul class="el-info">

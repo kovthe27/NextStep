@@ -73,7 +73,7 @@ const card_Comentario = document.querySelector('#cardComentarios');
 let mostrar_datosComentario = () =>{
     let Comentario = consultar_comentarios();
     // let Usuarios = consultar_usuarios ();
-    let cedulaJuridica = "903";
+    let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
     // JSON.parse(localStorage.getItem('centro'));
 
     for(let i = Comentario.length -1; i > Comentario.length  -5; i--){

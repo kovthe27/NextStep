@@ -46,26 +46,28 @@
                 <div class="navbar-collapse">
                     <!-- Barra de búsqueda -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="sl-icon-menu"></i></a> </li>
-                        <li class="nav-item hidden-xs-down search-box"> <a
-                                class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
-                                    class="icon-Magnifi-Glass2"></i>
-                            </a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
                     </ul>
 
                     <!-- Perfil -->
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="../admin-wrap/assets/images/users/1.jpg" alt="user" class=""> <span
-                                    class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span>
-                            </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="imgPerfil" src=""  class=""> <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img align-self-center"><img id="imgPerfil2" src="" ></div>
+                                            <div class="u-text  text-align: center">
+                                                <h4 id="nombrePerfil2" >Steave Jobs</h4>
+                                                <p id="correo" class="text-muted"></p></div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="perfil_CentroEducativo.html"><i class="ti-user"></i> Mi perfil</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar sesión</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -129,7 +131,7 @@
                 <div class="container-fluid">
 
                     <div class="texto">
-                        <h2>Nombre del centro educativo</h2>
+                        <h2 id="nomCentro"></h2>
                         <button type="button" id="seleccionar_etiquetas" class="btn btn-sm btn-outline-warning mb-3"
                             data-toggle="modal" data-target="#registrarEtiquetasCentro">Añadir etiquetas</button>
                         <p id="creacionEtiquetas">
@@ -432,17 +434,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Botón -->
-                        <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#registrarCita">Añadir
-                            servicio</button> -->
-
-
-
-                        <!-- Botón -->
-                        <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal" data-target="#acercaNosotros">Añadir
-                                información</button> -->
-
-                        <!-- <a href="#" class="btn-sm btn-outline-themecolor text-themecolor float-right mr-1" data-toggle="modal" data-target="#acercaNosotros"><i class="ti-pencil"></i>Añadir información</a> -->
 
                         <div class="clearfix"></div>
 
@@ -518,19 +509,6 @@
                                 <div class="carousel-item active" id="carousel" role="listbox"></div>
                                 <div class="carousel-item" id="carousel2"></div>
                                 <div class="carousel-item" id="carousel3"></div>
-
-                                <!--                                
-
-                                <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button"
-                                    data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button"
-                                    data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a> -->
                                 <div class="clearfix"></div>
                                 <ol class="carousel-indicators">
                                     <li data-target="#carouselExampleIndicators2" data-slide-to="0" class=""></li>
@@ -539,95 +517,6 @@
                                 </ol>
                             </div>
                         </div>
-
-
-                        <!-- <div class="container">
-                            <div id="carruselCmpleto" class="carousel slide" data-ride="carousel">
-                                <div class="carousel-inner" role="listbox">
-
-                                    <div class="carousel-item active" id="carousel">
-                                        <div class="col-lg-4 col-md-6 float-left">
-                                            <div class="card">
-                                                <div class="el-card-item card-body">
-                                                    <h3 class="col-md-10">Titulo del servicio</h3>
-
-                                                    <div class="btn-group float-right">
-                                                        <button type="button" class="btn text-right" data-toggle="dropdown"
-                                                            aria-haspopup="true" aria-expanded="false">
-                                                            <i class="fas fa-ellipsis-v"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item\" href="#">Editar</a>
-                                                            <a class="dropdown-item\" href="#">Eliminar</a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="image">
-                                                        <img class="card-img-top img-fluid img-responsive img-thumbnail"
-                                                            src="../Public/imgs/colegio.jpg">
-                                                    </div>
-                                                    <div class="el-card-content">
-                                                        <p class="mt-3">subtitle of project</p>
-                                                        <br>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item" id="carousel2"></div>
-                                    <div class="carousel-item" id="carousel3"></div>
-                                </div>
-                                <a class="carousel-control-prev" href="#carruselCompleto" role="button"
-                                    data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"><i class="far fa-arrow-alt-circle-left"></i></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carruselCompleto" role="button"
-                                    data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-
-                            <a class="carousel-control-prev" href="#carruselCompleto" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"><i class="far fa-arrow-alt-circle-left"></i></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carruselCompleto" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div> -->
-
-                        <!-- <div id="cardServicio altura" class="col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">"
-                               <img class="card-img-top img-fluid img-responsive img-thumbnail" src="">
-                                <div class="card-body card">
-                        
-                              <div class="btn-group float-right">
-                              <button type="button" class="btn text-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fas fa-ellipsis-v"></i>
-                              </button>
-                               <div class="dropdown-menu dropdown-menu-right">
-                              <a class="dropdown-item\" href="#" >Editar</a>
-                               <a class="dropdown-item\" href="#" >Eliminar</a>
-                               </div></div>
-                        
-                                <div class="float-left"> <h4 id="txt_titulo" class="card-title text-themecolor">"+servicio[i].titulo+"</h4>
-                                <p id="txt_descripcion" class="card-text">"+servicio[i].descripcion+"</p>
-                                </div></div> -->
-
-
-                        <!-- <div class=" altura col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left">
-                            <img id="txt-imagen" class="card-img-top img-fluid" src="../Public/imgs/colegio.jpg">
-                            <div class="card-body">
-                                <h4 id="txt_titulo" class="card-title"></h4>
-                                <p id="txt_descripcion" class="card-text"></p>
-                            </div>
-                        </div> -->
 
                     </section>
                     <div class="clearfix"></div>
@@ -702,28 +591,6 @@
                                 </div>
                                 <!-- comentarios -->
                                 <div class="comment-widgets m-b-20" id="cardComentarios">
-                                    <!-- Comment Row -->
-                                    <!-- <div class="d-flex flex-row comment-row">
-                                            <div class="p-2"><span class="round"><img
-                                                        src="../admin-wrap/assets/images/users/1.jpg" alt="user"
-                                                        width="50"></span></div>
-                                            <div class="comment-text w-100">
-                                                <h5>James Anderson</h5><div class="float-right text-warning"><span>5</span><i class="ti-star text-warning"></i></div>
-                                                <div class="comment-footer">
-                                                    <span class="date">April 14, 2016</span>
-                                                    <span class="action-icons">
-                                                        <a href="javascript:void(0)"><i
-                                                                class="mdi mdi-pencil-circle"></i></a>
-                                                        <a href="javascript:void(0)"><i
-                                                                class="mdi mdi-checkbox-marked-circle"></i></a>
-                                                        <a href="javascript:void(0)"><i class="mdi mdi-heart"></i></a>
-                                                    </span>
-                                                </div>
-                                                <p class="m-b-5 m-t-10">Lorem Ipsum is simply dummy text of the printing
-                                                    and type setting industry. Lorem Ipsum has beenorem Ipsum is simply
-                                                    dummy text of the printing and type setting industry.</p>
-                                            </div>
-                                        </div> -->
                                 </div>
                                 <!-- Modal -->
                                 <div id="registrarComentario" class="modal fade" tabindex="-1" role="dialog"
@@ -769,21 +636,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- input comentario -->
-                                <!-- <div class="card-body b-t">
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <textarea placeholder="Escriba su comentario"
-                                                    class="form-control b-0"></textarea>
-                                            </div>
-                                            <div class="col-2 text-right">
-                                                <button type="button" class="btn btn-warning btn-circle btn-lg"><i
-                                                        class="far fa-paper-plane"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div> -->
                             </div>
 
 
@@ -831,7 +683,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button id="btn_enviarNoticia" type="submit"
+                                                    <button id="btn_enviarNoticia1" type="submit"
                                                         class="btn btn-warning waves-effect"
                                                         data-dismiss="modal">Crear</button>
 
@@ -959,6 +811,7 @@
     <script src="js/etiquetasCentro_controlador.js"></script>
     <script src="js/registrar_comentario_servicio.js"></script>
     <script src="js/registrar_comentario_controlador.js"></script>
+    <script src="js/menuCentro_controlador.js"></script>
 </body>
 
 </html>
