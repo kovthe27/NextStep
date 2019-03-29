@@ -57,7 +57,7 @@
           "   <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>"+
                           " </div>"+
 
-          "<div class=\"modal-body\" id=\"nombreLista"+lista[i].nombre+"\">"+
+          "<div class=\"modal-body pt-0\" id=\"nombreLista"+lista[i].nombre+"\">"+
           "<div class=\"card-body\">"+
           " <table class=\"tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle\" data-tablesaw-mode=\"columntoggle\" id=\"tablesaw-1093\">"+
           "<thead>"+

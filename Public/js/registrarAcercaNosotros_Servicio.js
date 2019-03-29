@@ -35,6 +35,8 @@ let registrar_acercaNosotros = (pcedulaJuridica, pdescripcion, pubicacion, penca
         text: 'Por favor inténtelo de nuevo'
       });
     });
+
+    bitacora(pcedulaJuridica, + "Acerca nosotros", pcedulaJuridica +  "agregó información del centro");
   };
   
 

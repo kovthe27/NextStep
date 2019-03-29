@@ -30,6 +30,7 @@ let registrar_cita = (pcedulaJuridica, pnombre, pfechaCita, phoraCita, pcorreoUs
         text: 'Por favor inténtelo de nuevo'
       });
     });
+    bitacora(pnombre, "Cita", "Registró una cita con" + pcedulaJuridica);
   };
   
 
