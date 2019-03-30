@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=opensans:500);
 body{
-                background: #54B56B;
+                background: transparent !important;
                 color:#fff;
                 font-family: 'Open Sans', sans-serif;
                 max-height:700px;
@@ -22,12 +22,11 @@ body{
                 letter-spacing: 15px;
             }
             ._1{
-                text-align:center;
-                display:block;
-                position:relative;
-                letter-spacing: 12px;
-                font-size: 4em;
-                line-height: 80%;
+                text-align: center;
+                display: block;
+                position: relative;
+                margin-top: .2em;
+                font-size: 4.5em;
             }
             ._2{
                 text-align:center;
@@ -41,7 +40,6 @@ body{
                 position: relative;
                 display: inline-block;
                 margin: 19px 0px 0px 0px;
-                /* top: 256.301px; */
                 z-index: 3;
                 width: 100%;
                 line-height: 1.2em;
@@ -50,7 +48,7 @@ body{
            
 
             .btn{
-                background-color: rgb( 255, 255, 255 );
+                /* background-color: rgb( 255, 255, 255 ); */
                 position: relative;
                 display: inline-block;
                 width: 358px;
@@ -60,6 +58,7 @@ body{
                 margin:0 auto;
                 color:#33cc99;
                 text-decoration: none;
+                margin-top:2em; 
                 margin-right: 10px
             }
             .right{
@@ -92,12 +91,12 @@ body{
             .cloud {
                 width: 350px; height: 120px;
 
-                background: #FFF;
-                background: linear-gradient(top, #FFF 100%);
-                background: -webkit-linear-gradient(top, #FFF 100%);
-                background: -moz-linear-gradient(top, #FFF 100%);
-                background: -ms-linear-gradient(top, #FFF 100%);
-                background: -o-linear-gradient(top, #FFF 100%);
+                background: #33cc99;
+                background: linear-gradient(top, #33cc99 100%);
+                background: -webkit-linear-gradient(top, #33cc99 100%);
+                background: -moz-linear-gradient(top, #33cc99 100%);
+                background: -ms-linear-gradient(top, #33cc99 100%);
+                background: -o-linear-gradient(top, #33cc99 100%);
 
                 border-radius: 100px;
                 -webkit-border-radius: 100px;
@@ -112,7 +111,7 @@ body{
             .cloud:after, .cloud:before {
                 content: '';
                 position: absolute;
-                background: #FFF;
+                background: #33cc99;
                 z-index: -1
             }
 
