@@ -4,10 +4,6 @@ const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    requireTLS: true,
     auth: {
       user: 'specta.grupo@gmail.com',
       pass: 'specta123'
@@ -32,7 +28,8 @@ module.exports.registrar_Padre = (req, res) =>{
             distritoUsuario: req.body.distritoUsuario,
             contrasenaUsuario: GeneratedGui(),
             estadoUsuario: req.body.estadoUsuario,
-            tipo: req.body.tipo
+            tipo: req.body.tipo,
+            registroCompletado:req.body.registroCompletado
         }
     );
     
@@ -51,8 +48,8 @@ module.exports.registrar_Padre = (req, res) =>{
                     to: registro_Padre.emailUsuario,
                     subject: 'Código de inicio de sesión Next Step',
                     html: `<h1 style="color:#6F1E51;">Saludos ${registro_Padre.nombreUsuario} </h1>
-                    <p>Bienvenido a Next Steps!</p>
-                    <p>Este es tu código temporal ${contrasenaUsuario.GeneratedGui()}</p>
+                    <p>Bienvenido(a) a Next Steps!</p>
+                    <p>Este es tu código temporal ${registro_Padre.contrasenaUsuario}</p>
                     <p>Ingresa a la aplicación y digita el código temporal al iniciar sesión</p>
                     `
                 };
@@ -86,6 +83,31 @@ function GeneratedGui(){
         generatedGui += parseInt(Math.random() * (max - min) + min);
     }
     return generatedGui;
+}
+
+module.exports.actualizarcontrasena_Padre = (req, res) => {
+    model_RegistroPadre.findOneAndUpdate(
+        {emailUsuario:req.body.email}, 
+        {contrasenaUsuario:req.body.contrasena, registroCompletado:true},
+        {new:true}, 
+        function(error, usuarioActualizado){
+            if(error){
+                res.json(
+                    {
+                        success : false,
+                        msg : `No se pudo actualizar la contraseña`
+                    }
+                )
+            }else {
+                res.json(
+                    {
+                        success : true,
+                        msg : `Contraseña ha sido actualizada`,
+                        usuario: usuarioActualizado
+                    }
+                )
+            }
+    });
 }
 
 

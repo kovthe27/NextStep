@@ -4,10 +4,6 @@ const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    requireTLS: true,
     auth: {
       user: 'specta.grupo@gmail.com',
       pass: 'specta123'
@@ -34,7 +30,8 @@ module.exports.registrar_Centro = (req, res) =>{
             gradoAcademico: req.body.gradoAcademico,
             annoFundCentro: req.body.annoFundCentro,
             referenciaHistorica: req.body.referenciaHistorica,
-            archivosCentro: req.body.archivosCentro
+            archivosCentro: req.body.archivosCentro,
+            registroCompletado: false
         }
     );
     
@@ -54,7 +51,7 @@ module.exports.registrar_Centro = (req, res) =>{
                     subject: 'Código de inicio de sesión Next Step',
                     html: `<h1 style="color:#6F1E51;">Saludos ${registro_Centro.nombreCentro} </h1>
                     <p>Bienvenido a Next Steps!</p>
-                    <p>Este es tu código temporal ${GeneratedGui()}</p>
+                    <p>Este es tu código temporal ${registro_Centro.contrasenaCentro}</p>
                     <p>Ingresa a la aplicación y digita el código temporal al iniciar sesión</p>
                     `
                 };
@@ -91,6 +88,30 @@ function GeneratedGui(){
     return generatedGui;
 }
 
+module.exports.actualizarcontrasena_Centro = (req, res) => {
+    model_RegistroCentro.findOneAndUpdate(
+        {emailCentro:req.body.email}, 
+        {contrasenaCentro:req.body.contrasena, registroCompletado:true},
+        {new:true}, 
+        function(error, usuarioActualizado){
+            if(error){
+                res.json(
+                    {
+                        success : false,
+                        msg : `No se pudo actualizar la contraseña`
+                    }
+                )
+            }else {
+                res.json(
+                    {
+                        success : true,
+                        msg : `Contraseña ha sido actualizada`,
+                        usuario: usuarioActualizado
+                    }
+                )
+            }
+    });
+}
 
 module.exports.listar_TodosCentros = (req ,res) =>{
     model_RegistroCentro.find().then(

@@ -19,7 +19,8 @@ let schema_RegistroPadre = new mongoose.Schema(
         provinciaUsuario : {type: String,require: true},
         cantonUsuario : {type: String, require: true},
         distritoUsuario : {type: String, require: true},
-        tipo : {type: String, require: true}
+        tipo : {type: String, require: true},
+        registroCompletado : {type: Boolean}
     }
 );
 
