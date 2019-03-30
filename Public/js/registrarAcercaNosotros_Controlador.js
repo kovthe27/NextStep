@@ -14,13 +14,6 @@ const btn_enviarInfoCentro = document.querySelector('#btn-enviarInfo');
 let validarInfo_centro = () => {
     let error = false;
 
-    if (input_cedulaJuridica.value == '') {
-        error = true;
-        input_cedulaJuridica.classList.add('error_input');
-    } else {
-        input_cedulaJuridica.classList.remove('error_input');
-    }
-
     if (input_descripcionCentro.value == '') {
         error = true;
         input_descripcionCentro.classList.add('error_input');
@@ -56,7 +49,7 @@ let validarInfo_centro = () => {
 let obtener_datosCentro = () => {
 
     if (validarInfo_centro() == false) {
-        let cedulaJuridica = input_cedulaJuridica.value;
+        let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
         let descripcionCentro = input_descripcionCentro.value;
         let ubicacion = input_ubicacion.value;
         let encargado = input_encargado.value;
@@ -74,7 +67,7 @@ let obtener_datosCentro = () => {
             text: 'Muchas gracias'
         });
 
-        window.location.reload();
+        // window.location.reload();
         // $('#btn_enviarNoticia').click();
 
     } else {
@@ -99,7 +92,8 @@ const card_acercaNosotros = document.querySelector('#cardInfo');
 let mostrar_infoCentro = () => {
     let acercaNosotros = consultar_acercaNosotros();
 
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < acercaNosotros.length; i++) {
+        if (acercaNosotros[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
         var card_acercaNosotros = 
         "<div class=\"clearfix\"></div>"+
         "<div class=\"col-md-7 float-left\">"+
@@ -122,7 +116,7 @@ let mostrar_infoCentro = () => {
 
         $("#cardInfo").append(card_acercaNosotros)
     };
-
+};
 };
 
 

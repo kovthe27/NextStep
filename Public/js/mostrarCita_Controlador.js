@@ -8,7 +8,7 @@ let mostrar_datosCita = () =>{
     
 
     for(let i = 0; i < cita.length; i++){
-        // if (cita[i].cedulaJuridica == cedulaJuridica ) {
+        if (cita[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
         var fechaFormato = new Date(cita[i].fecha);
         var nuevaFecha = fechaFormato.getDate() + "-" + fechaFormato.getMonth() + "-" + fechaFormato.getFullYear();
         var card = 
@@ -32,7 +32,7 @@ let mostrar_datosCita = () =>{
         $("#cargarCitas").append(card);
     };
     
-// }
+}
 };
 
 

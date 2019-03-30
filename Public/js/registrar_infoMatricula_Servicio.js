@@ -28,7 +28,7 @@ let registrar_infoMatricula = (pcedulaJuridica, ptitulo, pdescripcion) => {
         text: 'Por favor inténtelo de nuevo'
       });
     });
-    bitacora(pcedulaJuridica, + "Matrícula",  pcedulaJuridica +  "agregó información de matrícula");
+    // bitacora(pcedulaJuridica, + "Matrícula",  pcedulaJuridica +  "agregó información de matrícula");
   };
   
 

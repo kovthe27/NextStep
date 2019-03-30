@@ -42,13 +42,13 @@ let obtener_datosServicio = () => {
         let descripcion = input_descripcion.value;
 
         registrar_servicio(cedulaJuridica, imagen, titulo, descripcion);
-        swal.fire({
-            type: 'success',
-            title: 'El servicio fue creado',
-            text: 'Muchas gracias'
-        });
-        $('#btn_enviar').click();
-        window.location.reload();
+        // swal.fire({
+        //     type: 'success',
+        //     title: 'El servicio fue creado',
+        //     text: 'Muchas gracias'
+        // });
+        // $('#btn_enviar').click();
+        // window.location.reload();
 
     } else {
         swal.fire({
@@ -81,6 +81,7 @@ let mostrar_datosServicio = () => {
     let titulo;
     let descripcion;
     for (let i = 0; i < 3; i++) {
+        if (servicio[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
         if (servicio[i].imagen == "undefined") {
             imagen = "/imgs/placeholder.png";
         }else{
@@ -103,11 +104,11 @@ let mostrar_datosServicio = () => {
             "</div> </div> </div>"
 
         $("#carousel").append(card)
-        // numeroCarrusel++;
-        // servicio.reverse();
     };
+};
     
     for (let i = 4; i < 7; i++) {
+        if (servicio[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
         if (servicio[i].imagen == "undefined") {
             imagen = ".\imgs\placeholder.png";
         }else{
@@ -133,9 +134,11 @@ let mostrar_datosServicio = () => {
         // numeroCarrusel++;
         // servicio.reverse();
     };
+};
 
 
     for (let i = 7; i < 10; i++) {
+        if (servicio[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
         if (i < servicio.length) {
             imagen= servicio[i].imagen;
             titulo = servicio[i].titulo;
@@ -165,7 +168,7 @@ let mostrar_datosServicio = () => {
         // numeroCarrusel++;
         // servicio.reverse();
     };
-
+    };
 
 };
 

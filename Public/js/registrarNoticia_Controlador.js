@@ -24,6 +24,7 @@ let validarNoticia = () => {
 };
 
 let obtener_datosNoticia = () => {
+    document.querySelector("#cargaNoticias").innerHTML = "";
 
     if (validarNoticia() == false) {
         let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
@@ -40,17 +41,9 @@ let obtener_datosNoticia = () => {
 
         registrar_noticia(cedulaJuridica, titulo, fecha, descripcion);
 
-        window.location.reload();
-
-    } else {
-        swal.fire({
-            type: 'warning',
-            title: 'La noticia no fue creado',
-            text: 'Por favor revise los campos resaltados'
-        });
-
-    }
-
+    } 
+    mostrar_datosNoticia();
+    window.location.reload();
 };
 
 

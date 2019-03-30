@@ -57,9 +57,10 @@ let registrar_servicio = (pCedulaJuridica, pimagen, ptitulo, pdescripcion) => {
     request.done(function (msg) {
       swal.fire({
         type: 'success',
-        title: 'La actividad fue enviada',
+        title: 'El servicio fue registrado',
         text: 'Muchas gracias'
       });
+      window.location.reload();
     });
   
     // request.fail(function (jqXHR, textStatus) {
