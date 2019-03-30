@@ -1,6 +1,56 @@
 'use strict';
+const input_calificacion = document.querySelector('#txt_calificacion');
+const input_comentario = document.querySelector('#txt_comentario');
+const btn_enviarComentario = document.querySelector('#btn_enviarComentario1');
+
 
 // Servicios -> listo
+
+let validarComentario = () => {
+    let error = false;
+
+    if (input_calificacion.value == '') {
+        error = true;
+        input_calificacion.classList.add('error_input');
+    } else {
+        input_calificacion.classList.remove('error_input');
+    }
+
+    if (input_comentario.value == '') {
+        error = true;
+        input_comentario.classList.add('error_input');
+    } else {
+        input_comentario.classList.remove('error_input');
+    }
+
+    return error;
+};
+
+let obtener_datosComentario = () => {
+
+    if (validarComentario() == false) {
+        // Se ejecuta solo si la validación no da error
+        let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
+        let correoUsuario = JSON.parse(localStorage.getItem('cliente'));
+        let calificacion = input_calificacion.value;
+        let fecha = '';
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = today.getFullYear();
+        fecha = dd + '/' + mm + '/' + yyyy;
+        let comentario = input_comentario.value;
+        let likes = 0;
+
+        registrar_comentarios(cedulaJuridica, correoUsuario, calificacion, fecha, comentario,likes);
+    }
+    mostrar_datosComentario();
+
+};
+
+btn_enviarComentario.addEventListener('click', obtener_datosComentario);
+
+
 let mostrar_datosServicio = () => {
     let servicio = consultar_servicio();
     let c1 = 0;
@@ -188,8 +238,9 @@ let mostrar_datosComentario = () => {
     // let Usuarios = consultar_usuarios ();
     let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
     // JSON.parse(localStorage.getItem('centro'));
+    document.querySelector("#cardComentarios").innerHTML = "";
 
-    for (let i = Comentario.length - 1; i > Comentario.length - 5; i--) {
+    for (let i = Comentario.length - 1; i > Comentario.length - 4; i--) {
 
         if (Comentario[i].cedulaJuridica == cedulaJuridica) {
             let nombreUsuario = getNombreUsuario(Comentario[i].correoUsuario);
@@ -204,7 +255,7 @@ let mostrar_datosComentario = () => {
                 "<span class=\"date\">" + Comentario[i].fecha + "</span>" +
                 "</div>" +
                 "<p class=\"m-b-5 m-t-10\">" + Comentario[i].comentario + "</p><hr class= \"mb-2 mt-2\">" +
-                "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-warning btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes"
+                "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-warning btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes" 
             "</div>" +
 
                 "</div>"

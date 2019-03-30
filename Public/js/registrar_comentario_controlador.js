@@ -33,7 +33,7 @@ let obtener_datosComentario = () => {
 
     if (validarComentario() == false) {
         // Se ejecuta solo si la validación no da error
-        let cedulaJuridica = JSON.parse(localStorage.getItem('centro'));
+        let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
         let correoUsuario = JSON.parse(localStorage.getItem('cliente'));
         let calificacion = input_calificacion.value;
         let fecha = '';
@@ -45,23 +45,8 @@ let obtener_datosComentario = () => {
         let comentario = input_comentario.value;
         let likes = 0;
 
-        swal.fire({
-            type: 'success',
-            title: 'La información de matrícula fue creada',
-            text: 'Muchas gracias'
-        });
-
         registrar_comentarios(cedulaJuridica, correoUsuario, calificacion, fecha, comentario,likes);
-        window.location.reload();
-
-    } else {
-        swal.fire({
-            type: 'warning',
-            title: 'El comentario no fue creados',
-            text: 'Por favor revise los campos resaltados'
-        });
     }
-
 };
 
 
@@ -72,11 +57,11 @@ const card_Comentario = document.querySelector('#cardComentarios');
 
 let mostrar_datosComentario = () =>{
     let Comentario = consultar_comentarios();
-    // let Usuarios = consultar_usuarios ();
     let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
-    // JSON.parse(localStorage.getItem('centro'));
 
     for(let i = Comentario.length -1; i > Comentario.length  -5; i--){
+
+        if (Comentario[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
 
         if (Comentario[i].cedulaJuridica == cedulaJuridica ) {
         let nombreUsuario = getNombreUsuario(Comentario[i].correoUsuario);
@@ -101,14 +86,8 @@ let mostrar_datosComentario = () =>{
     };
 };
 };
+};
 
-// let darLikes = () =>{
-//     let like = consultar_comentarios ();
-//     for(let i = 0; i < like.length; i++){
-//         var meGusta = 0;
-//          $("#mostrarLikes").append(meGusta);
-// }
-// };
 
 
 mostrar_datosComentario();

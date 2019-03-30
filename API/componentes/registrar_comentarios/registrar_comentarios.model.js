@@ -14,4 +14,4 @@ let schema_comentario = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('comentario', schema_comentario);
+module.exports = mongoose.model('tabla_comentario', schema_comentario);

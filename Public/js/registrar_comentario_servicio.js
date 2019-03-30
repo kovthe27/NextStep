@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_comentarios = (pcedulaJuridica, pcorreoUsuario, pcalificacion, pfecha, pcomentario ) => {
+let registrar_comentarios = (pcedulaJuridica, pcorreoUsuario, pcalificacion, pfecha, pcomentario, plikes ) => {
     let request = $.ajax({
       url: "http://localhost:4000/api/registrar_comentarios",
       method: "POST",
@@ -10,6 +10,7 @@ let registrar_comentarios = (pcedulaJuridica, pcorreoUsuario, pcalificacion, pfe
         calificacion: pcalificacion,
         fecha: pfecha,
         comentario: pcomentario,
+        likes: plikes,
 
       },
       dataType: "json",
@@ -31,7 +32,7 @@ let registrar_comentarios = (pcedulaJuridica, pcorreoUsuario, pcalificacion, pfe
         text: 'Por favor inténtelo de nuevo'
       });
     });
-    bitacora(pcorreoUsuario, "Comentario", pcorreoUsuario + "agregó un comentario a" + pcedulaJuridica);
+    // bitacora(pcorreoUsuario, "Comentario", pcorreoUsuario + "agregó un comentario a" + pcedulaJuridica);
   };
   
 
