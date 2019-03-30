@@ -106,11 +106,11 @@ let consultar_listaCentros = () => {
 
 let redireccionarUsuario = (pinfoUsuario) => {
     
-    if (pinfoUsuario.type == "Padre") {
+    if (pinfoUsuario.tipo == "Padre") {
         bitacora(pinfoUsuario.emailUsuario, "Inicio de sesion", "Sistema operativo: " + navigator.platform);
         window.location.assign("principal_padres.html");
     } else {
-        if (pinfoUsuario.type == "Administrador") {
+        if (pinfoUsuario.tipo == "Administrador") {
             bitacora(pinfoUsuario.emailUsuario, "Inicio de sesion", "Sistema operativo: " + navigator.platform);
             window.location.assign("principal_administrador.html");
         } else {

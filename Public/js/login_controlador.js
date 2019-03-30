@@ -64,7 +64,7 @@ let validarContrasenas = () => {
     if(regex.exec(contrasenaReestablecida)) {
         if(contrasenaReestablecida == contrasenaConfirmada) {
             let infoUsuario = obtenerUsuario(emailUsuario);
-            if(infoUsuario.type === "Padre" && infoUsuario.type === "Administrador"){
+            if(infoUsuario.tipo === "Padre" || infoUsuario.tipo === "Administrador"){
                 reestablecerContrasena_Padre(emailUsuario,contrasenaReestablecida);
             }else{
                 reestablecerContrasena_Centro(emailUsuario,contrasenaReestablecida);
