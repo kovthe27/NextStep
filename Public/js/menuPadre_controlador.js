@@ -270,7 +270,7 @@ let filtroFinal = () => {
                     <div class="el-card-avatar el-overlay-1"> <img src="`+ listaFiltrada[i].fotoCentro + `" alt="user" width=100%>
                         <div class="el-overlay scrl-up">
                             <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="`+ listaFiltrada[i].nombreCentro + `"><i class="sl-icon-magnifier"></i></a></li>
+                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="`+ listaFiltrada[i].fotoCentro + `"><i class="sl-icon-magnifier"></i></a></li>
                                 <li><a class="btn default btn-outline" href="javascript:verPerfil(`+ listaFiltrada[i].cedJuridica + `);"><i class=" fas fa-arrow-alt-circle-right"></i></a></li>
                             </ul>
                         </div>
