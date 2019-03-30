@@ -17,4 +17,10 @@ router.route('/consultar_boletin')
             }
         )
 
+router.route('/enviar_MailBoletin')
+    .post(
+        function(req, res){
+            boletin_api.enviar_MailBoletin(req, res);
+        }
+    )
 module.exports = router;
