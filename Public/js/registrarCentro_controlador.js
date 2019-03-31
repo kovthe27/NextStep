@@ -15,11 +15,12 @@ const input_DireccionCentro = document.querySelector('#txt_DireccionCentro');
 const input_TipoCentro = document.querySelector('#slt_TipoCentro');
 const input_GradoAcademico = document.querySelector('#slt_GradoAcademico');
 const input_RefHistorica = document.querySelector('#txt_RefHistorica');
-const input_Archivos = document.querySelector('#txt_Archivos');
 const input_imagen = document.querySelector('#imgFoto');
 const carga_imagen = document.querySelector('#cargarImagen');
 
 const boton_RegistroCentro = document.querySelector('#btn_RegistrarCentro');
+
+let archivo;
 
 let validar = () => {
     let error = false;
@@ -137,10 +138,9 @@ let obtener_datosCentro = () => {
         let tipoCentro = input_TipoCentro.value;
         let gradoAcademico = input_GradoAcademico.value;
         let referenciaHistorica = input_RefHistorica.value;
-        let archivosCentro = input_Archivos.value;
         let fotoCentro = input_imagen.src;
      
-        registrar_Centro(nombreCentro, nombreComercial, cedJuridica,  emailCentro, telCentro, faxCentro, annoFundCentro, sitioWeb, provinciaCentro, cantonCentro, distritoCentro, direccionCentro, tipoCentro, gradoAcademico, referenciaHistorica, archivosCentro, fotoCentro);
+        registrar_Centro(nombreCentro, nombreComercial, cedJuridica,  emailCentro, telCentro, faxCentro, annoFundCentro, sitioWeb, provinciaCentro, cantonCentro, distritoCentro, direccionCentro, tipoCentro, gradoAcademico, referenciaHistorica, archivo, fotoCentro);
         
     } else {
         swal.fire({
@@ -153,3 +153,39 @@ let obtener_datosCentro = () => {
 };
 
 boton_RegistroCentro.addEventListener('click', obtener_datosCentro);
+
+
+let pdfUrl = '';
+
+$(function() {
+    $.cloudinary.config({ cloud_name: 'nextstep', api_key: '514151394451531'});
+
+    // Upload button
+    let uploadButton = $('#btnSeleccionarBoletin');
+
+    // Upload button event
+    uploadButton.on('click', function(e){
+        // Initiate upload
+        cloudinary.openUploadWidget({ cloud_name: 'nextstep', upload_preset: 'zd6003wd', tags: ['cgal']},
+        function(error, result) {
+            if(error) console.log(error);
+            // If NO error, log image data to console
+            let id = result[0].public_id;
+            //  console.log(id);
+            
+            pdfUrl = processImage(id);
+            // console.log(pdfUrl);
+
+            pdfUrl = pdfUrl.replace('file', 'http');
+            archivo = pdfUrl;
+            return pdfUrl;
+        });
+    });
+})
+
+function processImage(id) {
+    let options = {
+        client_hints: true,
+    };
+    return  $.cloudinary.url(id, options);
+}
