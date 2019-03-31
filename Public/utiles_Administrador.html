@@ -29,7 +29,8 @@
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
                 <div class="navbar-header">
-                    <a href="principal_Administrador.html"><img src="../Public/imgs/logo-text-02.png" alt="homepage" class="dark-logo"></a>
+                    <a href="principal_Administrador.html"><img src="../Public/imgs/logo-text-02.png" alt="homepage"
+                            class="dark-logo"></a>
                 </div>
 
                 <div class="navbar-collapse">
@@ -211,7 +212,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
                     </div>
-                    <input type="text" id="txt_search" class="form-control" placeholder="Buscar" aria-label="Username"
+                    <input type="text" id="txt_searchUtiles" class="form-control" placeholder="Buscar" aria-label="Username"
                         aria-describedby="basic-addon1">
                 </div>
 
@@ -274,6 +275,26 @@
     </script>
     <script>
         cloudinary.setCloudName("nextstep");
+    </script>
+
+
+    <!-- filtrar -->
+    <script>
+        var busqueda = document.getElementById('txt_searchUtiles');
+        var table = document.getElementById("tablesaw-1093").tBodies[0];
+
+        buscaTabla = function () {
+            texto = busqueda.value.toLowerCase();
+            var r = 0;
+            while (row = table.rows[r++]) {
+                if (row.innerText.toLowerCase().indexOf(texto) !== -1)
+                    row.style.display = null;
+                else
+                    row.style.display = 'none';
+            }
+        }
+
+        busqueda.addEventListener('keyup', buscaTabla);
     </script>
 
 
