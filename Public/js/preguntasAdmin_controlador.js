@@ -22,8 +22,8 @@ let construirTabla = () => {
 
     for (i = 0; i < preguntas.length; i++) {
         let nuevaPregunta =
-            `<div class="card m-b-0 col-md-8">
-                <div class="card-header bg-white" role="tab" id="headingOne1">
+            `<div class="card m-b-0 col-md-8 bg-transparent">
+                <div class="card-header bg-transparent" role="tab" id="headingOne1">
                     <h5 class="mb-0">
                         <a class="link" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne">
                             ` +preguntas[i].numero+ `. ` + preguntas[i].pregunta+ 
