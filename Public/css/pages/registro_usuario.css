@@ -115,16 +115,16 @@ body {
 }
 
 #btnSeleccionarImagen {
-    color: #ff9041;
-    background-color: transparent;
-    border: 1px solid #ff9041;
+    /* color: #ff9041; */
+    /* background-color: transparent; */
+    /* border: 1px solid #ff9041; */
     -webkit-transition: 0.2s ease-in;
     -o-transition: 0.2s ease-in;
     transition: 0.2s ease-in;
-    background-image: none !important;
+    /* background-image: none !important; */
     cursor: pointer;
     position: relative;
-    top: 80px;
+    /* top: 80px; */
 }
 
 #btnSeleccionarImagen:hover {
@@ -133,8 +133,8 @@ body {
 }
 
 #cargarImagen {
-    width: 277px;
-    height: 187px;
+    /* width: 277px; */
+    height: 122px;
     border: 1px #bababa dashed;
 }
 
@@ -154,6 +154,6 @@ body {
     margin: 0 auto;
 }
 
-#txt_Archivos {
+/* #txt_Archivos {
     width: 108px;
-}
+} */
