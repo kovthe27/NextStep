@@ -51,8 +51,129 @@ module.exports.enviar_MailBoletin = function(req, res) {
         from: 'specta.grupo@gmail.com',
         to: req.body.usuario,
         subject: 'Boletín Informativo',
-        html: `<h1 style="color:#6F1E51;">Saludos!</h1>
-        <p>Este es el boletín informativo del centro educativo ${req.body.boletin}</p>
+        html: `<table class="w100m" width="600" align="center" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center" style="background-color:#fff;">
+            <table class="w100m" width="600" align="center" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center">
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td align="center" style="background-color:#282b29;">
+                          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td align="center">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                  <tr>
+                                    <td align="center">
+                                      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                          <td align="center" valign="middle" style="padding:0 24px;font-family:-apple-system,Calibri,Arial,Helvetica,sans-serif;font-size:12px;color:#fff;">
+                                              <img src="http://img.fenixzone.net/i/a12RvZL.png" width=150>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="background-color:#fff;">
+            <table class="w100m" width="600" align="center" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center">
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="center" style="background-color:#fff;">
+                        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="center">
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                <tr>
+                                  <td align="center" style="padding-bottom:5px;">
+                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                        <td align="center" valign="middle" style="padding:16px 24px 0;font-family:-apple-system,Calibri,Arial,Helvetica,sans-serif;font-size:20px;color:#54B56B;font-weight:bold;">
+                                          Saludos!
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" style="background-color:#fff;">
+            <table class="w100m" width="600" align="center" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center">
+                  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="center" style="background-color:#fff;">
+                        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="center">
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                <tr>
+                                  <td align="center" style="padding-bottom:5px;">
+                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                        <td align="center" valign="middle" style="padding:16px 24px 12px;font-family:-apple-system,Calibri,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#7d7d7d;vertical-align:middle;">
+                                          <span>Gracias por su interés y solicitar más información del centro educativo.</span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" valign="middle" style="padding:16px 24px 12px;font-family:-apple-system,Calibri,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#7d7d7d;vertical-align:middle;">
+                                          <span>A continuación le adjuntamos el boletín con la información requerida ${req.body.boletin}</span>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" valign="top" style="padding: 6px 0 16px 0">
+                                    <table class="email-cta" width="52%" style="margin-bottom: 5px;" cellpadding="0" cellspacing="0" border="0">
+                                      <tr>
+                                        <td align="center" style="background-color:#00b96b;padding: 18px 16px;font-size: 16px;font-weight: bold;font-family:Helvetica, sans-serif;">
+                                          <a style="font-size: 16px;color:#ffffff;text-decoration:none;" id="" href="http://localhost:3000/public/landing_page.html">Ir a la aplicación</a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
         `
     };
     transporter.sendMail(mailOptions, function(error, info){
