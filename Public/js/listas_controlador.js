@@ -10,7 +10,12 @@ const btn_registrartipo = document.querySelector('#btn_registrartipo');
 let crearLista = () => {
     let nombreLista = getNombreLista();
     let listaTipos = getListaTipos();
-    let user = "MEPAdmin1";
+    let user;
+    if(JSON.parse(localStorage.getItem('cliente')) == "Nextstep@mep.go.cr"){
+        user = "MEPAdmin1";
+    }else{
+        user = JSON.parse(localStorage.getItem('centroEducativo'));
+    }
     let lista = getLista();
     document.querySelector("#txt_titulo").innerHTML = "Lista: " + nombreLista;
 
@@ -77,10 +82,15 @@ let nuevoArticulo = () => {
     let cantidad = input_cantidad.value;
     let articulo = input_articulo.value;
     let descripcion = input_descripcion.value;
-    let cedula = "MEPAdmin1"
+    let cedula;
+    if(JSON.parse(localStorage.getItem('cliente')) == "Nextstep@mep.go.cr"){
+        cedula = "MEPAdmin1";
+    }else{
+        cedula = JSON.parse(localStorage.getItem('centroEducativo'));
+    }
     let nombreLista = getNombreLista();
     if (validar() == false) {
-        crearArticulo(cantidad, articulo, descripcion);
+        crearArticulo(cedula, cantidad, articulo, descripcion);
         bitacora(cedula, "Registro", "se agregó un articulo a la lista: "+nombreLista);
     }
     else {

@@ -24,7 +24,7 @@ let crearMenuCentro = () => {
 
 }
 
-let cerrarSesion = () =>{
+let cerrarSesioncentro = () =>{
         localStorage.setItem('centroEducativo', JSON.stringify("Notlogin"));
         window.location.assign("landing_page.html");
 }

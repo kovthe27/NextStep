@@ -57,16 +57,15 @@ let getListaTipos = () => {
   return lista_tipos;
 }
 
-let crearArticulo = (pcantidad, particulo, pdescripcion) => {
+let crearArticulo = (pcedula, pcantidad, particulo, pdescripcion) => {
   let nivel = getNombreLista();
-  let cedula = "MEPAdmin1"
   let listaActual = getLista();
 
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_utilesAdmin",
     method: "POST",
     data: {
-      cedula: cedula,
+      cedula: pcedula,
       cantidad: pcantidad,
       tipo: particulo,
       descripcion: pdescripcion,

@@ -5,13 +5,20 @@ const card = document.querySelector("#TblUtiles");
 const btnRegistrar = document.querySelector("#btn_registrar");
 
 let construirTabla = () => {
+    let cedulaJuridica;
+    if(JSON.parse(localStorage.getItem('cliente')) == "Nextstep@mep.go.cr"){
+        cedulaJuridica = "MEPAdmin1";
+    }else{
+        cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
+    }
     let lista = consultar_utilesAdmin();
     for (let i = 0; i < lista.length; i++) {
-        let nombre=lista[i].nombre;
-        let nuevalista =
-            `<tr>
+        if (lista[i].cedula == cedulaJuridica) {
+            let nombre = lista[i].nombre;
+            let nuevalista =
+                `<tr>
                 <td class="title">
-                    <a class="link" id="lista`+i+`" href="javascript:construirLista('`+nombre+`')">`+ lista[i].nombre + `</a>
+                    <a class="link" id="lista`+ i + `" href="javascript:construirLista('` + nombre + `')">` + lista[i].nombre + `</a>
                 </td>
                 <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">`+ lista[i].creada + `</td>
                 <td>
@@ -31,20 +38,29 @@ let construirTabla = () => {
                 </td>
             </tr>`
 
-        $("#TblUtiles").append(nuevalista)
+            $("#TblUtiles").append(nuevalista)
+        }
     }
 };
 
-let construirLista = (pnombre) =>{
-    // localStorage.setItem('ListaUsuario', JSON.stringify(pcedula));
-    localStorage.setItem('ListaNombre', JSON.stringify(pnombre));
-    window.location.assign("./listas.html")
-    // window.location.assign("./listas_CentroEducativo.html")
+let construirLista = (pnombre) => {
+    if(JSON.parse(localStorage.getItem('cliente')) == "Nextstep@mep.go.cr"){
+        localStorage.setItem('ListaNombre', JSON.stringify(pnombre));
+        window.location.assign("./listas.html")
+    }else{
+        localStorage.setItem('ListaNombre', JSON.stringify(pnombre));
+        window.location.assign("./listas_CentroEducativo.html")
+    }
 }
 
 let registrarLista = () => {
+    let cedula;
+    if(JSON.parse(localStorage.getItem('cliente')) == "Nextstep@mep.go.cr"){
+        cedula = "MEPAdmin1";
+    }else{
+        cedula = JSON.parse(localStorage.getItem('centroEducativo'));
+    }
     let nombre = inputNombre.value;
-    let cedula = "MEPAdmin1";
 
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -56,7 +72,7 @@ let registrarLista = () => {
     nuevaLista(cedula, nombre, fecha);
 
     //Registro de bitacora
-    bitacora(cedula, "Registro", "se agregó la lista: "+nombre);
+    // bitacora(cedula, "Registro", "se agregó la lista: " + nombre);
 
     window.location.reload();
 }

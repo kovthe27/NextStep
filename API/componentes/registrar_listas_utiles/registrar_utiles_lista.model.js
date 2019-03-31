@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 let schema_TablaListaUtiles = new mongoose.Schema(
     {
         cedula : {type : String, required : true},
-        nombre : {type : String, unique: true, required: true},
+        nombre : {type : String, required: true},
         creada : {type : String, required: true},
         visible : {type : Boolean, required: true},
     }

@@ -85,7 +85,7 @@ let nuevaLista = (pcedula, pnombre, pfecha) => {
     request.done(function (msg) {
       swal.fire({
         type: 'success',
-        title: 'La pregunta ha sido agregada',
+        title: 'La lista ha sido agregada',
         text: 'Muchas gracias'
       });
     });
@@ -93,7 +93,7 @@ let nuevaLista = (pcedula, pnombre, pfecha) => {
     request.fail(function (jqXHR, textStatus) {
       swal.fire({
         type: 'error',
-        title: 'La pregunta no pudo ser agregada',
+        title: 'La lista no pudo ser agregada',
         text: 'Por favor inténtelo de nuevo'
       });
     });
