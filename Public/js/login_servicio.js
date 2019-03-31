@@ -107,14 +107,15 @@ let consultar_listaCentros = () => {
 let redireccionarUsuario = (pinfoUsuario) => {
     
     if (pinfoUsuario.tipo == "Padre") {
-        bitacora(pinfoUsuario.emailUsuario, "Inicio de sesion", "Sistema operativo: " + navigator.platform);
+        bitacora(pinfoUsuario.emailUsuario, "Inicio de sesión", "Sistema operativo: " + navigator.platform);
         window.location.assign("principal_padres.html");
     } else {
         if (pinfoUsuario.tipo == "Administrador") {
-            bitacora(pinfoUsuario.emailUsuario, "Inicio de sesion", "Sistema operativo: " + navigator.platform);
+            bitacora(pinfoUsuario.emailUsuario, "Inicio de sesión", "Sistema operativo: " + navigator.platform);
             window.location.assign("principal_administrador.html");
         } else {
-            bitacora(pinfoUsuario.emailCentro, "Inicio de sesion", "Sistema operativo: " + navigator.platform);
+            bitacora(pinfoUsuario.emailCentro, "Inicio de sesión", "Sistema operativo: " + navigator.platform);
+            localStorage.setItem('centroEducativo', JSON.stringify(pinfoUsuario.cedJuridica));
             window.location.assign("principal_CentroEducativo.html");
         }
     }
