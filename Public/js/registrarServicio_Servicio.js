@@ -70,7 +70,7 @@ let registrar_servicio = (pCedulaJuridica, pimagen, ptitulo, pdescripcion) => {
     //     text: 'Por favor inténtelo de nuevo'
     //   });
     // });
-    bitacora(pCedulaJuridica, "Servicio", pcedulaJuridica + "Registró un servicio" );
+    // bitacora(pCedulaJuridica, "Servicio", pcedulaJuridica + "Registró un servicio" );
   };
   
 
