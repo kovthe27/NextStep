@@ -17,7 +17,11 @@ router.route('/consultar_padre')
         }
     )
 
-
-
+router.route('/actualizarcontrasena_Padre')
+    .post(
+        function(req, res){
+            padre_api.actualizarcontrasena_Padre(req, res);
+        }
+    )
 
 module.exports = router;
