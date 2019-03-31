@@ -180,7 +180,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div id="boletin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                                                    <!-- <div id="boletin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
                                                     aria-hidden="true" style="display: none;">
                                                     <div class="modal-dialog modal-dialog-centered">
                                                         <div class="modal-content">
@@ -192,17 +192,17 @@
                                                             <div class="modal-body">
                                                                 <div id="cargarBoletin">
                                                                     <a id="pdfBoletin" href=""></a>
-                                                                </div>
+                                                                </div> -->
             
-                                                                <div class="form-group">
+                                                                <!-- <div class="form-group">
                                                                         <input type="text" id="txt_nombrePDF" name="text" class="form-control"
                                                                             required="true"
                                                                             data-validation-required-message="This field is required"
                                                                             aria-invalid="false" placeholder="Inserte el nombre del archivo">
-                                                                    </div>
-            
+                                                                    </div> -->
+<!--             
                                                                 <div class="form-group">
-                                                                    <button class="form-control btn-outline-warning"
+                                                                    <button type="button" class="form-control btn-outline-warning"
                                                                         id="btnSeleccionarBoletin">Cargar
                                                                         archivos</button>
                                                                 </div>
@@ -215,7 +215,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 
 
                                                 </div>
@@ -257,20 +257,38 @@
                                                                 class="form-control" id="txt_RefHistorica">
                                                         </div>
 
-                                                        <div class="form-group">
+                                                        <div class="col-md-4 mt-1 float-left">
+                                                            <div class="form-group">    
+                                                                
+                                                                <button class="btn btn-outline-secondary mt-4 mr-1 float-left"
+                                                                    id="btnSeleccionarBoletin" type="button"><i class="ti-zip"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- <div class="col-md-4 float-left">
+                                                            <div class="form-group">    
+                                                                <button id="btnSeleccionarBoletin"
+                                                                class="btn btn-outline-secondary mr-2 float-left"
+                                                                ><i class="ti-zip"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div> -->
+
+                                                        <!-- <div class="form-group">
                                                             <div class="">
                                                                 <label for="txt_Archivos">Archivos</label>
                                                                 <div class="">
-                                                                    <button id="txt_Archivos"
+                                                                    <button type="button" id="txt_Archivos"
                                                                         class="btn btn-outline-secondary mr-2 float-left"
-                                                                        alt="default" data-toggle="modal"
+                                                                        data-toggle="modal"
                                                                         data-target="#boletin"><i class="ti-zip"></i>
                                                                     </button>
                                                                 </div>
                                                                 <a class="form-control col-md-10 float-left"
-                                                                    id="linkPdf">Archivo</a>
+                                                                    >Archivo</a>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
 
                                                     </div>
 
@@ -404,8 +422,8 @@
     <script src="js/cantones.js"></script>
     <script src="js/distritos.js"></script>
     <script src="js/controlador_ubicacion.js"></script>
-    <script src="js/registrar_boletin_Servicio.js"></script>
-    <script src="js/registrar_boletin_Controlador.js"></script>
+    <!-- <script src="js/registrar_boletin_Servicio.js"></script>
+    <script src="js/registrar_boletin_Controlador.js"></script> -->
 </body>
 
 </html>
