@@ -4,6 +4,7 @@ const input_comentario = document.querySelector('#txt_comentario');
 const btn_enviarComentario = document.querySelector('#btn_enviarComentario1');
 
 
+
 // Servicios -> listo
 
 let validarComentario = () => {
@@ -192,7 +193,7 @@ let mostrar_infoCentro = () => {
                 "<p class=\"card-text\">" + acercaNosotros[i].descripcionCentro + "</p><br>" +
                 "<button class=\"btn btn-themecolor mr-1\" data-toggle=\"modal\" data-target=\"#registrarComentario\">Calificar centro</button>" +
                 "<button class=\"btn btn-secondary mr-1\" data-toggle=\"modal\" data-target=\"#registrarCita\">Agendar cita</button>" +
-                "<button class=\"btn btn-secondary mr-1\">Solicitar información</button>" +
+                "<button id=\"btn_SolicitarInfo\" class=\"btn btn-secondary mr-1\">Solicitar información</button>" +
                 "</div>" +
                 "<div class=\"linea float-left\"></div>" +
                 "<div class=\"col-md-4 float-left información\">" +
@@ -319,5 +320,32 @@ let crearMenu = () => {
     }
 
 }
+
+let enviarBoletin = () => {
+    //Obtiene el usuario del localStorage
+    let usuario = JSON.parse(localStorage.getItem('cliente'));
+    //Obtener centro
+    let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
+
+    //Obtener boletín
+    let boletines = consultar_boletin();
+    let boletin;
+    for(let i = 0; i < boletines.length; i++) {
+        if(boletines[i].cedulaJuridica == cedulaJuridica) {
+            boletin = boletines[i];
+
+            enviar_MailBoletin(boletin.boletin,usuario);
+        }
+    }
+    
+}
+
+document.addEventListener('click', (e) => {
+    if(e.target && e.target.id== 'btn_SolicitarInfo'){
+        enviarBoletin();
+    }
+ })
+
+
 
 crearMenu();

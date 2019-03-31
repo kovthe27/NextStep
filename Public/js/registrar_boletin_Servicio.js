@@ -91,5 +91,30 @@ let consultar_boletin = () => {
       return lista_boletines;
       
     };
+
+    let enviar_MailBoletin = (pboletin, pusuario) => {
+      let request = $.ajax({
+        url: "http://localhost:4000/api/enviar_MailBoletin",
+        method: "POST",
+        data: {
+          boletin: pboletin,
+          usuario: pusuario
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+      });
+
+      request.fail(function (jqXHR, textStatus) {
+        console.log("fail");
+      });
+    
+      request.done(function (msg) {
+        swal.fire({
+          type: 'success',
+          title: 'El boletín fue enviado a su correo',
+          text: 'Muchas gracias'
+        });
+      });
+    };
     
     
