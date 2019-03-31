@@ -311,7 +311,7 @@
     <script src="js/centrosAdmin_controlador.js"></script>
     <script src="js/MenuAdmin_Controlador.js"></script>
 
-    
+   <!-- Centros  -->
 <script>
     var busqueda = document.getElementById('txt_search');
     var table = document.getElementById("tablaCentros").tBodies[0];
@@ -330,6 +330,26 @@
 
     busqueda.addEventListener('keyup', buscaTabla);
     </script>
+
+<!-- Etiquetas -->
+<script>
+        var busqueda = document.getElementById('txt_search');
+        var table = document.getElementById("tablaCentros").tBodies[0];
+    
+        buscaTabla = function(){
+          texto = busqueda.value.toLowerCase();
+          var r=0;
+          while(row = table.rows[r++])
+          {
+            if ( row.innerText.toLowerCase().indexOf(texto) !== -1 )
+              row.style.display = null;
+            else
+              row.style.display = 'none';
+          }
+        }
+    
+        busqueda.addEventListener('keyup', buscaTabla);
+        </script>
 
 
 </body>
