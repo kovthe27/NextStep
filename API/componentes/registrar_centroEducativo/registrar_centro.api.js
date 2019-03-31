@@ -49,10 +49,135 @@ module.exports.registrar_Centro = (req, res) =>{
                     from: 'specta.grupo@gmail.com',
                     to: registro_Centro.emailCentro,
                     subject: 'Código de inicio de sesión Next Step',
-                    html: `<h1 style="color:#6F1E51;">Saludos ${registro_Centro.nombreCentro} </h1>
-                    <p>Bienvenido a Next Steps!</p>
-                    <p>Este es tu código temporal ${registro_Centro.contrasenaCentro}</p>
-                    <p>Ingresa a la aplicación y digita el código temporal al iniciar sesión</p>
+                    html: `<table class="w100m" width="600" align="center" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="center" style="background-color:#fff;">
+                        <table class="w100m" width="600" align="center" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="center">
+                              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td align="center" style="background-color:#282b29;">
+                                      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                          <td align="center">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                              <tr>
+                                                <td align="center">
+                                                  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td align="center" valign="middle" style="padding:0 24px;font-family:-apple-system,Calibri,Arial,Helvetica,sans-serif;font-size:12px;color:#fff;">
+                                                          <img src="http://img.fenixzone.net/i/a12RvZL.png" width=150>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="background-color:#fff;">
+                        <table class="w100m" width="600" align="center" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="center">
+                              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td align="center" style="background-color:#fff;">
+                                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td align="center">
+                                          <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                            <tr>
+                                              <td align="center" style="padding-bottom:5px;">
+                                                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                  <tr>
+                                                    <td align="center" valign="middle" style="padding:16px 24px 0;font-family:-apple-system,Calibri,Arial,Helvetica,sans-serif;font-size:20px;color:#54B56B;font-weight:bold;">
+                                                      Saludos ${registro_Centro.nombreCentro}
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td align="center" valign="middle" style="padding:16px 24px 12px;font-family:-apple-system,Calibri,Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;line-height:20px;color:#000000;vertical-align:middle;">
+                                                        <p>Bienvenido(a) a Next Steps!</p>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="background-color:#fff;">
+                        <table class="w100m" width="600" align="center" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="center">
+                              <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td align="center" style="background-color:#fff;">
+                                    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+                                      <tr>
+                                        <td align="center">
+                                          <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                            <tr>
+                                              <td align="center" style="padding-bottom:5px;">
+                                                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                  <tr>
+                                                    <td align="center" valign="middle" style="padding:16px 24px 12px;font-family:-apple-system,Calibri,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#7d7d7d;vertical-align:middle;">
+                                                      <span>Este es tu código temporal 
+                                                      ${registro_Centro.contrasenaCentro}</span>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td align="center" valign="middle" style="padding:16px 24px 12px;font-family:-apple-system,Calibri,Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#7d7d7d;vertical-align:middle;">
+                                                      <p>Ingresa a la aplicación y digita el código temporal al iniciar sesión</p>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td align="center" valign="top" style="padding: 6px 0 16px 0">
+                                                <table class="email-cta" width="52%" style="margin-bottom: 5px;" cellpadding="0" cellspacing="0" border="0">
+                                                  <tr>
+                                                    <td align="center" style="background-color:#00b96b;padding: 18px 16px;font-size: 16px;font-weight: bold;font-family:Helvetica, sans-serif;">
+                                                      <a style="font-size: 16px;color:#ffffff;text-decoration:none;" id="" href="http://localhost:3000/public/login.html">Ir a la aplicación</a>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
                     `
                 };
                 transporter.sendMail(mailOptions, function(error, info){
