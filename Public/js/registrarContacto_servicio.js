@@ -1,35 +1,35 @@
 'use strict';
 
-let imgUrl = '';
+// let imgUrl = '';
 
-$(function() {
-    // Configure Cloudinary
-    // with credentials available on
-    // your Cloudinary account dashboard
-    $.cloudinary.config({ cloud_name: 'nextstep', api_key: '514151394451531'});
+// $(function() {
+//     // Configure Cloudinary
+//     // with credentials available on
+//     // your Cloudinary account dashboard
+//     $.cloudinary.config({ cloud_name: 'nextstep', api_key: '514151394451531'});
 
-    // Upload button
-    let uploadButton = $('#btnSeleccionarImagen');
+//     // Upload button
+//     let uploadButton = $('#btnSeleccionarImagen');
 
-    // Upload button event
-    uploadButton.on('click', function(e){
-        // Initiate upload
-        cloudinary.openUploadWidget({ cloud_name: 'nextstep', upload_preset: 'zd6003wd', tags: ['cgal']},
-        function(error, result) {
-            if(error) console.log(error);
-            // If NO error, log image data to console
-            let id = result[0].public_id;
-            //  console.log(id);
+//     // Upload button event
+//     uploadButton.on('click', function(e){
+//         // Initiate upload
+//         cloudinary.openUploadWidget({ cloud_name: 'nextstep', upload_preset: 'zd6003wd', tags: ['cgal']},
+//         function(error, result) {
+//             if(error) console.log(error);
+//             // If NO error, log image data to console
+//             let id = result[0].public_id;
+//             //  console.log(id);
             
-            imgUrl = processImage(id);
-            // console.log(imagenUrl);
+//             imgUrl = processImage(id);
+//             // console.log(imagenUrl);
 
-            imgUrl = imgUrl.replace('file', 'http');
-            document.querySelector('#imgFoto').src = imgUrl;
-            return imgUrl;
-        });
-    });
-})
+//             imgUrl = imgUrl.replace('file', 'http');
+//             document.querySelector('#imgFoto').src = imgUrl;
+//             return imgUrl;
+//         });
+//     });
+// })
 
 function processImage(id) {
     let options = {
