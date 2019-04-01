@@ -17,6 +17,7 @@ let obtener_datosEtiquetas = () => {
     let etiqueta4 = input_etiqueta4.value;
 
     registrar_etiquetasCentro(cedulaJuridica, etiqueta1, etiqueta2, etiqueta3, etiqueta4);
+    window.location.reload();
 };
 
 
@@ -35,9 +36,7 @@ let mostrar_datosEtiquetas = () => {
 
             $("#creacionEtiquetas").append(etiquetaCentro);
         };
-
     }
 };
-
 
 mostrar_datosEtiquetas();

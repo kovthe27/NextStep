@@ -60,7 +60,7 @@ let registrar_servicio = (pCedulaJuridica, pimagen, ptitulo, pdescripcion) => {
         title: 'El servicio fue registrado',
         text: 'Muchas gracias'
       });
-      window.location.reload();
+      
     });
   
     // request.fail(function (jqXHR, textStatus) {

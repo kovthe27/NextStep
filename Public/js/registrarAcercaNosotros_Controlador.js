@@ -61,25 +61,9 @@ let obtener_datosCentro = () => {
         let pagina = input_pagina.value;
 
         registrar_acercaNosotros(cedulaJuridica, descripcionCentro, ubicacion, encargado, correo, telefono, facebook, instagram, twitter, pagina);
-        // swal.fire({
-        //     type: 'success',
-        //     title: 'La información ha sido añadida',
-        //     text: 'Muchas gracias'
-        // });
-
         window.location.reload();
-        // $('#btn_enviarNoticia').click();
-
     } 
-    // else {
-    //     swal.fire({
-    //         type: 'warning',
-    //         title: 'La información no pudo ser añadida',
-    //         text: 'Por favor revise los campos resaltados'
-    //     });
-
-    // }
-
+    
 };
 
 

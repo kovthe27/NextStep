@@ -50,13 +50,15 @@ let obtener_datosServicio = () => {
         // $('#btn_enviar').click();
         // window.location.reload();
 
-    } else {
-        swal.fire({
-            type: 'warning',
-            title: 'El servicio no fue creado',
-            text: 'Por favor revise los campos resaltados'
-        });
     }
+    //  else {
+    //     swal.fire({
+    //         type: 'warning',
+    //         title: 'El servicio no fue creado',
+    //         text: 'Por favor revise los campos resaltados'
+    //     });
+    // }
+    window.location.reload();
 
 };
 
@@ -134,6 +136,7 @@ let mostrar_datosServicio = () => {
         // numeroCarrusel++;
         // servicio.reverse();
     };
+    
 };
 
 

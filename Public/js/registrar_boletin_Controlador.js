@@ -25,21 +25,20 @@ let obtener_datosBoletin = () => {
         let boletin = input_boletin.href;
         let nombre = input_nombrePdf.value;
 
-        registrar_boletin(cedulaJuridica, boletin, nombre);
-        swal.fire({
-            type: 'success',
-            title: 'El boletin fue creado',
-            text: 'Muchas gracias'
-        });
-        window.location.reload();
-
-    } else {
-        swal.fire({
-            type: 'warning',
-            title: 'El boletin no fue creado',
-            text: 'Por favor revise los campos resaltados'
-        });
+        // registrar_boletin(cedulaJuridica, boletin, nombre);
+        // swal.fire({
+        //     type: 'success',
+        //     title: 'El boletin fue creado',
+        //     text: 'Muchas gracias'
+        // });
     }
+    //  else {
+    //     swal.fire({
+    //         type: 'warning',
+    //         title: 'El boletin no fue creado',
+    //         text: 'Por favor revise los campos resaltados'
+    //     });
+    // }
 
 };
 
