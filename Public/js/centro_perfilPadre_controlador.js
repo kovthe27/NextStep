@@ -324,6 +324,13 @@ let crearMenu = () => {
             }
         }
     }
+    let listaCentros =consultar_listaCentrosAdmin();
+    let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
+    for(let i=0; i<listaCentros.length; i++){
+        if(listaCentros[i].cedJuridica == cedulaJuridica){
+            document.querySelector("#nomCentro").innerHTML= listaCentros[i].nombreCentro;
+        }
+    }
 
 }
 
