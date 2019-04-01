@@ -15,7 +15,7 @@ let mostrarTablaCentrosAdmin = () => {
             <td class="tablesaw-priority-2">01/01/0001</td>
             <td class="tablesaw-priority-1">` + listaCentros[i].emailCentro + `</td>
             <td class="tablesaw-priority-1">Desconocido</td>
-            <td class="tablesaw-priority-1">Desconocido</td>
+            
             <td class="tablesaw-priority-1">
             <button type="button" onclick="location.href='javascript:verPerfilCentro(` + listaCentros[i].cedJuridica + `)'" class="btn btn-sm btn-themecolor mr-1 btn-circle">
             <i class="fas fa-info" ></i>
@@ -71,11 +71,11 @@ let mostrarCardInfo = () => {
                 "<hr>" +
                 "<small class=\"text-muted p-t-10 db\">Dirección del centro</small>" +
                 "<p>" + listaCard[j].direccionCentro + "</p>" +
+                // "<hr>" +
+                // "<small class=\"text-muted p-t-10 db\">Dirección del centro</small>" +
+                // "<p>" + listaCard[j].direccionCentro + "</p>" +
                 "<hr>" +
-                "<small class=\"text-muted p-t-10 db\">Dirección del centro</small>" +
-                "<p>" + listaCard[j].direccionCentro + "</p>" +
-                "<hr>" +
-                "<small class=\"text-muted p-t-10 db\">Dirección del centro</small>" +
+                "<small class=\"text-muted p-t-10 db\">Fax</small>" +
                 "<p>" + listaCard[j].faxCentro + "</p>" +
                 "<hr>" +
                 "<small class=\"text-muted p-t-10 db\">Tipo de centro</small>" +
@@ -123,14 +123,14 @@ let mostrarEncargado = () => {
                 "<small class=\"text-muted p-t-10 db\">Dirección del centro</small>" +
                 "<p>" + listaEncargados[k].telEncargado + "</p>" +
                 "<hr>" +
-                "<small class=\"text-muted p-t-10 db\">Tipo de centro</small>" +
+                "<small class=\"text-muted p-t-10 db\">Extensión</small>" +
                 "<p>" + listaEncargados[k].extEncargado + "</p>" +
                 "<hr>" +
                 "<small class=\"text-muted p-t-10 db\">Grado académico</small>" +
                 "<p>" + listaEncargados[k].emailEncargado + "</p>" +
                 "<hr>" +
                 "<small class=\"text-muted p-t-10 db\">Año de fundación</small>" +
-                "<p>" + listaEncargados[k].centroEducativoId + "</p>"
+                "<p>" + listaEncargados[k].annoFundCentro+ "</p>"
 
             $("#infoEncargado").append(infoEncargado);
         }
