@@ -109,7 +109,7 @@ let mostrarEncargado = () => {
  console.log(listaEncargados[0].cedulaJuridica);
     for (let k = 0; k < listaEncargados.length; k++) {
         
-        if (listaEncargados[k].cedulaJuridica== "234324543") {
+        if (listaEncargados[k].cedulaJuridica== JSON.parse(localStorage.getItem('centroEducativo'))) {
             let infoEncargado =
                 "<small class=\"text-muted p-t-10 db\">Nombre comercial</small>" +
                 "<p>" + listaEncargados[k].nombreEncargado + "</p>" +

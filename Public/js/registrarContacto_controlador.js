@@ -52,7 +52,7 @@ let validarContacto = () => {
     return error;
 };
 
-let obtener_datosContacto = (centro_id) => {
+let obtener_datosContacto = (centro_id, pcedJuridica) => {
 
     if (validarContacto() == false) {
         // Se ejecuta solo si la validación no da error
@@ -65,7 +65,7 @@ let obtener_datosContacto = (centro_id) => {
         let fotoEncargado = input_imagen.src;
         let centroEducativoId = centro_id;
         debugger;
-        registrar_Contacto(nombreEncargado, idEncargado, emailEncargado,  dptoEncargado, telEncargado, extEncargado,fotoEncargado, centroEducativoId);
+        registrar_Contacto(nombreEncargado, idEncargado, emailEncargado,  dptoEncargado, telEncargado, extEncargado,fotoEncargado, centroEducativoId, pcedJuridica);
         
     } else {
         swal.fire({

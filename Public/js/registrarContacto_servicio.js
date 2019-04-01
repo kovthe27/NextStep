@@ -40,7 +40,7 @@ function processImage(id) {
 
 //Registro Contacto
 
-let registrar_Contacto = (pnombreEncargado, pidEncargado, pemailEncargado, pdptoEncargado, ptelEncargado, pextEncargado, pfotoEncargado, pcentroEducativoId) => {
+let registrar_Contacto = (pnombreEncargado, pidEncargado, pemailEncargado, pdptoEncargado, ptelEncargado, pextEncargado, pfotoEncargado, pcentroEducativoId, pcedJuridica) => {
   debugger;
   let request = $.ajax({
     url: "http://localhost:4000/api/registrar_contacto",
@@ -53,7 +53,8 @@ let registrar_Contacto = (pnombreEncargado, pidEncargado, pemailEncargado, pdpto
         telEncargado: ptelEncargado,
         extEncargado: pextEncargado,
         fotoEncargado: pfotoEncargado,
-        centroEducativoId : pcentroEducativoId
+        centroEducativoId : pcentroEducativoId,
+        cedulaJuridica : pcedJuridica
     },
     dataType: "json",
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8'

@@ -68,12 +68,8 @@ let registrar_Centro = (pnombreCentro, pnombreComercial, pcedJuridica, pemailCen
   });
 
   request.done(function (response) {
-    obtener_datosContacto(response.centro._id);
-    /* swal.fire({
-      type: 'success',
-      title: 'El centro educativo fue registrado',
-      text: 'Le estaremos enviando un código de verificación a su coreo electrónico para que pueda iniciar sesión'
-    }); */
+    obtener_datosContacto("response.centro._id", pcedJuridica);
+    
   });
 
   request.fail(function (jqXHR, textStatus) {
