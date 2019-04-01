@@ -61,23 +61,24 @@ let obtener_datosCentro = () => {
         let pagina = input_pagina.value;
 
         registrar_acercaNosotros(cedulaJuridica, descripcionCentro, ubicacion, encargado, correo, telefono, facebook, instagram, twitter, pagina);
-        swal.fire({
-            type: 'success',
-            title: 'La información ha sido añadida',
-            text: 'Muchas gracias'
-        });
+        // swal.fire({
+        //     type: 'success',
+        //     title: 'La información ha sido añadida',
+        //     text: 'Muchas gracias'
+        // });
 
-        // window.location.reload();
+        window.location.reload();
         // $('#btn_enviarNoticia').click();
 
-    } else {
-        swal.fire({
-            type: 'warning',
-            title: 'La información no pudo ser añadida',
-            text: 'Por favor revise los campos resaltados'
-        });
+    } 
+    // else {
+    //     swal.fire({
+    //         type: 'warning',
+    //         title: 'La información no pudo ser añadida',
+    //         text: 'Por favor revise los campos resaltados'
+    //     });
 
-    }
+    // }
 
 };
 
@@ -98,9 +99,9 @@ let mostrar_infoCentro = () => {
         "<div class=\"clearfix\"></div>"+
         "<div class=\"col-md-7 float-left\">"+
         "<p class=\"card-text\">"+acercaNosotros[i].descripcionCentro+"</p><br>"+
-            "<button class=\"btn btn-themecolor mr-1\" data-toggle=\"modal\" data-target=\"#registrarComentario\">Calificar centro</button>"+
-            "<button class=\"btn btn-secondary mr-1\" data-toggle=\"modal\" data-target=\"#registrarCita\">Agendar cita</button>"+
-            "<button class=\"btn btn-secondary mr-1\">Solicitar información</button>"+
+            // "<button class=\"btn btn-themecolor mr-1\" data-toggle=\"modal\" data-target=\"#registrarComentario\">Calificar centro</button>"+
+            // "<button class=\"btn btn-secondary mr-1\" data-toggle=\"modal\" data-target=\"#registrarCita\">Agendar cita</button>"+
+            // "<button class=\"btn btn-secondary mr-1\">Solicitar información</button>"+
         "</div>"+
         "<div class=\"linea float-left\"></div>"+
         "<div class=\"col-md-4 float-left información\">"+

@@ -43,16 +43,18 @@ let mostrar_datosCita = () =>{
                                     "<div class=\"carousel-item flex-column active\">"+
                                     "<i class=\"ti-calendar mb-1 fa-2x\"></i>"+
                                         "<h4 class=\"mt-2\">"+cita[i].nombre+"</h4>"+
+                                        "<p><i class=\"ti-mail\"></i> "+cita[i].correo+"</p>"+
                                         "<p><i class=\"ti-calendar\"></i> Fecha: "+nuevaFecha+"<br> <span><i class=\"ti-time\"></i> Hora:"+cita[i].hora+"</span> </p>"+
                                         "<div>"+
                                            "<button class=\"btn btn-sm btn-themecolor justify-content-start waves-effect waves-light m-t-15\">Aceptar</button>"+
                                             "<button class=\"btn btn-sm ml-2 btn-outline-danger justify-content-start waves-effect waves-light m-t-15\">Rechazar</button>"+
                                         "</div>"+
-                                    "</div>"+
-                                    "</div>"+
-                                    " </div>"+
-                                    "</div>"+
-                                    "</div>"+
+                                     "</div>"+
+                                "</div>"+
+                        " </div>"+
+                    "</div>"+
+                    "</div>"+
+        "</div>"
         $("#cargarCitas").append(card);
     };
     
@@ -64,8 +66,9 @@ let cerrarSesion = () =>{
     window.location.assign("landing_page.html");
 }
 
-crearMenuCentro();
 mostrar_datosCita();
+crearMenuCentro();
+
 
 
 

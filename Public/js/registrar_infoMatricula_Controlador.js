@@ -25,23 +25,19 @@ let validarMatricula = () => {
 };
 
 let obtener_datosMatricula = () => {
-    document.querySelector("#cardMatricula").innerHTML = "";
+    // document.querySelector("#cardMatricula").innerHTML = "";
     
     if (validarMatricula() == false) {
         let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
         let titulo = input_tituloMatricula.value;
         let descripcion = input_descripcionMatricula.value;
 
-        // swal.fire({
-        //     type: 'success',
-        //     title: 'La información de matrícula fue creada',
-        //     text: 'Muchas gracias'
-        // });
-
         registrar_infoMatricula(cedulaJuridica, titulo, descripcion);
-
     } 
-    mostrar_datosMatricula();
+
+    window.location.reload();
+
+    // mostrar_datosMatricula();
 
 };
 
