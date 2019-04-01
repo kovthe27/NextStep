@@ -44,9 +44,9 @@ let obtener_datosComentario = () => {
         let comentario = input_comentario.value;
         let likes = 0;
 
-        registrar_comentarios(cedulaJuridica, correoUsuario, calificacion, fecha, comentario,likes);
+        registrar_comentarios(cedulaJuridica, correoUsuario, calificacion, fecha, comentario, likes);
     }
-    
+
     mostrar_datosComentario();
     window.location.reload();
 };
@@ -132,7 +132,7 @@ let mostrar_datosNoticia = () => {
     let max = 5;
     // console.log(noticia);
 
-    for (let i = noticia.length-1; i>0; i--) {
+    for (let i = noticia.length - 1; i > 0; i--) {
         if (noticia[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo')) & max > 0) {
             var cardNoticia =
                 // "<div class=\"card col-md-3 float-left \">" +
@@ -262,7 +262,7 @@ let mostrar_datosComentario = () => {
                 "<span class=\"date\">" + Comentario[i].fecha + "</span>" +
                 "</div>" +
                 "<p class=\"m-b-5 m-t-10\">" + Comentario[i].comentario + "</p><hr class= \"mb-2 mt-2\">" +
-                "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-warning btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes" 
+                "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-warning btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes"
             "</div>" +
 
                 "</div>"
@@ -279,29 +279,29 @@ let consultarListaMenuPadre = () => {
     let listaUsuarios = [];
 
     let request = $.ajax({
-      url: "http://localhost:4000/api/consultar_padre",
-      method: "GET",
-      data: {
-      },
-      dataType: "json",
-      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-      async: false
+        url: "http://localhost:4000/api/consultar_padre",
+        method: "GET",
+        data: {
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async: false
     });
-  
+
     request.done(function (res) {
         listaUsuarios = res;
-      console.log("success");
-  
+        console.log("success");
+
     });
-  
+
     request.fail(function (jqXHR, textStatus) {
-      console.log("fail");
+        console.log("fail");
     });
-  
+
     return listaUsuarios;
 }
 
-let crearFavoritos = () =>{
+let crearFavoritos = () => {
     window.location.assign("favoritos.html");
 }
 let crearMenu = () => {
@@ -324,11 +324,11 @@ let crearMenu = () => {
             }
         }
     }
-    let listaCentros =consultar_listaCentrosAdmin();
+    let listaCentros = consultar_listaCentrosAdmin();
     let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
-    for(let i=0; i<listaCentros.length; i++){
-        if(listaCentros[i].cedJuridica == cedulaJuridica){
-            document.querySelector("#nomCentro").innerHTML= listaCentros[i].nombreCentro;
+    for (let i = 0; i < listaCentros.length; i++) {
+        if (listaCentros[i].cedJuridica == cedulaJuridica) {
+            document.querySelector("#nomCentro").innerHTML = listaCentros[i].nombreCentro;
         }
     }
 
@@ -343,26 +343,26 @@ let enviarBoletin = () => {
     //Obtener boletín
     let boletines = consultar_boletin();
     let boletin;
-    for(let i = 0; i < boletines.length; i++) {
-        if(boletines[i].cedulaJuridica == cedulaJuridica) {
+    for (let i = 0; i < boletines.length; i++) {
+        if (boletines[i].cedulaJuridica == cedulaJuridica) {
             boletin = boletines[i];
 
-            enviar_MailBoletin(boletin.boletin,usuario);
+            enviar_MailBoletin(boletin.boletin, usuario);
         }
     }
-    
+
 }
 
 document.addEventListener('click', (e) => {
-    if(e.target && e.target.id== 'btn_SolicitarInfo'){
+    if (e.target && e.target.id == 'btn_SolicitarInfo') {
         enviarBoletin();
     }
- })
+})
 
 // cita
 const input_nombre = document.querySelector('#txt_nombre');
 const input_fechaCita = document.querySelector('#txt_fechaCita');
-const input_horaCita= document.querySelector('#txt_horaCita');
+const input_horaCita = document.querySelector('#txt_horaCita');
 const input_correoUsuario = document.querySelector('#txt_correoUsuario');
 const btn_enviarCita = document.querySelector('#btn_enviarCita');
 
@@ -419,6 +419,148 @@ let obtener_datosCita = () => {
 
 btn_enviarCita.addEventListener('click', obtener_datosCita);
 
+let mostrar_utilesAdministrador = () => {
+    let lista_utilesAdmin = [];
 
+    let request = $.ajax({
+        url: "http://localhost:4000/api/consultar_listaUtiles",
+        method: "GET",
+        data: {
+        },
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async: false
+    });
+
+    request.done(function (res) {
+        lista_utilesAdmin = res;
+        // console.log("success");
+
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        // console.log("fail");
+    });
+
+    return lista_utilesAdmin;
+};
+
+let getListaLanding = () => {
+
+    let lista_utilesAdmin = [];
+
+    let request = $.ajax({
+        url: "http://localhost:4000/api/consultar_utilesAdmin",
+        method: "GET",
+        data: {},
+        dataType: "json",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        async: false
+    });
+
+    request.done(function (res) {
+        lista_utilesAdmin = res;
+        console.log("success");
+
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        console.log("fail");
+    });
+
+    return lista_utilesAdmin;
+};
+
+let crearListaLanding = (nombre) => {
+    // let nombreLista = getNombreListaLanding();
+    // let listaTipos = getListaTiposLanding();
+    let user = JSON.parse(localStorage.getItem('centroEducativo'));
+    let lista = getListaLanding();
+    // document.querySelector("#txt_titulo").innerHTML = "Lista: " + nombreLista;
+
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i].cedula == user) {
+            if (lista[i].nivel == nombre) {
+                let nuevalista =
+                    `<tr>
+                <td class="title">
+                    <p class="link" id="lista`+ i + `" href="javascript:voide(0)">` + lista[i].cantidad + `</p>
+                </td>
+                <td class="title">
+                    <p class="link" id="lista`+ i + `" href="javascript:voide(0)">` + lista[i].tipo + `</p>
+                </td>
+                <td class="title">
+                    <p class="link" id="lista`+ i + `" href="javascript:voide(0)">` + lista[i].descripcion + `</p>
+                </td>
+                </tr>`
+
+                $("#TblUtiles_" + nombre + "").append(nuevalista)
+            }
+        }
+    }
+}
+
+
+
+let mostrarListaLanding = () => {
+    let lista = mostrar_utilesAdministrador();
+    let user = JSON.parse(localStorage.getItem('centroEducativo'));
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i].cedula == user) {
+            let listaLanding =
+                "<div class=\"col-lg-3 col-md-6 float-left\">" +
+                "<div class=\"card\">" +
+                "<div class=\"el-card-content\">" +
+                "<h3 class=\"box-title\">" + lista[i].nombre + "</h3>" +
+                "<a class=\"btn waves-effect waves-light btn-rounded btn-sm btn-warning image-popup-vertical-fit\ alt=\"default\" data-toggle=\"modal\" data-target=\"#nombreLista" + lista[i].nombre + "\" href=\"#\"><i class=\"sl-icon-magnifier\"></i>Ver</a>" +
+                "<br>" +
+                "</div>" +
+                "</div>" +
+                "</div>" +
+
+
+                "<div id=\"nombreLista" + lista[i].nombre + "\" class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"vcenter\" aria-hidden=\"true\" style=\"display: none;\">" +
+                "<div class=\"modal-dialog modal-dialog-centered\">" +
+                "<div class=\"modal-content\">" +
+                " <div class=\"modal-header\">" +
+                "   <h4 class=\"modal-title\" id=\"vcenter\">Lista de útiles</h4>" +
+                "   <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>" +
+                " </div>" +
+
+                "<div class=\"modal-body pt-0\" id=\"nombreLista" + lista[i].nombre + "\">" +
+                "<div class=\"card-body\">" +
+                " <table class=\"tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle\" data-tablesaw-mode=\"columntoggle\" id=\"tablesaw-1093\">" +
+                "<thead>" +
+                " <tr>" +
+                "   <th>Cantidad</th>" +
+                "  <th>Artículo</th>" +
+                "  <th>Descripción</th>" +
+
+                "   </tr>" +
+                " </thead>" +
+                "  <tbody id=\"TblUtiles_" + lista[i].nombre + "\">" +
+                " </tbody>" +
+                "  </table>" +
+                "  </div>" +
+                " </div>" +
+                "</div></div></div>"
+
+
+            $("#cardLista").append(listaLanding);
+            crearListaLanding(lista[i].nombre);
+
+
+        };
+    }
+};
+
+let cerrarSesion = () => {
+    localStorage.setItem('cliente', JSON.stringify("Notlogin"));
+    window.location.assign("landing_page.html");
+}
+
+
+
+mostrarListaLanding();
 
 crearMenu();
