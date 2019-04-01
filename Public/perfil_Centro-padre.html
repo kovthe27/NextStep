@@ -836,6 +836,20 @@
     <script src="js/registrar_comentario_servicio.js"></script>
     <script src="js/centro_perfilPadre_controlador.js"></script>
     <script src="js/registrarCita_Servicio.js"></script>
+
+    <!-- scroll -->
+    <script>
+        $("a[href^='#']").click(function (e) {
+            e.preventDefault();
+
+            var position = $($(this).attr("href")).offset().top;
+
+            $("body, html").animate({
+                scrollTop: position
+            } /* speed */ );
+        });
+    </script>
+    
 </body>
 
 </html>

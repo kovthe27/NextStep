@@ -247,7 +247,7 @@ let mostrar_datosComentario = () => {
     // JSON.parse(localStorage.getItem('centro'));
     document.querySelector("#cardComentarios").innerHTML = "";
 
-    for (let i = Comentario.length - 1; i > Comentario.length - 4; i--) {
+    for (let i = Comentario.length - 1; i > Comentario.length - 5; i--) {
 
         if (Comentario[i].cedulaJuridica == cedulaJuridica) {
             let nombreUsuario = getNombreUsuario(Comentario[i].correoUsuario);
@@ -255,7 +255,7 @@ let mostrar_datosComentario = () => {
             var card =
                 // let i = noticia.length - 1; i > noticia.length - 5; i--
                 "<div class=\"d-flex flex-row comment-row mb-3 bg-light\">" +
-                "<div class=\"p-2\"><span class=\"round\"><img src=\"" + fotoUsuario + "\"   alt=\"user\"  width=\"50\"></span></div>" +
+                "<div class=\"p-2\"><span class=\"round\"><img src=\"" + fotoUsuario + "\"   alt=\"user\"  width=\"50\" height=\"50\"></span></div>" +
                 "<div class=\"comment-text w-100\">" +
                 "<h5>" + nombreUsuario + "</h5><div class=\"float-right text-warning\"><span>" + Comentario[i].calificacion + "</span><i class=\"ti-star text-warning\"></i></div>" +
                 "<div class=\"comment-footer\">" +
