@@ -50,10 +50,23 @@
                     <!-- Perfil -->
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><img src="../admin-wrap/assets/images/users/1.jpg"
-                                    alt="user" class=""> <span class="hidden-md-down">Mark Sanders &nbsp;<i class="fa fa-angle-down"></i></span>
-                            </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="imgPerfil" src=""  class=""> <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img align-self-center"><img id="imgPerfil2" src="" ></div>
+                                            <div class="u-text  text-align: center">
+                                                <h4 id="nombrePerfil2" >Steave Jobs</h4>
+                                                <p id="correo" class="text-muted"></p></div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="perfil_CentroEducativo.html"><i class="ti-user"></i> Mi perfil</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar sesión</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -62,29 +75,27 @@
 
 
 
-        <aside class="left-sidebar">
+         <!-- Menu -->
+         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
+            <div class="scroll-sidebar ps ps--theme_default ps--active-y"
+                data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav active">
-                    <ul id="sidebarnav" class="in">
-                        <li class="nav-small-cap">------ MENÚ</li>
-                        <li class=""> <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-bell"></i><span
-                                    class="hide-menu">Solicitudes <span class="label label-rounded label-danger">4</span></span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-home"></i><span
-                                    class="hide-menu">Centros educativos </span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-bar-chart-alt"></i><span
-                                    class="hide-menu">Reportes </span></a></li>
-                        <li class="active"> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-calendar"></i><span
-                                    class="hide-menu">Calendario </span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class="ti-cup"></i><span
-                                    class="hide-menu">Ranking </span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-write"></i><span
-                                    class="hide-menu">Lista de útiles </span></a></li>
-                        <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i class=" ti-user"></i><span
-                                    class="hide-menu">Mi perfil</span></a></li>
-                    </ul>
-                </nav>
+                        <ul id="sidebarnav" class="in">
+                            <li class="nav-small-cap">------ MENÚ</li>
+                          
+                            <li class=""> <a class=" waves-effect waves-dark" href="#" aria-expanded="false"><i
+                                        class=" ti-bar-chart-alt"></i><span class="hide-menu">Reportes </span></a></li>
+                            <li class="active"> <a class=" waves-effect waves-dark" href="principal_CentroEducativo.html"
+                                    aria-expanded="false"><i class=" ti-calendar"></i><span class="hide-menu">Citas agendadas
+                                    </span></a></li>
+                            <li class=""> <a class=" waves-effect waves-dark" href="lista_Listas_CentroEducativo.html" aria-expanded="false"><i
+                                        class=" ti-write"></i><span class="hide-menu">Lista de útiles </span></a></li>
+                            <li class=""> <a class=" waves-effect waves-dark" href="perfil_CentroEducativo.html" aria-expanded="false"><i
+                                        class=" ti-user"></i><span class="hide-menu">Mi perfil</span></a></li>
+                        </ul>
+                    </nav>
                 <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
                     <div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
                 </div>
@@ -96,59 +107,21 @@
 
 
 
-        <div class="page-wrapper" style="min-height: 633px;">
-            <div class="container-fluid">
+        <div class="page-wrapper" style="min-height: 800px;">
+            <div class="container-fluid" id="cargarCitas">
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Calendario de citas</h3>
+                        <h3 class="text-themecolor">Citas agendadas</h3>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="">
-                                <div class="row">
-                                    <!--  -->
-                                    <div class="col-lg-12">
-                                        <div class="card-body b-l calender-sidebar">
-                                            <div id="calendar" class="fc fc-unthemed fc-ltr">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- BEGIN MODAL -->
-                <div class="modal none-border" id="my-event">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title"><strong>Add Event</strong></h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            </div>
-                            <div class="modal-body"></div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Create
-                                    event</button>
-                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light"
-                                    data-dismiss="modal">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-        
             </div>
         </div>
-
-
-
     </div>
+
+
+
+
 
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>
     <script src="./assets/node_modules/bootstrap/js/popper.min.js"></script>
@@ -166,6 +139,8 @@
     <script src="./assets/node_modules/moment/moment.js"></script>
     <script src="./assets/node_modules/calendar/dist/fullcalendar.min.js"></script>
     <script src="./assets/node_modules/calendar/dist/cal-init.js"></script>
+    <script src="js/mostrarCita_Servicio.js"></script>
+    <script src="js/mostrarCita_Controlador.js"></script>
 
 </body>
 

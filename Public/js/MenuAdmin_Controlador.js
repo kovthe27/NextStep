@@ -1,17 +1,32 @@
 'use strict';
 
-let crearMenu = () =>{
+let crearMenu = () => {
     //Obtiene el usuario del localStorage
     let usuario = getUsuario();
+    if (usuario == "Notlogin") {
+        window.location.assign("pages-error-404.html");
+    } else {
+        let listaUsuarios = consultarListaMenuAdmin();
 
-    //Obtiene el nombre y apellido del usuario    
-    let nombreUsuario = getNombreUsuario(usuario);
-    let apellidoUsuario = getApeliidoUsuario(usuario);
+        for (let i = 0; i < listaUsuarios.length; i++) {
+            if (listaUsuarios[i].emailUsuario == usuario) {
+                document.querySelector("#imgPerfil").src = listaUsuarios[i].fotoUsuario;
+                document.querySelector("#nombrePerfil1").innerHTML = listaUsuarios[i].nombreUsuario;
 
-    //Setea el nombre del usuario en el perfil
-    document.querySelector("#txtUsuario").innerHTML = nombreUsuario + " " +apellidoUsuario
+                document.querySelector("#imgPerfil2").src = listaUsuarios[i].fotoUsuario;
+                document.querySelector("#nombrePerfil2").innerHTML = "MEP Costa Rica";
+                document.querySelector("#correo").innerHTML = listaUsuarios[i].emailUsuario;
+
+            }
+        }
+    }
+
 }
 
+let cerrarSesion = () => {
+    localStorage.setItem('cliente', JSON.stringify("Notlogin"));
+    window.location.assign("landing_page.html");
+}
 
 //Se construye el menu automaticamente con el usuasio en el local storage
 crearMenu();

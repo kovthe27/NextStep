@@ -1,0 +1,159 @@
+body {
+    font-family: 'Muli', sans-serif;
+}
+/*Card Registro*/
+.login-sidebar .login-box {
+    background-color: #fcfcfc;
+    width: 750px;
+    color: #292b29;
+}
+
+.login-box h3, 
+.login-box ::placeholder,
+.login-box select::placeholder,
+.form-control  {
+    color: #292b29;
+} 
+
+.login-box .form-material .form-control, 
+.login-box .form-material .form-control.focus, 
+.login-box .form-material .form-control:focus {
+    background-image: linear-gradient(#00b96b, #00b96b), linear-gradient(#e9edf2, #e9edf2);
+    background-color: #fcfcfc;
+}
+
+.form-control:focus {
+    color: #292b29;
+} 
+
+.form-wrapper {
+    margin-top: 30px;
+}
+
+.file-field {
+    position: relative;
+}
+
+.file-field .btn {
+    font-size: 14px;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    padding: 7px;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    margin: 3px;
+    border: 0;
+    -webkit-border-radius: .125rem;
+    border-radius: .125rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: normal;
+    word-wrap: break-word;
+    float: left!important;
+}
+
+.file-field span {
+    cursor: pointer;
+}
+
+.file-field input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.file-field .file-path-wrapper {
+    overflow: hidden;
+    padding-left: 10px;
+    height: 2.5rem;
+}
+
+.file-field input.file-path {
+    width: 100%;
+    height: 36px;
+}
+
+.btn-info {
+    background: #00b96b;
+    border: 1px solid #00b96b; 
+}
+
+.custom-select {
+    background: url(./assets/images/custom-select.png) right 0.75rem center no-repeat;
+}
+
+.error_input {
+    border: solid 1px red !important;
+    background-image: none !important;
+}
+
+.btn-file {
+    text-transform: capitalize !important;
+    background: #00b96b;
+}
+
+.btn-container {
+    padding: 0;
+}
+
+#btn_RegistrarPadre {
+    text-transform: capitalize !important;
+}
+
+.dir-container {
+    padding: 0 15px;
+}
+
+#btnSeleccionarImagen {
+    /* color: #ff9041; */
+    /* background-color: transparent; */
+    /* border: 1px solid #ff9041; */
+    -webkit-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
+    /* background-image: none !important; */
+    cursor: pointer;
+    position: relative;
+    /* top: 80px; */
+}
+
+#btnSeleccionarImagen:hover {
+    background-color: #ff9041;
+    color: #fff;
+}
+
+#cargarImagen {
+    /* width: 277px; */
+    height: 200px;
+    border: 1px #bababa dashed;
+}
+
+#cargarImagen img {
+    width: 100%;
+}
+
+.container-fluid {
+    width: 80%;
+}
+
+.card-header.bg-info {
+    background-color: #00b96b!important;
+}
+
+.btn-container {
+    margin: 0 auto;
+}
+
+/* #txt_Archivos {
+    width: 108px;
+} */

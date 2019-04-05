@@ -1,15 +1,16 @@
-.portada{
+.portada {
     height: 500px;
 }
-.imagenCentro{
-    background-image: url("../imgs/colegio.jpg");
+
+.imagenCentro {
+    background-image: url("../imgs/bg.jpg");
     width: 100%;
     height: 400px;
     background-size: cover;
     z-index: -1;
 }
 
-.opacidad{
+.opacidad {
     z-index: 1;
     height: 400px;
     width: 100%;
@@ -19,47 +20,99 @@
     opacity: 0.8;
 }
 
-.texto{
+.texto {
     z-index: 2;
     position: absolute;
-    top: 20em;
+    top: 18em;
     margin-left: 1.5em;
 }
 
-.texto h2{
+.texto h2 {
     color: white;
 }
 
-.star-rating{
+.star-rating {
     color: white;
     margin-bottom: 2em;
 }
 
 
-.linea{
+.linea {
     width: 2px;
     height: 220px;
-    background-color: #54B56B;
-    margin: 0 30px;
+    background-color: transparent;
+    margin: 0px 43px;
 }
 
-.acercaNosotros{
+.acercaNosotros {
     margin-bottom: 2em;
-    height: 257px;
-    padding: 1em 0;
+    padding: 1em;
     background-color: white;
 }
 
 /* ------------ */
-.comentarios-noticias{
+.comentarios-noticias {
     height: 865px;
     background-color: white;
 }
 
 .altura {
-    height: 200px;
+    min-height: 200px;
 }
 
-.error_input{
+.error_input {
     border-color: #ff5c6c;
+}
+
+.ribbon-warning {
+    background: #e7934d !important;
+}
+
+#imgFoto {
+    width: 100%;
+    border: 1px solid #cfd4da;
+    border-radius: 5px;
+    margin-bottom: 27px;
+}
+
+.carousel-control-prev-icon {
+    background-color: #333;
+    position: absolute;
+    left: -15px;
+    /* padding: 7px; */
+    top: 10em;
+}
+
+.carousel-control-next-icon {
+    background-color: #333;
+    position: absolute;
+    right: -15px;
+    top: 10em;
+}
+
+.servicios {
+    margin-bottom: 2em;
+    padding: 2em;
+    height: 550px;
+    background-color: white;
+}
+
+.customtab{
+    position: absolute;
+    top: 7em;
+    right: 0;
+    z-index: 1;
+}
+
+.carousel-indicators li{
+    background-color: orange;
+}
+
+.form-control {
+    min-height: 40px;
+}
+
+hr{
+    margin-top: 0;
+    margin-bottom: 20px;
 }

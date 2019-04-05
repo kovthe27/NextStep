@@ -28,40 +28,34 @@
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
                 <div class="navbar-header">
-                    <img src="../Public/imgs/logo-text-02.png" alt="homepage" class="dark-logo">
+                    <a href="principal_Administrador.html"><img src="../Public/imgs/logo-text-02.png" alt="homepage" class="dark-logo"></a>
                 </div>
 
                 <div class="navbar-collapse">
                     <!-- Barra de búsqueda -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
-                                <i class="sl-icon-menu"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item hidden-xs-down search-box">
-                            <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
-                                <i class="icon-Magnifi-Glass2"></i>
-                            </a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter">
-                                <a class="srh-btn">
-                                    <i class="ti-close"></i>
-                                </a>
-                            </form>
-                        </li>
                     </ul>
 
                     <!-- Perfil -->
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <img src="../admin-wrap/assets/images/users/1.jpg" alt="user" class="">
-                                <span id="txtUsuario"class="hidden-md-down">Mark Sanders &nbsp;
-                                    <i class="fa fa-angle-down"></i>
-                                </span>
-                            </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="imgPerfil" src=""  class=""> <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;<i class="fa fa-angle-down"></i></span> </a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img align-self-center"><img id="imgPerfil2" src="" ></div>
+                                            <div class="u-text  text-align: center">
+                                                <h4 id="nombrePerfil2" >Steave Jobs</h4>
+                                                <p id="correo" class="text-muted"></p></div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="ti-user"></i> Mi perfil</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar sesión</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -97,11 +91,18 @@
                             </a>
                         </li>
                         <li class="">
+                                <a class=" waves-effect waves-dark" href="bitacora.html" aria-expanded="false">
+                                     <i class="ti-receipt"></i>
+                                    <span class="hide-menu">Bitácora</span>
+                                </a>
+                            </li>
+
+                        <!-- <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class=" ti-calendar"></i>
                                 <span class="hide-menu">Calendario </span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class="ti-cup"></i>
@@ -114,12 +115,12 @@
                                 <span class="hide-menu">Lista de útiles </span>
                             </a>
                         </li>
-                        <li class="">
+                        <!-- <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class=" ti-user"></i>
                                 <span class="hide-menu">Mi perfil</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="">
                             <a class=" waves-effect waves-dark" href="preguntas_Administrador.html" aria-expanded="false">
                                 <i class="ti-help"></i>
@@ -155,7 +156,7 @@
                             <thead>
                                 <tr>
                                     <th>Centro educativo</th>
-                                    <th>Cedula juridica</th>
+                                    <th>Cédula jurídica</th>
                                     <th>Año de creación</th>
                                     <th>Correo</th>
                                     <th>Administrador</th>
@@ -165,12 +166,12 @@
                             <tbody>
                                 <tr>
                                     <td class="title">
-                                        <a class="link" href="javascript:void(0)">ABC DEF</a>
+                                        <a class="link" href="javascript:void(0)">Liceo Laboratorio Emma Gamboa</a>
                                     </td>
-                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">123456789</td>
-                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">2009</td>
-                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">test@abc.com</td>
-                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">John Doe</td>
+                                    <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">3-101-121231</td>
+                                    <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">1972</td>
+                                    <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">liceo.laboratorio.mep.com</td>
+                                    <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">John Aguilar</td>
                                     <td>
                                         <button type="button" class="btn btn-sm btn-success mr-1 btn-circle">
                                             <i class="fa fa-check"></i>

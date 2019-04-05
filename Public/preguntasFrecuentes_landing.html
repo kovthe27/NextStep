@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
+    <title>NextStep</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../admin-wrap/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../admin-wrap/main/css/style.css" rel="stylesheet">
+    <!-- page css -->
+    <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
+    <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
+
+    <title>NextStep</title>
+</head>
+
+<body class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
+                <div class="navbar-header">
+                   <a href="landing_page.html"><img src="../Public/imgs/logo-text-02.png"  alt="homepage" class="dark-logo"></a> 
+                </div>
+
+                          </nav>
+        </header>
+
+        <div class="container" style="min-height: 900px;">
+            <div class="container-fluid">
+                    <div class="row page-titles bg-white mt-5">
+                            <div class="col-md-5 mt-5 align-self-center">
+                                <h3 class="text-themecolor">Preguntas frecuentes</h3>
+                            </div>
+                        </div>
+                <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                    aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="vcenter">Añadir pregunta</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <input type="text" id="txt_pregunta" name="text" class="form-control"
+                                        required="true" data-validation-required-message="This field is required"
+                                        aria-invalid="false" placeholder="Inserte la pregunta">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="controls">
+                                        <textarea name="textarea" id="txt_respuesta" class="form-control" required=""
+                                            placeholder="Escriba la respuesta"></textarea>
+                                        <div class="help-block"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btn_registrar" type="submit" class="btn btn-warning waves-effect"
+                                    data-dismiss="modal">Añadir</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <!-- Botón -->
+                <!-- <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
+                    data-target="#agregarMatricula">Añadir pregunta</button>
+                <div class="clearfix"></div> -->
+
+            </div>
+
+            <div>
+                <img class="float-right" src="../Public/imgs/ask-03.png" width="30%">
+            </div>
+            <div class="card-body">
+                <!-- <h4 class="card-title">Faqs with accordion</h4> -->
+                <h6 class="card-subtitle"></h6>
+                <div id="accordion1" role="tablist" aria-multiselectable="true">
+                    <!-- Se cargan las preguntas frecuentes cuando se crea la pagina -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/node_modules/jquery/jquery.min.js"></script>
+    <script src="./assets/node_modules/bootstrap/js/popper.min.js"></script>
+    <script src="./assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/node_modules/ps/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../admin-wrap/main/js/waves.js"></script>
+    <script src="./assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="./assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
+    <script src="./assets/node_modules/prism/prism.js"></script>
+    <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
+    <!-- Sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <!-- tabla -->
+    <!-- <script src="js/MenuAdmin_Servicio.js"></script>
+    <script src="js/MenuAdmin_Controlador.js"></script> -->
+    <script src="js/preguntasAdmin_servicio.js"></script>
+    <script src="js/preguntasAdmin_controlador.js"></script>
+
+</body>
+
+</html>

@@ -78,7 +78,7 @@ html {
   -moz-osx-font-smoothing: grayscale; }
 
 a {
-  color: #20aee3; }
+  color: #54B56B; }
 
 a:hover,
 a:focus {
@@ -87,7 +87,7 @@ a:focus {
 a.link {
   color: #455a64; }
   a.link:hover, a.link:focus {
-    color: #20aee3; }
+    color: rgb(59, 134, 77); }
 
 .img-responsive {
   width: 100%;
@@ -1141,6 +1141,7 @@ File: scss
     border-left: 1px solid rgba(120, 130, 140, 0.13); }
     .topbar .profile-pic img {
       width: 30px;
+      height: 30px;
       border-radius: 100%; }
     .topbar .profile-pic span {
       font-size: 14px;
