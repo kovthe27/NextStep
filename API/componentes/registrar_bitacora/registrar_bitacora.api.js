@@ -17,13 +17,13 @@ module.exports.registrar_bitacora = (req, res) => {
         if (error) {
             res.json({
                 success: false,
-                msg: `No se guardo en bitacora`
+                msg: `No se guardo en bitácora`
             });
 
         } else {
             res.json({
                 success: true,
-                msg: `Accion guardada en bitacora`
+                msg: `Accion guardada en bitácora`
             });
         };
     });

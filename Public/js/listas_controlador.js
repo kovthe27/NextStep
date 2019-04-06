@@ -91,12 +91,12 @@ let nuevoArticulo = () => {
     let nombreLista = getNombreLista();
     if (validar() == false) {
         crearArticulo(cedula, cantidad, articulo, descripcion);
-        bitacora(cedula, "Registro", "se agregó un articulo a la lista: "+nombreLista);
+        bitacora(cedula, "Registro", "Se agregó un articulo a la lista: "+nombreLista);
     }
     else {
         swal.fire({
             type: 'error',
-            title: 'El articulo no fue registrado',
+            title: 'El artículo no fue registrado',
             text: 'Por favor inténtelo de nuevo'
         })
     }
@@ -108,8 +108,8 @@ let nuevoTipo = () => {
     if (nombre == "") {
         swal.fire({
             type: 'error',
-            title: 'Nuevo tipo de articulo no registrado',
-            text: 'Por favor indique un nombre para el nuevo articulo'
+            title: 'Nuevo tipo de artículo no registrado',
+            text: 'Por favor indique un nombre para el nuevo artículo'
         })
     }else{
         crearTipo(nombre);

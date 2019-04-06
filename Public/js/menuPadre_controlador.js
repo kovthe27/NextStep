@@ -180,7 +180,7 @@ let filtrar = () => {
         }
     }
     if (document.querySelector("#customCheck3").checked) {
-        let nueva2 = filtroGrado("Prescolar");
+        let nueva2 = filtroGrado("Ambos");
         for (let i = 0; i < nueva2.length; i++) {
             listafiltrada.push(nueva2[i]);
         }

@@ -87,7 +87,7 @@ let crearArticulo = (pcedula, pcantidad, particulo, pdescripcion) => {
   request.fail(function (jqXHR, textStatus) {
     swal.fire({
       type: 'error',
-      title: 'El articulo no pudo ser agregado',
+      title: 'El artículo no pudo ser agregado',
       text: 'Por favor inténtelo de nuevo'
     });
   });
@@ -119,7 +119,7 @@ let crearTipo = (pNombre) => {
   request.done(function (msg) {
     swal.fire({
       type: 'success',
-      title: 'El articulo se agregó con exito',
+      title: 'El artículo se agregó con exito',
       text: 'Muchas gracias'
     });
   });
@@ -127,7 +127,7 @@ let crearTipo = (pNombre) => {
   request.fail(function (jqXHR, textStatus) {
     swal.fire({
       type: 'error',
-      title: 'El articulo no pudo ser agregado',
+      title: 'El artículo no pudo ser agregado',
       text: 'Por favor inténtelo de nuevo'
     });
   });

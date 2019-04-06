@@ -36,7 +36,7 @@ let mostrar_datosCita = () =>{
         var fechaFormato = new Date(cita[i].fecha);
         var nuevaFecha = fechaFormato.getDate() + "-" + fechaFormato.getMonth() + "-" + fechaFormato.getFullYear();
         var card = 
-        "<div class=\"col-lg-3 col-md-6 float-left\">"+
+        "<div class=\"col-lg-4 col-md-6 float-left\">"+
                    "<div class=\"card bg-white\">"+
                        "<div class=\"card-body\">"+
                                 "<div class=\"carousel-inner\">"+
