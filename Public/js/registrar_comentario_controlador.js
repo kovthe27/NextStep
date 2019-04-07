@@ -70,10 +70,29 @@ let mostrar_datosComentario = () =>{
         // let i = noticia.length - 1; i > noticia.length - 5; i--
         "<div class=\"d-flex flex-row comment-row mb-3 bg-light\">"+
         "<div class=\"p-2\"><span class=\"round\"><img src=\"" + fotoUsuario + "\"   alt=\"user\"  width=\"50\" height=\"50\"></span></div>"+
+        
         "<div class=\"comment-text w-100\">"+
-            "<h5>"+ nombreUsuario+ "</h5><div class=\"float-right text-warning\"><span>"+Comentario[i].calificacion +"</span><i class=\"ti-star text-warning\"></i></div>"+
+            "<h5>"+ nombreUsuario+ "</h5><div class=\"float-right text-warning\"><span>"+Comentario[i].calificacion +"</span><i class=\"ti-star text-warning\"></i>"+
+                  // dropdown
+            
+                  "<div class=\"btn-group float-right\">" +
+                  "<button type=\"button\" class=\"btn text-right pt-0 ml-3\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">" +
+                  "<i class=\"fas fa-ellipsis-v\"></i>" +
+                  "</button>" +
+                  "<div class=\"dropdown-menu dropdown-menu-right\">" +
+                  "<a class=\"dropdown-item\" alt=\"default\" data-toggle=\"modal\" id=\"editarNoticia\" data-target=\"#registrarComentario\" >Editar</a>" +
+                  "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>" +
+                  "</div></div>" +
+
+                  
+            "</div>"+
+            "<div class=\"clearfix\"></div>"+
+            
             "<div class=\"comment-footer\">"+
                 "<span class=\"date\">" + Comentario[i].fecha + "</span>"+
+
+          
+
             "</div>"+
             "<p class=\"m-b-5 m-t-10\">" + Comentario[i].comentario + "</p><hr class= \"mb-2 mt-2\">"+
         "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-warning btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes" 

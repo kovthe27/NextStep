@@ -6,7 +6,8 @@ module.exports.registrar_noticia = (req, res) => {
         cedulaJuridica : req.body.cedulaJuridica,
         titulo: req.body.titulo,
         fecha: req.body.fecha,
-        descripcion: req.body.descripcion
+        descripcion: req.body.descripcion,
+        estado: 'activo'
     });
     console.log(noticia_nueva);
 
@@ -20,7 +21,7 @@ module.exports.registrar_noticia = (req, res) => {
         } else {
             res.json({
                 success: true,
-                msg: `La noticia fue creado con éxito`
+                msg: `La noticia fue creada con éxito`
             });
         };
     });
@@ -32,3 +33,73 @@ module.exports.consultar_noticia = function(req, res) {
             res.send(noticia)
         });
 };
+
+module.exports.buscar_noticia = (req, res) =>{
+    model_noticia.find(
+        {_id :req.body.id_noticia}
+    ) .then(
+        function(noticia){
+            res.send (noticia)
+        }
+    )
+};
+
+// Actualizar
+// module.exports.buscar_por_id = function (req, res){
+//     modelo_noticia.find({_id : req.body.id_noticia}).then(
+//         function(noticia){
+//             if(noticia){
+//                 res.json({success: true, noticia : noticia});
+//             }else{
+//                 res.json({success: false, noticia : noticia});
+//             }
+//         }
+
+//     );
+
+// };
+
+module.exports.actualizar = function(req, res){
+   
+    model_noticia.findByIdAndUpdate(req.body.id_noticia, { $set: req.body },
+        // model_noticia.findByIdAndUpdate(req.body.id_noticia, { $set:{descripcion:req.body.descripcion}},
+        function (error, noticia){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar la noticia'});
+            }else{
+                res.json({success: true , msg : 'La noticia se actualizó con éxito'}
+                
+                );
+
+            }
+        }
+    
+    );
+}
+
+
+// module.exports.actualizarNoticia= (req, res) => {
+//     modelo_noticia.findOneAndUpdate(
+//         {emailCentro:req.body.email}, 
+//         {contrasenaCentro:req.body.contrasena, registroCompletado:true},
+//         {new:true}, 
+//         function(error, usuarioActualizado){
+//             if(error){
+//                 res.json(
+//                     {
+//                         success : false,
+//                         msg : `No se pudo actualizar la contraseña`
+//                     }
+//                 )
+//             }else {
+//                 res.json(
+//                     {
+//                         success : true,
+//                         msg : `Contraseña ha sido actualizada`,
+//                         usuario: usuarioActualizado
+//                     }
+//                 )
+//             }
+//     });
+// }
+

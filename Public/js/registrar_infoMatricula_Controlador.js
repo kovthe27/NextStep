@@ -26,14 +26,14 @@ let validarMatricula = () => {
 
 let obtener_datosMatricula = () => {
     // document.querySelector("#cardMatricula").innerHTML = "";
-    
+
     if (validarMatricula() == false) {
         let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
         let titulo = input_tituloMatricula.value;
         let descripcion = input_descripcionMatricula.value;
 
         registrar_infoMatricula(cedulaJuridica, titulo, descripcion);
-    } 
+    }
 
     window.location.reload();
 
@@ -56,6 +56,16 @@ let mostrar_datosMatricula = () => {
             var card = "<div class=\"col-lg-4 col-md-6 col-xlg-2 col-xs-12 float-left\">" +
                 "<div class=\"ribbon-wrapper border card\">" +
                 "<div class=\"ribbon ribbon-default\">" + matricula[i].titulo + "</div>" +
+                // dropdown
+                "<div class=\"btn-group float-left\">" +
+                "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">" +
+                "<i class=\"fas fa-ellipsis-v\"></i>" +
+                "</button>" +
+                "<div class=\"dropdown-menu dropdown-menu-right\">" +
+                "<a class=\"dropdown-item\" alt=\"default\" data-toggle=\"modal\" id=\"editarNoticia\"  data-target=\"#agregarNoticia\"  >Editar</a>" +
+                "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>" +
+                "</div></div>" +
+
                 "<p class=\"ribbon-content\">" + matricula[i].descripcion + "</p>" +
                 "</div></div>";
 
@@ -67,6 +77,3 @@ let mostrar_datosMatricula = () => {
 
 
 mostrar_datosMatricula();
-
-
-
