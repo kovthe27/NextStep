@@ -17,4 +17,18 @@ router.route('/consultar_infoMatricula')
             }
         )
 
+        router.route('/actualizar_infoMatricula')
+        .post(
+            function (req, res) {
+                infoMatricula_api.actualizar(req, res);
+            }
+        );
+
+        router.route('/buscar_infoMatricula')
+    .post(
+        function (req, res) {
+            infoMatricula_api.buscar_infoMatricula(req, res);
+        }
+    );
+
 module.exports = router;
