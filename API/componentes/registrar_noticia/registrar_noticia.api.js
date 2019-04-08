@@ -45,19 +45,6 @@ module.exports.buscar_noticia = (req, res) =>{
 };
 
 // Actualizar
-// module.exports.buscar_por_id = function (req, res){
-//     modelo_noticia.find({_id : req.body.id_noticia}).then(
-//         function(noticia){
-//             if(noticia){
-//                 res.json({success: true, noticia : noticia});
-//             }else{
-//                 res.json({success: false, noticia : noticia});
-//             }
-//         }
-
-//     );
-
-// };
 
 module.exports.actualizar = function(req, res){
    
@@ -76,30 +63,4 @@ module.exports.actualizar = function(req, res){
     
     );
 }
-
-
-// module.exports.actualizarNoticia= (req, res) => {
-//     modelo_noticia.findOneAndUpdate(
-//         {emailCentro:req.body.email}, 
-//         {contrasenaCentro:req.body.contrasena, registroCompletado:true},
-//         {new:true}, 
-//         function(error, usuarioActualizado){
-//             if(error){
-//                 res.json(
-//                     {
-//                         success : false,
-//                         msg : `No se pudo actualizar la contraseña`
-//                     }
-//                 )
-//             }else {
-//                 res.json(
-//                     {
-//                         success : true,
-//                         msg : `Contraseña ha sido actualizada`,
-//                         usuario: usuarioActualizado
-//                     }
-//                 )
-//             }
-//     });
-// }
 

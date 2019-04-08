@@ -93,12 +93,12 @@ let construirModalNoticia = (p_id) => {
     let modalNoticia =
 
 
-    `<div id="actualizarNoticia" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="vcenter" style="display: block;" aria-modal="true">
-                                        <div class="modal-dialog modal-dialog-centered">
+    // <div id="actualizarNoticia" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="vcenter" style="display: block;" aria-modal="true">
+                                       ` <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h4 class="modal-title" id="vcenter">Creación de noticia</h4>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                   <a href="javascript:cerrarModalNoticia()"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> </a>
                                                 </div>
                                                 <div class="modal-body">
 
@@ -115,19 +115,34 @@ let construirModalNoticia = (p_id) => {
                                                 </div>
                                                 <div class="modal-footer">
 
-                                                        <button id="btn_actualizarNoticia" data-id="`+noticiaEspecifica[0]._id+`" type="submit" class="btn btn-outline-warning waves-effect" data-dismiss="modal">Actualizar</button>
+                                                        <button id="btn_actualizarNoticia" href="javascript:cerrarModalNoticia()" data-id="`+noticiaEspecifica[0]._id+`" type="submit" class="btn btn-outline-warning waves-effect" data-dismiss="modal">Actualizar</button>
 
                                                 </div>
                                             </div>
-                                        </div>
                                     </div>`
 
-                                    $("#pantallaNoticia").append(modalNoticia);
-                                    console.log(noticiaEspecifica);
+                                    $("#actualizarNoticia").append(modalNoticia);
+                                    document.querySelector("#actualizarNoticia").style.display="block";
+                                    document.querySelector("#actualizarNoticia").classList.add('show');
+
+                                    document.querySelector("#bkmodal").classList.add("modal-backdrop");
+                                    document.querySelector("#bkmodal").classList.add('show');
+
+
+                                    // console.log(noticiaEspecifica);
                                     prueba(noticiaEspecifica[0].titulo, noticiaEspecifica[0].descripcion);
 
                                    
 }
+
+let cerrarModalNoticia = () => {
+    document.querySelector("#actualizarNoticia").innerHTML = " ";
+    document.querySelector("#actualizarNoticia").classList.remove('show');
+    document.querySelector("#actualizarNoticia").style.display="none";
+    document.querySelector("#bkmodal").classList.remove("modal-backdrop");
+    document.querySelector("#bkmodal").classList.remove('show');
+ }
+
  
 let prueba = (ptitulo, pdescripcion) => {
     document.querySelector('#txt_tituloNoticiaEspecifica').value = ptitulo;
