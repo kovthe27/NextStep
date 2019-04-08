@@ -243,3 +243,14 @@ module.exports.listar_TodosPadres = (req ,res) =>{
 
     )
 };
+
+module.exports.buscarUsuario = (req ,res) =>{
+  model_RegistroPadre.find(
+    {_id : req.body.id_usuario}
+  ).then(
+      function(padres){
+          res.send(padres)
+      }
+
+  )
+};

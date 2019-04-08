@@ -137,3 +137,7 @@ list and media
 
 .plugin-details-active {
   display: block; }
+
+  #widgetUsuarios{
+    background: #ffffff !important;
+  }
