@@ -10,6 +10,13 @@ router.route('/registrar_padre')
         }
     );
 
+router.route('/actualizar_padre')
+    .post(
+        function(req , res){
+            padre_api.actualizar_padre(req, res);
+        }
+    );
+
 router.route('/consultar_padre')
     .get(
         function(req, res){
@@ -23,5 +30,14 @@ router.route('/actualizarcontrasena_Padre')
             padre_api.actualizarcontrasena_Padre(req, res);
         }
     )
+
+
+router.route('/buscar_padre')
+.get(
+    function(req , res){
+        padre_api.buscar_Padre(req, res);
+    }
+);
+
 
 module.exports = router;

@@ -29,7 +29,8 @@ module.exports.registrar_Padre = (req, res) =>{
             contrasenaUsuario: GeneratedGui(),
             estadoUsuario: req.body.estadoUsuario,
             tipo: req.body.tipo,
-            registroCompletado:req.body.registroCompletado
+            registroCompletado:req.body.registroCompletado,
+            estadoCuenta: 'Activo'
         }
     );
     
@@ -243,3 +244,32 @@ module.exports.listar_TodosPadres = (req ,res) =>{
 
     )
 };
+
+module.exports.buscar_Padre = (req ,res) => {
+  model_RegistroPadre.find(
+   {"_id": req.body.id_Usuario}
+  ).then (
+    function(padre) {
+      res.json(
+        {
+            success : false,
+            msg : `No se pudo actualizar la contraseña`, 
+            padre : padre
+        }
+    )
+    }
+  )
+}
+
+module.exports.actualizar_padre = function(req, res){
+  model_RegistroPadre.findByIdAndUpdate(req.body.id, { $set: req.body },
+      function (error){
+          if(error){
+              res.json({success : false , msg : 'No se pudo actualizar el registro'});
+          }else{
+              res.json({success: true , msg : 'El registro se actualizó con éxito'});
+          }
+      }
+  
+  );
+}

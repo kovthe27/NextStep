@@ -16,11 +16,12 @@ let schema_RegistroPadre = new mongoose.Schema(
         telUsuario : {type: String, required: true},
         cantHijos : {type: Number, required: false},
         fotoUsuario : {type: String, required: false},
-        provinciaUsuario : {type: String,require: true},
-        cantonUsuario : {type: String, require: true},
-        distritoUsuario : {type: String, require: true},
-        tipo : {type: String, require: true},
-        registroCompletado : {type: Boolean}
+        provinciaUsuario : {type: String,required: true},
+        cantonUsuario : {type: String, required: true},
+        distritoUsuario : {type: String, required: true},
+        tipo : {type: String, required: true},
+        registroCompletado : {type: Boolean},
+        estadoCuenta : {type: String, required: true}
     }
 );
 
