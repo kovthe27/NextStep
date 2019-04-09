@@ -171,3 +171,7 @@ a.link:hover, a.link:focus {
 #txtUsuarioReestablecer, #txtContrasenaNueva{
   padding: 10px;
 }
+
+.ribbon {
+  left: 0px !important;
+}
