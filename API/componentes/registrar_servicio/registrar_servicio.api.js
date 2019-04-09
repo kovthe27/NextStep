@@ -6,7 +6,8 @@ module.exports.registrar_servicio = (req, res) => {
         cedulaJuridica: req.body.cedulaJuridica,
         imagen: req.body.imagen,
         titulo: req.body.titulo,
-        descripcion: req.body.descripcion
+        descripcion: req.body.descripcion,
+        estado: 'activo'
     });
     console.log(servicio_nuevo);
 
@@ -32,3 +33,36 @@ module.exports.consultar_servicio = function(req, res) {
             res.send(servicio)
         });
 };
+
+
+
+module.exports.buscar_servicio = (req, res) =>{
+    model_servicio.find(
+        {_id :req.body.id_servicio}
+    ) .then(
+        function(servicio){
+            res.send (servicio)
+        }
+    )
+};
+
+// Actualizar
+
+module.exports.actualizar = function(req, res){
+   
+    model_servicio.findByIdAndUpdate(req.body.id_servicio, { $set: req.body },
+        function (error, servicio){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar el servicio'});
+            }else{
+                res.json({success: true , msg : 'El servicio se actualizó con éxito'}
+                
+                );
+
+            }
+        }
+    
+    );
+}
+
+

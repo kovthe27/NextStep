@@ -6,7 +6,8 @@ let schema_servicio = new mongoose.Schema(
         cedulaJuridica : {type: String, required: true},
         imagen : {type: String, required: true},
         titulo : {type : String, required: true},
-        descripcion : {type: String, required: true}
+        descripcion : {type: String, required: true},
+        estado : {type : String, required : true}
     }
 );
 
