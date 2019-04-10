@@ -22,7 +22,9 @@ let schema_RegistroCentro = new mongoose.Schema(
         annoFundCentro : {type: Number, required: true},
         referenciaHistorica : {type: String, required: true},
         archivosCentro : {type: String, required: false},
-        registroCompletado : {type: Boolean}
+        registroCompletado : {type: Boolean},
+        estado : {type: String},
+        fechaRegistro : {type: String}
     }
 );
 

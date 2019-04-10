@@ -10,6 +10,16 @@ let transporter = nodemailer.createTransport({
     }
 });
 
+function fecha(){
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+
+    let fecha = dd + '/' + mm + '/' + yyyy;
+    return fecha;
+}
+
 module.exports.registrar_Centro = (req, res) =>{
     let registro_Centro = new model_RegistroCentro(
         {
@@ -31,7 +41,9 @@ module.exports.registrar_Centro = (req, res) =>{
             annoFundCentro: req.body.annoFundCentro,
             referenciaHistorica: req.body.referenciaHistorica,
             archivosCentro: req.body.archivosCentro,
-            registroCompletado: false
+            registroCompletado: false,
+            estado: "Pendiente",
+            fechaRegistro: fecha()
         }
     );
     
@@ -244,3 +256,21 @@ module.exports.listar_TodosCentros = (req ,res) =>{
             res.send(centros)
         });
 };
+
+module.exports.CambiarEstado = function(req, res){
+   
+  model_RegistroCentro.findByIdAndUpdate(req.body.id_centro, { $set: {estado : req.body.estado} },
+      // model_noticia.findByIdAndUpdate(req.body.id_noticia, { $set:{descripcion:req.body.descripcion}},
+      function (error, noticia){
+          if(error){
+              res.json({success : false , msg : 'No se pudo actualizar el estado'});
+          }else{
+              res.json({success: true , msg : 'El estado se actualizó con éxito'}
+              
+              );
+
+          }
+      }
+  
+  );
+}
