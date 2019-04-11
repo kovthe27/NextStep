@@ -111,3 +111,81 @@ let listar_Padres = () => {
   return lista_Padres;
  
 };
+
+
+let buscar_Padre = (pid) => {
+  let lista_Padres = [];
+  let padre;
+  let request = $.ajax({
+    url: "http://localhost:4000/api/consultar_padre",
+    method: "GET",
+    data: {
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    async : false
+  });
+
+  request.done(function (res) {
+    lista_Padres = res;
+    
+    for(let i = 0; i < lista_Padres.length; i++) {
+      if(lista_Padres[i]._id === pid) {
+        
+        padre = lista_Padres[i];
+        break;
+      }
+    }
+    
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+    
+  });
+  return padre;
+ 
+};
+
+let actualizar_padre = (pnombrePadre, papellidoPadre, papellidoDosPadre, pidPadre, pnacionPadre, pdireccionPadre, pemailPadre, ptelPadre, pcantHijos, pfotoPadre, pprovinciaPadre, pcantonPadre, pdistritoPadre,  pid) =>{
+  let request = $.ajax({
+      url : 'http://localhost:4000/api/actualizar_padre',
+      method : "POST",
+      data : {
+        nombreUsuario: pnombrePadre,
+        apellidoUsuario: papellidoPadre,
+        seg_ApellidoUsuario: papellidoDosPadre,
+        idUsuario: pidPadre,
+        nacionUsuario: pnacionPadre,
+        direccionUsuario: pdireccionPadre,
+        emailUsuario: pemailPadre,
+        telUsuario: ptelPadre,
+        cantHijos: pcantHijos,
+        fotoUsuario: pfotoPadre,
+        provinciaUsuario : pprovinciaPadre,
+        cantonUsuario : pcantonPadre,
+        distritoUsuario : pdistritoPadre,
+        id : pid
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+
+  request.done(function(res){
+      swal.fire({
+          type : 'success',
+          title : 'Proceso realizado con éxito',
+          text : res.msg
+      });
+
+  });
+
+  request.fail(function(res){
+      swal.fire({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};

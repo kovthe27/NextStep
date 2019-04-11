@@ -39,6 +39,7 @@ let obtenerDatos = () => {
         if (infoUsuario) {
             //Guarda el user validado en localstorage 
             localStorage.setItem('cliente', JSON.stringify(usuario));
+            localStorage.setItem('usuario_logueado_id', JSON.stringify(infoUsuario._id));
             //Carga el menu dependiendo del tipo de usuario
             //cargarUsuario(usuario);
             if(infoUsuario.registroCompletado) {
