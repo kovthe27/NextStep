@@ -33,7 +33,7 @@ let mostrar_datos = () =>{
     let opciones_provincias = document.querySelectorAll('#slt_provincias option');
 
     for(let i = 0; i < opciones_provincias.length; i++){
-        debugger;
+        
         if(opciones_provincias[i].textContent == padre['provinciaUsuario']){
             opciones_provincias[i].selected = true;
             llenar_cantones();
