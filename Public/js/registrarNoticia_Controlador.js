@@ -68,7 +68,7 @@ let mostrar_datosNoticia = () => {
             "</button>" +
             "<div class=\"dropdown-menu dropdown-menu-right\">" +
             "<a class=\"dropdown-item\" alt=\"default\"  id=\"editarNoticia\"    href=\"javascript:construirModalNoticia('"+ noticia[i]._id +"')\"  >Editar</a>" +
-            "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>" +
+            "<a class=\"dropdown-item\" alt=\"default\"  id=\"eliminarNoticia\"    href=\"javascript:eliminarNoticia('"+ noticia[i]._id +"')\"  >Eliminar</a>" +
             "</div></div>" +
            
             "<h4  class=\"card-title text-themecolor\">" + noticia[i].titulo + "</h4>" +
@@ -178,3 +178,30 @@ document.addEventListener('click', (e) => {
         obtener_datosActualizar(idNoticiaAct);
     }
 })
+
+
+// eliminar
+
+let eliminarNoticia = (pid) =>{
+    swal("¿Está seguro que desea eliminar la noticia?", {
+        buttons: {
+          No: "Cancelar",
+          Si: "Aceptar",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+       
+          case "No":
+            break;
+       
+          case "Aceptar":
+            swal("Gotcha!", "Pikachu was caught!", "success");
+            break;
+       
+          default:
+          eliminar_noticia(pid, "Rechazado");
+        }
+      });
+    
+}

@@ -62,3 +62,16 @@ module.exports.actualizar = function(req, res){
     
     );
 }
+
+module.exports.eliminarInfoMatricula = function(req, res){
+    model_infoMatricula.findByIdAndRemove(req.body.id_infoMatricula,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar la noticia '});
+            }else{
+                res.json({success: true ,msg: 'La noticia se eliminó con éxito'}); 
+            }
+        }
+    )
+};
+

@@ -123,3 +123,38 @@ let consultar_infoMatricula= () => {
       });
   
   };
+
+
+  let eliminar_infoMatricula = (p_id) => {
+    let request = $.ajax({
+      url : 'http://localhost:4000/api/eliminar_infoMatricula',
+      method : "POST",
+      data : {
+        id_infoMatricula: p_id
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+
+  request.done(function(res){
+      swal({
+          type : 'success',
+          title : 'Proceso realizado con éxito',
+          text : res.msg
+      });
+
+      document.querySelector('#cardMatricula').innerHTML= "";
+      mostrar_datosMatricula();
+
+  });
+
+  request.fail(function(res){
+      swal({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};

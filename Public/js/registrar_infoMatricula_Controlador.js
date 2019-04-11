@@ -64,7 +64,7 @@ let mostrar_datosMatricula = () => {
                 "</button>" +
                 "<div class=\"dropdown-menu dropdown-menu-right\">" +
                 "<a class=\"dropdown-item\" alt=\"default\"  id=\"editarInfo\"    href=\"javascript:construirModalinfoMatricula('"+ matricula[i]._id +"')\"  >Editar</a>" +
-                "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>" +
+                "<a class=\"dropdown-item\" alt=\"default\"  id=\"eliminarInfoMatricula\"    href=\"javascript:eliminarInfoMatricula('"+ matricula[i]._id +"')\"  >Eliminar</a>" +
                 "</div></div>" +
                 
                 "</div>" +
@@ -169,3 +169,30 @@ let construirModalinfoMatricula = (p_id) => {
      }
  })
  
+
+
+// eliminar
+
+let eliminarInfoMatricula = (pid) =>{
+    swal("¿Está seguro que desea eliminar la información de matrícula?", {
+        buttons: {
+          No: "Cancelar",
+          Si: "Aceptar",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+       
+          case "No":
+            break;
+       
+          case "Aceptar":
+            swal("Gotcha!", "Pikachu was caught!", "success");
+            break;
+       
+          default:
+          eliminar_infoMatricula(pid, "Rechazado");
+        }
+      });
+    
+}

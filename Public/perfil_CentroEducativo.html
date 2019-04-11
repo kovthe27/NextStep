@@ -120,9 +120,9 @@
                 <div class="imagenCentro"></div>
                 <div>
                     <ul class="nav nav-tabs customtab" role="tablist">
-                        <li class=""> <a class="nav-link text-white" data-toggle="" href="#cardLista" role=""
+                        <!-- <li class=""> <a class="nav-link text-white" data-toggle="" href="#cardLista" role=""
                                 aria-selected="true"><span class="hidden-sm-up"><i class="ti-home"></i></span>
-                                <span class="hidden-xs-down">Lista de útiles</span></a> </li>
+                                <span class="hidden-xs-down">Lista de útiles</span></a> </li> -->
                         <li class=""> <a class="nav-link text-white" data-toggle="" href="#cardServicio" role=""
                                 aria-selected="false"><span class="hidden-sm-up"><i class="ti-user"></i></span>
                                 <span class="hidden-xs-down">Servicios</span></a> </li>
@@ -237,6 +237,12 @@
                                 data-target="#acercaNosotros">Añadir
                                 información</button>
 
+                                <button class="btn text-warning mb-3 mt-3" alt="default" data-toggle="modal"
+                                data-target="#acercaNosotros_actualizar">Editar
+                                información</button>
+
+
+
 
                             <!-- <button class="btn btn-warning" type="button">Calificar</button> -->
                             <hr>
@@ -332,6 +338,97 @@
                                 </div>
                             </div>
                         </div>
+
+                         <!-- modal editar información -->
+                         <div id="acercaNosotros_actualizar" class="modal fade" tabindex="-1" role="dialog"
+                         aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
+                         <div class="modal-dialog modal-dialog-centered">
+                             <div class="modal-content">
+                                 <div class="modal-header">
+                                     <h4 class="modal-title" id="vcenter">Acerca de nosotros</h4>
+                                     <button type="button" class="close" data-dismiss="modal"
+                                         aria-hidden="true">×</button>
+                                 </div>
+                                 <div class="modal-body">
+
+                                     <div class="form-group">
+                                         <div class="controls">
+                                             <textarea name="textarea" id="txt_descripcionCentro_act"
+                                                 class="form-control" required=""
+                                                 placeholder="Escriba una descripción del centro educativo"></textarea>
+                                             <div class="help-block"></div>
+                                         </div>
+                                     </div>
+
+                                     <div class="form-group">
+                                         <input type="text" id="txt_ubicacion_act" name="text" class="form-control"
+                                             required="true"
+                                             data-validation-required-message="This field is required"
+                                             aria-invalid="false" placeholder="Inserte la ubicacion">
+                                     </div>
+
+                                     <div class="form-group">
+                                         <input type="text" id="txt_contacto_act" name="text" class="form-control"
+                                             required="true"
+                                             data-validation-required-message="This field is required"
+                                             aria-invalid="false"
+                                             placeholder="Inserte el nombre del contacto del centro">
+                                     </div>
+
+                                     <div class="form-group">
+                                         <input type="text" id="txt_correo_act" name="text" class="form-control"
+                                             required="true"
+                                             data-validation-required-message="This field is required"
+                                             aria-invalid="false"
+                                             placeholder="Inserte el correo del centro educativo">
+                                     </div>
+
+                                     <div class="form-group">
+                                         <input type="number" id="txt_telefono_act" name="text" class="form-control"
+                                             required="false"
+                                             data-validation-required-message="This field is required"
+                                             aria-invalid="false"
+                                             placeholder="Inserte el teléfono del centro educativo">
+                                     </div>
+
+                                     <div class="form-group">
+                                         <input type="text" id="txt_facebook_act" name="text" class="form-control"
+                                             required="false"
+                                             data-validation-required-message="This field is required"
+                                             aria-invalid="false" placeholder="Inserte el link de facebook">
+                                     </div>
+
+                                     <div class="form-group">
+                                         <input type="text" id="txt_instagram_act" name="text" class="form-control"
+                                             required="false"
+                                             data-validation-required-message="This field is required"
+                                             aria-invalid="false" placeholder="Inserte el link de instagram">
+                                     </div>
+
+
+                                     <div class="form-group">
+                                         <input type="text" id="txt_twitter_act" name="text" class="form-control"
+                                             required="false"
+                                             data-validation-required-message="This field is required"
+                                             aria-invalid="false" placeholder="Inserte el link de twitter">
+                                     </div>
+
+                                     <div class="form-group">
+                                         <input type="text" id="txt_pagina_act" name="text" class="form-control"
+                                             required="false"
+                                             data-validation-required-message="This field is required"
+                                             aria-invalid="false" placeholder="Inserte el link de la página web">
+                                     </div>
+                                 </div>
+                                 <div class="modal-footer">
+                                     <button id="btn-enviarInfo_act" type="submit" class="btn btn-warning waves-effect"
+                                         data-dismiss="modal">Crear</button>
+
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
 
 
 
@@ -774,6 +871,7 @@
     <script src="js/registrar_comentario_servicio.js"></script>
     <script src="js/registrar_comentario_controlador.js"></script>
     <script src="js/menuCentro_controlador.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- scroll -->
     <script>
