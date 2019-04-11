@@ -6,7 +6,8 @@ let schema_noticia = new mongoose.Schema(
         cedulaJuridica : {type : String, required: true},
         titulo : {type : String, required: true},
         fecha : {type : String, required : true},
-        descripcion : {type: String, required: true}
+        descripcion : {type: String, required: true},
+        estado : {type : String, required : true}
     }
 );
 

@@ -245,6 +245,7 @@ module.exports.listar_TodosPadres = (req ,res) =>{
     )
 };
 
+
 module.exports.buscar_Padre = (req ,res) => {
   model_RegistroPadre.find(
    {"_id": req.body.id_Usuario}
@@ -273,3 +274,4 @@ module.exports.actualizar_padre = function(req, res){
   
   );
 }
+

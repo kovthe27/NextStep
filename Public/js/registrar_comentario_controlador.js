@@ -70,13 +70,18 @@ let mostrar_datosComentario = () =>{
         // let i = noticia.length - 1; i > noticia.length - 5; i--
         "<div class=\"d-flex flex-row comment-row mb-3 bg-light\">"+
         "<div class=\"p-2\"><span class=\"round\"><img src=\"" + fotoUsuario + "\"   alt=\"user\"  width=\"50\" height=\"50\"></span></div>"+
+        
         "<div class=\"comment-text w-100\">"+
-            "<h5>"+ nombreUsuario+ "</h5><div class=\"float-right text-warning\"><span>"+Comentario[i].calificacion +"</span><i class=\"ti-star text-warning\"></i></div>"+
+        "<button type=\"button\" class=\"btn ml-2 btn-outline-danger btn-outline-circle float-right btn-sm mr-2 \"><i class=\"fa fa-trash\"></i></button>"+
+            "<h5>"+ nombreUsuario+ "</h5><div class=\"float-left text-warning\"><i class=\"ti-star text-warning\"></i><span>"+Comentario[i].calificacion +"</span>"+
+            "</div>"+
+            "<div class=\"clearfix\"></div>"+
+            
             "<div class=\"comment-footer\">"+
                 "<span class=\"date\">" + Comentario[i].fecha + "</span>"+
             "</div>"+
             "<p class=\"m-b-5 m-t-10\">" + Comentario[i].comentario + "</p><hr class= \"mb-2 mt-2\">"+
-        "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-warning btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes" 
+        "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-themecolor btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes" 
         "</div>"+
        
        "</div>"

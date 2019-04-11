@@ -3,6 +3,7 @@ const input_tituloNoticia = document.querySelector('#txt_tituloNoticia');
 const input_descripcionNoticia = document.querySelector('#txt_descripcionNoticia');
 const btn_enviarNoticia = document.querySelector('#btn_enviarNoticia1');
 
+
 let validarNoticia = () => {
     let error = false;
 
@@ -35,15 +36,13 @@ let obtener_datosNoticia = () => {
         let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         let yyyy = today.getFullYear();
         fecha = dd + '/' + mm + '/' + yyyy;
-
-
+        let estado = "Activo";
         let descripcion = input_descripcionNoticia.value;
 
-        registrar_noticia(cedulaJuridica, titulo, fecha, descripcion);
+        registrar_noticia(cedulaJuridica, titulo, fecha, descripcion, estado );
 
     } 
     mostrar_datosNoticia();
-    window.location.reload();
 };
 
 
@@ -61,7 +60,6 @@ let mostrar_datosNoticia = () => {
     for (let i = 0; i < noticia.length; i++) {
 
         var cardNoticia =
-            // "<div class=\"card col-md-3 float-left \">" +
             "<div class=\"card-body img-thumbnail mb-2\">" +
             // dropdown
             "<div class=\"btn-group float-right\">" +
@@ -69,10 +67,10 @@ let mostrar_datosNoticia = () => {
             "<i class=\"fas fa-ellipsis-v\"></i>" +
             "</button>" +
             "<div class=\"dropdown-menu dropdown-menu-right\">" +
-            "<a class=\"dropdown-item\" href=\"#\" >Editar</a>" +
+            "<a class=\"dropdown-item\" alt=\"default\"  id=\"editarNoticia\"    href=\"javascript:construirModalNoticia('"+ noticia[i]._id +"')\"  >Editar</a>" +
             "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>" +
             "</div></div>" +
-
+           
             "<h4  class=\"card-title text-themecolor\">" + noticia[i].titulo + "</h4>" +
             "<h6  class=\"card-subtitle mb-2 text-muted\">" + noticia[i].fecha + "</h6>" +
             "<p class=\"card-text\">" + noticia[i].descripcion + "</p>" +
@@ -87,5 +85,96 @@ let mostrar_datosNoticia = () => {
 
 };
 
-
 mostrar_datosNoticia();
+
+
+let construirModalNoticia = (p_id) => {
+   let noticiaEspecifica = buscar_noticia(p_id);
+    let modalNoticia =
+
+
+    // <div id="actualizarNoticia" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="vcenter" style="display: block;" aria-modal="true">
+                                       ` <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="vcenter">Creación de noticia</h4>
+                                                   <a href="javascript:cerrarModalNoticia()"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> </a>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="form-group">
+                                                        <input type="text" id="txt_tituloNoticiaEspecifica" name="text" class="form-control" required="true" data-validation-required-message="This field is required" aria-invalid="false">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="controls">
+                                                            <textarea name="textarea" id="txt_descripcionNoticiaEspecifica" class="form-control" required="" placeholder="Escriba una descripción"></textarea>
+                                                            <div class="help-block"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+
+                                                        <button id="btn_actualizarNoticia" href="javascript:cerrarModalNoticia()" data-id="`+noticiaEspecifica[0]._id+`" type="submit" class="btn btn-outline-warning waves-effect" data-dismiss="modal">Actualizar</button>
+
+                                                </div>
+                                            </div>
+                                    </div>`
+
+                                    $("#actualizarNoticia").append(modalNoticia);
+                                    document.querySelector("#actualizarNoticia").style.display="block";
+                                    document.querySelector("#actualizarNoticia").classList.add('show');
+
+                                    document.querySelector("#bkmodal").classList.add("modal-backdrop");
+                                    document.querySelector("#bkmodal").classList.add('show');
+
+
+                                    // console.log(noticiaEspecifica);
+                                    prueba(noticiaEspecifica[0].titulo, noticiaEspecifica[0].descripcion);
+
+                                   
+}
+
+let cerrarModalNoticia = () => {
+    document.querySelector("#actualizarNoticia").innerHTML = " ";
+    document.querySelector("#actualizarNoticia").classList.remove('show');
+    document.querySelector("#actualizarNoticia").style.display="none";
+    document.querySelector("#bkmodal").classList.remove("modal-backdrop");
+    document.querySelector("#bkmodal").classList.remove('show');
+ }
+
+ 
+let prueba = (ptitulo, pdescripcion) => {
+    document.querySelector('#txt_tituloNoticiaEspecifica').value = ptitulo;
+    document.querySelector('#txt_descripcionNoticiaEspecifica').value = pdescripcion;
+}
+
+
+
+
+// Actualizar noticia--------------------------------------------------------------------------
+
+
+let obtener_datosActualizar = (pid) =>{
+    let titulo = document.querySelector('#txt_tituloNoticiaEspecifica').value;
+    let fecha = '';
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); 
+    let yyyy = today.getFullYear();
+    fecha = dd + '/' + mm + '/' + yyyy;
+    let descripcion = document.querySelector('#txt_descripcionNoticiaEspecifica').value;
+
+    actualizar_noticia(titulo, fecha, descripcion, pid );
+    console.log(pid);
+    document.querySelector('#actualizarNoticia').style.display="none";
+    window.location.reload();
+    
+};
+
+document.addEventListener('click', (e) => {
+    if (e.target && e.target.id == 'btn_actualizarNoticia') {
+        let idNoticiaAct=document.querySelector('#btn_actualizarNoticia').getAttribute('data-id');
+        obtener_datosActualizar(idNoticiaAct);
+    }
+})
