@@ -59,8 +59,9 @@ let obtener_datosCentro = () => {
         let instagram = input_instagram.value;
         let twitter = input_twitter.value;
         let pagina = input_pagina.value;
+        let estado = "Activo";
 
-        registrar_acercaNosotros(cedulaJuridica, descripcionCentro, ubicacion, encargado, correo, telefono, facebook, instagram, twitter, pagina);
+        registrar_acercaNosotros(cedulaJuridica, descripcionCentro, ubicacion, encargado, correo, telefono, facebook, instagram, twitter, pagina, estado);
         window.location.reload();
     } 
     
@@ -76,6 +77,7 @@ const card_acercaNosotros = document.querySelector('#cardInfo');
 
 let mostrar_infoCentro = () => {
     let acercaNosotros = consultar_acercaNosotros();
+    // let acercaEspecifico = buscar_acercaNosotros(p_id);
 
     for (let i = 0; i < acercaNosotros.length; i++) {
         if (acercaNosotros[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
@@ -100,9 +102,38 @@ let mostrar_infoCentro = () => {
         "</div>"
 
         $("#cardInfo").append(card_acercaNosotros)
+        // info(acercaEspecifico[0].descripcionCentro, acercaEspecifico[0].ubicacion, acercaEspecifico[0].encargado, acercaEspecifico[0].correo, acercaEspecifico[0].telefono, acercaEspecifico[0].facebook,acercaEspecifico[0].instagram, acercaEspecifico[0].twitter, acercaEspecifico[0].pagina);
     };
 };
 };
 
 
 mostrar_infoCentro();
+
+
+// Actualizar noticia--------------------------------------------------------------------------
+
+
+// let obtener_datosActualizarInfo = (pid) =>{
+//     let descripcionCentro = document.querySelector('#txt_descripcionCentro_act').value; 
+//     let ubicacion = document.querySelector('#txt_ubicacion_act').value; 
+//     let encargado = document.querySelector('#txt_contacto_act').value; 
+//     let correo = document.querySelector('#txt_correo_act').value; 
+//     let telefono = document.querySelector('#txt_telefono_act').value; 
+//     let facebook = document.querySelector('#txt_facebook_act').value; 
+//     let instagram = document.querySelector('#txt_instagram_act').value; 
+//     let twitter = document.querySelector('#txt_twitter_act').value; 
+//     let pagina = document.querySelector('#txt_pagina_act').value; 
+//     let estado = "Activo";
+
+//     actualizar_acercaNosotros(descripcionCentro, ubicacion, encargado, correo, telefono, facebook, instagram, twitter, pagina, estado, pid );
+//     window.location.reload();
+    
+// };
+
+// document.addEventListener('click', (e) => {
+//     if (e.target && e.target.id == 'btn-enviarInfo_act') {
+//         let idacercaNosotrosAct=document.querySelector('#btn-enviarInfo_act').getAttribute('data-id');
+//         obtener_datosActualizarInfo(idacercaNosotrosAct);
+//     }
+// })

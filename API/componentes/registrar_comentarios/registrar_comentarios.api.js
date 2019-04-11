@@ -34,3 +34,25 @@ module.exports.consultar_comentarios = function(req, res) {
             res.send(comentario)
         });
 };
+
+module.exports.buscar_comentarios = (req, res) =>{
+    model_comentario.find(
+        {_id :req.body.id_comentarios}
+    ) .then(
+        function(comentarios){
+            res.send (comentarios)
+        }
+    )
+};
+
+module.exports.eliminar = function(req, res){
+    model_comentario.findByIdAndRemove(req.body.id,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar el comentario '});
+            }else{
+                res.json({success: true ,msg: 'El comentario se eliminó con éxito'}); 
+            }
+        }
+    )
+};

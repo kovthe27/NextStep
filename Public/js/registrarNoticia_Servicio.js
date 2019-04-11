@@ -124,3 +124,37 @@ let consultar_noticia = () => {
       });
   
   };
+
+  let eliminar_noticia = (p_id) => {
+    let request = $.ajax({
+      url : 'http://localhost:4000/api/eliminar_noticia',
+      method : "POST",
+      data : {
+        id_noticia: p_id
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+
+  request.done(function(res){
+      swal({
+          type : 'success',
+          title : 'Proceso realizado con éxito',
+          text : res.msg
+      });
+
+      document.querySelector('#cargaNoticias').innerHTML= "";
+      mostrar_datosNoticia();
+
+  });
+
+  request.fail(function(res){
+      swal({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};

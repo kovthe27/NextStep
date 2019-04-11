@@ -64,3 +64,15 @@ module.exports.actualizar = function(req, res){
     );
 }
 
+module.exports.eliminarNoticia = function(req, res){
+    model_noticia.findByIdAndRemove(req.body.id_noticia,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar la noticia '});
+            }else{
+                res.json({success: true ,msg: 'La noticia se eliminó con éxito'}); 
+            }
+        }
+    )
+};
+

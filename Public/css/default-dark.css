@@ -175,3 +175,13 @@ a.link:hover, a.link:focus {
 .ribbon {
   left: 0px !important;
 }
+
+.swal-button{
+  background-color: #54B56B !important;
+}
+
+.swal-button--No{
+  background-color: transparent !important;
+  border: 1px solid #54B56B !important;
+  color: #54B56B !important;
+}

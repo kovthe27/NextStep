@@ -12,7 +12,8 @@ module.exports.registrar_acercaNosotros = (req, res) => {
         facebook : req.body.facebook,
         instagram : req.body.instagram,
         twitter : req.body.twitter,
-        pagina : req.body.pagina
+        pagina : req.body.pagina,
+        estado: 'activo'
     });
 
     acercaNosotros_nuevo.save(function (error) {
@@ -37,5 +38,35 @@ module.exports.consultar_acercaNosotros = function(req, res) {
             res.send(acercaNosotros)
         });
 };
+
+module.exports.buscar_acercaNosotros = (req, res) =>{
+    model_acercaNosotros.find(
+        {_id :req.body.id_acercaNosotros}
+    ) .then(
+        function(acercaNosotros){
+            res.send (acercaNosotros)
+        }
+    )
+};
+
+// Actualizar
+
+module.exports.actualizar = function(req, res){
+   
+    model_acercaNosotros.findByIdAndUpdate(req.body.id_acercaNosotros, { $set: req.body },
+        // model_acercaNosotros.findByIdAndUpdate(req.body.id_acercaNosotros, { $set:{descripcion:req.body.descripcion}},
+        function (error, acercaNosotros){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar la información'});
+            }else{
+                res.json({success: true , msg : 'La información se actualizó con éxito'}
+                
+                );
+
+            }
+        }
+    
+    );
+}
 
 
