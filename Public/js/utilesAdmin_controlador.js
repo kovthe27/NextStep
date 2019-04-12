@@ -83,7 +83,7 @@ let construirModalLista = (p_id) => {
      <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title" id="vcenter">Editar lista</h4>
-                               <ahref="javascript:cerrarModalLista()"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></a> 
+                               <a href="javascript:cerrarModalLista()"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></a> 
                             </div>
                             <div class="modal-body">
 
