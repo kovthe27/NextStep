@@ -82,8 +82,8 @@ let construirModalLista = (p_id) => {
      ` <div class="modal-dialog modal-dialog-centered">
      <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title" id="vcenter">Nueva lista</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title" id="vcenter">Editar lista</h4>
+                               <ahref="javascript:cerrarModalLista()"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></a> 
                             </div>
                             <div class="modal-body">
 
@@ -93,7 +93,7 @@ let construirModalLista = (p_id) => {
 
                             </div>
                             <div class="modal-footer">
-                                <button id="btn_actualizarlistaUtiles"  href="javascript:cerrarModalLista()" data-id="`+listaEspecifica[0]._id+`" type="submit" class="btn btn-warning waves-effect" data-dismiss="modal">Añadir</button>
+                                <button id="btn_actualizarlistaUtiles"  href="javascript:cerrarModalLista()" data-id="`+listaEspecifica[0]._id+`" type="submit" class="btn btn-warning waves-effect" data-dismiss="modal">Actualizar</button>
 
                             </div>
                             </div>

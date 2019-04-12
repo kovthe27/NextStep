@@ -182,7 +182,8 @@ request.done(function(res){
     });
 
     document.querySelector('#actualizarLista').innerHTML= "";
-    construirTabla();
+    // construirTabla();
+    window.location.reload();
 
 });
 
