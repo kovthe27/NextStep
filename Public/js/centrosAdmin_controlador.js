@@ -172,13 +172,8 @@ let mostrarTablaEtiquetas = () => {
         <td class="tablesaw-priority-3">` + listaEtiquetas[i].fecha + `</td>
         <td class="tablesaw-priority-2">` + listaEtiquetas[i].usuarios + `</td>
         <td class="tablesaw-priority-1">
-                    <button type="button" id="btnEtiquetasAdmin` + i + `"
-                        class="btn btn-sm btn-success mr-1 btn-circle">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-danger mr-1 btn-circle">
-                        <i class="fas fa-trash"></i>
-                    </button>
+        <a id="editaretiqueta"  href="javascript:construirModaletiqueta('`+ listaEtiquetas[i]._id +`')"><button type="button" class="btn btn-sm btn-success mr-1 btn-circle"><i class="fas fa-edit"></i></button></a>
+        <a id="eliminaretiqueta"  href="javascript:eliminaretiqueta('`+ listaEtiquetas[i]._id +`')"><button type="button" class="btn btn-sm btn-danger mr-1 btn-circle"><i class="fas fa-trash"></i></button></a>
                 </td>
     </tr>`
         $("#tbodyEtiquetas").append(nuevaEtiqueta);
@@ -229,3 +224,107 @@ let verPerfilCentro = (cedulaJuridica) => {
 }
 
 btn_registrarEtiqueta.addEventListener('click', crearEtiqueta);
+
+
+
+
+
+let construirModaletiqueta = (p_id) => {
+    let etiquetaEspecifica = buscar_etiqueta(p_id);
+     let modaletiqueta =
+ 
+ 
+                                        ` <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="vcenter">Editar etiqueta</h4>
+                                               <a href="javascript:cerrarModaletiqueta()"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
+                                            </div>
+                                            <div class="modal-body">
+        
+                                                <div class="form-group">
+                                                    <input type="text" id="txt_nombreEtiquetaAct" name="text" class="form-control" required="true" data-validation-required-message="This field is required" aria-invalid="false" placeholder="Ingrese el nombre de la etiqueta">
+                                                </div>
+        
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button id="btn_actualizarEtiqueta"  href="javascript:cerrarModaletiqueta()" data-id="`+etiquetaEspecifica[0]._id+`" type="submit" class="btn btn-warning waves-effect" data-dismiss="modal">Actualizar</button>        
+                                            </div>
+                                        </div>
+                                    </div>`
+ 
+                                     $("#actualizarEtiquetas").append(modaletiqueta);
+                                     document.querySelector("#actualizarEtiquetas").style.display="block";
+                                     document.querySelector("#actualizarEtiquetas").classList.add('show');
+ 
+                                     document.querySelector("#bgmodal").classList.add("modal-backdrop");
+                                     document.querySelector("#bgmodal").classList.add('show');
+ 
+ 
+                                     // console.log(etiquetaEspecifica);
+                                     prueba(etiquetaEspecifica[0].nombre);
+ 
+                                    
+ }
+ 
+ let cerrarModaletiqueta = () => {
+     document.querySelector("#actualizarEtiquetas").innerHTML = " ";
+     document.querySelector("#actualizarEtiquetas").classList.remove('show');
+     document.querySelector("#actualizarEtiquetas").style.display="none";
+     document.querySelector("#bgmodal").classList.remove("modal-backdrop");
+     document.querySelector("#bgmodal").classList.remove('show');
+  }
+ 
+  
+ let prueba = (pnombre) => {
+     document.querySelector('#txt_nombreEtiquetaAct').value = pnombre;
+ }
+ 
+ 
+ 
+ 
+ // Actualizar etiqueta--------------------------------------------------------------------------
+ 
+ 
+ let obtener_datosActualizar = (pid) =>{
+     let nombre = document.querySelector('#txt_nombreEtiquetaAct').value;
+     actualizar_etiqueta(nombre, pid );
+     console.log(pid);
+     document.querySelector('#actualizarEtiquetas').style.display="none";
+    //  window.location.reload();
+     
+ };
+ 
+ document.addEventListener('click', (e) => {
+     if (e.target && e.target.id == 'btn_actualizarEtiqueta') {
+         let idetiquetaAct=document.querySelector('#btn_actualizarEtiqueta').getAttribute('data-id');
+         obtener_datosActualizar(idetiquetaAct);
+     }
+ })
+ 
+ 
+ // eliminar
+ 
+ let eliminaretiqueta = (pid) =>{
+     swal("¿Está seguro que desea eliminar la etiqueta?", {
+         buttons: {
+           No: "Cancelar",
+           Si: "Aceptar",
+         },
+       })
+       .then((value) => {
+         switch (value) {
+        
+           case "No":
+             break;
+        
+           case "Aceptar":
+             swal("Gotcha!", "Pikachu was caught!", "success");
+             break;
+        
+           default:
+           eliminar_etiqueta(pid, "Rechazado");
+         }
+       });
+     
+ }

@@ -40,3 +40,4 @@ let mostrar_datosEtiquetas = () => {
 };
 
 mostrar_datosEtiquetas();
+
