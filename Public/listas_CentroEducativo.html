@@ -123,7 +123,7 @@
                         <div class="modal-content">
                             
                             <div class="modal-header">
-                                <h4 class="modal-title" id="vcenter">Lista de utiles</h4>
+                                <h4 class="modal-title" id="vcenter">Lista de útiles</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             </div>
                             <div class="modal-body">
@@ -134,17 +134,19 @@
                                         aria-invalid="false" placeholder="Cantidad">
                                 </div>
                                 <div class="form-group">
-                                    <select id="slt_articulos"class="form-control custom-select" data-placeholder="Seleccione un tipo de articulo"
+                                    <button class="btn btn-sm btn-outline-warning mb-3" alt="default" data-toggle="modal"
+                                        data-target="#agregarTipo">Agregar nuevo tipo</button>
+
+                                    <select id="slt_articulos"class="form-control custom-select" data-placeholder="Seleccione un tipo de artículo"
                                         tabindex="1">
                                         <option value="Category">--Seleccione un tipo de artículo--</option>
                                     </select>
-                                    <button class="btn btn-sm btn-themecolor mt-3" alt="default" data-toggle="modal"
-                                        data-target="#agregarTipo">Agregar nuevo tipo</button>
+                                    
                                 </div>
                                 <div class="form-group">
                                     <input type="textarea" id="txt_descripcion" name="text" class="form-control"
                                         required="true" data-validation-required-message="This field is required"
-                                        aria-invalid="false" placeholder="Ingrese la descripcion">
+                                        aria-invalid="false" placeholder="Ingrese la descripción">
                                 </div>
 
                             </div>
@@ -186,14 +188,15 @@
                 <button class="btn btn-themecolor mb-3 mt-3" alt="default" data-toggle="modal"
                     data-target="#agregarMatricula">Agregar a la lista</button>
 
-                     <!-- Search -->
-                
-                 <div class="input-group mb-3 col-md-4 float-right">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
-                        </div>
-                        <input type="text" id="txt_search" class="form-control" placeholder="Buscar" aria-label="Username" aria-describedby="basic-addon1">
+                        <!-- Search -->
+
+                <div class="input-group mb-3 col-md-4 float-right">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
                     </div>
+                    <input type="text" id="txt_searchUtiles" class="form-control" placeholder="Buscar" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                </div>
 
 
                 <div class="clearfix"></div>
@@ -215,6 +218,7 @@
                                 <th>Cantidad</th>
                                 <th>Artículo</th>
                                 <th>Descripción</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody id="TblUtiles">
@@ -225,6 +229,8 @@
             </div>
         </div>
     </div>
+    <div id="actualizarUtilesAdmin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"></div>
+        <div id="bgmodal" class="fade"></div>
     </div>
 
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>
@@ -257,7 +263,28 @@
     <script>
         cloudinary.setCloudName("nextstep");
     </script>
-    <!-- <script src="js/filtrar.js"></script> -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+   
+
+      <!-- filtrar -->
+      <script>
+        var busqueda = document.getElementById('txt_searchUtiles');
+        var table = document.getElementById("tablesaw-1093").tBodies[0];
+
+        buscaTabla = function () {
+            texto = busqueda.value.toLowerCase();
+            var r = 0;
+            while (row = table.rows[r++]) {
+                if (row.innerText.toLowerCase().indexOf(texto) !== -1)
+                    row.style.display = null;
+                else
+                    row.style.display = 'none';
+            }
+        }
+
+        busqueda.addEventListener('keyup', buscaTabla);
+    </script>
 
 
 
