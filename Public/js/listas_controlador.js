@@ -182,7 +182,8 @@ let construirModalUtiles = (p_id) => {
                         document.querySelector("#bgmodal").classList.add("modal-backdrop");
                         document.querySelector("#bgmodal").classList.add('show');
 
-                        listaAct(listaEspecifica[0].cantidad, listaEspecifica[0].articulo, listaEspecifica[0].descripcion);
+                        listaAct(listaEspecifica[0].cantidad, listaEspecifica[0].tipo, listaEspecifica[0].descripcion);
+                        console.log(listaEspecifica[0].tipo + "hello");
 };
  
 
@@ -197,7 +198,7 @@ let cerrarModalUtiles = () => {
  
 let listaAct = (pcantidad, particulo, pdescripcion) => {
     document.querySelector('#txt_cantidadAct').value = pcantidad;
-    document.querySelector('#slt_articulosAct').option = particulo;
+    $("#slt_articulosAct").val(particulo);
     document.querySelector('#txt_descripcionAct').value = pdescripcion;
 }
 
@@ -209,7 +210,7 @@ let listaAct = (pcantidad, particulo, pdescripcion) => {
 
 let obtener_datosActualizarUtilesAdmin = (pid) =>{
     let cantidad = document.querySelector('#txt_cantidadAct').value;
-    let articulo = document.querySelector('#slt_articulosAct').option;
+    let articulo = document.querySelector('#slt_articulosAct').value;
     let descripcion = document.querySelector('#txt_descripcionAct').value;
 
     actualizar_utilesAdmin(cantidad, articulo, descripcion, pid );

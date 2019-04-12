@@ -164,12 +164,14 @@ return utilesAdmin;
 }
 
 
-let actualizar_utilesAdmin = (pnombre, p_id) =>{
+let actualizar_utilesAdmin = (pcantidad, particulo, pdescripcion, p_id) =>{
   let request = $.ajax({
       url : 'http://localhost:4000/api/actualizar_utilesAdmin',
       method : "POST",
       data : {
-        nombre: pnombre,
+        cantidad: pcantidad,
+        articulo: particulo,
+        descripcion :pdescripcion,
         id_utilesAdmin: p_id
       },
       dataType : "json",
@@ -177,7 +179,7 @@ let actualizar_utilesAdmin = (pnombre, p_id) =>{
   });
 
   request.done(function(res){
-      swal.fire({
+      swal({
           type : 'success',
           title : 'Proceso realizado con éxito',
           text : res.msg
@@ -186,7 +188,7 @@ let actualizar_utilesAdmin = (pnombre, p_id) =>{
   });
 
   request.fail(function(res){
-      swal.fire({
+      swal({
           type : 'error',
           title : 'Proceso no realizado',
           text : res.msg
