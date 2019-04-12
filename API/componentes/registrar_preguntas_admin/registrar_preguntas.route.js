@@ -17,4 +17,28 @@ router.route('/consultar_PreguntaAdmin')
             }
         )
 
+
+        router.route('/actualizar_pregunta')
+    .post(
+        function (req, res) {
+            servicio_preguntaAdmin.actualizar(req, res);
+        }
+    );
+
+
+router.route('/buscar_pregunta')
+    .post(
+        function (req, res) {
+            servicio_preguntaAdmin.buscar_pregunta(req, res);
+        }
+    );
+
+    router.route('/eliminar_pregunta')
+    .post(
+        function (req, res) {
+            servicio_preguntaAdmin.eliminarpregunta(req, res);
+        }
+    );
+
+
 module.exports = router;
