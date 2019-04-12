@@ -32,3 +32,48 @@ module.exports.consultar_listaUtiles = function(req, res) {
             res.send(utilesAdmin)
         });
 };
+
+
+
+module.exports.buscar_listaUtiles = (req, res) =>{
+    schema_TablaListaUtiles.find(
+        {_id :req.body.id_listaUtiles}
+    ) .then(
+        function(listaUtiles){
+            res.send (listaUtiles)
+        }
+    )
+};
+
+// Actualizar
+
+module.exports.actualizarLista = function(req, res){
+   
+    schema_TablaListaUtiles.findByIdAndUpdate(req.body.id_listaUtiles, { $set: req.body },
+        // schema_TablaListaUtiles.findByIdAndUpdate(req.body.id_listaUtiles, { $set:{descripcion:req.body.descripcion}},
+        function (error, listaUtiles){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar la lista de útiles'});
+            }else{
+                res.json({success: true , msg : 'La lista de útiles se actualizó con éxito'}
+                
+                );
+
+            }
+        }
+    
+    );
+}
+
+module.exports.eliminarListaUtiles = function(req, res){
+    schema_TablaListaUtiles.findByIdAndRemove(req.body.id_listaUtiles,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar la lista de útiles'});
+            }else{
+                res.json({success: true ,msg: 'La lista de útiles se eliminó con éxito'}); 
+            }
+        }
+    )
+};
+

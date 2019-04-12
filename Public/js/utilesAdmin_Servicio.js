@@ -67,7 +67,7 @@ let consultar_utilesAdmin = () =>{
 };
 
 // Registrar lista
-let nuevaLista = (pcedula, pnombre, pfecha) => {
+let nuevaLista = (pcedula, pnombre, pfecha, p_id) => {
 
     let request = $.ajax({
       url: "http://localhost:4000/api/registrar_listaUtiles",
@@ -76,7 +76,8 @@ let nuevaLista = (pcedula, pnombre, pfecha) => {
         cedula: pcedula,
         nombre : pnombre,
         creada: pfecha,
-        visible: false
+        visible: false,
+        _id: p_id
       },
       dataType: "json",
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
@@ -99,4 +100,101 @@ let nuevaLista = (pcedula, pnombre, pfecha) => {
     });
     return true;
   }
+
+
+  let buscar_listaUtiles = (p_id) => {
+    let listaUtiles = [];
+
+    let request = $.ajax({
+      url: "http://localhost:4000/api/buscar_listaUtiles",
+      method: "POST",
+      data: {
+        id_listaUtiles: p_id
+      },
+      dataType: "json",
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+      async : false
+    });
+
+    request.done(function (res) {
+      listaUtiles = res;
+      console.log("success");
+      
+    });
+  
+    request.fail(function (jqXHR, textStatus) {
+      console.log("fail");
+    });
+
+  return listaUtiles;
+     
+  }
+  
+
+let actualizar_listaUtiles = (pnombre, p_id) =>{
+    let request = $.ajax({
+        url : 'http://localhost:4000/api/actualizar_listaUtiles',
+        method : "POST",
+        data : {
+          nombre: pnombre,
+          id_listaUtiles: p_id
+        },
+        dataType : "json",
+        contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+    });
+
+    request.done(function(res){
+        swal.fire({
+            type : 'success',
+            title : 'Proceso realizado con éxito',
+            text : res.msg
+        });
+
+    });
+
+    request.fail(function(res){
+        swal.fire({
+            type : 'error',
+            title : 'Proceso no realizado',
+            text : res.msg
+        });
+
+    });
+
+};
+
+let eliminar_listaUtiles = (p_id) => {
+  let request = $.ajax({
+    url : 'http://localhost:4000/api/eliminar_listaUtiles',
+    method : "POST",
+    data : {
+      id_listaUtiles: p_id
+    },
+    dataType : "json",
+    contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+});
+
+request.done(function(res){
+    swal({
+        type : 'success',
+        title : 'Proceso realizado con éxito',
+        text : res.msg
+    });
+
+    document.querySelector('#actualizarLista').innerHTML= "";
+    construirTabla();
+
+});
+
+request.fail(function(res){
+    swal({
+        type : 'error',
+        title : 'Proceso no realizado',
+        text : res.msg
+    });
+
+});
+
+};
+
   
