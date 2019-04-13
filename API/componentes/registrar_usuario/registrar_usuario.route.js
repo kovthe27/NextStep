@@ -39,5 +39,11 @@ router.route('/buscar_padre')
     }
 );
 
+router.route('/eliminar_padre')
+.post(
+    function(req , res){
+        padre_api.eliminar_padre(req, res);
+    }
+);
 
 module.exports = router;

@@ -154,6 +154,14 @@ body {
     margin: 0 auto;
 }
 
+#btn_EliminarPadre.btn-warning,
+#btn_EliminarPadre.btn-warning:hover, 
+#btn_EliminarPadre.btn-warning.disabled:hover {
+    background: #ff9041!important;
+    color: #ffffff;
+    border: 1px solid #ff9041!important;
+}
+
 /* #txt_Archivos {
     width: 108px;
 } */

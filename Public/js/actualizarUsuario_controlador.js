@@ -16,6 +16,8 @@ const input_CantonPadre = document.querySelector('#slt_cantones');
 const input_DistritoPadre = document.querySelector('#slt_distritos');
 const boton_actualizarPadre = document.querySelector('#btn_ActualizarPadre');
 
+const boton_eliminarPadre = document.querySelector('#btn_EliminarPadre');
+
 let usuario_logueado_id = JSON.parse(localStorage.getItem('usuario_logueado_id'));
 let padre = buscar_Padre(usuario_logueado_id);
 let mostrar_datos = () =>{
@@ -84,3 +86,10 @@ let obtener_datos = () =>{
 };
 
 boton_actualizarPadre.addEventListener('click', obtener_datos);
+
+boton_eliminarPadre.addEventListener('click', function(){
+    debugger;
+    eliminar_padre(usuario_logueado_id);
+    
+
+});
