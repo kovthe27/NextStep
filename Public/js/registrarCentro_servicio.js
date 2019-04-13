@@ -105,3 +105,81 @@ let listar_Centros = () => {
   return lista_Centros;
  
 };
+
+let buscar_centro = (p_id) => {
+  let centro = [];
+
+  let request = $.ajax({
+    url: "http://localhost:4000/api/buscar_centro",
+    method: "POST",
+    data: {
+      cedJuridica: p_id
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    async : false
+  });
+
+  request.done(function (res) {
+    centro = res;
+    console.log("success");
+    
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+    console.log("fail");
+  });
+
+return centro;
+   
+};
+
+
+
+let actualizar_centro = (pnombreCentro, pnombreComercial, pcedJuridica, pemailCentro, ptelCentro, pfaxCentro, pannoFundCentro, psitioWeb, pprovinciaCentro, pcantonCentro, pdistritoCentro, pdireccionCentro, ptipoCentro, pgradoAcademico, preferenciaHistorica, parchivosCentro, pfotoCentro, pid) => {
+  let request = $.ajax({
+    url: "http://localhost:4000/api/actualizar_centro",
+    method: "POST",
+    data: {
+        nombreCentro: pnombreCentro,
+        nombreComercial: pnombreComercial,
+        cedJuridica: pcedJuridica,
+        emailCentro: pemailCentro,
+        telCentro: ptelCentro,
+        faxCentro: pfaxCentro,
+        annoFundCentro: pannoFundCentro,
+        sitioWeb: psitioWeb,
+        provinciaCentro: pprovinciaCentro,
+        cantonCentro: pcantonCentro,
+        distritoCentro: pdistritoCentro,
+        direccionCentro: pdireccionCentro,
+        tipoCentro: ptipoCentro,
+        gradoAcademico: pgradoAcademico,
+        referenciaHistorica: preferenciaHistorica,
+        archivosCentro: parchivosCentro,
+        fotoCentro: pfotoCentro,
+        id : pid
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+  });
+
+  request.done(function(res){
+    swal.fire({
+        type : 'success',
+        title : 'Proceso realizado con éxito',
+        text : res.msg
+    });
+
+  });
+
+  request.fail(function(res){
+    swal.fire({
+        type : 'error',
+        title : 'Proceso no realizado',
+        text : res.msg
+    });
+
+  });
+};
+

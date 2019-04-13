@@ -31,4 +31,18 @@ router.route('/actualizarcontrasena_Centro')
         }
     )
 
+router.route('/actualizar_centro')
+    .post(
+        function(req , res){
+            centro_api.actualizar_centro(req, res);
+        }
+    );
+
+router.route('/buscar_centro')
+    .post(
+    function(req , res){
+        centro_api.buscar_centro(req, res);
+    }
+    );
+
 module.exports = router;

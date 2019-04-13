@@ -157,3 +157,11 @@ body {
 /* #txt_Archivos {
     width: 108px;
 } */
+
+.actualizar-centro {
+    margin-left: 162px;
+}
+
+.actualizar-centro .container-fluid {
+    margin-top: 72px;
+}

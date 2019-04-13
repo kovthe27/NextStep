@@ -104,3 +104,70 @@ let listar_Contactos = () => {
   return lista_Contactos;
  
 };
+
+let buscar_contacto = (p_id) => {
+  let contacto = [];
+
+  let request = $.ajax({
+    url: "http://localhost:4000/api/buscar_contacto",
+    method: "POST",
+    data: {
+      cedulaJuridica: p_id
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    async : false
+  });
+
+  request.done(function (res) {
+    contacto = res;
+    console.log("success");
+    
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+    console.log("fail");
+  });
+
+return contacto;
+   
+};
+
+
+let actualizar_contacto = (pnombreEncargado, pidEncargado, pemailEncargado, pdptoEncargado, ptelEncargado, pextEncargado, pfotoEncargado, pcentroEducativoId, pcedJuridica) => {
+  let request = $.ajax({
+    url: "http://localhost:4000/api/actualizar_centro",
+    method: "POST",
+    data: {
+      nombreEncargado: pnombreEncargado,
+      idEncargado: pidEncargado,
+      emailEncargado: pemailEncargado,
+      dptoEncargado: pdptoEncargado,
+      telEncargado: ptelEncargado,
+      extEncargado: pextEncargado,
+      fotoEncargado: pfotoEncargado,
+      centroEducativoId : pcentroEducativoId,
+      cedulaJuridica : pcedJuridica
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
+  });
+
+  request.done(function(res){
+    swal.fire({
+        type : 'success',
+        title : 'Proceso realizado con éxito',
+        text : res.msg
+    });
+
+  });
+
+  request.fail(function(res){
+    swal.fire({
+        type : 'error',
+        title : 'Proceso no realizado',
+        text : res.msg
+    });
+
+  });
+};
