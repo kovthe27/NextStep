@@ -45,9 +45,15 @@ let mostrar_datosCita = () =>{
                                         "<h4 class=\"mt-2\">"+cita[i].nombre+"</h4>"+
                                         "<p><i class=\"ti-mail\"></i> "+cita[i].correo+"</p>"+
                                         "<p><i class=\"ti-calendar\"></i> Fecha: "+nuevaFecha+"<br> <span><i class=\"ti-time\"></i> Hora:"+cita[i].hora+"</span> </p>"+
-                                        "<div>"+
-                                           "<button class=\"btn btn-sm btn-themecolor justify-content-start waves-effect waves-light m-t-15\">Aceptar</button>"+
-                                            "<button class=\"btn btn-sm ml-2 btn-outline-danger justify-content-start waves-effect waves-light m-t-15\">Rechazar</button>"+
+                                        "<div id=\"contenedor-botones\">"+
+                                           "<button id=\"btn-aceptarCita\" class=\"btn btn-sm btn-themecolor justify-content-start waves-effect waves-light m-t-15\">Aceptar</button>"+
+                                            "<button id=\"btn-rechazarCita\" class=\"btn btn-sm ml-2 btn-outline-danger justify-content-start waves-effect waves-light m-t-15\">Rechazar</button>"+
+                                        "</div>"+
+                                        "<div style=\"display:none;\" id=\"aceptado-label\">"+
+                                           "<p>Aceptada</p>"+
+                                        "</div>"+
+                                        "<div style=\"display:none;\" id=\"rechazado-label\">"+
+                                            "<p>Rechazada</p>"+
                                         "</div>"+
                                      "</div>"+
                                 "</div>"+
@@ -60,6 +66,54 @@ let mostrar_datosCita = () =>{
     
 }
 };
+
+
+
+let aceptar_cita = () =>{
+    let cita = consultar_cita();
+    
+    for(let i = 0; i < cita.length; i++) {
+        if (cita[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
+            
+            document.getElementById("contenedor-botones").style.display = "none";
+            document.getElementById("aceptado-label").style.display = "block";
+        }
+    }
+};
+
+document.addEventListener('click', (e) => {
+    if (e.target && e.target.id == 'btn-aceptarCita') {
+        aceptar_cita();
+    }
+})
+
+let rechazar_cita = () =>{
+    let cita = consultar_cita();
+
+    for(let i = 0; i < cita.length; i++) {
+        let usuario = cita[i].correo;
+
+        if (cita[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
+            document.getElementById("contenedor-botones").style.display = "none";
+            document.getElementById("rechazado-label").style.display = "block";
+            enviar_MailCita(cita, usuario);
+
+        }
+    }
+};
+
+document.addEventListener('click', (e) => {
+    if (e.target && e.target.id == 'btn-rechazarCita') {
+        rechazar_cita();
+    }
+})
+
+
+
+
+
+
+
 
 let cerrarSesion = () =>{
     localStorage.setItem('centroEducativo', JSON.stringify("Notlogin"));
