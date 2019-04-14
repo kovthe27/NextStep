@@ -13,7 +13,6 @@ module.exports.registrar_acercaNosotros = (req, res) => {
         instagram : req.body.instagram,
         twitter : req.body.twitter,
         pagina : req.body.pagina,
-        estado: 'activo'
     });
 
     acercaNosotros_nuevo.save(function (error) {
@@ -54,7 +53,6 @@ module.exports.buscar_acercaNosotros = (req, res) =>{
 module.exports.actualizar = function(req, res){
    
     model_acercaNosotros.findByIdAndUpdate(req.body.id_acercaNosotros, { $set: req.body },
-        // model_acercaNosotros.findByIdAndUpdate(req.body.id_acercaNosotros, { $set:{descripcion:req.body.descripcion}},
         function (error, acercaNosotros){
             if(error){
                 res.json({success : false , msg : 'No se pudo actualizar la información'});
