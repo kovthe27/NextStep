@@ -7,6 +7,7 @@ const btnGuardar = document.querySelector('#btn_guardar');
 
 let formulario=[];
 let numero=0;
+document.querySelector("#nomForm").innerHTML = JSON.parse(localStorage.getItem('nombreFormulario'));
 
 let crearUnitario = () =>{
     let grid = $('.grid-stack').data('gridstack')
@@ -71,20 +72,29 @@ let crearDivision = () =>{
       </div>
         `, 0, 0, 12, 1, true)
 }
-let Push = (id) =>{
-    formulario.push(id)
-    console.log(formulario);
-}
+
 let GuardarFormulario = () =>{
+    let cedulaJuridica = JSON.parse(localStorage.getItem('cliente'));
+    let nombreFormulario = JSON.parse(localStorage.getItem('nombreFormulario'));
+    let periodo = JSON.parse(localStorage.getItem('periodoFormulario'));
     for(let i=0; i<numero; i++){
-        let id= "";
-        id = "item"+i;
-        Push(id);
+        let id = "#item"+i;
+        id = id.toString();
+        let inputID = document.querySelector(id).value;
+
+        let select = "#select"+i;
+        select = select.toString();
+        let inputSelect = document.querySelector(select).value;
+        console.log(cedulaJuridica);
+        console.log(nombreFormulario);
+        console.log(inputID);
+        console.log(inputSelect);
+        agregarItem(cedulaJuridica, nombreFormulario, inputID, inputSelect, periodo);
     }
 }
 
 btnUnitario.addEventListener('click', crearUnitario);
 btnDecimal.addEventListener('click', crearDecimal);
-btnDivision.addEventListener('click', crearDivision);
+// btnDivision.addEventListener('click', crearDivision);
 
 btnGuardar.addEventListener('click', GuardarFormulario);

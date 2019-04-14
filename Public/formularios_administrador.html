@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Favicon icon -->
@@ -13,11 +13,6 @@
     <link href="../admin-wrap/assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
     <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
     <link href="./assets/node_modules/tablesaw-master/dist/tablesaw.css" rel="stylesheet">
-    <!-- widget -->
-    <link href="./assets/node_modules/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="./assets/node_modules/chartist-js/dist/chartist-init.css" rel="stylesheet">
-    <link href="./assets/node_modules/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <link href="./assets/node_modules/css-chart/css-chart.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
 
@@ -36,8 +31,9 @@
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
                 <div class="navbar-header">
-                    <a href="principal_Administrador.html"><img src="../Public/imgs/logo-text-02.png" alt="homepage"
-                            class="dark-logo"></a>
+                    <a href="principal_Administrador.html">
+                        <img src="../Public/imgs/logo-text-02.png" alt="homepage" class="dark-logo">
+                    </a>
                 </div>
 
                 <div class="navbar-collapse">
@@ -50,14 +46,19 @@
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="imgPerfil"
-                                    src="" class=""> <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;<i
-                                        class="fa fa-angle-down"></i></span> </a>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img id="imgPerfil" src="" class="">
+                                <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;
+                                    <i class="fa fa-angle-down"></i>
+                                </span>
+                            </a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
-                                            <div class="u-img align-self-center"><img id="imgPerfil2" src=""></div>
+                                            <div class="u-img align-self-center">
+                                                <img id="imgPerfil2" src="">
+                                            </div>
                                             <div class="u-text  text-align: center">
                                                 <h4 id="nombrePerfil2">Steave Jobs</h4>
                                                 <p id="correo" class="text-muted"></p>
@@ -65,10 +66,16 @@
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="ti-user"></i> Mi perfil</a></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-user"></i> Mi perfil</a>
+                                    </li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar
-                                            sesion</a></li>
+                                    <li>
+                                        <a href="javascript:cerrarSesion();">
+                                            <i class="fa fa-power-off"></i> Cerrar sesion
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -103,7 +110,7 @@
                             </a>
                         </li>
 
-                        <li class="active">
+                        <li class="">
                             <a class=" waves-effect waves-dark" href="usuarios_Administrador.html"
                                 aria-expanded="false">
                                 <i class="ti-user"></i>
@@ -164,105 +171,81 @@
         <!-- Titulo -->
         <div class="page-wrapper" style="min-height: 900px;">
 
-            <div id="mainUsuarios" class="container-fluid ">
-
-                <div id="grid-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="grid-title"
-                    style="display: none; padding-right: 17px;" aria-modal="true"></div>
-
+            <div id="mainFormulario" class="container-fluid ">
                 <!-- Titulo -->
                 <div class="col-md-8 align-self-center">
-                    <h3 class="text-themecolor">Usuarios</h3>
+                    <h3 class="text-themecolor">Formulario de calificación</h3>
                 </div>
 
+                <!-- Modal -->
 
-                <!-- Contenido de tabs -->
-                <!-- Tab1 -->
-
-
-                <div class="tab-pane p-20 active" id="home2" role="tabpanel">
-                    <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
-                        data-tablesaw-mode="columntoggle" id="tablaUsuarios">
-                        <thead>
-                            <tr>
-                                <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="persist">
-                                    Nombre</th>
-                                <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-sortable-default-col=""
-                                    data-tablesaw-priority="3" class="tablesaw-priority-3">Apellido</th>
-                                <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2"
-                                    class="tablesaw-priority-2">Correo</th>
-                                <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
-                                    class="tablesaw-priority-1">Fecha de registro
-                                </th>
-                                <!-- <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
-                                        class="tablesaw-priority-1">Administrador
-                                    </th> -->
-                                <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
-                                    class="tablesaw-priority-1">Estado
-                                </th>
-                                <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
-                                    class="tablesaw-priority-1">Edición
-                                </th>
-                            </tr>
-                        </thead>
-
-                        <!-- Buscar -->
-                        <div class="input-group mb-3 col-md-4 float-left pl-0 mt-3">
-                            <!-- <div id="widgetUsuarios"class="card-body">
-                                <div class="row p-t-10 p-b-10">
-                                  
-                                    <div class="col p-r-0">
-                                        <h1 class="font-light">86</h1>
-                                        <h6 class="text-muted">New Clients</h6></div>
-                                   
-                                    <div class="col text-right align-self-center">
-                                        <div data-label="20%" class="css-bar m-b-0 css-bar-primary css-bar-20"><i class="mdi mdi-account-circle"></i></div>
-                                    </div>
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="input-group mb-3 col-md-4 float-right pl-0 mt-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
+                <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                    aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="vcenter">Nuevo formulario de calificación</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             </div>
+                            <div class="modal-body">
 
-                            <input type="text" id="txt_search" class="form-control" placeholder="Buscar"
-                                aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-
-
-                        <tbody id="tablaUsuarios">
-                            <!-- Se llena dinamicamente -->
-                        </tbody>
-
-                        <div id="usuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
-                            aria-hidden="true" style="display: none;">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="vcenter">Nueva lista</h4>
-                                        <button type="button" class="close" data-dismiss="modal"
-                                            aria-hidden="true">×</button>
-                                    </div>
-                                    <div class="modal-body">
-
-                                        <div class="form-group">
-                                            <input type="text" id="txt_nombre" name="text" class="form-control"
-                                                required="true"
-                                                data-validation-required-message="This field is required"
-                                                aria-invalid="false" placeholder="Ingrese el nombre de la lista">
-                                        </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button id="btn_registrar" type="submit" class="btn btn-warning waves-effect"
-                                            data-dismiss="modal">Añadir</button>
-
-                                    </div>
+                                <div class="form-group">
+                                    <input type="text" id="txt_nombreFormulario" name="text" class="form-control" required="true"
+                                        data-validation-required-message="This field is required" aria-invalid="false"
+                                        placeholder="Ingrese el nombre del formulario">
                                 </div>
+                                <div class="form-group">
+                                    <input type="text" id="txt_periodoFormulario" name="text" class="form-control" required="true"
+                                        data-validation-required-message="This field is required" aria-invalid="false"
+                                        placeholder="Ingrese periodo lectivo">
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btn_crearFormulario" type="submit" class="btn btn-warning waves-effect"
+                                    data-dismiss="modal">Añadir</button>
+
                             </div>
                         </div>
-                    </table>
+                    </div>
                 </div>
+
+                <!-- Contenido -->
+                <div class="input-group mb-3 col-md-4 float-right">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
+                    </div>
+                    <input type="text" id="txt_searchUtiles" class="form-control" placeholder="Buscar"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="col-md-12 align-self-center">
+                    <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_nuevo" data-toggle="modal"
+                    data-target="#agregarMatricula">Crear nuevo
+                        formulario</button>
+                </div>
+
+                <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
+                    data-tablesaw-mode="columntoggle" id="tablaCentros">
+                    <thead>
+                        <tr>
+                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="persist">
+                                Nombre del formulario</th>
+                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="persist">
+                                Período</th>
+                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
+                                class="tablesaw-priority-1">Edición
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <!-- Buscar -->
+
+                    <tbody id="tablaFormularios">
+                        <!-- Se llena dinamicamente -->
+                    </tbody>
+                </table>
+
             </div>
         </div>
         <div id="bkmodal" class="fade"></div>
@@ -279,15 +262,24 @@
     <script src="./assets/node_modules/prism/prism.js"></script>
     <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/widget-data.js"></script>
+    <!-- <script src="js/widget-data.js"></script> -->
     <script src="../admin-wrap/main/js/widget-data.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
     <!-- new -->
     <script src="./assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
     <!-- tabla -->
     <script src="./assets/node_modules/tablesaw-master/dist/tablesaw.jquery.js"></script>
     <script src="./assets/node_modules/tablesaw-master/dist/tablesaw-init.js"></script>
-    <script src="js/usuariosAdministrador_servicio.js"></script>
-    <script src="js/usuariosAdministrador_controlador.js"></script>
+    <script src="./js/formulario_servicio.js"></script>
+    <script src="./js/formulario_administrador.js"></script>
+
+    <!-- Test -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.all.js"></script>
+
 </body>
 
 </html>

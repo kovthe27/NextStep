@@ -99,8 +99,10 @@ const etiqueta = require ('./componentes/registrar_etiquetas/registrar_etiquetas
 const registroCentroEducativo = require('./componentes/registrar_centroEducativo/registrar_centro.route');
 const registroContacto = require('./componentes/registrar_contacto/registrar_contacto.route');
 const listaFavorito = require('./componentes/registrar_favortios/registrar_favoritos.route');
+const listaFormularios = require('./componentes/registrar_formularios/registrarFormularios_route');
 
 
+app.use('/api', listaFormularios);
 app.use('/api', servicio);
 app.use('/api', preguntasAdmin);
 app.use('/api', utilesAdmin);

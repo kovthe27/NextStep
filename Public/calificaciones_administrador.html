@@ -113,7 +113,7 @@
                             </a>
                         </li>
 
-                        <li class="active">
+                        <li class="">
                             <a class=" waves-effect waves-dark" href="usuarios_Administrador.html" aria-expanded="false">
                                 <i class="ti-user"></i>
                                 <span class="hide-menu">Usuarios </span>
@@ -151,6 +151,13 @@
                                 <span class="hide-menu">Preguntas frecuentes </span>
                             </a>
                         </li>
+                        <li class="active">
+                            <a class=" waves-effect waves-dark" href="formularios_administrador.html"
+                                aria-expanded=false>
+                                <i class="ti-notepad"></i>
+                                <span class="hide-menu">Formularios</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
@@ -172,12 +179,12 @@
 
                 <!-- Titulo -->
                 <div class="col-md-8 align-self-center">
-                    <h3 class="text-themecolor">Nuevo formulario</h3>
+                    <h3 id="nomForm" class="text-themecolor">Nuevo formulario</h3>
                 </div>
                 <div class="col-md-12 align-self-center">
                     <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_unitario"> Nuevo item - unitario</button>
                     <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_decimal" >Nuevo item - Decimal</button>
-                    <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_division"> División</button>
+                    <!-- <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_division"> División</button> -->
                 </div>
     
                 <div class="grid-stack" id="awo">
@@ -216,7 +223,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.all.js"></script>
+    <script src="js/formulario_servicio.js"></script>
     <script src="js/formulario_controlador.js"></script>
+    
     <!-- <script type="text/javascript">
     $(function() {
         $('.grid-stack').gridstack({
