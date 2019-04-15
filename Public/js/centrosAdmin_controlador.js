@@ -14,7 +14,7 @@ let mostrarTablaCentrosAdmin = () => {
             <td class="tablesaw-priority-3">` + listaCentros[i].cedJuridica + `</td>
             <td class="tablesaw-priority-2">01/01/0001</td>
             <td class="tablesaw-priority-1">` + listaCentros[i].emailCentro + `</td>
-            <td class="tablesaw-priority-1">Desconocido</td>
+            <td class="tablesaw-priority-1">` + listaCentros[i].gradoAcademico + `</td>
             
             <td class="tablesaw-priority-1">
             <button type="button" onclick="location.href='javascript:verPerfilCentro(` + listaCentros[i].cedJuridica + `)'" class="btn btn-sm btn-themecolor mr-1 btn-circle">
