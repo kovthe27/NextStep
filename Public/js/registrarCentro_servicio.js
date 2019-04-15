@@ -183,3 +183,45 @@ let actualizar_centro = (pnombreCentro, pnombreComercial, pcedJuridica, pemailCe
   });
 };
 
+let eliminar_centro = (pid) => {
+  let request = $.ajax({
+      url : 'http://localhost:4000/api/eliminar_centro',
+      method : "POST",
+      data : {
+        id: pid
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+
+  request.done(function(res){
+      if(res.success){
+          swal.fire({
+              type : 'success',
+              title : 'Proceso realizado con éxito',
+              text : res.msg,
+              onClose: () => {
+                window.location.href = "http://localhost:3000/public/landing_page.html";
+              }
+          });
+      }else{
+          swal.fire({
+              type : 'Error',
+              title : 'Proceso realizado sin éxito',
+              text : res.msg
+          });
+      }
+      
+
+  });
+
+  request.fail(function(res){
+      swal.fire({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+};
+

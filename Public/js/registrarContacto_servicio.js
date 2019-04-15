@@ -136,7 +136,7 @@ return contacto;
 
 let actualizar_contacto = (pnombreEncargado, pidEncargado, pemailEncargado, pdptoEncargado, ptelEncargado, pextEncargado, pfotoEncargado, pcentroEducativoId, pcedJuridica) => {
   let request = $.ajax({
-    url: "http://localhost:4000/api/actualizar_centro",
+    url: "http://localhost:4000/api/actualizar_contacto",
     method: "POST",
     data: {
       nombreEncargado: pnombreEncargado,

@@ -140,10 +140,11 @@
          <div class="col-lg-12">
             <div class="card">
                <div class="bg-transparent">
-                  <h4 class="mb-0 mt-3 text-warning">Información Centro Educativo</h4>
+                  <h4 class="mb-0 mt-3 text-warning">Mis Datos</h4>
                </div>
                <form action="#">
                   <hr>
+                  <p>Si desea actualice sus datos, o bien, puede darse de baja en el sistema.</p>
                   <div class="form-body">
                      <!-- Paso 1 -->
                      <div class="card-body">
@@ -301,46 +302,18 @@
                                        <input type="text" placeholder="Referencia Histórica"
                                           class="form-control" id="txt_RefHistorica">
                                     </div>
-                                    <div class="col-md-4 mt-1 float-left">
-                                       <div class="form-group">    
-                                          <button class="btn btn-outline-secondary mt-4 mr-1 float-left"
-                                             id="btnSeleccionarBoletin" type="button"><i class="ti-zip"></i>
-                                          </button>
-                                       </div>
+                                    <div class="form-group">
+                                       <label>Sitio Web</label>
+                                       <input type="text" placeholder="Sitio Web"
+                                          class="form-control" id="txt_SitioWeb">
                                     </div>
-                                    <!-- <div class="col-md-4 float-left">
-                                       <div class="form-group">    
-                                           <button id="btnSeleccionarBoletin"
-                                           class="btn btn-outline-secondary mr-2 float-left"
-                                           ><i class="ti-zip"></i>
-                                           </button>
-                                       </div>
-                                       </div> -->
-                                    <!-- <div class="form-group">
-                                       <div class="">
-                                           <label for="txt_Archivos">Archivos</label>
-                                           <div class="">
-                                               <button type="button" id="txt_Archivos"
-                                                   class="btn btn-outline-secondary mr-2 float-left"
-                                                   data-toggle="modal"
-                                                   data-target="#boletin"><i class="ti-zip"></i>
-                                               </button>
-                                           </div>
-                                           <a class="form-control col-md-10 float-left"
-                                               >Archivo</a>
-                                       </div>
-                                       </div> -->
+                                    
                                  </div>
                                  <div class="col-md-4 float-left">
                                     <div class="form-group">
                                        <label for="txt_AnnoCentro">*Año de Fundación</label>
                                        <input type="text" placeholder="*Año de Fundación"
                                           class="form-control" id="txt_AnnoCentro">
-                                    </div>
-                                    <div class="form-group">
-                                       <label>Sitio Web</label>
-                                       <input type="text" placeholder="Sitio Web"
-                                          class="form-control" id="txt_SitioWeb">
                                     </div>
                                  </div>
                               </div>
@@ -384,6 +357,19 @@
                                        <label>Extensión</label>
                                        <input type="text" placeholder="Extensión"
                                           class="form-control" id="txt_ExtContacto">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="float-right">
+                                 <div class="form-actions">
+                                    <div class="">
+                                       <div class="form-group text-center m-t-20">
+                                          <div class="">
+                                             <button id="btn_EliminarCentro"
+                                                class="btn btn-themecolor btn-block text-uppercase waves-effect waves-light btn-warning"
+                                                type="button">Eliminar</button>
+                                          </div>
+                                       </div>
                                     </div>
                                  </div>
                               </div>

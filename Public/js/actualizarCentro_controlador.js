@@ -19,6 +19,8 @@ const input_imagen = document.querySelector('#imgFoto');
 const carga_imagen = document.querySelector('#cargarImagen');
 const boton_ActualizarCentro = document.querySelector('#btn_ActualizarCentro');
 
+const boton_eliminarCentro = document.querySelector('#btn_EliminarCentro');
+
 let usuario_logueado_id = JSON.parse(localStorage.getItem('centroEducativo'));
 let centro = buscar_centro(usuario_logueado_id);
 let mostrar_datos = () =>{
@@ -100,15 +102,21 @@ let obtener_datos = () =>{
     let provinciaCentro = input_ProvinciaCentro.selectedOptions[0].textContent;
     let cantonCentro = input_CantonCentro.selectedOptions[0].textContent;
     let distritoCentro = input_DistritoCentro.selectedOptions[0].textContent;
-    let direccionCentro = input_DireccionCentro.value
+    let direccionCentro = input_DireccionCentro.value;
     let fotoCentro = input_imagen.src;
-    let archivo = pdfUrl;
+    
 
     console.log(centro[0]._id);
 
-    actualizar_centro(nombreCentro, nombreComercial, cedJuridica,  emailCentro, telCentro, faxCentro, annoFundCentro, sitioWeb, provinciaCentro, cantonCentro, distritoCentro, direccionCentro, tipoCentro, gradoAcademico, referenciaHistorica, fotoCentro, archivo, centro[0]._id);
+    
+    actualizar_centro(nombreCentro, nombreComercial, cedJuridica,  emailCentro, telCentro, faxCentro, annoFundCentro, sitioWeb, provinciaCentro, cantonCentro, distritoCentro, direccionCentro, tipoCentro, gradoAcademico, referenciaHistorica, fotoCentro, "", centro[0]._id);
     
 };
 
 boton_ActualizarCentro.addEventListener('click', obtener_datos);
 
+boton_eliminarCentro.addEventListener('click', function(){
+    debugger;
+    eliminar_centro(usuario_logueado_id);
+
+});

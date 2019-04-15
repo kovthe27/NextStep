@@ -45,4 +45,11 @@ router.route('/buscar_centro')
     }
     );
 
+router.route('/eliminar_centro')
+.post(
+    function(req , res){
+        centro_api.eliminar_centro(req, res);
+    }
+);
+
 module.exports = router;

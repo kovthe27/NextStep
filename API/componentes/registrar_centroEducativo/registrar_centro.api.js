@@ -297,3 +297,15 @@ module.exports.actualizar_centro = function(req, res){
   
   );
 }
+
+module.exports.eliminar_centro = function(req, res){
+  model_RegistroCentro.findByIdAndRemove(req.body.id,
+      function(error){
+          if(error){
+              res.json({success: false ,msg: 'No se pudo eliminar la cuenta'});
+          }else{
+              res.json({success: true ,msg: 'La cuenta se eliminó con éxito'}); 
+          }
+      }
+  )
+};
