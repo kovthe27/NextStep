@@ -18,12 +18,15 @@ let mostrarTablaCentrosAdmin = () => {
             
             <td class="tablesaw-priority-1">
             <button type="button" onclick="location.href='javascript:verPerfilCentro(` + listaCentros[i].cedJuridica + `)'" class="btn btn-sm btn-themecolor mr-1 btn-circle">
-            <i class="fas fa-info" ></i>
-        </button>
+                <i class="fas fa-info" ></i>
+            </button>
+            <button type="button" onclick="location.href='javascript:calificarCentro(` + listaCentros[i].cedJuridica + `)'"class="btn btn-sm btn-success mr-1 btn-circle">
+            <i class="far fa-file-alt"></i>
+            </button>
+            <button type="button" class="btn btn-sm btn-danger mr-1 btn-circle">
+                <i class="fas fa-trash"></i>
+            </button>
 
-                <button type="button" class="btn btn-sm btn-danger mr-1 btn-circle">
-                    <i class="fas fa-trash"></i>
-                </button>
                 
             </td>
         </tr>`
@@ -91,12 +94,12 @@ let mostrarCardInfo = () => {
 
 
             let permisos =
-            "<div class=\"float-left\">" +
-            "<a class=\"nav-link text-themecolor font-15\" href=\"" + listaCard[j].archivosCentro + "\" role=\"tab\"><i class=\"ti-zip\"></i>Permiso</a>" +
-            // "<h5>Permiso</h5>" +
-            "</div>"
+                "<div class=\"float-left\">" +
+                "<a class=\"nav-link text-themecolor font-15\" href=\"" + listaCard[j].archivosCentro + "\" role=\"tab\"><i class=\"ti-zip\"></i>Permiso</a>" +
+                // "<h5>Permiso</h5>" +
+                "</div>"
 
-             $("#permisos").append(permisos);
+            $("#permisos").append(permisos);
         }
     }
 }
@@ -105,11 +108,11 @@ let mostrarCardInfo = () => {
 
 let mostrarEncargado = () => {
     let listaEncargados = listar_TodosContactos();
- console.log(listaEncargados);
- console.log(listaEncargados[0].cedulaJuridica);
+    console.log(listaEncargados);
+    console.log(listaEncargados[0].cedulaJuridica);
     for (let k = 0; k < listaEncargados.length; k++) {
-        
-        if (listaEncargados[k].cedulaJuridica== JSON.parse(localStorage.getItem('centroEducativo'))) {
+
+        if (listaEncargados[k].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
             let infoEncargado =
                 "<small class=\"text-muted p-t-10 db\">Nombre comercial</small>" +
                 "<p>" + listaEncargados[k].nombreEncargado + "</p>" +
@@ -130,7 +133,7 @@ let mostrarEncargado = () => {
                 "<p>" + listaEncargados[k].emailEncargado + "</p>" +
                 "<hr>" +
                 "<small class=\"text-muted p-t-10 db\">Año de fundación</small>" +
-                "<p>" + listaEncargados[k].annoFundCentro+ "</p>"
+                "<p>" + listaEncargados[k].annoFundCentro + "</p>"
 
             $("#infoEncargado").append(infoEncargado);
         }
@@ -172,8 +175,8 @@ let mostrarTablaEtiquetas = () => {
         <td class="tablesaw-priority-3">` + listaEtiquetas[i].fecha + `</td>
         <td class="tablesaw-priority-2">` + listaEtiquetas[i].usuarios + `</td>
         <td class="tablesaw-priority-1">
-        <a id="editaretiqueta"  href="javascript:construirModaletiqueta('`+ listaEtiquetas[i]._id +`')"><button type="button" class="btn btn-sm btn-success mr-1 btn-circle"><i class="fas fa-edit"></i></button></a>
-        <a id="eliminaretiqueta"  href="javascript:eliminaretiqueta('`+ listaEtiquetas[i]._id +`')"><button type="button" class="btn btn-sm btn-danger mr-1 btn-circle"><i class="fas fa-trash"></i></button></a>
+        <a id="editaretiqueta"  href="javascript:construirModaletiqueta('`+ listaEtiquetas[i]._id + `')"><button type="button" class="btn btn-sm btn-success mr-1 btn-circle"><i class="fas fa-edit"></i></button></a>
+        <a id="eliminaretiqueta"  href="javascript:eliminaretiqueta('`+ listaEtiquetas[i]._id + `')"><button type="button" class="btn btn-sm btn-danger mr-1 btn-circle"><i class="fas fa-trash"></i></button></a>
                 </td>
     </tr>`
         $("#tbodyEtiquetas").append(nuevaEtiqueta);
@@ -210,6 +213,24 @@ let crearEtiqueta = () => {
     };
 };
 
+let mostrarCalificaciones = () => {
+    let listaCalificaciones = consultar_calificaciones();
+
+    for (let i = 0; i < listaCalificaciones.length; i++) {
+        let nombreCentro = getNombreCentro(listaCalificaciones[i].cedulaJuridica);
+        let nuevaCalificacion =
+            `<tr>
+        <td class="title"><a class="link" href="javascript:void(0)">` + nombreCentro + `</a></td>
+        <td class="tablesaw-priority-3">` + listaCalificaciones[i].fecha + `</td>
+        <td class="tablesaw-priority-2">` + listaCalificaciones[i].calificacion + `</td>
+        <td class="tablesaw-priority-1">
+        <a id="eliminaretiqueta"  href="javascript:eliminarCalificacion('`+ listaCalificaciones[i]._id + `')"><button type="button" class="btn btn-sm btn-danger mr-1 btn-circle"><i class="fas fa-trash"></i></button></a>
+                </td>
+    </tr>`
+        $("#tbodyCalificaciones").append(nuevaCalificacion);
+    }
+}
+
 
 
 // Eventos
@@ -217,6 +238,7 @@ mostrarTablaEtiquetas();
 mostrarTablaCentrosAdmin();
 mostrarCardInfo();
 mostrarEncargado();
+mostrarCalificaciones();
 
 let verPerfilCentro = (cedulaJuridica) => {
     localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
@@ -231,10 +253,10 @@ btn_registrarEtiqueta.addEventListener('click', crearEtiqueta);
 
 let construirModaletiqueta = (p_id) => {
     let etiquetaEspecifica = buscar_etiqueta(p_id);
-     let modaletiqueta =
- 
- 
-                                        ` <div class="modal-dialog modal-dialog-centered">
+    let modaletiqueta =
+
+
+        ` <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h4 class="modal-title" id="vcenter">Editar etiqueta</h4>
@@ -248,83 +270,134 @@ let construirModaletiqueta = (p_id) => {
         
                                             </div>
                                             <div class="modal-footer">
-                                            <button id="btn_actualizarEtiqueta"  href="javascript:cerrarModaletiqueta()" data-id="`+etiquetaEspecifica[0]._id+`" type="submit" class="btn btn-warning waves-effect" data-dismiss="modal">Actualizar</button>        
+                                            <button id="btn_actualizarEtiqueta"  href="javascript:cerrarModaletiqueta()" data-id="`+ etiquetaEspecifica[0]._id + `" type="submit" class="btn btn-warning waves-effect" data-dismiss="modal">Actualizar</button>        
                                             </div>
                                         </div>
                                     </div>`
- 
-                                     $("#actualizarEtiquetas").append(modaletiqueta);
-                                     document.querySelector("#actualizarEtiquetas").style.display="block";
-                                     document.querySelector("#actualizarEtiquetas").classList.add('show');
- 
-                                     document.querySelector("#bgmodal").classList.add("modal-backdrop");
-                                     document.querySelector("#bgmodal").classList.add('show');
- 
- 
-                                     // console.log(etiquetaEspecifica);
-                                     prueba(etiquetaEspecifica[0].nombre);
- 
-                                    
- }
- 
- let cerrarModaletiqueta = () => {
-     document.querySelector("#actualizarEtiquetas").innerHTML = " ";
-     document.querySelector("#actualizarEtiquetas").classList.remove('show');
-     document.querySelector("#actualizarEtiquetas").style.display="none";
-     document.querySelector("#bgmodal").classList.remove("modal-backdrop");
-     document.querySelector("#bgmodal").classList.remove('show');
-  }
- 
-  
- let prueba = (pnombre) => {
-     document.querySelector('#txt_nombreEtiquetaAct').value = pnombre;
- }
- 
- 
- 
- 
- // Actualizar etiqueta--------------------------------------------------------------------------
- 
- 
- let obtener_datosActualizar = (pid) =>{
-     let nombre = document.querySelector('#txt_nombreEtiquetaAct').value;
-     actualizar_etiqueta(nombre, pid );
-     console.log(pid);
-     document.querySelector('#actualizarEtiquetas').style.display="none";
+
+    $("#actualizarEtiquetas").append(modaletiqueta);
+    document.querySelector("#actualizarEtiquetas").style.display = "block";
+    document.querySelector("#actualizarEtiquetas").classList.add('show');
+
+    document.querySelector("#bgmodal").classList.add("modal-backdrop");
+    document.querySelector("#bgmodal").classList.add('show');
+
+
+    // console.log(etiquetaEspecifica);
+    prueba(etiquetaEspecifica[0].nombre);
+
+
+}
+
+let cerrarModaletiqueta = () => {
+    document.querySelector("#actualizarEtiquetas").innerHTML = " ";
+    document.querySelector("#actualizarEtiquetas").classList.remove('show');
+    document.querySelector("#actualizarEtiquetas").style.display = "none";
+    document.querySelector("#bgmodal").classList.remove("modal-backdrop");
+    document.querySelector("#bgmodal").classList.remove('show');
+}
+
+
+let prueba = (pnombre) => {
+    document.querySelector('#txt_nombreEtiquetaAct').value = pnombre;
+}
+
+
+
+
+// Actualizar etiqueta--------------------------------------------------------------------------
+
+
+let obtener_datosActualizar = (pid) => {
+    let nombre = document.querySelector('#txt_nombreEtiquetaAct').value;
+    actualizar_etiqueta(nombre, pid);
+    console.log(pid);
+    document.querySelector('#actualizarEtiquetas').style.display = "none";
     //  window.location.reload();
-     
- };
- 
- document.addEventListener('click', (e) => {
-     if (e.target && e.target.id == 'btn_actualizarEtiqueta') {
-         let idetiquetaAct=document.querySelector('#btn_actualizarEtiqueta').getAttribute('data-id');
-         obtener_datosActualizar(idetiquetaAct);
-     }
- })
- 
- 
- // eliminar
- 
- let eliminaretiqueta = (pid) =>{
-     swal("¿Está seguro que desea eliminar la etiqueta?", {
-         buttons: {
-           No: "Cancelar",
-           Si: "Aceptar",
-         },
-       })
-       .then((value) => {
-         switch (value) {
-        
-           case "No":
-             break;
-        
-           case "Aceptar":
-             swal("Gotcha!", "Pikachu was caught!", "success");
-             break;
-        
-           default:
-           eliminar_etiqueta(pid, "Rechazado");
-         }
-       });
-     
- }
+
+};
+
+document.addEventListener('click', (e) => {
+    if (e.target && e.target.id == 'btn_actualizarEtiqueta') {
+        let idetiquetaAct = document.querySelector('#btn_actualizarEtiqueta').getAttribute('data-id');
+        obtener_datosActualizar(idetiquetaAct);
+    }
+})
+
+
+// eliminar
+
+let eliminaretiqueta = (pid) => {
+    swal("¿Está seguro que desea eliminar la etiqueta?", {
+        buttons: {
+            No: "Cancelar",
+            Si: "Aceptar",
+        },
+    })
+        .then((value) => {
+            switch (value) {
+
+                case "No":
+                    break;
+
+                case "Aceptar":
+                    swal("Gotcha!", "Pikachu was caught!", "success");
+                    break;
+
+                default:
+                    eliminar_etiqueta(pid, "Rechazado");
+            }
+        });
+
+}
+
+let calificarCentro = (cedulaJuridica) => {
+    let modal =
+        `<div id="agregarMatricula" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="vcenter" style="display: block; padding-right: 17px;" aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="vcenter">Formulario de calificación</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group col-md-12">
+                        <select id="selectForms" class="form-control custom-select">
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn_crearForm" data-id="`+ cedulaJuridica +`"  type="submit" class="btn btn-warning waves-effect" data-dismiss="modal">Añadir</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>`
+    $("#main").append(modal);
+
+    let listaFormularios = consultar_formulario();
+    let listaNombres = [];
+    let listaFiltrada = [];
+    for(let i =0; i<listaFormularios.length; i++){
+        listaNombres.push(listaFormularios[i].nombre);
+    }
+    listaFiltrada = [...new Set(listaNombres)];
+    for(let i=0; i<listaFiltrada.length; i++){
+        let option=
+        `<option value="`+listaFiltrada[i]+`">`+listaFiltrada[i]+`</option>`
+        $("#selectForms").append(option);
+    }
+    localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
+
+}
+
+let crearForm = () =>{
+    let nombreform = document.querySelector("#selectForms").value;
+    localStorage.setItem('nombreFormulario', JSON.stringify(nombreform));
+    window.location = "calificar_centro.html";
+}
+
+document.addEventListener('click', (e) => {
+    if (e.target && e.target.id == 'btn_crearForm') {
+        crearForm();
+    }
+})

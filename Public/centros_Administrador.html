@@ -99,11 +99,12 @@
                         </li>
 
                         <li class="">
-                                <a class=" waves-effect waves-dark" href="usuarios_Administrador.html" aria-expanded="false">
-                                    <i class="ti-user"></i>
-                                    <span class="hide-menu">Usuarios </span>
-                                </a>
-                            </li>
+                            <a class=" waves-effect waves-dark" href="usuarios_Administrador.html"
+                                aria-expanded="false">
+                                <i class="ti-user"></i>
+                                <span class="hide-menu">Usuarios </span>
+                            </a>
+                        </li>
 
                         <li class="">
                             <a class=" waves-effect waves-dark" href="reportes_Administrador.html"
@@ -151,7 +152,7 @@
                                 <span class="hide-menu">Preguntas frecuentes </span>
                             </a>
                         </li>
-                        <li class="active">
+                        <li class="">
                             <a class=" waves-effect waves-dark" href="formularios_administrador.html"
                                 aria-expanded=false>
                                 <i class="ti-notepad"></i>
@@ -170,7 +171,7 @@
         </aside>
 
         <!-- Titulo -->
-        <div class="page-wrapper" style="min-height: 900px;">
+        <div id="main"class="page-wrapper" style="min-height: 900px;">
 
             <div class="container-fluid ">
 
@@ -203,8 +204,6 @@
                 <h4 class="card-body mt-3">Centros educativos</h4>
                 <div class="tab-content tabcontent-border border-top">
                     <!-- Tab1 -->
-
-
                     <div class="tab-pane p-20 active" id="home2" role="tabpanel">
                         <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
                             data-tablesaw-mode="columntoggle" id="tablaCentros">
@@ -298,14 +297,14 @@
                                     </th>
                                 </tr>
                             </thead>
-                             <!-- Buscar -->
-                             <div class="input-group mb-3 col-md-4 float-right mt-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
-                                    </div>
-                                    <input type="text" id="txt_searchTags" class="form-control" placeholder="Buscar"
-                                        aria-label="Username" aria-describedby="basic-addon1">
+                            <!-- Buscar -->
+                            <div class="input-group mb-3 col-md-4 float-right mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
                                 </div>
+                                <input type="text" id="txt_searchTags" class="form-control" placeholder="Buscar"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
 
                             <tbody id="tbodyEtiquetas">
                                 <!-- Se genera dinamicamente -->
@@ -314,12 +313,47 @@
 
                     </div>
                     <!-- Tab2 -->
-                    <div class="tab-pane p-20" id="messages" role="tabpanel"></div>
+                    <div class="tab-pane p-20" id="messages" role="tabpanel">
+
+                        <!-- Tabla etiquetas -->
+                        <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
+                            data-tablesaw-mode="columntoggle" id="tablesaw-6684">
+                            <thead>
+                                <tr>
+                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="persist">
+                                        Nombre</th>
+                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-sortable-default-col=""
+                                        data-tablesaw-priority="3" class="tablesaw-priority-3">Fecha de aplicación</th>
+                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2"
+                                        class="tablesaw-priority-2">Puntaje</th>
+                                    <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
+                                        class="tablesaw-priority-1">
+                                        Edición
+                                    </th>
+                                </tr>
+                            </thead>
+                            <!-- Buscar -->
+                            <div class="input-group mb-3 col-md-4 float-right mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
+                                </div>
+                                <input type="text" id="txt_searchTags" class="form-control" placeholder="Buscar"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+
+                            <tbody id="tbodyCalificaciones">
+                                <!-- Se genera dinamicamente -->
+                            </tbody>
+                        </table>
+
+                    </div>
+
                 </div>
             </div>
         </div>
-        <div id="actualizarEtiquetas" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"></div>
-        <div id="bgmodal" class="fade"></div>
+    </div>
+    <div id="actualizarEtiquetas" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"></div>
+    <div id="bgmodal" class="fade"></div>
     </div>
 
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>
@@ -346,6 +380,7 @@
     <script src="./assets/node_modules/tablesaw-master/dist/tablesaw-init.js"></script>
     <script src="js/centrosAdmin_servcio.js"></script>
     <script src="js/MenuAdmin_Servicio.js"></script>
+    <script src="js/formulario_servicio.js"></script>
     <script src="js/bitacora.js"></script>
     <script src="js/centrosAdmin_controlador.js"></script>
     <script src="js/MenuAdmin_Controlador.js"></script>
@@ -375,21 +410,20 @@
     <script>
         var busquedaTag = document.getElementById('txt_searchTags');
         var tableTags = document.getElementById("tablesaw-6684").tBodies[0];
-    
-        buscaEtiqueta = function(){
-          etiqueta = busquedaTag.value.toLowerCase();
-          var r=0;
-          while(row = tableTags.rows[r++])
-          {
-            if ( row.innerText.toLowerCase().indexOf(etiqueta) !== -1 )
-              row.style.display = null;
-            else
-              row.style.display = 'none';
-          }
+
+        buscaEtiqueta = function () {
+            etiqueta = busquedaTag.value.toLowerCase();
+            var r = 0;
+            while (row = tableTags.rows[r++]) {
+                if (row.innerText.toLowerCase().indexOf(etiqueta) !== -1)
+                    row.style.display = null;
+                else
+                    row.style.display = 'none';
+            }
         }
-    
+
         busquedaTag.addEventListener('keyup', buscaEtiqueta);
- </script>
+    </script>
 
 
 </body>

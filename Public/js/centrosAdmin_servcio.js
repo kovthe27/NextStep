@@ -207,3 +207,39 @@ request.fail(function(res){
 
 };
 
+let consultar_calificaciones = () =>{
+  let lista_Contactos = [];
+
+  let request = $.ajax({
+    url: "http://localhost:4000/api/consultar_calificaciones",
+    method: "GET",
+    data: {
+    },
+    dataType: "json",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    async : false
+  });
+
+  request.done(function (res) {
+    lista_Contactos = res;
+    
+  });
+
+  request.fail(function (jqXHR, textStatus) {
+    
+  });
+  return lista_Contactos;
+
+}
+
+let getNombreCentro = (cedula) =>{
+  let centros = consultar_listaCentrosAdmin();
+  let x =0;
+  for(let i=0; i<centros.length; i++){
+    if(centros[i].cedJuridica == cedula){
+      x=centros[i].nombreCentro;
+    }
+  }
+  return x;
+}
+

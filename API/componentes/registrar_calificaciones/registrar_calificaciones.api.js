@@ -1,0 +1,64 @@
+'use strict';
+const model_calificaciones = require('./registrar_calificaciones.model');
+
+module.exports.registrar_calificaciones= (req, res) => {
+    let acercaNosotros_nuevo = new model_calificaciones({
+        cedulaJuridica: req.body.cedulaJuridica,
+        calificacion: req.body.calificacion,
+        fecha : req.body.fecha,
+    });
+
+    acercaNosotros_nuevo.save(function (error) {
+        if (error) {
+            res.json({
+                success: false,
+                msg: `No se pudo guardar la información de matricula, por favor vuelva a intentarlo`
+            });
+
+        } else {
+            res.json({
+                success: true,
+                msg: `La información de matrícula fue creada con éxito`
+            });
+        };
+    });
+};
+
+module.exports.consultar_calificaciones= function(req, res) {
+    model_calificaciones.find().then(
+        function (acercaNosotros) {
+            res.send(acercaNosotros)
+        });
+};
+
+module.exports.buscar_calificaciones= (req, res) =>{
+    model_calificaciones.find(
+        {_id :req.body.id_acercaNosotros}
+    ) .then(
+        function(acercaNosotros){
+            res.send (acercaNosotros)
+        }
+    )
+};
+
+// Actualizar
+
+module.exports.actualizar_calificaciones= function(req, res){
+   
+    model_calificaciones.findByIdAndUpdate(req.body.id_acercaNosotros, { $set: req.body },
+        // model_acercaNosotros.findByIdAndUpdate(req.body.id_acercaNosotros, { $set:{descripcion:req.body.descripcion}},
+        function (error, acercaNosotros){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar la información'});
+            }else{
+                res.json({success: true , msg : 'La información se actualizó con éxito'}
+                
+                );
+
+            }
+        }
+    
+    );
+}
+
+
