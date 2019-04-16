@@ -17,4 +17,25 @@ router.route('/consultar_formulario')
             }
         )
 
+
+        router.route('/buscar_formulario')
+    .post(
+        function (req, res) {
+            servicio_formularios.buscar_formulario(req, res);
+        }
+    );
+
+    router.route('/eliminar_formulario')
+    .post(
+        function (req, res) {
+            servicio_formularios.eliminarformulario(req, res);
+        }
+    );
+
+    router.route('/actualizar_formulario')
+    .post(
+        function (req, res) {
+            servicio_formularios.actualizar(req, res);
+        }
+    );
 module.exports = router;

@@ -69,8 +69,8 @@ let mostrarUsuarios = () =>{
                 <td class="tablesaw-priority-1">01/01/0001</td>
                 <td class="tablesaw-priority-1">`+listaUsuarios[i].estadoUsuario+`</td>
                 <td class="tablesaw-priority-1">
-                    <a  class="link btn btn-sm btn-success mr-1 btn-circle" id="boton`+ i + `" href="javascript:verUsuario('` + listaUsuarios[i]._id + `')"> <i class="fas fa-info"></i> </a>
-                    <a class="link btn btn-sm btn-danger mr-1 btn-circle" id="boton`+ i + `" href="javascript:eliminarUsuario('` + listaUsuarios[i]._id + `')"> <i class="fas fa-trash"></i> </a>
+                    <a  class="btn btn-sm btn-success mr-1 btn-circle" id="boton`+ i + `" href="javascript:verUsuario('` + listaUsuarios[i]._id + `')"> <i class="fas fa-info"></i> </a>
+                    <a class="btn btn-sm btn-danger mr-1 btn-circle" id="boton`+ i + `" href="javascript:eliminarUsuario('` + listaUsuarios[i]._id + `')"> <i class="fas fa-trash"></i> </a>
                 </td>
             </tr>`
 

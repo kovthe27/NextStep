@@ -28,6 +28,7 @@ let crearUnitario = () =>{
                                     <option>8</option>
                                     <option>9</option>
                                 </select>
+                              
                             </div>
                         </div>
         `, 0, 0, 12, 1, true)
@@ -38,11 +39,11 @@ let crearDecimal = () =>{
     let grid = $('.grid-stack').data('gridstack')
           let widget = grid.addWidget(`
           <div class="grid-stack-item" data-gs-x="0" data-gs-y="5" data-gs-width="12" data-gs-height="1">
-                        <div class="grid-stack-item-content">
-                            <div class="mt-3 col-md-12">
-                                <input id="item`+numero+`" class="form-control col-md-9" style="float: left;" type="text" placeholder="Readonly input here…">
-                                <select id="select`+numero+`"class="form-control col-md-2" style="float: right;">
-                                    <option>--Peso--</option>
+                        <div class="">
+                            <div class="col-md-12">
+                                <input id="item`+numero+`" class="form-control col-md-9 mr-3" type="text" placeholder="Agregue un parámetro de calificación">
+                                <select id="select`+numero+`"class="form-control col-md-2">
+                                    <option>--Valor--</option>
                                     <option>10</option>
                                     <option>20</option>
                                     <option>30</option>
@@ -98,3 +99,6 @@ btnDecimal.addEventListener('click', crearDecimal);
 // btnDivision.addEventListener('click', crearDivision);
 
 btnGuardar.addEventListener('click', GuardarFormulario);
+
+
+

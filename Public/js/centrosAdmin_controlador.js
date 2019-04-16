@@ -12,16 +12,15 @@ let mostrarTablaCentrosAdmin = () => {
             `<tr>
             <td class="title"><a class="link" href="javascript:void(0)">` + listaCentros[i].nombreCentro + `</a></td>
             <td class="tablesaw-priority-3">` + listaCentros[i].cedJuridica + `</td>
-            <td class="tablesaw-priority-2">01/01/0001</td>
             <td class="tablesaw-priority-1">` + listaCentros[i].emailCentro + `</td>
             <td class="tablesaw-priority-1">` + listaCentros[i].gradoAcademico + `</td>
             
             <td class="tablesaw-priority-1">
-            <button type="button" onclick="location.href='javascript:verPerfilCentro(` + listaCentros[i].cedJuridica + `)'" class="btn btn-sm btn-themecolor mr-1 btn-circle">
+            <button type="button" onclick="location.href='javascript:verPerfilCentro(` + listaCentros[i].cedJuridica + `)'" class="btn btn-sm btn-info mr-1 btn-circle">
                 <i class="fas fa-info" ></i>
             </button>
             <button type="button" onclick="location.href='javascript:calificarCentro(` + listaCentros[i].cedJuridica + `)'"class="btn btn-sm btn-success mr-1 btn-circle">
-            <i class="far fa-file-alt"></i>
+            <i class="fa fa-star"></i>
             </button>
             <button type="button" class="btn btn-sm btn-danger mr-1 btn-circle">
                 <i class="fas fa-trash"></i>
@@ -357,12 +356,13 @@ let calificarCentro = (cedulaJuridica) => {
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="vcenter">Formulario de calificación</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="vcenter">Calificar centro</h4>
+                    <a href="javascript:cerrarModalCalificar()"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
                 </div>
                 <div class="modal-body">
                     <div class="form-group col-md-12">
-                        <select id="selectForms" class="form-control custom-select">
+                    <label for="selectForms"> Seleccione el tipo de centro a calificar
+                        <select id="selectForms" class="mt-3 form-control custom-select">
                         </select>
                     </div>
                     <div class="modal-footer">
@@ -373,6 +373,13 @@ let calificarCentro = (cedulaJuridica) => {
             </div>
         </div>`
     $("#main").append(modal);
+
+    document.querySelector("#main").style.display="block";
+    document.querySelector("#main").classList.add('show');
+
+    document.querySelector("#bgmodal").classList.add("modal-backdrop");
+    document.querySelector("#bgmodal").classList.add('show');
+
 
     let listaFormularios = consultar_formulario();
     let listaNombres = [];
@@ -401,3 +408,12 @@ document.addEventListener('click', (e) => {
         crearForm();
     }
 })
+
+
+let cerrarModalCalificar= () => {
+    document.querySelector("#agregarMatricula").innerHTML = " ";
+    document.querySelector("#agregarMatricula").classList.remove('show');
+    document.querySelector("#agregarMatricula").style.display="none";
+    document.querySelector("#bgmodal").classList.remove("modal-backdrop");
+    document.querySelector("#bgmodal").classList.remove('show');
+ }

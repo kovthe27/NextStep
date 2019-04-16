@@ -185,3 +185,21 @@ a.link:hover, a.link:focus {
   border: 1px solid #54B56B !important;
   color: #54B56B !important;
 }
+
+.title{
+  width: 20%;
+}
+
+th{
+  color: #333;
+  font-weight: 600;
+}
+
+#awo, .grid-stack-instance-1144{
+  height: auto !important;
+  padding-left: 0px !important;
+}
+
+.grid-stack-instance-6639 .grid-stack-item[data-gs-height="1"] {
+  height: auto !important;
+}

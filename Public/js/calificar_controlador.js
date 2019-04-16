@@ -19,17 +19,19 @@ let mostrarFormulario = () => {
 
 let crearDecimal = (pnombre, ppeso) =>{
           let widget = `
-          <div class="grid-stack-item" data-gs-x="0" data-gs-y="5" data-gs-width="12" data-gs-height="1">
-                        <div class="grid-stack-item-content">
-                            <div class="mt-3 col-md-12">
-                                <p id="item`+numero+`" class="form-control col-md-9" style="float: left;">`+pnombre+`</p>
-                                <select id="select`+numero+`"class="form-control col-md-2" style="float: right;">
+          <div class=" bg-transparent text-left" data-gs-x="0" data-gs-y="5" data-gs-width="12" data-gs-height="1">
+                        <div class="">
+                            <div class="mt-3 col-md-12 ">
+                                <p id="item`+numero+`" class="form-control col-md-8 text-left mr-2" style="float: left;">`+pnombre+`</p>
+                                <select id="select`+numero+`"class="form-control col-md-2">
                                     <option>--Calificar--</option>
                                     <option value=`+ppeso+`>Si</option>
                                     <option value=0>No</option>
                                 </select>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
+                        
         `
         numero++;
         $("#awo").append(widget);
@@ -55,6 +57,7 @@ let EnviarCalificacion = () =>{
     let calificacion = Math.round((puntaje * 100)/total);
 
     registrarCalificacion(cedulaJuridica,calificacion, fecha);
+    // window.location.reload("centrosAdmin.html");
 }
 
 mostrarFormulario()

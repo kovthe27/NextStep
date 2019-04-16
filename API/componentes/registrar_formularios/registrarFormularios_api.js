@@ -33,3 +33,46 @@ module.exports.consultar_formulario = function(req, res) {
             res.send(formulario)
         });
 };
+
+
+module.exports.buscar_formulario = (req, res) =>{
+    schema_TablaFormularios.find(
+        {_id :req.body.id_formulario}
+    ) .then(
+        function(formulario){
+            res.send (formulario)
+        }
+    )
+};
+
+// Actualizar
+
+module.exports.actualizar = function(req, res){
+   
+    schema_TablaFormularios.findByIdAndUpdate(req.body.id_formulario, { $set: req.body },
+        function (error, formulario){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar el formulario'});
+            }else{
+                res.json({success: true , msg : 'El formulario se actualizó con éxito'}
+                
+                );
+
+            }
+        }
+    
+    );
+}
+
+module.exports.eliminarformulario = function(req, res){
+    schema_TablaFormularios.findByIdAndRemove(req.body.id_formulario,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar el formulario '});
+            }else{
+                res.json({success: true ,msg: 'El formulario se eliminó con éxito'}); 
+            }
+        }
+    )
+};
+

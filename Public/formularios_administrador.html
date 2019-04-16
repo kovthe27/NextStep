@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
-    meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
+      <!-- Favicon icon -->
+      <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
     <title>NextStep</title>
     <!-- Bootstrap Core CSS -->
     <link href="../admin-wrap/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -173,7 +172,7 @@
 
             <div id="mainFormulario" class="container-fluid ">
                 <!-- Titulo -->
-                <div class="col-md-8 align-self-center">
+                <div class="align-self-center">
                     <h3 class="text-themecolor">Formulario de calificación</h3>
                 </div>
 
@@ -211,7 +210,7 @@
                 </div>
 
                 <!-- Contenido -->
-                <div class="input-group mb-3 col-md-4 float-right">
+                <div class="input-group mb-3 col-md-4 mt-3 float-right">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
                     </div>
@@ -219,7 +218,7 @@
                         aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
-                <div class="col-md-12 align-self-center">
+                <div class="align-self-center">
                     <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_nuevo" data-toggle="modal"
                     data-target="#agregarMatricula">Crear nuevo
                         formulario</button>
@@ -248,7 +247,8 @@
 
             </div>
         </div>
-        <div id="bkmodal" class="fade"></div>
+        <div id="actualizarformulario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"></div>
+        <div id="bgmodal" class="fade"></div>
     </div>
 
 
@@ -279,6 +279,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.all.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 
