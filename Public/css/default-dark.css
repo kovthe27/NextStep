@@ -186,9 +186,6 @@ a.link:hover, a.link:focus {
   color: #54B56B !important;
 }
 
-.title{
-  width: 20%;
-}
 
 th{
   color: #333;
@@ -202,4 +199,8 @@ th{
 
 .grid-stack-instance-6639 .grid-stack-item[data-gs-height="1"] {
   height: auto !important;
+}
+
+.el-element-overlay .el-card-item .el-overlay-1 img{
+  height: 140px !important;
 }
