@@ -55,7 +55,26 @@ let cerrarModal = () =>{
     document.querySelector("#bkmodal").classList.remove("show");
 }
 let eliminarUsuario = (id) =>{
-    console.log("H");
+    swal("¿Está seguro que desea eliminar a este usuario?", {
+        buttons: {
+          No: "Cancelar",
+          Si: "Aceptar",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+       
+          case "No":
+            break;
+       
+          case "Aceptar":
+            swal("Gotcha!", "Pikachu was caught!", "success");
+            break;
+       
+          default:
+          desactivar_usuario(id);
+        }
+      });
 }
 
 let mostrarUsuarios = () =>{
@@ -76,7 +95,6 @@ let mostrarUsuarios = () =>{
 
         $("#tablaUsuarios").append(usuario);
     }
-    console.log("H");
 }
 
 mostrarUsuarios();

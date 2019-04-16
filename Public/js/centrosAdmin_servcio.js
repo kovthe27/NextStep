@@ -243,3 +243,46 @@ let getNombreCentro = (cedula) =>{
   return x;
 }
 
+
+let desactivar_centro = (p_id) => {
+  let request = $.ajax({
+    url : 'http://localhost:4000/api/cambiarEstado_centro',
+    method : "POST",
+    data : {
+      id_centro: p_id,
+      estado: "Desactivado"
+    },
+    dataType : "json",
+    contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+});
+
+request.done(function(res){
+    swal({
+        type : 'success',
+        title : 'Proceso realizado con éxito',
+        text : res.msg
+    }).then(location.reload())
+
+});
+
+request.fail(function(res){
+    swal({
+        type : 'error',
+        title : 'Proceso no realizado',
+        text : res.msg
+    }).then(location.reload())
+
+});
+
+};
+
+let getIDCentro = (ced) =>{
+  let lista = consultar_listaCentrosAdmin();
+  let resultado;
+  for(let i=0; i<lista.length;i++){
+    if(lista[i].cedJuridica == ced){
+      resultado=lista[i]._id;
+    }
+  }
+  return resultado;
+}

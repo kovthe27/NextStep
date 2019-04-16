@@ -22,7 +22,7 @@ let mostrarTablaCentrosAdmin = () => {
             <button type="button" onclick="location.href='javascript:calificarCentro(` + listaCentros[i].cedJuridica + `)'"class="btn btn-sm btn-success mr-1 btn-circle">
             <i class="fa fa-star"></i>
             </button>
-            <button type="button" class="btn btn-sm btn-danger mr-1 btn-circle">
+            <button type="button" onclick="location.href='javascript:EliminarCentro(` + listaCentros[i].cedJuridica + `)'" class="btn btn-sm btn-danger mr-1 btn-circle">
                 <i class="fas fa-trash"></i>
             </button>
 
@@ -140,28 +140,29 @@ let mostrarEncargado = () => {
 }
 
 
-// permisos
-
-// let mostrarPermisos = () => {
-//     let listaPermisos = consultar_listaCentrosAdmin();
-
-//     for (let j = 0; j < listaPermisos; j++) {
-//         let permisos =
-//             "<div class=\"float-left\">" +
-//             "<a class=\"nav-link text-themecolor font-20\" data-toggle=\"tab\" href=\"" + listaPermisos[i].archivosCentro + "\" role=\"tab\"><i class=\"ti-zip\"></i></a>" +
-//             "<h5>Permiso</h5>" +
-//             "</div>"
-
-//         $("#permisos").append(permisos);
-//     }
-// }
-
-// Termina página de "Más información"
-// --------------------------------------------------------
-
-
-
-
+let EliminarCentro = (ced) =>{
+    let id=getIDCentro(ced)
+    swal("¿Está seguro que desea desactivar a este centro educativo?", {
+        buttons: {
+          No: "Cancelar",
+          Si: "Aceptar",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+       
+          case "No":
+            break;
+       
+          case "Aceptar":
+            swal("Gotcha!", "Pikachu was caught!", "success");
+            break;
+       
+          default:
+          desactivar_centro(id);
+        }
+      });
+}
 
 // TAB -> ETIQUETAS
 let mostrarTablaEtiquetas = () => {

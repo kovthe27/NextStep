@@ -3,7 +3,7 @@
 let mostrarPendientes = () => {
     let lista = consultar_listaCentrosAdmin();
     for (let i = 0; i < lista.length; i++) {
-        if (lista[i].estado == "Pendiente") {
+        if (lista[i].estado == "Pendiente" || lista[i].estado == "Desactivado") {
             let centro =
                 `
         <tr>
