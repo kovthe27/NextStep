@@ -30,7 +30,7 @@ let buscarUsuario = (pID) =>{
   let usuario = [];
 
   let request = $.ajax({
-    url: "http://localhost:4000/api/buscar_usuario",
+    url: "http://localhost:4000/api/buscar_Padre",
     method: "POST",
     data: {
       id_usuario: pID

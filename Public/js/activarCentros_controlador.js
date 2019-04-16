@@ -21,9 +21,9 @@ let mostrarPendientes = () => {
                 <button id="rechazar" data-id ="`+lista[i]._id+`" type="button" class="btn btn-sm btn-danger mr-1 btn-circle">
                     <i class="fa fa-times"></i>
                 </button>
-                <button id="vermas" data-id ="`+lista[i]._id+`" type="button" class="btn btn-sm btn-info mr-1 btn-circle">
-                    <i class=" fas fa-info"></i>
-                </button>
+                <button type="button" onclick="location.href='javascript:verPerfil(` + lista[i].cedJuridica + `)'" class="btn btn-sm btn-info mr-1 btn-circle">
+                <i class="fas fa-info" ></i>
+            </button>
              </td>
         </tr>
         `
@@ -109,3 +109,8 @@ document.addEventListener('click', (g) => {
 
 
 mostrarPendientes();
+
+let verPerfil = (cedulaJuridica) => {
+  localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
+  window.location.assign("masInfoCentros_admin.html");
+}
