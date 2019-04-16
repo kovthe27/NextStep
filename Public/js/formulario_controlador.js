@@ -28,7 +28,11 @@ let crearUnitario = () =>{
                                     <option>8</option>
                                     <option>9</option>
                                 </select>
-                              
+
+
+                                <div>
+                   
+                </div>
                             </div>
                         </div>
         `, 0, 0, 12, 1, true)

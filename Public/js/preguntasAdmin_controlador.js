@@ -64,7 +64,7 @@ let construirModalpregunta = (p_id) => {
      <div class="modal-content">
          <div class="modal-header">
              <h4 class="modal-title" id="vcenter">Editar pregunta</h4>
-             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <a href="javascript:cerrarModalpregunta()"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
          </div>
          <div class="modal-body">
 
@@ -160,3 +160,13 @@ let eliminarpregunta = (pid) =>{
       });
     
 }
+
+
+// let url = window.location.href
+// let arr = url.split("/");
+
+// if(arr[10] == "preguntas_Administrador.html"){
+//     location.href = "preguntas_Administrador.html";
+// } else{
+//     location.href = "preguntasFrecuentes_landing.html";
+// }

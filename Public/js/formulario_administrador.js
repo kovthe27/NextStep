@@ -3,8 +3,7 @@
 
 const inputNombreForm = document.querySelector("#txt_nombreFormulario");
 const inputPeriodoForm = document.querySelector("#txt_periodoFormulario");
-const btnCrearFormulario = document.querySelector("#btn_crearFormulario");
-
+const btnCrearFormulario = document.querySelector("#btn_crearFormulario"); 
 
 let verFormulario = () => {
 
@@ -26,7 +25,7 @@ let mostrarFormularios = () => {
         let formulario= 
         `<tr>
             <td class="title">
-                <a class="link" id="lista`+ j + `" href="javascript:construirLista('')">`+listaFiltrada[j]+`</a>
+                <a class="link" id="lista`+ j + `" href="javascript:construirFormulario('` + listaFormularios[j].nombre + `')">`+listaFiltrada[j]+`</a>
             </td>
             <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">`+getPeriodo(listaFiltrada[j])+` </td> 
             <td>
@@ -56,6 +55,12 @@ btnCrearFormulario.addEventListener('click', verFormulario);
 
 mostrarFormularios();
 
+let construirFormulario = (pnombre) => {
+    // if(JSON.parse(localStorage.getItem('cliente')) == "Nextstep@mep.go.cr"){
+        localStorage.setItem('nombreFormulario', JSON.stringify(pnombre));
+        window.location.assign("./ver_formulario.html")
+    // }
+}
 
 
 
