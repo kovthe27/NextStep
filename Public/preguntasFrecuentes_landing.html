@@ -38,7 +38,7 @@
             <div class="container-fluid">
                     <div class="row page-titles bg-white mt-5">
                             <div class="col-md-5 mt-5 align-self-center">
-                                <h3 class="text-themecolor">Preguntas frecuentes</h3>
+                                <h3 class="text-dark">Preguntas frecuentes</h3>
                             </div>
                         </div>
                 <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
@@ -111,6 +111,17 @@
     <script src="js/MenuAdmin_Controlador.js"></script> -->
     <script src="js/preguntasAdmin_servicio.js"></script>
     <script src="js/preguntasAdmin_controlador.js"></script>
+
+    <script>
+        
+        if (document.getElementById("editarPregunta")){
+            $("[id=editarPregunta]").hide();
+        };
+
+        if (document.getElementById("eliminarPregunta")){
+            $("[id=eliminarPregunta]").hide();
+        };
+     </script>   
 
 </body>
 
