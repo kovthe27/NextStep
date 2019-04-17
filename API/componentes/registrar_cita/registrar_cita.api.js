@@ -20,7 +20,8 @@ module.exports.registrar_cita = (req, res) => {
         nombre: req.body.nombre,
         fecha: req.body.fecha,
         hora: req.body.hora,
-        correo: req.body.correo
+        correo: req.body.correo,
+        estado: "Pendiente"
     });
     console.log(cita_nueva);
 
@@ -193,3 +194,19 @@ module.exports.enviar_MailCita = function(req, res) {
       });
       
 };
+
+module.exports.CambiarEstado = function(req, res){
+  model_cita.findByIdAndUpdate(req.body.id_cita, { $set: {estado : req.body.estado} },
+      function (error, cita){
+          if(error){
+              res.json({success : false , msg : 'No se pudo actualizar el estado'});
+          }else{
+              res.json({success: true , msg : 'El estado se actualizó con éxito'}
+              
+              );
+
+          }
+      }
+  
+  );
+}

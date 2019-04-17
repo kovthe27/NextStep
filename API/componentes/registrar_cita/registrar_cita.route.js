@@ -17,6 +17,13 @@ router.route('/consultar_cita')
             }
         );
 
+router.route('/cambiarEstado_cita')
+    .post(
+        function (req, res) {
+            cita_api.CambiarEstado(req, res);
+        }
+    );        
+
 router.route('/enviar_MailCita')
 .post(
     function(req, res){

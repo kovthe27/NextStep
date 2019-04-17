@@ -7,7 +7,8 @@ let schema_cita = new mongoose.Schema(
         nombre : {type : String, required: true},
         fecha : {type : Date, required : true},
         hora : {type : String, required : true},
-        correo : {type: String, required: true}
+        correo : {type: String, required: true},
+        estado : {type: String, required: true}
     }
 );
 
