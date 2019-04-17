@@ -101,7 +101,9 @@ const registroContacto = require('./componentes/registrar_contacto/registrar_con
 const listaFavorito = require('./componentes/registrar_favortios/registrar_favoritos.route');
 const listaFormularios = require('./componentes/registrar_formularios/registrarFormularios_route');
 const listaCalificaciones = require('./componentes/registrar_calificaciones/registrar_calificaciones.route');
+const ranking = require('./componentes/registrar_ranking/registrar_ranking.route');
 
+app.use('/api', ranking);
 app.use('/api', listaCalificaciones);
 app.use('/api', listaFormularios);
 app.use('/api', servicio);
