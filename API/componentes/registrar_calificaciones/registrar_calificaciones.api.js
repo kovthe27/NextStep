@@ -1,18 +1,11 @@
 'use strict';
-const model_acercaNosotros = require('./registrar_acercaNosotros.model');
+const model_calificaciones = require('./registrar_calificaciones.model');
 
-module.exports.registrar_acercaNosotros = (req, res) => {
-    let acercaNosotros_nuevo = new model_acercaNosotros({
+module.exports.registrar_calificaciones= (req, res) => {
+    let acercaNosotros_nuevo = new model_calificaciones({
         cedulaJuridica: req.body.cedulaJuridica,
-        descripcionCentro: req.body.descripcionCentro,
-        ubicacion : req.body.ubicacion,
-        encargado : req.body.encargado,
-        correo : req.body.correo,
-        telefono : req.body.telefono,
-        facebook : req.body.facebook,
-        instagram : req.body.instagram,
-        twitter : req.body.twitter,
-        pagina : req.body.pagina,
+        calificacion: req.body.calificacion,
+        fecha : req.body.fecha,
     });
 
     acercaNosotros_nuevo.save(function (error) {
@@ -31,15 +24,15 @@ module.exports.registrar_acercaNosotros = (req, res) => {
     });
 };
 
-module.exports.consultar_acercaNosotros = function(req, res) {
-    model_acercaNosotros.find().then(
+module.exports.consultar_calificaciones= function(req, res) {
+    model_calificaciones.find().then(
         function (acercaNosotros) {
             res.send(acercaNosotros)
         });
 };
 
-module.exports.buscar_acercaNosotros = (req, res) =>{
-    model_acercaNosotros.find(
+module.exports.buscar_calificaciones= (req, res) =>{
+    model_calificaciones.find(
         {_id :req.body.id_acercaNosotros}
     ) .then(
         function(acercaNosotros){
@@ -50,9 +43,10 @@ module.exports.buscar_acercaNosotros = (req, res) =>{
 
 // Actualizar
 
-module.exports.actualizar = function(req, res){
+module.exports.actualizar_calificaciones= function(req, res){
    
-    model_acercaNosotros.findByIdAndUpdate(req.body.id_acercaNosotros, { $set: req.body },
+    model_calificaciones.findByIdAndUpdate(req.body.id_acercaNosotros, { $set: req.body },
+        // model_acercaNosotros.findByIdAndUpdate(req.body.id_acercaNosotros, { $set:{descripcion:req.body.descripcion}},
         function (error, acercaNosotros){
             if(error){
                 res.json({success : false , msg : 'No se pudo actualizar la información'});

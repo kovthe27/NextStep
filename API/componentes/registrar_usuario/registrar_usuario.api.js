@@ -281,8 +281,10 @@ module.exports.eliminar_padre = function(req, res){
           if(error){
               res.json({success: false ,msg: 'No se pudo eliminar la cuenta'});
           }else{
-              res.json({success: true ,msg: 'La cuenta se eliminó con éxito'}); 
+              res.json({success: true ,msg: 'La cuenta se eliminó'}); 
           }
       }
   )
 };
+
+

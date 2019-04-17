@@ -17,12 +17,12 @@ router.route('/consultar_acercaNosotros')
         }
     )
 
-router.route('/consultar_acercaNosotros')
-    .get(
+    router.route('/actualizar_acercaNosotros')
+    .post(
         function (req, res) {
-            acercaNosotros_api.consultar_acercaNosotros(req, res);
+            acercaNosotros_api.actualizar(req, res);
         }
-    )
+    );
 
 router.route('/buscar_acercaNosotros')
     .post(

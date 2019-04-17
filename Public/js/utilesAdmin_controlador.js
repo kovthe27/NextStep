@@ -21,12 +21,7 @@ let construirTabla = () => {
                     <a class="link" id="lista`+ i + `" href="javascript:construirLista('` + nombre + `')">` + lista[i].nombre + `</a>
                 </td>
                 <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">`+ lista[i].creada + `</td>
-                <td>
-                <div class="custom-control custom-checkbox">
-                     <input type="checkbox" class="custom-control-input" id="customCheck`+ i + `">
-                     <label class="custom-control-label" for="customCheck`+ i + `"></label>
-                 </div>
-                </td>    
+                 
                 <td>
 
                     <a id="editarLista"  href="javascript:construirModalLista('`+ lista[i]._id +`')"><button type="button" class="btn btn-sm btn-success mr-1 btn-circle"><i class="fas fa-edit"></i></button></a>

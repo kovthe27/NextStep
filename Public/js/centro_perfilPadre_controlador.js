@@ -191,7 +191,7 @@ let mostrar_infoCentro = () => {
         if (acercaNosotros[i].cedulaJuridica == JSON.parse(localStorage.getItem('centroEducativo'))) {
             var card_acercaNosotros =
                 "<div class=\"clearfix\"></div>" +
-                "<div class=\"col-md-7 float-left\">" +
+                "<div class=\"col-md-8 float-left\">" +
                 "<p class=\"card-text\">" + acercaNosotros[i].descripcionCentro + "</p><br>" +
                 "<button class=\"btn btn-themecolor mr-1\" data-toggle=\"modal\" data-target=\"#registrarComentario\">Calificar centro</button>" +
                 "<button class=\"btn btn-secondary mr-1\" data-toggle=\"modal\" data-target=\"#registrarCita\">Agendar cita</button>" +

@@ -13,11 +13,6 @@
     <link href="../admin-wrap/assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
     <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
     <link href="./assets/node_modules/tablesaw-master/dist/tablesaw.css" rel="stylesheet">
-    <!-- widget -->
-    <link href="./assets/node_modules/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="./assets/node_modules/chartist-js/dist/chartist-init.css" rel="stylesheet">
-    <link href="./assets/node_modules/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <link href="./assets/node_modules/css-chart/css-chart.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
 
@@ -27,19 +22,17 @@
     <!-- page css -->
     <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
     <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
-    <link href="./assets/node_modules/gridstack/gridstack.css" rel="stylesheet">
 
     <title>NextStep</title>
 </head>
 
-<body id="bodyUsuarios" class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
+<body class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
     <div id="main-wrapper">
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
                 <div class="navbar-header">
-                    <a href="principal_Administrador.html">
-                        <img src="../Public/imgs/logo-text-02.png" alt="homepage" class="dark-logo">
-                    </a>
+                    <a href="principal_Administrador.html"><img src="../Public/imgs/logo-text-02.png" alt="homepage"
+                            class="dark-logo"></a>
                 </div>
 
                 <div class="navbar-collapse">
@@ -51,37 +44,26 @@
                     <!-- Perfil -->
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <img id="imgPerfil" src="" class="">
-                                <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;
-                                    <i class="fa fa-angle-down"></i>
-                                </span>
-                            </a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="imgPerfil"
+                                    src="" class=""> <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;<i
+                                        class="fa fa-angle-down"></i></span> </a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
-                                            <div class="u-img align-self-center">
-                                                <img id="imgPerfil2" src="">
-                                            </div>
+                                            <div class="u-img align-self-center"><img id="imgPerfil2" src=""></div>
                                             <div class="u-text  text-align: center">
-                                                <!-- <h4 id="nombrePerfil2">Steave Jobs</h4> -->
+                                                <h4 id="nombrePerfil2">Steave Jobs</h4>
                                                 <p id="correo" class="text-muted"></p>
                                             </div>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-user"></i> Mi perfil</a>
-                                    </li>
+                                    <li><a href="#"><i class="ti-user"></i> Mi perfil</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li>
-                                        <a href="javascript:cerrarSesion();">
-                                            <i class="fa fa-power-off"></i> Cerrar sesion
-                                        </a>
-                                    </li>
+                                    <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar
+                                            sesion</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -94,34 +76,39 @@
         <!-- Menu -->
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
+            <div class="scroll-sidebar ps ps--theme_default ps--active-y"
+                data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav active">
                     <ul id="sidebarnav" class="in">
                         <li class="nav-small-cap">------ MENÚ</li>
                         <li class="">
-                            <a class="waves-effect waves-dark" href="principal_Administrador.html" aria-expanded="false">
+                            <a class="waves-effect waves-dark" href="principal_Administrador.html"
+                                aria-expanded="false">
                                 <i class="ti-bell"></i>
                                 <span class="hide-menu">Solicitudes
                                 </span>
                             </a>
                         </li>
                         <li class="">
-                            <a class=" waves-effect waves-dark " href="centros_Administrador.html" aria-expanded="false">
+                            <a class=" waves-effect waves-dark " href="centros_Administrador.html"
+                                aria-expanded="false">
                                 <i class="ti-home"></i>
                                 <span class="hide-menu">Centros educativos </span>
                             </a>
                         </li>
 
                         <li class="">
-                            <a class=" waves-effect waves-dark" href="usuarios_Administrador.html" aria-expanded="false">
+                            <a class=" waves-effect waves-dark" href="usuarios_Administrador.html"
+                                aria-expanded="false">
                                 <i class="ti-user"></i>
                                 <span class="hide-menu">Usuarios </span>
                             </a>
                         </li>
 
-                        <li class="">
-                            <a class=" waves-effect waves-dark" href="reportes_admin.html" aria-expanded="false">
+                        <li class="active">
+                            <a class=" waves-effect waves-dark" href="reportes_admin.html"
+                                aria-expanded="false">
                                 <i class=" ti-bar-chart-alt"></i>
                                 <span class="hide-menu">Reportes </span>
                             </a>
@@ -133,6 +120,14 @@
                                 <span class="hide-menu">Bitácora</span>
                             </a>
                         </li>
+
+
+                        <!-- <li class="">
+                            <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class=" ti-calendar"></i>
+                                <span class="hide-menu">Calendario </span>
+                            </a>
+                        </li> -->
                         <li class="">
                             <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class="ti-cup"></i>
@@ -145,13 +140,19 @@
                                 <span class="hide-menu">Lista de útiles </span>
                             </a>
                         </li>
+                        <!-- <li class="">
+                            <a class=" waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class=" ti-user"></i>
+                                <span class="hide-menu">Mi perfil</span>
+                            </a>
+                        </li> -->
                         <li class="">
                             <a class=" waves-effect waves-dark" href="preguntas_Administrador.html" aria-expanded=false>
                                 <i class="ti-help"></i>
                                 <span class="hide-menu">Preguntas frecuentes </span>
                             </a>
                         </li>
-                        <li class="active">
+                        <li class="">
                             <a class=" waves-effect waves-dark" href="formularios_administrador.html"
                                 aria-expanded=false>
                                 <i class="ti-notepad"></i>
@@ -170,37 +171,70 @@
         </aside>
 
         <!-- Titulo -->
-        <div class="page-wrapper" style="min-height: 900px;">
+        <div id="main"class="page-wrapper" style="min-height: 900px;">
 
-            <div id="mainUsuarios" class="container-fluid ">
-
-                <div id="grid-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="grid-title" style="display: none; padding-right: 17px;"
-                    aria-modal="true"></div>
+            <div class="container-fluid ">
 
                 <!-- Titulo -->
                 <div class="col-md-8 align-self-center">
-                    <h3 id="nomForm" class="text-themecolor">Nuevo formulario</h3>
+                    <h3 class="text-themecolor">Reportes</h3>
                 </div>
-                <div class="col-md-12 align-self-center">
-                    <button class="btn btn-outline-warning mt-3 mb-3" alt="default" id="btn_decimal" >Agregar parámetro</button>
-                    <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_unitario" style="display:none"> Nuevo item - unitario</button>
-                    <!-- <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_division"> División</button> -->
-                    <!-- <div class="col-md-12 align-self-center"> -->
-                            <button class="btn btn-themecolor float-right mt-3 mb-3" alt="default" id="btn_guardar">Guardar</button>
-                        <!-- </div> -->
-                </div>
-    
-                <div class="grid-stack col-md-10" id="awo">
-                
-                </div>
-                
-            </div>
-            <div class="clearfix"></div>
-                
-        </div>
-        <div id="bkmodal" class="fade"></div>
-    </div>
 
+                <!-- Tabs -->
+                <div class="col-md-12 mt-4">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item"> <a class="nav-link active text-themecolor" data-toggle="tab" href="#home2"
+                                role="tab" aria-selected="true"><span class="hidden-sm-up"><i
+                                        class="ti-home"></i></span> <span class="hidden-xs-down">Historial ranking</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link text-themecolor" data-toggle="tab" href="#messages"
+                                role="tab" aria-selected="false"><span class="hidden-sm-up"><i
+                                        class="ti-email"></i></span> <span
+                                    class="hidden-xs-down">Centros mejor evaluados</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link text-themecolor" data-toggle="tab" href="#profile2"
+                                role="tab" aria-selected="false"><span class="hidden-sm-up"><i
+                                        class="ti-user"></i></span> <span class="hidden-xs-down">Evaluaciones por padres</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Contenido de tabs -->
+                
+                <div class="tab-content tabcontent-border">
+                    <!-- Tab1 -->
+                    <div class="tab-pane p-20" id="home2" role="tabpanel">
+                    <h5 class="card-body mt-3">Crear reporte</h5>
+                    <div class="form-group col-md-3 float-left">
+                            <!-- <label for="txt_centro">Seleccione el centro educativo</label> -->
+                            <input type="text" id="txt_centro" name="text" class="form-control" placeholder="Seleccione un centro">
+                        </div>
+
+                        <div class="input-group mb-3 col-md-3 float-left ml-2">
+                                <input type="text" class="form-control shawCalRanges" placeholder="Seleccione la fecha" id="date">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <span class="ti-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 float-left">
+                                    <button class="btn btn-themecolor mt-0 mb-3">Crear reporte</button>
+                            </div>
+                            <div class="clearfix"></div>
+                            <hr>
+                    </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="actualizarEtiquetas" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"></div>
+    <div id="bgmodal" class="fade"></div>
+    </div>
 
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>
     <script src="./assets/node_modules/bootstrap/js/popper.min.js"></script>
@@ -212,43 +246,24 @@
     <script src="./assets/node_modules/prism/prism.js"></script>
     <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <!-- <script src="js/widget-data.js"></script> -->
-    <script src="../admin-wrap/main/js/widget-data.js"></script>
+    <script src="./assets/node_modules/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="./assets/node_modules/daterangepicker/daterangepicker.js"></script>
     <!-- new -->
+    <!-- <script src="../admin-wrap/main/js/custom.min.js"></script> -->
+    <!-- <script src="./assets/node_modules/switchery/dist/switchery.min.js"></script> -->
+    <!-- <script src="./assets/node_modules/select2/dist/js/select2.full.min.js" type="text/javascript"></script> -->
+    <!-- <script src="./assets/node_modules/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script> -->
     <script src="./assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    <!-- <script src="./assets/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script> -->
+    <!-- <script src="./assets/node_modules/dff/dff.js" type="text/javascript"></script> -->
+    <!-- <script type="text/javascript" src="./assets/node_modules/multiselect/js/jquery.multi-select.js"></script> -->
     <!-- tabla -->
     <script src="./assets/node_modules/tablesaw-master/dist/tablesaw.jquery.js"></script>
     <script src="./assets/node_modules/tablesaw-master/dist/tablesaw-init.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <!-- Test -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.all.js"></script>
-    <script src="js/formulario_servicio.js"></script>
-    <script src="js/formulario_controlador.js"></script>
-    
-    <!-- <script type="text/javascript">
-    $(function() {
-        $('.grid-stack').gridstack({
-            width: 12,
-            alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-            resizable: {
-                handles: 'e, se, s, sw, w'
-            }
-        });
-    });
-    </script> -->
-    <script type="text/javascript">
-        $(function () {
-            var options = {
-                cellHeight: 80,
-                verticalMargin: 10
-            };
-            $('.grid-stack').gridstack(options);
-        });
-    </script>
+
 
 </body>
 

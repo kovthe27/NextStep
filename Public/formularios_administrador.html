@@ -2,22 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
+      <!-- Favicon icon -->
+      <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
     <title>NextStep</title>
     <!-- Bootstrap Core CSS -->
     <link href="../admin-wrap/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../admin-wrap/assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
     <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
     <link href="./assets/node_modules/tablesaw-master/dist/tablesaw.css" rel="stylesheet">
-    <!-- widget -->
-    <link href="./assets/node_modules/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="./assets/node_modules/chartist-js/dist/chartist-init.css" rel="stylesheet">
-    <link href="./assets/node_modules/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
-    <link href="./assets/node_modules/css-chart/css-chart.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
 
@@ -27,7 +21,6 @@
     <!-- page css -->
     <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
     <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
-    <link href="./assets/node_modules/gridstack/gridstack.css" rel="stylesheet">
 
     <title>NextStep</title>
 </head>
@@ -51,8 +44,8 @@
                     <!-- Perfil -->
                     <ul class="navbar-nav my-lg-0">
                         <li class="nav-item dropdown u-pro">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img id="imgPerfil" src="" class="">
                                 <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;
                                     <i class="fa fa-angle-down"></i>
@@ -66,7 +59,7 @@
                                                 <img id="imgPerfil2" src="">
                                             </div>
                                             <div class="u-text  text-align: center">
-                                                <!-- <h4 id="nombrePerfil2">Steave Jobs</h4> -->
+                                                <h4 id="nombrePerfil2">Steave Jobs</h4>
                                                 <p id="correo" class="text-muted"></p>
                                             </div>
                                         </div>
@@ -94,34 +87,39 @@
         <!-- Menu -->
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
-            <div class="scroll-sidebar ps ps--theme_default ps--active-y" data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
+            <div class="scroll-sidebar ps ps--theme_default ps--active-y"
+                data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav active">
                     <ul id="sidebarnav" class="in">
                         <li class="nav-small-cap">------ MENÚ</li>
                         <li class="">
-                            <a class="waves-effect waves-dark" href="principal_Administrador.html" aria-expanded="false">
+                            <a class="waves-effect waves-dark" href="principal_Administrador.html"
+                                aria-expanded="false">
                                 <i class="ti-bell"></i>
                                 <span class="hide-menu">Solicitudes
                                 </span>
                             </a>
                         </li>
                         <li class="">
-                            <a class=" waves-effect waves-dark " href="centros_Administrador.html" aria-expanded="false">
+                            <a class=" waves-effect waves-dark " href="centros_Administrador.html"
+                                aria-expanded="false">
                                 <i class="ti-home"></i>
                                 <span class="hide-menu">Centros educativos </span>
                             </a>
                         </li>
 
                         <li class="">
-                            <a class=" waves-effect waves-dark" href="usuarios_Administrador.html" aria-expanded="false">
+                            <a class=" waves-effect waves-dark" href="usuarios_Administrador.html"
+                                aria-expanded="false">
                                 <i class="ti-user"></i>
                                 <span class="hide-menu">Usuarios </span>
                             </a>
                         </li>
 
                         <li class="">
-                            <a class=" waves-effect waves-dark" href="reportes_admin.html" aria-expanded="false">
+                            <a class=" waves-effect waves-dark" href="reportes_admin.html"
+                                aria-expanded="false">
                                 <i class=" ti-bar-chart-alt"></i>
                                 <span class="hide-menu">Reportes </span>
                             </a>
@@ -172,33 +170,85 @@
         <!-- Titulo -->
         <div class="page-wrapper" style="min-height: 900px;">
 
-            <div id="mainUsuarios" class="container-fluid ">
-
-                <div id="grid-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="grid-title" style="display: none; padding-right: 17px;"
-                    aria-modal="true"></div>
-
+            <div id="mainFormulario" class="container-fluid ">
                 <!-- Titulo -->
-                <div class="col-md-8 align-self-center">
-                    <h3 id="nomForm" class="text-themecolor">Nuevo formulario</h3>
+                <div class="align-self-center">
+                    <h3 class="text-themecolor">Formulario de calificación</h3>
                 </div>
-                <div class="col-md-12 align-self-center">
-                    <button class="btn btn-outline-warning mt-3 mb-3" alt="default" id="btn_decimal" >Agregar parámetro</button>
-                    <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_unitario" style="display:none"> Nuevo item - unitario</button>
-                    <!-- <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_division"> División</button> -->
-                    <!-- <div class="col-md-12 align-self-center"> -->
-                            <button class="btn btn-themecolor float-right mt-3 mb-3" alt="default" id="btn_guardar">Guardar</button>
-                        <!-- </div> -->
+
+                <!-- Modal -->
+
+                <div id="agregarMatricula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                    aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="vcenter">Nuevo formulario de calificación</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <input type="text" id="txt_nombreFormulario" name="text" class="form-control" required="true"
+                                        data-validation-required-message="This field is required" aria-invalid="false"
+                                        placeholder="Ingrese el nombre del formulario">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="txt_periodoFormulario" name="text" class="form-control" required="true"
+                                        data-validation-required-message="This field is required" aria-invalid="false"
+                                        placeholder="Ingrese periodo lectivo">
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btn_crearFormulario" type="submit" class="btn btn-warning waves-effect"
+                                    data-dismiss="modal">Añadir</button>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-    
-                <div class="grid-stack col-md-10" id="awo">
-                
+
+                <!-- Contenido -->
+                <div class="input-group mb-3 col-md-4 mt-3 float-right">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
+                    </div>
+                    <input type="text" id="txt_searchUtiles" class="form-control" placeholder="Buscar"
+                        aria-label="Username" aria-describedby="basic-addon1">
                 </div>
-                
+
+                <div class="align-self-center">
+                    <button class="btn btn-themecolor mt-3 mb-3" alt="default" id="btn_nuevo" data-toggle="modal"
+                    data-target="#agregarMatricula">Crear nuevo
+                        formulario</button>
+                </div>
+
+                <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
+                    data-tablesaw-mode="columntoggle" id="tablaCentros">
+                    <thead>
+                        <tr>
+                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="persist">
+                                Nombre del formulario</th>
+                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="persist">
+                                Período</th>
+                            <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1"
+                                class="tablesaw-priority-1">Edición
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <!-- Buscar -->
+
+                    <tbody id="tablaFormularios">
+                        <!-- Se llena dinamicamente -->
+                    </tbody>
+                </table>
+
             </div>
-            <div class="clearfix"></div>
-                
         </div>
-        <div id="bkmodal" class="fade"></div>
+        <div id="actualizarformulario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"></div>
+        <div id="bgmodal" class="fade"></div>
     </div>
 
 
@@ -214,41 +264,23 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <!-- <script src="js/widget-data.js"></script> -->
     <script src="../admin-wrap/main/js/widget-data.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
     <!-- new -->
     <script src="./assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
     <!-- tabla -->
     <script src="./assets/node_modules/tablesaw-master/dist/tablesaw.jquery.js"></script>
     <script src="./assets/node_modules/tablesaw-master/dist/tablesaw-init.js"></script>
+    <script src="./js/formulario_servicio.js"></script>
+    <script src="./js/formulario_administrador.js"></script>
 
     <!-- Test -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.all.js"></script>
-    <script src="js/formulario_servicio.js"></script>
-    <script src="js/formulario_controlador.js"></script>
-    
-    <!-- <script type="text/javascript">
-    $(function() {
-        $('.grid-stack').gridstack({
-            width: 12,
-            alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-            resizable: {
-                handles: 'e, se, s, sw, w'
-            }
-        });
-    });
-    </script> -->
-    <script type="text/javascript">
-        $(function () {
-            var options = {
-                cellHeight: 80,
-                verticalMargin: 10
-            };
-            $('.grid-stack').gridstack(options);
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.all.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 
