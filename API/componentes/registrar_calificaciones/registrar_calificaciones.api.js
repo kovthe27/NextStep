@@ -62,3 +62,17 @@ module.exports.actualizar_calificaciones= function(req, res){
 }
 
 
+module.exports.eliminarcalificacion = function(req, res){
+    model_calificaciones.findByIdAndRemove(req.body.id_calificacion,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar la calificacion '});
+            }else{
+                res.json({success: true ,msg: 'La calificacion se eliminó con éxito'}); 
+            }
+        }
+    )
+};
+
+
+

@@ -31,5 +31,12 @@ router.route('/buscar_calificaciones')
         }
     );
 
+    router.route('/eliminarcalificacion')
+    .post(
+        function (req, res) {
+            calificaciones_api.eliminarcalificacion(req, res);
+        }
+    );
+
 
 module.exports = router;

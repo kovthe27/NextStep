@@ -224,7 +224,7 @@ let mostrarCalificaciones = () => {
         <td class="tablesaw-priority-3">` + listaCalificaciones[i].fecha + `</td>
         <td class="tablesaw-priority-2">` + listaCalificaciones[i].calificacion + `</td>
         <td class="tablesaw-priority-1">
-        <a id="eliminaretiqueta"  href="javascript:eliminarCalificacion('`+ listaCalificaciones[i]._id + `')"><button type="button" class="btn btn-sm btn-danger mr-1 btn-circle"><i class="fas fa-trash"></i></button></a>
+        <a id="eliminarcalificacion"  href="javascript:eliminarcalific('`+ listaCalificaciones[i]._id + `')"><button type="button" class="btn btn-sm btn-danger mr-1 btn-circle"><i class="fas fa-trash"></i></button></a>
                 </td>
     </tr>`
         $("#tbodyCalificaciones").append(nuevaCalificacion);
@@ -302,6 +302,32 @@ let prueba = (pnombre) => {
     document.querySelector('#txt_nombreEtiquetaAct').value = pnombre;
 }
 
+
+// eliminar
+
+let eliminarcalific = (pid) =>{
+    swal("¿Está seguro que desea eliminar la calificacion?", {
+        buttons: {
+          No: "Cancelar",
+          Si: "Aceptar",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+       
+          case "No":
+            break;
+       
+          case "Aceptar":
+            swal("Gotcha!", "Pikachu was caught!", "success");
+            break;
+       
+          default:
+          eliminarcalificacion(pid, "Rechazado");
+        }
+      });
+    
+}
 
 
 
