@@ -211,9 +211,9 @@ a.link:hover, a.link:focus {
   margin: 0;
 }
 
-.card-no-border .bg-white {
+/* .card-no-border .bg-white {
   height: 260px;
-}
+} */
 
 th{
   color: #333;

@@ -66,3 +66,16 @@ module.exports.actualizar = function(req, res){
 }
 
 
+module.exports.eliminar_servicio = function(req, res){
+    model_servicio.findByIdAndRemove(req.body.id_servicio,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar el servicio '});
+            }else{
+                res.json({success: true ,msg: 'El servicio se eliminó con éxito'}); 
+            }
+        }
+    )
+};
+
+

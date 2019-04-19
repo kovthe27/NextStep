@@ -32,4 +32,11 @@ router.route('/buscar_servicio')
         }
     );
 
+    router.route('/eliminar_servicio')
+    .post(
+        function (req, res) {
+            servicio_api.eliminar_servicio(req, res);
+        }
+    );
+
 module.exports = router;

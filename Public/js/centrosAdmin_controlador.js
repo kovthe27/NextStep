@@ -284,7 +284,7 @@ let construirModaletiqueta = (p_id) => {
 
 
     // console.log(etiquetaEspecifica);
-    prueba(etiquetaEspecifica[0].nombre);
+    pruebaEti(etiquetaEspecifica[0].nombre);
 
 
 }
@@ -298,7 +298,7 @@ let cerrarModaletiqueta = () => {
 }
 
 
-let prueba = (pnombre) => {
+let pruebaEti = (pnombre) => {
     document.querySelector('#txt_nombreEtiquetaAct').value = pnombre;
 }
 
