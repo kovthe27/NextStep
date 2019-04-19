@@ -1,11 +1,20 @@
 'use strict';
 
+// Tab1
 const selectTab1 = document.querySelector("#slt_centro");
 const annoTab1 = document.querySelector("#slt_anno");
 const btn_Tab1 = document.querySelector("#btn_crearReporte");
 
+// tab2
+const slt_centro21 = document.querySelector("#slt_centro21");
+const slt_centro22 = document.querySelector("#slt_centro22");
+const slt_centro23 = document.querySelector("#slt_centro23");
+const btn_Tab2 = document.querySelector("#btn_crearReporte2");
 
-// Tab1
+// Tab3
+
+
+// Funciones Tab1
 let mostrarTab1 = () => {
     let listaCentros = consultarCentros();
     let annos = consultarAnnos();
@@ -49,22 +58,22 @@ let reporte1 = (cedula, anno) => {
 
     for (let i = 0; i < annos.length; i++) {
         if (annos[i].cedula == centro) {
-            if(annos[i].anno >= year){
-            let nuevo =
-                `
+            if (annos[i].anno >= year) {
+                let nuevo =
+                    `
                 <tr>
-                <td>`+annos[i].anno+`</td>
-                <td>`+annos[i].calificacion+`</td>
+                <td>`+ annos[i].anno + `</td>
+                <td>`+ annos[i].calificacion + `</td>
                 </tr>
                 `
-            $("#TblReporte1").append(nuevo);
+                $("#TblReporte1").append(nuevo);
             }
         }
     }
     new Chart(document.getElementById("line-chart"), {
         type: 'line',
         data: {
-            labels: [10,25,50,75,100],
+            labels: [10, 25, 50, 75, 100],
             datasets: [{
                 data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
                 label: "Africa",
@@ -102,14 +111,85 @@ let reporte1 = (cedula, anno) => {
     });
 }
 
-function addData(chart, label, data) {
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(data);
-    });
-    chart.update();
+// Funciones Tab2
+
+let mostrarTab2 = () => {
+    let listaCentros = consultarCentros();
+    let annos = consultarAnnos();
+    let annosFiltrada = [];
+
+    for (let i = 0; i < annos.length; i++) {
+        annosFiltrada.push(annos[i].anno);
+    }
+    annosFiltrada = [...new Set(annosFiltrada)];
+
+    for (let j = 0; j < annosFiltrada.length; j++) {
+        let anno =
+            `
+            <option value="`+ annosFiltrada[j] + `">` + annosFiltrada[j] + `</option>
+        `
+        $("#slt_centro23").append(anno);
+    }
+}
+
+let buscarCentro = (cedula) =>{
+    let centro=[];
+    let listaCentros = consultarCentros();
+    for(let i=0; i<listaCentros.length; i++){
+        if(listaCentros[i].cedJuridica == cedula){
+            centro=listaCentros[i];
+        }
+    }
+    return centro;
+}
+
+let reporte2 = () => {
+    document.querySelector("#CentrosUser").innerHTML = "";
+    let modalidad = slt_centro21.value;
+    let tipo = slt_centro22.value;
+    let anno = slt_centro23.value;
+
+    let listaCentros = consultarCentros();
+    let listaRanking = consultarAnnos();
+
+    let contador=1 ;
+
+    for(let i=0; i<listaRanking.length; i++){
+        let centro=buscarCentro(listaRanking[i].cedula);
+        if(centro.tipoCentro == tipo & centro.gradoAcademico == modalidad & listaRanking[i].anno == anno & contador<11){
+            let nuevo =
+                `
+                <div class="col-lg-3 mt-4 col-md-6">
+                <div class="card">
+                    <div class="el-card-item bounce animated">
+                        <div class="el-card-avatar el-overlay-1"> <img src="`+centro.fotoCentro+`" alt="user" width=100%>
+                            <div class="el-overlay scrl-up">
+                                <ul class="el-info">
+                                    <li><a class="btn default btn-outline image-popup-vertical-fit" href=""><i class="sl-icon-magnifier"></i></a></li>
+                                    <li><a class="btn default btn-outline" href="javascript:verPerfil()"><i class=" fas fa-arrow-alt-circle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="box-title">`+centro.nombreCentro+`</h4> <small>Info de algo aqui</small>
+                            <br>
+                            <hr class="orange">
+                            <p> Numero `+contador+`</P>
+                        </div>
+                            
+                    </div>
+                    </div>
+            </div>
+                `
+            $("#CentrosUser").append(nuevo);
+            contador++;
+
+        }
+    }
 }
 
 
 btn_Tab1.addEventListener('click', reporte1);
+btn_Tab2.addEventListener('click', reporte2);
 mostrarTab1();
+mostrarTab2();

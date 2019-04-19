@@ -14,11 +14,18 @@
     <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
     <link href="./assets/node_modules/tablesaw-master/dist/tablesaw.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
+    <link href="./assets/node_modules/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
+    <link href="css/pages/user-card.css" rel="stylesheet">
     <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
+
 
     <!-- Custom CSS -->
     <link href="../admin-wrap/main/css/style.css" rel="stylesheet">
+    <link href="../admin-wrap/main/css/colors/default-dark.css" id="theme" rel="stylesheet">
     <link href="css/listas.css" rel="stylesheet">
+    <link href="../admin-wrap/main/css/pages/ribbon-page.css" rel="stylesheet">
+    
+
     <!-- page css -->
     <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
     <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
@@ -230,36 +237,49 @@
                         </div>
                         <div class="clearfix"></div>
                         <div class="col-md-4 mt-4" style="float: left;">
-                                <table class="tablesaw table-striped table-hover table-bordered table">
+                            <table class="tablesaw table-striped table-hover table-bordered table">
                                 <thead>
                                     <tr>
                                         <th>Año</th>
                                         <th>Calificación</th>
-    
+
                                     </tr>
                                 </thead>
                                 <tbody id="TblReporte1">
                                     <!-- Se crea dinamicamente -->
-                                    
+
                                 </tbody>
                             </table>
                         </div>
                         <div class="col-md-8 mt-4" style="float: right;">
-                                <canvas id="line-chart" width="800" height="450"></canvas>
+                            <canvas id="line-chart" width="800" height="450"></canvas>
                         </div>
                     </div>
                     <!-- TAb2 -->
                     <div class="tab-pane p-20" id="messages" role="tabpanel">
                         <h5 class="card-body mt-3">Crear reporte prueba</h5>
                         <div class="form-group col-md-3 float-left">
-                            <!-- <label for="txt_centro">Seleccione el centro educativo</label> -->
-                            <input type="text" id="txt_centro" name="text" class="form-control"
-                                placeholder="Seleccione un centro">
+                            <select id="slt_centro21" class="form-control" placeholder="Seleccione un centro">
+                                <option value="0">-Seleccione una modalidad-</option>
+                                <option value="1">Preescolar</option>
+                                <option value="Primaria">Primaria</option>
+                                <option value="Secundaria">Secundaria</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-3 float-left">
+                            <select id="slt_centro22" class="form-control" placeholder="Seleccione un centro">
+                                <option value="0">-Seleccione un tipo-</option>
+                                <option value="Público">Centros públicos</option>
+                                <option value="Privado">Centros privados</option>
+                                <option value="Semi-Privado">Centros semi-privados</option>
+                            </select>
                         </div>
 
                         <div class="input-group mb-3 col-md-3 float-left ml-2">
-                            <input type="text" class="form-control shawCalRanges" placeholder="Seleccione la fecha"
-                                id="date">
+                            <select id="slt_centro23" class="form-control" placeholder="Seleccione un centro">
+                                <option value="0">-Seleccione un año-</option>
+                            </select>
                             <div class="input-group-append">
                                 <span class="input-group-text">
                                     <span class="ti-calendar"></span>
@@ -268,10 +288,10 @@
                         </div>
 
                         <div class="col-md-3 float-left">
-                            <button class="btn btn-themecolor mt-0 mb-3">Crear reporte</button>
+                            <button id="btn_crearReporte2" class="btn btn-themecolor mt-0 mb-3">Crear reporte</button>
                         </div>
                         <div class="clearfix"></div>
-                        <hr>
+                        <div id="CentrosUser" class="row el-element-overlay"></div>
                     </div>
                 </div>
 
