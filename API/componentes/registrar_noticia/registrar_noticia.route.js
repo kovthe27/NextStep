@@ -32,4 +32,11 @@ router.route('/buscar_noticia')
         }
     );
 
+    router.route('/eliminar_noticia')
+    .post(
+        function (req, res) {
+            noticia_api.eliminarNoticia(req, res);
+        }
+    );
+
 module.exports = router;

@@ -49,7 +49,7 @@
                                         <div class="dw-user-box">
                                             <div class="u-img align-self-center"><img id="imgPerfil2" src=""></div>
                                             <div class="u-text  text-align: center">
-                                                <h4 id="nombrePerfil2">Steave Jobs</h4>
+                                                <!-- <h4 id="nombrePerfil2">Steave Jobs</h4> -->
                                                 <p id="correo" class="text-muted"></p>
                                             </div>
                                         </div>
@@ -100,7 +100,7 @@
                             </li>
 
                         <li class="">
-                            <a class=" waves-effect waves-dark" href="reportes_Administrador.html"
+                            <a class=" waves-effect waves-dark" href="reportes_admin.html"
                                 aria-expanded="false">
                                 <i class=" ti-bar-chart-alt"></i>
                                 <span class="hide-menu">Reportes </span>
@@ -143,6 +143,13 @@
                                 <span class="hide-menu">Preguntas frecuentes </span>
                             </a>
                         </li>
+                        <li class="">
+                            <a class=" waves-effect waves-dark" href="formularios_administrador.html"
+                                aria-expanded=false>
+                                <i class="ti-notepad"></i>
+                                <span class="hide-menu">Formularios</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
@@ -159,7 +166,7 @@
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h3 class="text-themecolor">Preguntas frecuentes</h3>
+                        <h3 class="text-dark">Preguntas frecuentes</h3>
 
                     </div>
                 </div>
@@ -215,6 +222,9 @@
 
             </div>
         </div>
+
+        <div id="actualizarpregunta" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"></div>
+        <div id="bgmodal" class="fade"></div>
     </div>
 
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>
@@ -233,6 +243,8 @@
     <script src="js/MenuAdmin_Controlador.js"></script>
     <script src="js/preguntasAdmin_servicio.js"></script>
     <script src="js/preguntasAdmin_controlador.js"></script>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 

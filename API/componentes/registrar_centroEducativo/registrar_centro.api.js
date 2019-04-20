@@ -251,7 +251,7 @@ module.exports.actualizarcontrasena_Centro = (req, res) => {
 }
 
 module.exports.listar_TodosCentros = (req ,res) =>{
-    model_RegistroCentro.find().then(
+    model_RegistroCentro.find().sort({"nombreCentro":1}).then(
         function(centros){
             res.send(centros)
         });

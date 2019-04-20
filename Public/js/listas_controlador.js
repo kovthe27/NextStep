@@ -33,6 +33,13 @@ let crearLista = () => {
                 <td class="title">
                     <a class="link" id="lista`+ i + `" href="javascript:voide(0)">` + lista[i].descripcion + `</a>
                 </td>
+
+                <td>
+
+                    <a id="editarLista"  href="javascript:construirModalUtiles('`+ lista[i]._id +`')"><button type="button" class="btn btn-sm btn-success mr-1 btn-circle"><i class="fas fa-edit"></i></button></a>
+                    <a id="eliminarLista"  href="javascript:eliminarlUtilesAdmin('`+ lista[i]._id +`')"><button type="button" class="btn btn-sm btn-danger mr-1 btn-circle"><i class="fas fa-trash"></i></button></a>
+                </td>
+
                 </tr>`
 
                 $("#TblUtiles").append(nuevalista)
@@ -51,29 +58,6 @@ let crearLista = () => {
 
 //Limpia la tabla 
 let refrescarLista = () => {
-    // let lista = getLista();
-    // let cantidad = -1;
-    // let user = "MEPAdmin1";
-    // let nombreLista = getNombreLista();
-
-    // if (lista.length > 1) {
-    //     for (let i = 0; i < lista.length; i++) {
-    //         if (lista[i].cedula == user) {
-    //             if (lista[i].nivel == nombreLista) {
-    //                 cantidad++;
-    //             }
-    //         }
-    //     }
-    // }
-    // if (cantidad > 0) {
-    //     for (let i = cantidad - 1; i > 0; i--) {
-    //         document.querySelector("#TblUtiles").deleteRow(i);
-    //     }
-    // } else {
-    //     if (cantidad == 0) {
-    //         document.querySelector("#TblUtiles").deleteRow(0);
-    //     }
-    // }
     window.location.reload();
 }
 
@@ -151,3 +135,120 @@ let validar = () => {
 crearLista();
 btn_registrar.addEventListener('click', nuevoArticulo);
 btn_registrartipo.addEventListener('click', nuevoTipo);
+
+
+
+
+let construirModalUtiles = (p_id) => {
+    console.log("hello");
+    let listaEspecifica = buscar_utilesAdmin(p_id);
+    let modalUtiles =
+
+     `<div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+         
+         <div class="modal-header">
+             <h4 class="modal-title" id="vcenter">Editar elemento</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><a class="text-dark" href="javascript:cerrarModalUtiles()" data-id="`+listaEspecifica[0]._id+`">x</a></button>
+         </div>
+         <div class="modal-body">
+
+             <div class="form-group">
+                 <input type="number" id="txt_cantidadAct" name="text" class="form-control" required="true" data-validation-required-message="This field is required" aria-invalid="false" placeholder="Cantidad">
+             </div>
+             <div class="form-group">
+             <button class="btn btn-sm btn-outline-warning mb-2" alt="default" data-toggle="modal" data-target="#agregarTipo">Agregar nuevo tipo</button>
+                 <select id="slt_articulosAct" class="form-control custom-select" data-placeholder="Seleccione un tipo de articulo" tabindex="1">
+                     <option value="Category">--Seleccione un tipo de artículo--</option>
+                 <option value="Cuaderno">Cuaderno</option><option value="Lápiz">Lápiz</option><option value="Libros">Libros</option><option value="Crayolas">Crayolas</option><option value="Goma">Goma</option><option value="Calculadora">Calculadora</option><option value="Blusa / Camisa">Blusa / Camisa</option><option value="Tableta">Tableta</option></select>
+                
+             </div>
+             <div class="form-group">
+                 <input type="textarea" id="txt_descripcionAct" name="text" class="form-control" required="true" data-validation-required-message="This field is required" aria-invalid="false" placeholder="Ingrese la descripción">
+             </div>
+
+         </div>
+         <div class="modal-footer">
+             <button id="btn_actualizar" href="javascript:cerrarModalUtiles()" data-id="`+listaEspecifica[0]._id+`"  type="submit" class="btn btn-warning waves-effect" data-dismiss="modal">Actualizar</button>
+
+         </div>
+     </div>
+ </div>`
+
+                        $("#actualizarUtilesAdmin").append(modalUtiles);
+                        document.querySelector("#actualizarUtilesAdmin").style.display="block";
+                        document.querySelector("#actualizarUtilesAdmin").classList.add('show');
+
+                        document.querySelector("#bgmodal").classList.add("modal-backdrop");
+                        document.querySelector("#bgmodal").classList.add('show');
+
+                        listaAct(listaEspecifica[0].cantidad, listaEspecifica[0].tipo, listaEspecifica[0].descripcion);
+                        console.log(listaEspecifica[0].tipo + "hello");
+};
+ 
+
+let cerrarModalUtiles = () => {
+    document.querySelector("#actualizarUtilesAdmin").innerHTML = " ";
+    document.querySelector("#actualizarUtilesAdmin").classList.remove('show');
+    document.querySelector("#actualizarUtilesAdmin").style.display="none";
+    document.querySelector("#bgmodal").classList.remove("modal-backdrop");
+    document.querySelector("#bgmodal").classList.remove('show');
+ }
+
+ 
+let listaAct = (pcantidad, particulo, pdescripcion) => {
+    document.querySelector('#txt_cantidadAct').value = pcantidad;
+    $("#slt_articulosAct").val(particulo);
+    document.querySelector('#txt_descripcionAct').value = pdescripcion;
+}
+
+
+
+
+// Actualizar noticia--------------------------------------------------------------------------
+
+
+let obtener_datosActualizarUtilesAdmin = (pid) =>{
+    let cantidad = document.querySelector('#txt_cantidadAct').value;
+    let articulo = document.querySelector('#slt_articulosAct').value;
+    let descripcion = document.querySelector('#txt_descripcionAct').value;
+
+    actualizar_utilesAdmin(cantidad, articulo, descripcion, pid );
+    document.querySelector('#actualizarUtilesAdmin').style.display="none";
+    window.location.reload();
+    
+};
+
+document.addEventListener('click', (e) => {
+    if (e.target && e.target.id == 'btn_actualizar') {
+        let idutilesAdminAct=document.querySelector('#btn_actualizar').getAttribute('data-id');
+        obtener_datosActualizarUtilesAdmin(idutilesAdminAct);
+    }
+})
+
+
+// eliminar
+
+let eliminarlUtilesAdmin = (pid) =>{
+    swal("¿Está seguro que desea eliminar el elemento?", {
+        buttons: {
+          No: "Cancelar",
+          Si: "Aceptar",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+       
+          case "No":
+            break;
+       
+          case "Aceptar":
+            swal("Gotcha!", "Pikachu was caught!", "success");
+            break;
+       
+          default:
+          eliminar_utilesAdmin(pid, "Rechazado");
+        }
+      });
+    
+}

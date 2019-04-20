@@ -91,7 +91,7 @@
                             </li>
 
                         <li class="">
-                            <a class=" waves-effect waves-dark" href="reportes_Administrador.html"
+                            <a class=" waves-effect waves-dark" href="reportes_admin.html"
                                 aria-expanded="false">
                                 <i class=" ti-bar-chart-alt"></i>
                                 <span class="hide-menu">Reportes </span>
@@ -180,7 +180,7 @@
                                 </div>
                                 <div class="form-group">
                                     <h5 class="float-left mt-3">Artículo</h5>
-                                        <button class="btn btn-sm btn-themecolor mb-3 float-right" alt="default" data-toggle="modal"
+                                        <button class="btn btn-sm btn-outline-warning mb-3 float-right" alt="default" data-toggle="modal"
                                         data-target="#agregarTipo">Agregar nuevo tipo</button>
 
                                     <select id="slt_articulos"class="form-control custom-select  mb-3" data-placeholder="Seleccione un tipo de artículo"
@@ -192,7 +192,7 @@
                                 <div class="form-group">
                                     <input type="textarea" id="txt_descripcion" name="text" class="form-control"
                                         required="true" data-validation-required-message="This field is required"
-                                        aria-invalid="false" placeholder="Ingrese la descripcion">
+                                        aria-invalid="false" placeholder="Ingrese la descripción">
                                 </div>
 
                             </div>
@@ -257,7 +257,8 @@
                             <tr>
                                 <th>Cantidad</th>
                                 <th>Artículo</th>
-                                <th>Descripciósn</th>
+                                <th>Descripción</th>
+                                <th>Editar</th>
                             </tr>
                         </thead>
                         <tbody id="TblUtiles">
@@ -268,6 +269,8 @@
             </div>
         </div>
     </div>
+    <div id="actualizarUtilesAdmin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"></div>
+    <div id="bgmodal" class="fade"></div>
     </div>
 
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>

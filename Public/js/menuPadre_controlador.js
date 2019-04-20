@@ -96,7 +96,7 @@ let cargarCentros = () => {
                     </div>
                 </div>
                 <div class="card-body">
-                    <h3 class="box-title">`+ listaCentros[i].nombreCentro + `</h3> <small>` + listaCentros[i].emailCentro + `</small>
+                    <h4 class="box-title">`+ listaCentros[i].nombreCentro + `</h4> <small>` + listaCentros[i].emailCentro + `</small>
                     <br>
                     <hr class="orange">
                     <a href="javascript:agregarFavorito(`+listaCentros[i].cedJuridica+`)" class="text-warning text-small float-left">Agregar a favoritos</a>

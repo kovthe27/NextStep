@@ -15,6 +15,22 @@ router.route('/consultar_cita')
             function(req, res){
                 cita_api.consultar_cita(req, res);
             }
-        )
+        );
+
+router.route('/cambiarEstado_cita')
+    .post(
+        function (req, res) {
+            cita_api.CambiarEstado(req, res);
+        }
+    );        
+
+router.route('/enviar_MailCita')
+.post(
+    function(req, res){
+        cita_api.enviar_MailCita(req, res);
+    }
+)
+
+
 
 module.exports = router;

@@ -275,3 +275,16 @@ module.exports.actualizar_padre = function(req, res){
   );
 }
 
+module.exports.eliminar_padre = function(req, res){
+  model_RegistroPadre.findByIdAndRemove(req.body.id,
+      function(error){
+          if(error){
+              res.json({success: false ,msg: 'No se pudo eliminar la cuenta'});
+          }else{
+              res.json({success: true ,msg: 'La cuenta se eliminó'}); 
+          }
+      }
+  )
+};
+
+

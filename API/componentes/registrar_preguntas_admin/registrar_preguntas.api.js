@@ -31,3 +31,48 @@ module.exports.consultar_PreguntaAdmin = function(req, res) {
             res.send(preguntaAdmin)
         });
 };
+
+
+module.exports.buscar_pregunta = (req, res) =>{
+    model_TablaPreguntasAdmin.find(
+        {_id :req.body.id_pregunta}
+    ) .then(
+        function(preguntaAdmin){
+            res.send (preguntaAdmin)
+        }
+    )
+};
+
+// Actualizar
+
+module.exports.actualizar = function(req, res){
+   
+    model_TablaPreguntasAdmin.findByIdAndUpdate(req.body.id_pregunta, { $set: req.body },
+        // model_TablaPregunta.findByIdAndUpdate(req.body.id_pregunta, { $set:{descripcion:req.body.descripcion}},
+        function (error, pregunta){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar la pregunta'});
+            }else{
+                res.json({success: true , msg : 'La pregunta se actualizó con éxito'}
+                
+                );
+
+            }
+        }
+    
+    );
+}
+
+module.exports.eliminarpregunta = function(req, res){
+    model_TablaPreguntasAdmin.findByIdAndRemove(req.body.id_pregunta,
+        function(error){
+            if(error){
+                res.json({success: false ,msg: 'No se pudo eliminar la pregunta '});
+            }else{
+                res.json({success: true ,msg: 'La pregunta se eliminó con éxito'}); 
+            }
+        }
+    )
+};
+
+

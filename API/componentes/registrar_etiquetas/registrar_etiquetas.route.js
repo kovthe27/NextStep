@@ -17,4 +17,26 @@ router.route('/consultar_etiqueta')
             }
         )
 
+
+router.route('/actualizar_etiqueta')
+    .post(
+        function (req, res) {
+            servicio_etiquetas.actualizar_etiqueta(req, res);
+        }
+    )
+
+router.route('/buscar_etiqueta')
+    .post(
+        function (req, res) {
+            servicio_etiquetas.buscar_etiqueta(req, res);
+        }
+    );
+
+router.route('/eliminar_etiqueta')
+    .post(
+        function (req, res) {
+            servicio_etiquetas.eliminaretiqueta(req, res);
+        }
+    );
+
 module.exports = router;

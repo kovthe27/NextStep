@@ -12,7 +12,8 @@ let schema_acercaNosotros= new mongoose.Schema(
         facebook : {type : String, required: false},
         instagram : {type : String, required: false},
         twitter : {type : String, required: false},
-        pagina : {type : String, required: false}
+        pagina : {type : String, required: false},
+        estado : {type : String, required: true},
     }
 );
 

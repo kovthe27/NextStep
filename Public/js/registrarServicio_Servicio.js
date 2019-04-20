@@ -196,4 +196,37 @@ let consultar_servicio = () => {
   
   };
     
+
+  let eliminar_servicio = (p_id) => {
+    let request = $.ajax({
+      url : 'http://localhost:4000/api/eliminar_servicio',
+      method : "POST",
+      data : {
+        id_servicio: p_id
+      },
+      dataType : "json",
+      contentType : 'application/x-www-form-urlencoded; charset=UTF-8' 
+  });
+
+  request.done(function(res){
+      swal({
+          type : 'success',
+          title : 'Proceso realizado con éxito',
+          text : res.msg
+      });
+
+      window.location.reload();
+
+  });
+
+  request.fail(function(res){
+      swal({
+          type : 'error',
+          title : 'Proceso no realizado',
+          text : res.msg
+      });
+
+  });
+
+};
     

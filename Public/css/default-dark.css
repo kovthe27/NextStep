@@ -175,3 +175,60 @@ a.link:hover, a.link:focus {
 .ribbon {
   left: 0px !important;
 }
+
+.swal-button{
+  background-color: #54B56B !important;
+}
+
+.swal-button--No{
+  background-color: transparent !important;
+  border: 1px solid #54B56B !important;
+  color: #54B56B !important;
+}
+
+.aceptado-label {
+  background-color: #54B56B;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 26px;
+}
+
+.rechazado-label {
+  background-color: #e6294b;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 26px;
+}
+
+.aceptado-label p,
+.rechazado-label p {
+  margin: 0;
+}
+
+/* .card-no-border .bg-white {
+  height: 260px;
+} */
+
+th{
+  color: #333;
+  font-weight: 600;
+}
+
+#awo, .grid-stack-instance-1144{
+  height: auto !important;
+  padding-left: 0px !important;
+}
+
+.grid-stack-instance-6639 .grid-stack-item[data-gs-height="1"] {
+  height: auto !important;
+}
+
+.el-element-overlay .el-card-item .el-overlay-1 img{
+  height: 140px !important;
+}

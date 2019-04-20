@@ -31,7 +31,7 @@
     <title>NextStep</title>
 </head>
 
-<body id="bodyUsuarios"class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
+<body id="bodyUsuarios" class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
     <div id="main-wrapper">
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
@@ -112,7 +112,7 @@
                         </li>
 
                         <li class="">
-                            <a class=" waves-effect waves-dark" href="reportes_Administrador.html"
+                            <a class=" waves-effect waves-dark" href="reportes_admin.html"
                                 aria-expanded="false">
                                 <i class=" ti-bar-chart-alt"></i>
                                 <span class="hide-menu">Reportes </span>
@@ -143,6 +143,13 @@
                                 <span class="hide-menu">Preguntas frecuentes </span>
                             </a>
                         </li>
+                        <li class="">
+                            <a class=" waves-effect waves-dark" href="formularios_administrador.html"
+                                aria-expanded=false>
+                                <i class="ti-notepad"></i>
+                                <span class="hide-menu">Formularios</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
@@ -155,21 +162,35 @@
         </aside>
 
         <!-- Titulo -->
-        <div  class="page-wrapper" style="min-height: 900px;">
+        <div class="page-wrapper" style="min-height: 900px;">
 
             <div id="mainUsuarios" class="container-fluid ">
 
-                <div id="grid-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="grid-title" style="display: none; padding-right: 17px;" aria-modal="true"></div>
+                <div id="grid-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="grid-title"
+                    style="display: none; padding-right: 17px;" aria-modal="true"></div>
 
                 <!-- Titulo -->
-                <div class="col-md-8 align-self-center">
+                <div class="col-md-12 align-self-center">
                     <h3 class="text-themecolor">Usuarios</h3>
+
                 </div>
+
+                <!-- Search -->
+
+                <div class="input-group mb-3 col-md-4 mt-3 mb-0">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
+                    </div>
+                    <input type="text" id="txt_searchUtiles" class="form-control" placeholder="Buscar" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                </div>
+
 
 
                 <!-- Contenido de tabs -->
                 <!-- Tab1 -->
 
+                          
 
                 <div class="tab-pane p-20 active" id="home2" role="tabpanel">
                     <table class="tablesaw table-striped table-hover table-bordered table tablesaw-columntoggle"
@@ -197,37 +218,13 @@
                             </tr>
                         </thead>
 
-                        <!-- Buscar -->
-                        <div class="input-group mb-3 col-md-4 float-left pl-0 mt-3">
-                            <!-- <div id="widgetUsuarios"class="card-body">
-                                <div class="row p-t-10 p-b-10">
-                                  
-                                    <div class="col p-r-0">
-                                        <h1 class="font-light">86</h1>
-                                        <h6 class="text-muted">New Clients</h6></div>
-                                   
-                                    <div class="col text-right align-self-center">
-                                        <div data-label="20%" class="css-bar m-b-0 css-bar-primary css-bar-20"><i class="mdi mdi-account-circle"></i></div>
-                                    </div>
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="input-group mb-3 col-md-4 float-right pl-0 mt-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="icon-Magnifi-Glass2"></i></span>
-                            </div>
-                            
-                            <input type="text" id="txt_search" class="form-control" placeholder="Buscar"
-                                aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-
 
                         <tbody id="tablaUsuarios">
                             <!-- Se llena dinamicamente -->
                         </tbody>
 
-                        <div id="usuario" class="modal fade" tabindex="-1" role="dialog"
-                            aria-labelledby="vcenter" aria-hidden="true" style="display: none;">
+                        <div id="usuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"
+                            aria-hidden="true" style="display: none;">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -276,10 +273,32 @@
     <!-- new -->
     <script src="./assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
     <!-- tabla -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./assets/node_modules/tablesaw-master/dist/tablesaw.jquery.js"></script>
     <script src="./assets/node_modules/tablesaw-master/dist/tablesaw-init.js"></script>
     <script src="js/usuariosAdministrador_servicio.js"></script>
     <script src="js/usuariosAdministrador_controlador.js"></script>
+
+     <!-- filtrar -->
+ <script>
+    var busqueda = document.getElementById('txt_searchUtiles');
+    var table = document.getElementById("tablaUsuarios").tBodies[0];
+
+    buscaTabla = function () {
+        texto = busqueda.value.toLowerCase();
+        var r = 0;
+        while (row = table.rows[r++]) {
+            if (row.innerText.toLowerCase().indexOf(texto) !== -1)
+                row.style.display = null;
+            else
+                row.style.display = 'none';
+        }
+    }
+
+    busqueda.addEventListener('keyup', buscaTabla);
+</script>
+
+
 </body>
 
 </html>

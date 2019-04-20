@@ -58,6 +58,10 @@ const card_Comentario = document.querySelector('#cardComentarios');
 let mostrar_datosComentario = () =>{
     let Comentario = consultar_comentarios();
     let cedulaJuridica = JSON.parse(localStorage.getItem('centroEducativo'));
+    // let comentario_Especifico = buscar_comentarios(p_id);
+    
+
+    // let x = 1;
 
     for(let i = Comentario.length -1; i > Comentario.length  -5; i--){
 
@@ -72,7 +76,8 @@ let mostrar_datosComentario = () =>{
         "<div class=\"p-2\"><span class=\"round\"><img src=\"" + fotoUsuario + "\"   alt=\"user\"  width=\"50\" height=\"50\"></span></div>"+
         
         "<div class=\"comment-text w-100\">"+
-        "<button type=\"button\" class=\"btn ml-2 btn-outline-danger btn-outline-circle float-right btn-sm mr-2 \"><i class=\"fa fa-trash\"></i></button>"+
+    //    " <button id=\"boton_eliminarComentario"+x+"\" data-id=\""+Comentario[i]._id+"\"  type=\"button\" class=\"btn btn-sm btn-info mr-1 btn-circle\"><i class=\"fas fa-info\"></i></button>"+
+        // "<button type=\"button\" data-id=\""+Comentario[i]._id+"\" id=\"boton_eliminarComentario"+x+"\" class=\"btn ml-2 btn-outline-danger btn-circle btn-outline-circle float-right btn-sm mr-2 \"><i class=\"fa fa-trash\"></i></button>"+
             "<h5>"+ nombreUsuario+ "</h5><div class=\"float-left text-warning\"><i class=\"ti-star text-warning\"></i><span>"+Comentario[i].calificacion +"</span>"+
             "</div>"+
             "<div class=\"clearfix\"></div>"+
@@ -88,6 +93,7 @@ let mostrar_datosComentario = () =>{
 
 
         $("#cardComentarios").append(card);
+        // x++;
     };
 };
 };
@@ -96,6 +102,59 @@ let mostrar_datosComentario = () =>{
 
 
 mostrar_datosComentario();
+
+
+
+// let borrarComentario = (idComentarioAct) => {
+//         eliminar(idComentarioAct);
+//         console.log(idComentarioAct);
+// };
+
+// document.querySelector("#boton_eliminarComentario1").addEventListener('click', borrarComentario (document.querySelector('#boton_eliminarComentario1').getAttribute('data-id')));
+// document.querySelector("#boton_eliminarComentario2").addEventListener('click', borrarComentario(document.querySelector('#boton_eliminarComentario2').getAttribute('data-id')));
+// document.querySelector("#boton_eliminarComentario3").addEventListener('click', borrarComentario(document.querySelector('#boton_eliminarComentario3').getAttribute('data-id')));
+// document.querySelector("#boton_eliminarComentario4").addEventListener('click', borrarComentario(document.querySelector('#boton_eliminarComentario4').getAttribute('data-id')));
+
+// document.addEventListener('click', (f) => {
+//     if (f.target && f.target.id == 'boton_eliminarComentario1') {
+//         let idComentarioAct = document.querySelector('#boton_eliminarComentario1').getAttribute('data-id');
+//         console.log("hello");
+//         eliminar(idComentarioAct);
+//         document.querySelector('#cardComentarios').innerHTML= "";
+//          mostrar_datosComentario();
+//     }
+// })
+
+// document.addEventListener('click', (g) => {
+//     if (g.target && g.target.id == 'boton_eliminarComentario2') {
+//         let idComentarioAct = document.querySelector('#boton_eliminarComentario2').getAttribute('data-id');
+//         console.log("hello");
+//         eliminar(idComentarioAct);
+//         document.querySelector('#cardComentarios').innerHTML= "";
+//         mostrar_datosComentario();
+//     }
+// })
+
+// document.addEventListener('click', (h) => {
+//     if (h.target && h.target.id == 'boton_eliminarComentario3') {
+//         let idComentarioAct = document.querySelector('#boton_eliminarComentario3').getAttribute('data-id');
+//         console.log("hello");
+//         eliminar(idComentarioAct);
+//         document.querySelector('#cardComentarios').innerHTML= "";
+//         mostrar_datosComentario();
+//     }
+// })
+
+// document.addEventListener('click', (j) => {
+//     if (j.target && j.target.id == 'boton_eliminarComentario4') {
+//         let idComentarioAct = document.querySelector('#boton_eliminarComentario4').getAttribute('data-id');
+//         console.log("hello");
+//         eliminar(idComentarioAct);
+//         document.querySelector('#cardComentarios').innerHTML= "";
+//         mostrar_datosComentario();
+//     }
+// })
+
 
 
 

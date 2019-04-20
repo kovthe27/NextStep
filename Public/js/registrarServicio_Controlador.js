@@ -92,7 +92,7 @@ let mostrar_datosServicio = () => {
              "</button>" +
              "<div class=\"dropdown-menu dropdown-menu-right\">" +
              "<a class=\"dropdown-item\" alt=\"default\"  id=\"editarServicio\" href=\"javascript:construirModalServicio('"+ servicio[i]._id +"')\"  >Editar</a>" +
-             "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>" +
+             "<a class=\"dropdown-item\" alt=\"default\"  id=\"eliminarServicio\" href=\"javascript:eliminarServicio('"+ servicio[i]._id +"')\"  >Eliminar</a>" +
              "</div></div>" +
 
             "<div class=\"image\">" +
@@ -130,7 +130,7 @@ let mostrar_datosServicio = () => {
             "</button>" +
             "<div class=\"dropdown-menu dropdown-menu-right\">" +
             "<a class=\"dropdown-item\" alt=\"default\"  id=\"editarServicio\" href=\"javascript:construirModalServicio('"+ servicio[i]._id +"')\"  >Editar</a>" +
-            "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>" +
+            "<a class=\"dropdown-item\" alt=\"default\"  id=\"eliminarServicio\" href=\"javascript:eliminarServicio('"+ servicio[i]._id +"')\"  >Eliminar</a>" +
             "</div></div>" +
 
             "<div class=\"image\">" +
@@ -169,7 +169,7 @@ let mostrar_datosServicio = () => {
         "</button>" +
         "<div class=\"dropdown-menu dropdown-menu-right\">" +
         "<a class=\"dropdown-item\" alt=\"default\"  id=\"editarServicio\" href=\"javascript:construirModalServicio('"+ servicio[i]._id +"')\"  >Editar</a>" +
-        "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>" +
+        "<a class=\"dropdown-item\" alt=\"default\"  id=\"eliminarServicio\" href=\"javascript:eliminarServicio('"+ servicio[i]._id +"')\"  >Eliminar</a>" +
         "</div></div>" +
 
         "<div class=\"image\">" +
@@ -303,4 +303,31 @@ document.addEventListener('click', (e) => {
             return imagenUrl_act;
         });
     }
-})
+});
+
+
+// eliminar
+
+let eliminarServicio = (pid) =>{
+    swal("¿Está seguro que desea eliminar el servicio?", {
+        buttons: {
+          No: "Cancelar",
+          Si: "Aceptar",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+       
+          case "No":
+            break;
+       
+          case "Aceptar":
+            swal("Gotcha!", "Pikachu was caught!", "success");
+            break;
+       
+          default:
+          eliminar_servicio(pid, "Rechazado");
+        }
+      });
+    
+}
