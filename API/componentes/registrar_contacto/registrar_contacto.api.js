@@ -47,3 +47,26 @@ module.exports.listar_TodosContactos = (req ,res) =>{
             res.send(contactos)
         });
 };
+
+module.exports.buscar_contacto = (req ,res) => {
+    model_RegistroContacto.find(
+     {cedulaJuridica: req.body.cedulaJuridica}
+    ).then (
+        function(contacto){
+            res.send(contacto);
+        }
+    );
+  }
+  
+  module.exports.actualizar_contacto = function(req, res){
+    model_RegistroContacto.findByIdAndUpdate(req.body.id, { $set: req.body },
+        function (error){
+            if(error){
+                res.json({success : false , msg : 'No se pudo actualizar el contacto'});
+            }else{
+                res.json({success: true , msg : 'El contacto se actualizó con éxito'});
+            }
+        }
+    
+    );
+  }

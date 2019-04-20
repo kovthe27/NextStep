@@ -140,6 +140,7 @@ body {
 
 #cargarImagen img {
     width: 100%;
+    height: 100%;
 }
 
 .container-fluid {
@@ -165,3 +166,16 @@ body {
 /* #txt_Archivos {
     width: 108px;
 } */
+
+.actualizar-centro {
+    margin-left: 162px;
+}
+
+.actualizar-centro .container-fluid {
+    margin-top: 72px;
+}
+
+#btn_EliminarCentro {
+    background: #ff9041!important;
+    border: 1px solid #ff9041!important;
+}

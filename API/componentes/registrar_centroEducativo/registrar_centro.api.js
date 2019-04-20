@@ -274,3 +274,38 @@ module.exports.CambiarEstado = function(req, res){
   
   );
 }
+
+module.exports.buscar_centro = (req ,res) => {
+  model_RegistroCentro.find(
+   {cedJuridica: req.body.cedJuridica}
+  ).then (
+    function(centro){
+      res.send(centro);
+    }
+  );
+}
+
+module.exports.actualizar_centro = function(req, res){
+  model_RegistroCentro.findByIdAndUpdate(req.body.id, { $set: req.body },
+      function (error){
+          if(error){
+              res.json({success : false , msg : 'No se pudo actualizar el centro'});
+          }else{
+              res.json({success: true , msg : 'El centro se actualizó con éxito'});
+          }
+      }
+  
+  );
+}
+
+module.exports.eliminar_centro = function(req, res){
+  model_RegistroCentro.findByIdAndRemove(req.body.id,
+      function(error){
+          if(error){
+              res.json({success: false ,msg: 'No se pudo eliminar la cuenta'});
+          }else{
+              res.json({success: true ,msg: 'La cuenta se eliminó con éxito'}); 
+          }
+      }
+  )
+};

@@ -17,5 +17,19 @@ router.route('/consultar_contacto')
         }
     )
 
+router.route('/actualizar_contacto')
+    .post(
+        function(req , res){
+            contacto_api.actualizar_contacto(req, res);
+        }
+    );
+
+router.route('/buscar_contacto')
+    .post(
+    function(req , res){
+        contacto_api.buscar_contacto(req, res);
+    }
+    );
+
 
 module.exports = router;
