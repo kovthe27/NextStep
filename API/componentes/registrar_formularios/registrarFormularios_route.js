@@ -28,7 +28,7 @@ router.route('/consultar_formulario')
     router.route('/eliminar_formulario')
     .post(
         function (req, res) {
-            servicio_formularios.eliminarformulario(req, res);
+            servicio_formularios.eliminar_formulario(req, res);
         }
     );
 

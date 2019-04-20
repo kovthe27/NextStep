@@ -18,7 +18,7 @@ let construirTabla = () => {
             let nuevalista =
                 `<tr>
                 <td class="title">
-                    <a class="link" id="lista`+ i + `" href="javascript:construirLista('` + nombre + `')">` + lista[i].nombre + `</a>
+                    <a class="link text-themecolor" id="lista`+ i + `" href="javascript:construirLista('` + nombre + `')">` + lista[i].nombre + `</a>
                 </td>
                 <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">`+ lista[i].creada + `</td>
                  

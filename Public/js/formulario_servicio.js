@@ -20,7 +20,8 @@ let agregarItem = (pcedulaJuridica, pnombreFormulario, pinputID, pinputSelect, p
           type: 'success',
           title: 'El formulario se guardo con exito',
           text: 'Muchas gracias'
-        });
+        })
+        .then(window.location.href = 'formularios_administrador.html');
       });
     
       request.fail(function (jqXHR, textStatus) {
@@ -138,7 +139,8 @@ request.done(function(res){
       type : 'success',
       title : 'Proceso realizado con éxito',
       text : res.msg
-  });
+  })
+  // .then(window.location.reload()) ;
 
   // document.querySelector('#actualizarformulario').innerHTML= "";
   window.location.reload();

@@ -25,13 +25,13 @@ let mostrarFormularios = () => {
         let formulario= 
         `<tr>
             <td class="title">
-                <a class="link" id="lista`+ j + `" href="javascript:construirFormulario('` + listaFormularios[j].nombre + `')">`+listaFiltrada[j]+`</a>
+                <a class="link text-themecolor" id="lista`+ j + `" href="javascript:construirFormulario('` + listaFiltrada[j] + `')">`+listaFiltrada[j]+`</a>
             </td>
             <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">`+getPeriodo(listaFiltrada[j])+` </td> 
             <td>
 
-            <a id="editarFormulario"  href="javascript:construirModalformulario('`+ listaFormularios[j]._id +`')"><button type="button" class="btn btn-sm btn-success mr-1 btn-circle"><i class="fas fa-edit"></i></button></a>
-            <a id="eliminarFormulario"  href="javascript:eliminarlformulario('`+ listaFormularios[j]._id +`')"><button type="button" class="btn btn-sm btn-danger mr-1 btn-circle"><i class="fas fa-trash"></i></button></a>
+            <a id="editarFormulario"  href="javascript:construirModalformulario('`+ listaFiltrada[j] +`')"><button type="button" class="btn btn-sm btn-success mr-1 btn-circle"><i class="fas fa-edit"></i></button></a>
+            <a id="eliminarFormulario"  href="javascript:eliminarlFormulario('`+ listaFiltrada[j] +`')"><button type="button" class="btn btn-sm btn-danger mr-1 btn-circle"><i class="fas fa-trash"></i></button></a>
             </td>
         </tr>`
 
@@ -56,16 +56,25 @@ btnCrearFormulario.addEventListener('click', verFormulario);
 mostrarFormularios();
 
 let construirFormulario = (pnombre) => {
+   
     // if(JSON.parse(localStorage.getItem('cliente')) == "Nextstep@mep.go.cr"){
         localStorage.setItem('nombreFormulario', JSON.stringify(pnombre));
         window.location.assign("./ver_formulario.html")
     // }
+        
 }
 
 
 
-let construirModalformulario = (p_id) => {
-    let formularioEspecifico = buscar_formulario(p_id);
+let construirModalformulario = (pnombre) => {
+    let listaFormularios = consultar_formulario();
+    let formularioEspecifico;
+
+    for (let i = 0; i < listaFormularios.length; i++){
+        if(listaFormularios[i].nombre == pnombre){
+            formularioEspecifico = buscar_formulario(listaFormularios[i]._id);
+        }
+    }
     let modalformulario =
 
      ` <div class="modal-dialog modal-dialog-centered">
@@ -91,6 +100,7 @@ let construirModalformulario = (p_id) => {
      </div>
  </div>`
 
+
                         $("#actualizarformulario").append(modalformulario);
                         document.querySelector("#actualizarformulario").style.display="block";
                         document.querySelector("#actualizarformulario").classList.add('show');
@@ -99,8 +109,9 @@ let construirModalformulario = (p_id) => {
                         document.querySelector("#bgmodal").classList.add('show');
 
                         formularioAct(formularioEspecifico[0].nombre, formularioEspecifico[0].periodo);
-};
- 
+        
+
+}
 
 let cerrarModalformulario = () => {
     document.querySelector("#actualizarformulario").innerHTML = " ";
@@ -142,7 +153,16 @@ document.addEventListener('click', (e) => {
 
 // eliminar
 
-let eliminarlformulario = (pid) =>{
+let eliminarlFormulario = (pnombre) =>{
+    let listaFormularios = consultar_formulario();
+    let formularioEspecifico;
+
+    for (let i = 0; i < listaFormularios.length; i++){
+        if(listaFormularios[i].nombre == pnombre){
+            formularioEspecifico = buscar_formulario(listaFormularios[i]._id);
+        }
+    }
+
     swal("¿Está seguro que desea eliminar el formulario?", {
         buttons: {
           No: "Cancelar",
@@ -160,7 +180,7 @@ let eliminarlformulario = (pid) =>{
             break;
        
           default:
-          eliminar_formulario(pid, "Rechazado");
+          eliminar_formulario(formularioEspecifico[0]._id, "Rechazado");
         }
       });
     

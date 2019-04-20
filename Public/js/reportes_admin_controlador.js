@@ -162,7 +162,9 @@ let reporte2 = () => {
                 <div class="col-lg-3 mt-4 col-md-6">
                 <div class="card">
                     <div class="el-card-item bounce animated">
-                        <div class="el-card-avatar el-overlay-1"> <img src="`+centro.fotoCentro+`" alt="user" width=100%>
+                    <h1>`+contador+`</h1>
+                    <hr id="orange">
+                        <div class="el-card-avatar el-overlay-1 image mb-0"> <img src="`+centro.fotoCentro+`" alt="user" width=100%>
                             <div class="el-overlay scrl-up">
                                 <ul class="el-info">
                                     <li><a class="btn default btn-outline image-popup-vertical-fit" href=""><i class="sl-icon-magnifier"></i></a></li>
@@ -170,11 +172,9 @@ let reporte2 = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <h4 class="box-title">`+centro.nombreCentro+`</h4> <small>Info de algo aqui</small>
-                            <br>
-                            <hr class="orange">
-                            <p> Numero `+contador+`</P>
+                        <div class="">
+                            <h4 class="box-title">`+centro.nombreCentro+`</h4> <small>`+centro.gradoAcademico+`</small>
+
                         </div>
                             
                     </div>

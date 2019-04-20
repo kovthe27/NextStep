@@ -64,7 +64,7 @@ module.exports.actualizar = function(req, res){
     );
 }
 
-module.exports.eliminarformulario = function(req, res){
+module.exports.eliminar_formulario = function(req, res){
     schema_TablaFormularios.findByIdAndRemove(req.body.id_formulario,
         function(error){
             if(error){
