@@ -7,7 +7,8 @@ const input_DptoContacto = document.querySelector('#txt_DptoContacto');
 const input_TelContacto = document.querySelector('#txt_TelContacto');
 const input_ExtContacto = document.querySelector('#txt_ExtContacto');
 
-let centro_logueado_id = JSON.parse(localStorage.getItem('centroEducativo'));
+let centro_logueado_id = JSON.parse(localStorage.getItem('centroEducativoId'));
+debugger;
 let contacto = buscar_contacto(centro_logueado_id);
 let mostrar_datosContacto = () =>{
     console.log(centro_logueado_id);
@@ -23,15 +24,16 @@ let mostrar_datosContacto = () =>{
 mostrar_datosContacto();
 
 
-let obtener_datosContacto = () =>{
+let obtener_datosContacto = (centro_id, pcedJuridica) =>{
     let nombreEncargado = input_NombreContacto.value;
     let idEncargado = input_IdContacto.value;
     let emailEncargado = input_EmailContacto.value;
     let dptoEncargado = input_DptoContacto.value;
     let telEncargado = input_TelContacto.value;
     let extEncargado = input_ExtContacto.value;
+    let centroEducativoId = centro_id;
 
 
-    actualizar_contacto(nombreEncargado, idEncargado, emailEncargado, dptoEncargado, telEncargado, extEncargado);
+    actualizar_contacto(nombreEncargado, idEncargado, emailEncargado, dptoEncargado, telEncargado, extEncargado,centroEducativoId, pcedJuridica);
     
 };

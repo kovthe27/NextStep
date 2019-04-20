@@ -192,26 +192,6 @@
                               <div class="row">
                                  <div class="col-md-4 float-left">
                                     <div class="form-group">
-                                       <label for="slt_provincias">*Provincia</label>
-                                       <select id="slt_provincias" class="form-control">
-                                          <option value="">*Seleccione una provincia</option>
-                                       </select>
-                                    </div>
-                                    <div class="form-group">
-                                       <label>*Cantón</label>
-                                       <select id="slt_cantones" class="form-control">
-                                          <option value="">*Seleccione un cantón</option>
-                                       </select>
-                                    </div>
-                                 </div>
-                                 <div class="col-md-4 float-left">
-                                    <div class="form-group">
-                                       <label>*Distrito</label>
-                                       <select id="slt_distritos" class="form-control">
-                                          <option value="">*Seleccione un distrito</option>
-                                       </select>
-                                    </div>
-                                    <div class="form-group">
                                        <label>*Dirección Exacta</label>
                                        <input type="text" placeholder="Dirección Exacta"
                                           id="txt_DireccionCentro" class="form-control">
@@ -317,8 +297,35 @@
                                     </div>
                                  </div>
                               </div>
+
+                              <div class="float-right">
+                                 <div class="form-actions">
+                                    <div class="">
+                                       <div class="form-group text-center m-t-20">
+                                          <div class="">
+                                             <button id="btn_EliminarCentro"
+                                                class="btn btn-themecolor btn-block text-uppercase waves-effect waves-light btn-warning"
+                                                type="button">Eliminar</button>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="float-right" style="margin-right: 10px">
+                                 <div class="form-actions">
+                                    <div class="">
+                                       <div class="form-group text-center m-t-20">
+                                          <div class="">
+                                             <button id="btn_ActualizarCentro"
+                                                class="btn btn-themecolor btn-block text-uppercase waves-effect waves-light"
+                                                type="button">Actualizar</button>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
-                           <div class="card-body">
+                           <!-- <div class="card-body">
                               <h4 class="card-title mt-3 mb-3 text-themecolor">Información Contacto
                                  Centro Educativo
                               </h4>
@@ -360,33 +367,7 @@
                                     </div>
                                  </div>
                               </div>
-                              <div class="float-right">
-                                 <div class="form-actions">
-                                    <div class="">
-                                       <div class="form-group text-center m-t-20">
-                                          <div class="">
-                                             <button id="btn_EliminarCentro"
-                                                class="btn btn-themecolor btn-block text-uppercase waves-effect waves-light btn-warning"
-                                                type="button">Eliminar</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="float-right">
-                                 <div class="form-actions">
-                                    <div class="">
-                                       <div class="form-group text-center m-t-20">
-                                          <div class="">
-                                             <button id="btn_ActualizarCentro"
-                                                class="btn btn-themecolor btn-block text-uppercase waves-effect waves-light"
-                                                type="button">Actualizar</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+                           </div> -->
                </form>
                </div>
                </div>
@@ -427,12 +408,12 @@
       </script>
       <script src="js/registrarCentro_servicio.js"></script>
       <script src="js/registrarContacto_servicio.js"></script>
-      <script src="js/provincias.js"></script>
+      <!-- <script src="js/provincias.js"></script>
       <script src="js/cantones.js"></script>
       <script src="js/distritos.js"></script>
-      <script src="js/controlador_ubicacion.js"></script>
+      <script src="js/controlador_ubicacion.js"></script> -->
 
       <script src="js/actualizarCentro_controlador.js"></script>
-      <script src="js/actualizarContacto_controlador.js"></script>
+      <!-- <script src="js/actualizarContacto_controlador.js"></script> -->
    </body>
 </html>

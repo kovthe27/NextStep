@@ -99,9 +99,9 @@ let obtener_datos = () =>{
     let tipoCentro = input_TipoCentro.selectedOptions[0].textContent;
     let gradoAcademico = input_GradoAcademico.selectedOptions[0].textContent;
     let referenciaHistorica = input_RefHistorica.value;
-    let provinciaCentro = input_ProvinciaCentro.selectedOptions[0].textContent;
+    /* let provinciaCentro = input_ProvinciaCentro.selectedOptions[0].textContent;
     let cantonCentro = input_CantonCentro.selectedOptions[0].textContent;
-    let distritoCentro = input_DistritoCentro.selectedOptions[0].textContent;
+    let distritoCentro = input_DistritoCentro.selectedOptions[0].textContent; */
     let direccionCentro = input_DireccionCentro.value;
     let fotoCentro = input_imagen.src;
     
@@ -109,14 +109,13 @@ let obtener_datos = () =>{
     console.log(centro[0]._id);
 
     
-    actualizar_centro(nombreCentro, nombreComercial, cedJuridica,  emailCentro, telCentro, faxCentro, annoFundCentro, sitioWeb, provinciaCentro, cantonCentro, distritoCentro, direccionCentro, tipoCentro, gradoAcademico, referenciaHistorica, fotoCentro, "", centro[0]._id);
+    actualizar_centro(nombreCentro, nombreComercial, cedJuridica,  emailCentro, telCentro, faxCentro, annoFundCentro, sitioWeb, "", "", "", direccionCentro, tipoCentro, gradoAcademico, referenciaHistorica, fotoCentro, "", centro[0]._id);
     
 };
 
 boton_ActualizarCentro.addEventListener('click', obtener_datos);
 
 boton_eliminarCentro.addEventListener('click', function(){
-    debugger;
-    eliminar_centro(usuario_logueado_id);
+    eliminar_centro(centro[0]._id);
 
 });
