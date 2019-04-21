@@ -25,7 +25,7 @@ let obtener_datosBoletin = () => {
         let boletin = input_boletin.href;
         let nombre = input_nombrePdf.value;
 
-        // registrar_boletin(cedulaJuridica, boletin, nombre);
+        registrar_boletin(cedulaJuridica, boletin, nombre);
         // swal.fire({
         //     type: 'success',
         //     title: 'El boletin fue creado',

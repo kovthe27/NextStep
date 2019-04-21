@@ -21,7 +21,7 @@ let registrar_acercaNosotros = (pcedulaJuridica, pdescripcion, pubicacion, penca
     });
   
     request.done(function (msg) {
-      swal.fire({
+      swal({
         type: 'success',
         title: 'La información fue agregada',
         text: 'Muchas gracias'
@@ -29,7 +29,7 @@ let registrar_acercaNosotros = (pcedulaJuridica, pdescripcion, pubicacion, penca
     });
   
     request.fail(function (jqXHR, textStatus) {
-      swal.fire({
+      swal({
         type: 'error',
         title: 'La información no pudo ser registrada',
         text: 'Por favor inténtelo de nuevo'

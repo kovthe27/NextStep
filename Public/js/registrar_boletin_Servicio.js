@@ -54,7 +54,7 @@ let registrar_boletin = (pcedulaJuridica, pboletin, pnombre) => {
     });
   
     request.done(function (msg) {
-      swal.fire({
+      swal({
         type: 'success',
         title: 'El boletín fue cargado',
         text: 'Muchas gracias'
