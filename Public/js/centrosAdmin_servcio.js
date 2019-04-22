@@ -38,16 +38,16 @@ let registrarEtiqueta = (pnombre, pfecha, pusuarios) => {
   });
 
   request.done(function (msg) {
-    swal.fire({
+    swal({
       type: 'success',
       title: 'La etiqueta ha sido agregada',
       text: 'Muchas gracias'
     });
-    bitacora("MEPAdmin1", "Registro", "Se agregó la etiqueta: " + pnombre);
+    // bitacora("MEPAdmin1", "Registro", "Se agregó la etiqueta: " + pnombre);
   });
 
   request.fail(function (jqXHR, textStatus) {
-    swal.fire({
+    swal({
       type: 'error',
       title: 'La etiqueta no pudo ser agregada',
       text: 'Por favor inténtelo de nuevo'
