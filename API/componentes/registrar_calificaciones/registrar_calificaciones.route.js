@@ -38,5 +38,10 @@ router.route('/buscar_calificaciones')
         }
     );
 
-
+    router.route('/consultar_calificacionesOrdenadas')
+    .get(
+        function (req, res) {
+            calificaciones_api.consultar_calificacionesOrdenadas(req, res);
+        }
+    )
 module.exports = router;

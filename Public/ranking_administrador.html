@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16" href="imgs/icon.png">
+    <title>NextStep</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../admin-wrap/assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../admin-wrap/assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="../admin-wrap/assets/node_modules/prism/prism.css" rel="stylesheet">
+    <link href="./assets/node_modules/tablesaw-master/dist/tablesaw.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="./assets/node_modules/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
+    <link href="css/pages/user-card.css" rel="stylesheet">
+    <link href="../Public/css/default-dark.css" id="theme" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="../admin-wrap/main/css/style.css" rel="stylesheet">
+    <link href="../admin-wrap/main/css/colors/default-dark.css" id="theme" rel="stylesheet">
+    <link href="css/listas.css" rel="stylesheet">
+    <link href="../admin-wrap/main/css/pages/ribbon-page.css" rel="stylesheet">
+
+
+    <!-- page css -->
+    <link href="../admin-wrap/main/css/pages/card-page.css" rel="stylesheet">
+    <link href="../admin-wrap/main/css/pages/other-pages.css" rel="stylesheet">
+
+    <link href="../Public/css/landing_page.css" rel="stylesheet">
+
+    <title>NextStep</title>
+</head>
+
+<body class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
+                <div class="navbar-header">
+                    <a href="principal_Administrador.html"><img src="../Public/imgs/logo-text-02.png" alt="homepage"
+                            class="dark-logo"></a>
+                </div>
+
+                <div class="navbar-collapse">
+                    <!-- Barra de búsqueda -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Perfil -->
+                    <ul class="navbar-nav my-lg-0">
+                        <li class="nav-item dropdown u-pro">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img id="imgPerfil"
+                                    src="" class=""> <span id="nombrePerfil1" class="hidden-md-down"> &nbsp;<i
+                                        class="fa fa-angle-down"></i></span> </a>
+                            <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img align-self-center"><img id="imgPerfil2" src=""></div>
+                                            <div class="u-text  text-align: center">
+                                                <h4 id="nombrePerfil2">Steave Jobs</h4>
+                                                <p id="correo" class="text-muted"></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#"><i class="ti-user"></i> Mi perfil</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:cerrarSesion();"><i class="fa fa-power-off"></i> Cerrar
+                                            sesion</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+
+        <!-- Menu -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar ps ps--theme_default ps--active-y"
+                data-ps-id="b021d3f0-58d6-638e-c4d5-26de2bf78a78">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav active">
+                    <ul id="sidebarnav" class="in">
+                        <li class="nav-small-cap">------ MENÚ</li>
+                        <li class="">
+                            <a class="waves-effect waves-dark" href="principal_Administrador.html"
+                                aria-expanded="false">
+                                <i class="ti-bell"></i>
+                                <span class="hide-menu">Solicitudes
+                                </span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class=" waves-effect waves-dark " href="centros_Administrador.html"
+                                aria-expanded="false">
+                                <i class="ti-home"></i>
+                                <span class="hide-menu">Centros educativos </span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a class=" waves-effect waves-dark" href="usuarios_Administrador.html"
+                                aria-expanded="false">
+                                <i class="ti-user"></i>
+                                <span class="hide-menu">Usuarios </span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a class=" waves-effect waves-dark" href="reportes_admin.html" aria-expanded="false">
+                                <i class=" ti-bar-chart-alt"></i>
+                                <span class="hide-menu">Reportes </span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a class=" waves-effect waves-dark" href="bitacora.html" aria-expanded="false">
+                                <i class="ti-receipt"></i>
+                                <span class="hide-menu">Bitácora</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a class=" waves-effect waves-dark" href="ranking_administrador.html" aria-expanded="false">
+                                <i class="ti-cup"></i>
+                                <span class="hide-menu">Ranking </span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class=" waves-effect waves-dark" href="utiles_Administrador.html" aria-expanded="false">
+                                <i class=" ti-write"></i>
+                                <span class="hide-menu">Lista de útiles </span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class=" waves-effect waves-dark" href="preguntas_Administrador.html" aria-expanded=false>
+                                <i class="ti-help"></i>
+                                <span class="hide-menu">Preguntas frecuentes </span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a class=" waves-effect waves-dark" href="formularios_administrador.html"
+                                aria-expanded=false>
+                                <i class="ti-notepad"></i>
+                                <span class="hide-menu">Formularios</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                    <div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                </div>
+                <div class="ps__scrollbar-y-rail" style="top: 0px; height: 751px; right: 0px;">
+                    <div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 620px;"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Titulo -->
+        <div id="main" class="page-wrapper" style="min-height: 900px;">
+
+            <div class="container-fluid ">
+
+                <!-- Titulo -->
+                <div class="col-md-8 align-self-center">
+                    <h3 class="text-themecolor">Ranking</h3>
+                </div>
+
+                <!-- Contenido de tabs -->
+
+                <!-- <div class="tab-content tabcontent-border"> -->
+                <div class="tab-pane p-20 active show" id="home2" role="tabpanel">
+                    <div class="form-group col-md-3 float-left">
+                        <!-- <label for="txt_centro">Seleccione el centro educativo</label> -->
+                        <select id="slt_Tipo" class="form-control" placeholder="Seleccione un centro">
+                            <option value="0">-Seleccione el tipo de ranking-</option>
+                            <option value="1">General</option>
+                            <option value="2">Escuelas Públicas</option>
+                            <option value="3">Escuelas Privados</option>
+                            <option value="4">Colegios Públicos</option>
+                            <option value="5">Colegios Privados </option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3 col-md-3 float-left ml-2">
+                        <select id="slt_anno" class="form-control" placeholder="Seleccione un centro">
+                            <option value="0">-Seleccione un año-</option>
+                        </select>
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <span class="ti-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 float-left">
+                        <button id="btn_crearRanking" class="btn btn-themecolor mt-0 mb-3">Generar</button>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="card-body">
+                        <div class="table-responsive m-t-20 no-wrap">
+                            <table class="table vm no-th-brd pro-of-month">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Posición </th>
+                                        <th>Calificación</th>
+                                        <th>Distrito</th>
+                                        <th>Teléfono</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bodyRanking">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+    <div id="actualizarEtiquetas" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"></div>
+    <div id="bgmodal" class="fade"></div>
+    </div>
+
+    <script src="./assets/node_modules/jquery/jquery.min.js"></script>
+    <script src="./assets/node_modules/bootstrap/js/popper.min.js"></script>
+    <script src="./assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/node_modules/ps/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../admin-wrap/main/js/waves.js"></script>
+    <script src="./assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="./assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
+    <script src="./assets/node_modules/prism/prism.js"></script>
+    <script src="./assets/node_modules/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="./assets/node_modules/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="./assets/node_modules/daterangepicker/daterangepicker.js"></script>
+    <!-- new -->
+
+    <script src="./assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdnjs.com/libraries/Chart.js"></script>
+    <script src="./assets/node_modules/tablesaw-master/dist/tablesaw.jquery.js"></script>
+    <script src="./assets/node_modules/tablesaw-master/dist/tablesaw-init.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/MenuAdmin_Servicio.js"></script>
+    <script src="js/MenuAdmin_Controlador.js"></script>
+    <script src="js/reportes_admin_servicio.js"></script>
+    <script src="js/ranking_controlador.js"></script>
+    
+
+
+
+</body>
+
+</html>

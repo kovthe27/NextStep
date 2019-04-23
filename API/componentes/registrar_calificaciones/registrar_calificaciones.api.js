@@ -74,5 +74,11 @@ module.exports.eliminarcalificacion = function(req, res){
     )
 };
 
+module.exports.consultar_calificacionesOrdenadas = function(req, res) {
+    model_calificaciones.find().sort({calificacion: 'desc'}).then(
+        function (acercaNosotros) {
+            res.send(acercaNosotros)
+        });
+};
 
 
