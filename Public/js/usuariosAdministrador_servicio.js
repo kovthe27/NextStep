@@ -26,14 +26,14 @@ let consultarUsuariosAdmin = () =>{
     return lista_utilesAdmin;
 }
 
-let buscarUsuario = (pID) =>{
-  let usuario = [];
+let buscarUsuario = (pid) =>{
+  let padre = [];
 
   let request = $.ajax({
     url: "http://localhost:4000/api/buscar_Padre",
     method: "POST",
     data: {
-      id_usuario: pID
+      id_Usuario: pid
     },
     dataType: "json",
     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -41,7 +41,7 @@ let buscarUsuario = (pID) =>{
   });
 
   request.done(function (res) {
-    usuario = res;
+    padre = res;
     console.log("success");
 
   });
@@ -50,8 +50,9 @@ let buscarUsuario = (pID) =>{
     console.log("fail");
   });
 
-  return usuario;
+  return padre;
 }
+
 
 let desactivar_usuario = (p_id) => {
   let request = $.ajax({

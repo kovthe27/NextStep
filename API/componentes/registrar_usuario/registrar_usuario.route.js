@@ -32,12 +32,13 @@ router.route('/actualizarcontrasena_Padre')
     )
 
 
-router.route('/buscar_padre')
-.get(
+router.route('/buscar_Padre')
+.post(
     function(req , res){
         padre_api.buscar_Padre(req, res);
     }
 );
+
 
 router.route('/eliminar_padre')
 .post(

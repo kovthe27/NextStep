@@ -12,8 +12,8 @@ let verUsuario = (id) =>{
                 </div>
                 <div class="modal-body">
                 <div class="card-body">
-                <center class="m-t-30"> <img src="`+listaUsuarios[0].fotoUsuario+`" class="img-circle" width="150">
-                    <h4 class="card-title m-t-10">`+listaUsuarios[0].nombreUsuario+` `+listaUsuarios[0].apellidoUsuario+`</h4>
+                <center class="m-t-30 mb-3"> <img src="`+listaUsuarios[0].fotoUsuario+`" class="img-circle" width="150" height="150">
+                    <h4 class="card-title mt-5">`+listaUsuarios[0].nombreUsuario+` `+listaUsuarios[0].apellidoUsuario+`</h4>
                     <h6 class="card-subtitle">`+listaUsuarios[0].emailUsuario+`</h6>
                     <div class="row text-center justify-content-md-center mt-3">
                         <div class="col-8"><a href="javascript:void(0)" class="link"><i class="icon-people"></i> <font class="font-medium"> Dirección: `+listaUsuarios[0].direccionUsuario+`</font></a></div>
@@ -31,7 +31,7 @@ let verUsuario = (id) =>{
             </div>
                 </div>
                 <div class="modal-footer">
-                <button id="btn_cerrarModal" type="button" class="btn btn-info waves-effect" data-dismiss="modal">Close</button>
+                <button id="btn_cerrarModal" type="button" class="btn btn-warning waves-effect" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
             <!-- /.modal-content -->

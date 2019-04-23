@@ -246,18 +246,20 @@ module.exports.listar_TodosPadres = (req ,res) =>{
 };
 
 
+
 module.exports.buscar_Padre = (req ,res) => {
   model_RegistroPadre.find(
-   {"_id": req.body.id_Usuario}
+   {_id: req.body.id_Usuario}
   ).then (
     function(padre) {
-      res.json(
-        {
-            success : false,
-            msg : `No se pudo actualizar la contraseña`, 
-            padre : padre
-        }
-    )
+      res.send (padre)
+    //   res.json(
+    //     {
+    //         success : false,
+    //         msg : `No se pudo actualizar la contraseña`, 
+    //         padre : padre
+    //     }
+    // )
     }
   )
 }

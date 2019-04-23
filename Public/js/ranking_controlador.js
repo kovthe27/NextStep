@@ -42,11 +42,11 @@ let ranking = () => {
                     let ranking =
                         `
                 <tr bounce animated>
-                <td style="width:50px;"><span class="round themecolor">`+ pos + `</span></td>
+                <td style="width:50px;"><span class="round bg-warning">`+ pos + `</span></td>
                 <td>
                     <h6>`+ centro.nombreCentro + `</h6><small class="text-muted">` + centro.tipoCentro + `</small>
                 </td>
-                <td><span class="label label-success label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
+                <td><span class="label label-themecolor label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
                 <td>`+ centro.distritoCentro + `</td>
                 <td>`+ centro.telCentro + `</td>
                 </tr>
@@ -66,11 +66,11 @@ let ranking = () => {
                     let ranking =
                         `
                 <tr>
-                <td style="width:50px;"><span class="round themecolor">`+ pos + `</span></td>
+                <td style="width:50px;"><span class="round bg-warning">`+ pos + `</span></td>
                 <td>
                     <h6>`+ centro.nombreCentro + `</h6><small class="text-muted">` + centro.tipoCentro + `</small>
                 </td>
-                <td><span class="label label-success label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
+                <td><span class="label label-themecolor label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
                 <td>`+ centro.distritoCentro + `</td>
                 <td>`+ centro.telCentro + `</td>
                 </tr>
@@ -90,11 +90,11 @@ let ranking = () => {
                     let ranking =
                         `
                 <tr>
-                <td style="width:50px;"><span class="round themecolor">`+ pos + `</span></td>
+                <td style="width:50px;"><span class="round bg-warning">`+ pos + `</span></td>
                 <td>
                     <h6>`+ centro.nombreCentro + `</h6><small class="text-muted">` + centro.tipoCentro + `</small>
                 </td>
-                <td><span class="label label-success label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
+                <td><span class="label label-themecolor label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
                 <td>`+ centro.distritoCentro + `</td>
                 <td>`+ centro.telCentro + `</td>
                 </tr>
@@ -114,11 +114,11 @@ let ranking = () => {
                     let ranking =
                         `
                 <tr>
-                <td style="width:50px;"><span class="round themecolor">`+ pos + `</span></td>
+                <td style="width:50px;"><span class="round bg-warning">`+ pos + `</span></td>
                 <td>
                     <h6>`+ centro.nombreCentro + `</h6><small class="text-muted">` + centro.tipoCentro + `</small>
                 </td>
-                <td><span class="label label-success label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
+                <td><span class="label label-themecolor label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
                 <td>`+ centro.distritoCentro + `</td>
                 <td>`+ centro.telCentro + `</td>
                 </tr>
@@ -142,7 +142,7 @@ let ranking = () => {
                 <td>
                     <h6>`+ centro.nombreCentro + `</h6><small class="text-muted">` + centro.tipoCentro + `</small>
                 </td>
-                <td><span class="label label-success label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
+                <td><span class="label label-themecolor label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
                 <td>`+ centro.distritoCentro + `</td>
                 <td>`+ centro.telCentro + `</td>
                 </tr>
