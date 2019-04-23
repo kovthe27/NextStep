@@ -334,7 +334,7 @@ let eliminarcalific = (pid) =>{
 // Actualizar etiqueta--------------------------------------------------------------------------
 
 
-let obtener_datosActualizar = (pid) => {
+let obtener_datosActualizarEtiqueta = (pid) => {
     let nombre = document.querySelector('#txt_nombreEtiquetaAct').value;
     actualizar_etiqueta(nombre, pid);
     console.log(pid);
@@ -346,7 +346,7 @@ let obtener_datosActualizar = (pid) => {
 document.addEventListener('click', (e) => {
     if (e.target && e.target.id == 'btn_actualizarEtiqueta') {
         let idetiquetaAct = document.querySelector('#btn_actualizarEtiqueta').getAttribute('data-id');
-        obtener_datosActualizar(idetiquetaAct);
+        obtener_datosActualizarEtiqueta(idetiquetaAct);
     }
 })
 
