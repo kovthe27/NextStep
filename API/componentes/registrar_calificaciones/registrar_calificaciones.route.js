@@ -44,4 +44,11 @@ router.route('/buscar_calificaciones')
             calificaciones_api.consultar_calificacionesOrdenadas(req, res);
         }
     )
+
+    router.route('/consultar_calificacionesAnno')
+    .get(
+        function (req, res) {
+            calificaciones_api.consultar_calificacionesAnno(req, res);
+        }
+    )
 module.exports = router;

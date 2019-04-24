@@ -9,4 +9,4 @@ let schema_calificaciones= new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('tablaCalificaciones', schema_calificaciones);
+module.exports = mongoose.model('tablaCalificaciones1', schema_calificaciones);

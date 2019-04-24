@@ -223,7 +223,7 @@
                             </select>
                         </div>
 
-                        <div class="input-group mb-3 col-md-3 float-left ml-2">
+                        <!-- <div class="input-group mb-3 col-md-3 float-left ml-2">
                             <select id="slt_anno" class="form-control" placeholder="Seleccione un centro">
                                 <option value="0">-Seleccione un año-</option>
                             </select>
@@ -232,20 +232,16 @@
                                     <span class="ti-calendar"></span>
                                 </span>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="col-md-3 float-left">
                             <button id="btn_crearReporte" class="btn btn-themecolor mt-0 mb-3">Crear reporte</button>
                         </div>
                         <div class="clearfix"></div>
+                        <div class="col-md-10 mt-4" id="mensaje"></div>
                         <div class="col-md-4 mt-4" style="float: left;">
                             <table class="tablesaw table-striped table-hover table-bordered table">
-                                <thead>
-                                    <tr>
-                                        <th>Año</th>
-                                        <th>Calificación</th>
-
-                                    </tr>
+                                <thead id="tablatab1">
                                 </thead>
                                 <tbody id="TblReporte1">
                                     <!-- Se crea dinamicamente -->
@@ -254,7 +250,7 @@
                             </table>
                         </div>
                         <div class="col-md-8 mt-4" style="float: right;">
-                            <canvas id="line-chart" width="800" height="450"></canvas>
+                            <canvas id="speedChart" width="350" height="150"></canvas>
                         </div>
                     </div>
                     <!-- TAb2 -->

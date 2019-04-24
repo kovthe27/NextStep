@@ -82,3 +82,11 @@ module.exports.consultar_calificacionesOrdenadas = function(req, res) {
 };
 
 
+module.exports.consultar_calificacionesAnno = function(req, res) {
+    model_calificaciones.find().sort({fecha: 'asc'}).then(
+        function (acercaNosotros) {
+            res.send(acercaNosotros)
+        });
+};
+
+
