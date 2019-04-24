@@ -90,26 +90,170 @@
     <section class="centros">
         <div class="container">
             <h2 class="text-themecolor text-center">Ranking de  
-                    <div class="btn-group">
-                            <button type="button" class="btn border text-white dropdown-toggle text-small"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                centros educativos
-                            </button>
-                            <div class="dropdown-menu animated fadelnDown">
-                                <a class="dropdown-item text-small" href="#">Colegios públicos</a>
-                                <a class="dropdown-item text-small" href="#">Colegios privados</a>
-                                <a class="dropdown-item text-small" href="#">Colegios semiprivados</a>
-                                <a class="dropdown-item text-small" href="#">Colegios técnicos</a>
-                                <a class="dropdown-item text-small" href="#">Colegios nocturnos</a>
-                            </div>
+                    <div class="btn-group ">
+                        <div class="form-group mt-3 ml-2 ">
+                            <!-- <label for="txt_centro">Seleccione el centro educativo</label> -->
+                            <select id="slt_TipoLanding" class="form-control" placeholder="Seleccione un centro">
+                                <option value="0">Centros educativos</option>
+                                <option value="1">Escuelas Públicas</option>
+                                <option value="2">Escuelas Privados</option>
+                                <option value="3">Colegios Públicos</option>
+                                <option value="4">Colegios Privados </option>
+                            </select>
                         </div>
+                        </div>
+
+                        <button class="btn btn-outline-light mb-1" type="button" id="buscarRanking"><i class="fas fa-search"></i></button>
+
             </h2>
                         
                        
 
-            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+            <div class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item">
+                    <div id="carouselExampleIndicators2" class="carousel-active">
+                        <!-- <div class="col-lg-3 col-md-6 float-left">
+                            <div class="card">
+                                <div class="el-card-item">
+                                    <h1>01</h1>
+                                    <hr id="orange">
+                                    <div class="image">
+                                        <img src="../Public/imgs/colegio.jpg" width="100%" alt="user">
+                                    </div>
+                                    <div class="el-card-content">
+                                        <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                        <br>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="star-rating">
+                                                <span class="icon sl-icon-star" data-rating="1"></span>
+                                                <span class="icon sl-icon-star" data-rating="2"></span>
+                                                <span class="icon sl-icon-star" data-rating="3"></span>
+                                                <span class="icon sl-icon-star" data-rating="4"></span>
+                                                <span class="icon sl-icon-star" data-rating="5"></span>
+                                                <span class="icon sl-icon-star" data-rating="6"></span>
+                                                <span class="icon sl-icon-star" data-rating="7"></span>
+                                                <span class="icon sl-icon-star" data-rating="8"></span>
+                                                <span class="icon sl-icon-star" data-rating="9"></span>
+                                                <span class="icon sl-icon-star" data-rating="10"></span>
+                                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="col-lg-3 col-md-6 float-left">
+                            <div class="card">
+                                <div class="el-card-item">
+                                    <h1>02</h1>
+                                    <hr id="orange">
+                                    <div class="image">
+                                        <img src="../Public/imgs/colegio.jpg" width="100%" alt="user">
+                                    </div>
+                                    <div class="el-card-content">
+                                        <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                        <br>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="star-rating">
+                                                <span class="icon sl-icon-star" data-rating="1"></span>
+                                                <span class="icon sl-icon-star" data-rating="2"></span>
+                                                <span class="icon sl-icon-star" data-rating="3"></span>
+                                                <span class="icon sl-icon-star" data-rating="4"></span>
+                                                <span class="icon sl-icon-star" data-rating="5"></span>
+                                                <span class="icon sl-icon-star" data-rating="6"></span>
+                                                <span class="icon sl-icon-star" data-rating="7"></span>
+                                                <span class="icon sl-icon-star" data-rating="8"></span>
+                                                <span class="icon sl-icon-star" data-rating="9"></span>
+                                                <span class="icon sl-icon-star" data-rating="10"></span>
+                                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 float-left">
+                            <div class="card">
+                                <div class="el-card-item">
+                                    <h1>03</h1>
+                                    <hr id="orange">
+                                    <div class="image">
+                                        <img src="../Public/imgs/colegio.jpg" width="100%" alt="user">
+                                    </div>
+                                    <div class="el-card-content">
+                                        <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                        <br>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="star-rating">
+                                                <span class="icon sl-icon-star" data-rating="1"></span>
+                                                <span class="icon sl-icon-star" data-rating="2"></span>
+                                                <span class="icon sl-icon-star" data-rating="3"></span>
+                                                <span class="icon sl-icon-star" data-rating="4"></span>
+                                                <span class="icon sl-icon-star" data-rating="5"></span>
+                                                <span class="icon sl-icon-star" data-rating="6"></span>
+                                                <span class="icon sl-icon-star" data-rating="7"></span>
+                                                <span class="icon sl-icon-star" data-rating="8"></span>
+                                                <span class="icon sl-icon-star" data-rating="9"></span>
+                                                <span class="icon sl-icon-star" data-rating="10"></span>
+                                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 float-left">
+                            <div class="card">
+                                <div class="el-card-item">
+                                    <h1>04</h1>
+                                    <hr id="orange">
+                                    <div class="image">
+                                        <img src="../Public/imgs/colegio.jpg" width="100%" alt="user">
+                                    </div>
+                                    <div class="el-card-content">
+                                        <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
+                                        <br>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="star-rating">
+                                                <span class="icon sl-icon-star" data-rating="1"></span>
+                                                <span class="icon sl-icon-star" data-rating="2"></span>
+                                                <span class="icon sl-icon-star" data-rating="3"></span>
+                                                <span class="icon sl-icon-star" data-rating="4"></span>
+                                                <span class="icon sl-icon-star" data-rating="5"></span>
+                                                <span class="icon sl-icon-star" data-rating="6"></span>
+                                                <span class="icon sl-icon-star" data-rating="7"></span>
+                                                <span class="icon sl-icon-star" data-rating="8"></span>
+                                                <span class="icon sl-icon-star" data-rating="9"></span>
+                                                <span class="icon sl-icon-star" data-rating="10"></span>
+                                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <!-- <div class="carousel-item active">
                         <div class="col-lg-3 col-md-6 float-left">
                             <div class="card">
                                 <div class="el-card-item">
@@ -249,158 +393,16 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="carousel-item active">
-                        <div class="col-lg-3 col-md-6 float-left">
-                            <div class="card">
-                                <div class="el-card-item">
-                                    <h1>01</h1>
-                                    <hr id="orange">
-                                    <div class="image">
-                                        <img src="../Public/imgs/colegio.jpg" width="100%" alt="user">
-                                    </div>
-                                    <div class="el-card-content">
-                                        <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
-                                        <br>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="star-rating">
-                                                <span class="icon sl-icon-star" data-rating="1"></span>
-                                                <span class="icon sl-icon-star" data-rating="2"></span>
-                                                <span class="icon sl-icon-star" data-rating="3"></span>
-                                                <span class="icon sl-icon-star" data-rating="4"></span>
-                                                <span class="icon sl-icon-star" data-rating="5"></span>
-                                                <span class="icon sl-icon-star" data-rating="6"></span>
-                                                <span class="icon sl-icon-star" data-rating="7"></span>
-                                                <span class="icon sl-icon-star" data-rating="8"></span>
-                                                <span class="icon sl-icon-star" data-rating="9"></span>
-                                                <span class="icon sl-icon-star" data-rating="10"></span>
-                                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 float-left">
-                            <div class="card">
-                                <div class="el-card-item">
-                                    <h1>02</h1>
-                                    <hr id="orange">
-                                    <div class="image">
-                                        <img src="../Public/imgs/colegio.jpg" width="100%" alt="user">
-                                    </div>
-                                    <div class="el-card-content">
-                                        <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
-                                        <br>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="star-rating">
-                                                <span class="icon sl-icon-star" data-rating="1"></span>
-                                                <span class="icon sl-icon-star" data-rating="2"></span>
-                                                <span class="icon sl-icon-star" data-rating="3"></span>
-                                                <span class="icon sl-icon-star" data-rating="4"></span>
-                                                <span class="icon sl-icon-star" data-rating="5"></span>
-                                                <span class="icon sl-icon-star" data-rating="6"></span>
-                                                <span class="icon sl-icon-star" data-rating="7"></span>
-                                                <span class="icon sl-icon-star" data-rating="8"></span>
-                                                <span class="icon sl-icon-star" data-rating="9"></span>
-                                                <span class="icon sl-icon-star" data-rating="10"></span>
-                                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 float-left">
-                            <div class="card">
-                                <div class="el-card-item">
-                                    <h1>03</h1>
-                                    <hr id="orange">
-                                    <div class="image">
-                                        <img src="../Public/imgs/colegio.jpg" width="100%" alt="user">
-                                    </div>
-                                    <div class="el-card-content">
-                                        <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
-                                        <br>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="star-rating">
-                                                <span class="icon sl-icon-star" data-rating="1"></span>
-                                                <span class="icon sl-icon-star" data-rating="2"></span>
-                                                <span class="icon sl-icon-star" data-rating="3"></span>
-                                                <span class="icon sl-icon-star" data-rating="4"></span>
-                                                <span class="icon sl-icon-star" data-rating="5"></span>
-                                                <span class="icon sl-icon-star" data-rating="6"></span>
-                                                <span class="icon sl-icon-star" data-rating="7"></span>
-                                                <span class="icon sl-icon-star" data-rating="8"></span>
-                                                <span class="icon sl-icon-star" data-rating="9"></span>
-                                                <span class="icon sl-icon-star" data-rating="10"></span>
-                                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 float-left">
-                            <div class="card">
-                                <div class="el-card-item">
-                                    <h1>04</h1>
-                                    <hr id="orange">
-                                    <div class="image">
-                                        <img src="../Public/imgs/colegio.jpg" width="100%" alt="user">
-                                    </div>
-                                    <div class="el-card-content">
-                                        <h3 class="box-title">Project title</h3> <small>subtitle of project</small>
-                                        <br>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="star-rating">
-                                                <span class="icon sl-icon-star" data-rating="1"></span>
-                                                <span class="icon sl-icon-star" data-rating="2"></span>
-                                                <span class="icon sl-icon-star" data-rating="3"></span>
-                                                <span class="icon sl-icon-star" data-rating="4"></span>
-                                                <span class="icon sl-icon-star" data-rating="5"></span>
-                                                <span class="icon sl-icon-star" data-rating="6"></span>
-                                                <span class="icon sl-icon-star" data-rating="7"></span>
-                                                <span class="icon sl-icon-star" data-rating="8"></span>
-                                                <span class="icon sl-icon-star" data-rating="9"></span>
-                                                <span class="icon sl-icon-star" data-rating="10"></span>
-                                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                 </a>
                 <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
-                </a>
+                </a> -->
             </div>
         </div>
     </section>
@@ -435,6 +437,10 @@
     <!-- listas -->
     <script src="js/mostrarListas_landing_servicio.js"></script>
     <script src="js/mostrarListas_landing_controlador.js"></script>
+
+     <!-- ranking -->
+     <script src="js/reportes_admin_servicio.js"></script>
+     <script src="js/mostrarRanking_landing_controlador.js"></script>
 
 
 
