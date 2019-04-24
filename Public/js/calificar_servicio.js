@@ -42,9 +42,10 @@ let registrarCalificacion = (pcedulaJuridica, pcalificacion, pfecha) =>{
           type: 'success',
           title: "La calificación es: " + pcalificacion,
           text: 'Muchas gracias'
-        });
+        }).then(function() {
+          window.location = "centros_Administrador.html";
       });
-    
+    });
       request.fail(function (jqXHR, textStatus) {
         swal({
           type: 'error',
