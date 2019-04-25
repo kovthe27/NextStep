@@ -262,7 +262,6 @@ let mostrar_datosComentario = () => {
                 "<span class=\"date\">" + Comentario[i].fecha + "</span>" +
                 "</div>" +
                 "<p class=\"m-b-5 m-t-10\">" + Comentario[i].comentario + "</p><hr class= \"mb-2 mt-2\">" +
-                "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-warning btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes"
             "</div>" +
 
                 "</div>"

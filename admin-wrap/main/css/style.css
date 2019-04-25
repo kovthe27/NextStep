@@ -4803,3 +4803,7 @@ File: scss
     width: 100%; }
     .dataTables_wrapper .dataTables_paginate .paginate_button {
       padding: 0.5rem 0.6rem; } }
+
+      .card-cita .card .card-body {
+        height: 250px;
+      }
