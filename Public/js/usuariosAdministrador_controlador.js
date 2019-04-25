@@ -85,7 +85,6 @@ let mostrarUsuarios = () =>{
                 <td class="tablesaw-priority-3">`+listaUsuarios[i].nombreUsuario+`</td>
                 <td class="tablesaw-priority-2">`+listaUsuarios[i].apellidoUsuario+`</td>
                 <td class="tablesaw-priority-1">`+listaUsuarios[i].emailUsuario+`</td>
-                <td class="tablesaw-priority-1">01/01/0001</td>
                 <td class="tablesaw-priority-1">`+listaUsuarios[i].estadoUsuario+`</td>
                 <td class="tablesaw-priority-1">
                     <a  class="btn btn-sm btn-success mr-1 btn-circle" id="boton`+ i + `" href="javascript:verUsuario('` + listaUsuarios[i]._id + `')"> <i class="fas fa-info"></i> </a>

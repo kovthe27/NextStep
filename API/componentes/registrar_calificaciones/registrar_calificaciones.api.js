@@ -66,9 +66,9 @@ module.exports.eliminarcalificacion = function(req, res){
     model_calificaciones.findByIdAndRemove(req.body.id_calificacion,
         function(error){
             if(error){
-                res.json({success: false ,msg: 'No se pudo eliminar la calificacion '});
+                res.json({success: false ,msg: 'No se pudo eliminar la calificación '});
             }else{
-                res.json({success: true ,msg: 'La calificacion se eliminó con éxito'}); 
+                res.json({success: true ,msg: 'La calificación se eliminó con éxito'}); 
             }
         }
     )

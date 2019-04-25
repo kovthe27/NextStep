@@ -173,7 +173,6 @@ let mostrarTablaEtiquetas = () => {
             `<tr>
         <td class="title"><a class="link" href="javascript:void(0)">` + listaEtiquetas[i].nombre + `</a></td>
         <td class="tablesaw-priority-3">` + listaEtiquetas[i].fecha + `</td>
-        <td class="tablesaw-priority-2">` + listaEtiquetas[i].usuarios + `</td>
         <td class="tablesaw-priority-1">
         <a id="editaretiqueta"  href="javascript:construirModaletiqueta('`+ listaEtiquetas[i]._id + `')"><button type="button" class="btn btn-sm btn-success mr-1 btn-circle"><i class="fas fa-edit"></i></button></a>
         <a id="eliminaretiqueta"  href="javascript:eliminaretiqueta('`+ listaEtiquetas[i]._id + `')"><button type="button" class="btn btn-sm btn-danger mr-1 btn-circle"><i class="fas fa-trash"></i></button></a>
@@ -306,7 +305,7 @@ let pruebaEti = (pnombre) => {
 // eliminar
 
 let eliminarcalific = (pid) =>{
-    swal("¿Está seguro que desea eliminar la calificacion?", {
+    swal("¿Está seguro que desea eliminar la calificación?", {
         buttons: {
           No: "Cancelar",
           Si: "Aceptar",
