@@ -69,3 +69,9 @@ let verPerfil = (cedulaJuridica) => {
 
 cargarFavoritos();
 crearMenu();
+
+
+let cerrarSesion = () => {
+    localStorage.setItem('cliente', JSON.stringify("Notlogin"));
+    window.location.assign("landing_page.html");
+}

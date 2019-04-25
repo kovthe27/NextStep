@@ -61,53 +61,76 @@ let ranking = () => {
     let listaCalificaciones = consultarCalificaciones();
     document.querySelector("#carouselExampleIndicators2").innerHTML = "";
     switch (tipo) {
-        case "1":
-            for (let i = 0; i < 4; i++) {
-                let centro = buscarCentro(listaCalificaciones[i].cedulaJuridica)
-                // let fecha = listaCalificaciones[i].fecha;
-                // let anno1 = fecha.substr(6, 4);
-                // if (anno1 == anno) {
-                    let contador = 1;
-                    let ranking =
-                        `
-                        <div class="col-lg-3 col-md-6 float-left">
-                        <div class="card">
-                            <div class="el-card-item">
-                            <small>Nota</small>
-                                <h1>`+ listaCalificaciones[i].calificacion + `</h1>
-                                <hr id="orange">
-                                <div class="image">
-                                    <img src="`+ centro.fotoCentro + `" width="100%" height= "125px" alt="user">
-                                </div>
-                                <div class="el-card-content">
-                                    <h3 class="box-title">`+ centro.nombreCentro + `</h3> </small>
-                                    <br>
-                                </div>
+
+        case "0":
+        for (let i = 0; i < 4; i++) {
+            let centro = buscarCentro(listaCalificaciones[i].cedulaJuridica)
+            // let fecha = listaCalificaciones[i].fecha;
+            // let anno1 = fecha.substr(6, 4);
+            // if (centro.gradoAcademico == "Primaria" & centro.tipoCentro == "Público") {
+                let ranking =
+                    `
+                    <div class="col-lg-3 col-md-6 float-left">
+                    <div class="card">
+                        <div class="el-card-item">
+                        <small>Nota</small>
+                            <h1>`+ listaCalificaciones[i].calificacion + `</h1>
+                            <hr id="orange">
+                            <div class="image">
+                                <img src="`+ centro.fotoCentro + `" width="100%" height= "125px" alt="user">
+                            </div>
+                            <div class="el-card-content">
+                                <h3 class="box-title">`+ centro.nombreCentro + `</h3> </small>
+                                <br>
                             </div>
                         </div>
                     </div>
-                `
-                // <tr bounce animated>
-                // <td style="width:50px;"><span class="round bg-warning">`+ pos + `</span></td>
-                // <td>
-                //     <h6>`+ centro.nombreCentro + `</h6><small class="text-muted">` + centro.tipoCentro + `</small>
-                // </td>
-                // <td><span class="label label-themecolor label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
-                // <td>`+ centro.distritoCentro + `</td>
-                // <td>`+ centro.telCentro + `</td>
-                // </tr>
-                    $("#carouselExampleIndicators2").append(ranking);
-                    pos++;
-                }
+                </div>
+            `
+                $("#carouselExampleIndicators2").append(ranking);
+                pos++;
             // }
-            break;
+        }
+        break;
+
+
+        case "1":
+        for (let i = 0; i < 4; i++) {
+            let centro = buscarCentro(listaCalificaciones[i].cedulaJuridica)
+            // let fecha = listaCalificaciones[i].fecha;
+            // let anno1 = fecha.substr(6, 4);
+            if (centro.gradoAcademico == "Primaria" && centro.tipoCentro == "Público") {
+                let ranking =
+                    `
+                    <div class="col-lg-3 col-md-6 float-left">
+                    <div class="card">
+                        <div class="el-card-item">
+                        <small>Nota</small>
+                            <h1>`+ listaCalificaciones[i].calificacion + `</h1>
+                            <hr id="orange">
+                            <div class="image">
+                                <img src="`+ centro.fotoCentro + `" width="100%" height= "125px" alt="user">
+                            </div>
+                            <div class="el-card-content">
+                                <h3 class="box-title">`+ centro.nombreCentro + `</h3> </small>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+                $("#carouselExampleIndicators2").append(ranking);
+                pos++;
+            }
+        }
+        break;
 
         case "2":
             for (let i = 0; i < 4; i++) {
                 let centro = buscarCentro(listaCalificaciones[i].cedulaJuridica)
                 // let fecha = listaCalificaciones[i].fecha;
                 // let anno1 = fecha.substr(6, 4);
-                if (centro.gradoAcademico == "Primaria" & centro.tipoCentro == "Público") {
+                if (centro.gradoAcademico == "Primaria" && centro.tipoCentro == "Privado") {
                     let ranking =
                         `
                         <div class="col-lg-3 col-md-6 float-left">
@@ -138,7 +161,7 @@ let ranking = () => {
                 let centro = buscarCentro(listaCalificaciones[i].cedulaJuridica)
                 // let fecha = listaCalificaciones[i].fecha;
                 // let anno1 = fecha.substr(6, 4);
-                if (centro.gradoAcademico == "Primaria" & centro.tipoCentro == "Privado") {
+                if (centro.gradoAcademico == "Secundaria" && centro.tipoCentro == "Público") {
                     let ranking =
                         `
                         <div class="col-lg-3 col-md-6 float-left">
@@ -165,37 +188,6 @@ let ranking = () => {
             break;
 
             case "4":
-            for (let i = 0; i < 4; i++) {
-                let centro = buscarCentro(listaCalificaciones[i].cedulaJuridica)
-                // let fecha = listaCalificaciones[i].fecha;
-                // let anno1 = fecha.substr(6, 4);
-                if (centro.gradoAcademico == "Secundaria" & centro.tipoCentro == "Público") {
-                    let ranking =
-                        `
-                        <div class="col-lg-3 col-md-6 float-left">
-                        <div class="card">
-                            <div class="el-card-item">
-                            <small>Nota</small>
-                                <h1>`+ listaCalificaciones[i].calificacion + `</h1>
-                                <hr id="orange">
-                                <div class="image">
-                                    <img src="`+ centro.fotoCentro + `" width="100%" height= "125px" alt="user">
-                                </div>
-                                <div class="el-card-content">
-                                    <h3 class="box-title">`+ centro.nombreCentro + `</h3> </small>
-                                    <br>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `
-                    $("#carouselExampleIndicators2").append(ranking);
-                    pos++;
-                }
-            }
-            break;
-
-            case "5":
             for (let i = 0; i < 4; i++) {
                 let centro = buscarCentro(listaCalificaciones[i].cedulaJuridica)
                 // let fecha = listaCalificaciones[i].fecha;

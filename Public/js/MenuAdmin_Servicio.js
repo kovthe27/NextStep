@@ -12,6 +12,7 @@ let getNombreUsuario = () => {
     return nombre;
 }
 
+
 let getApeliidoUsuario = () =>{
     let apellido;
 //Conectar al api

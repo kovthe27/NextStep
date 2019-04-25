@@ -137,16 +137,6 @@ let mostrar_datosNoticia = () => {
             var cardNoticia =
                 // "<div class=\"card col-md-3 float-left \">" +
                 "<div class=\"card-body img-thumbnail mb-2\">" +
-                // dropdown
-                "<div class=\"btn-group float-right\">" +
-                "<button type=\"button\" class=\"btn text-right\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">" +
-                "<i class=\"fas fa-ellipsis-v\"></i>" +
-                "</button>" +
-                "<div class=\"dropdown-menu dropdown-menu-right\">" +
-                "<a class=\"dropdown-item\" href=\"#\" >Editar</a>" +
-                "<a class=\"dropdown-item\" href=\"#\" >Eliminar</a>" +
-                "</div></div>" +
-
                 "<h4  class=\"card-title text-themecolor\">" + noticia[i].titulo + "</h4>" +
                 "<h6  class=\"card-subtitle mb-2 text-muted\">" + noticia[i].fecha + "</h6>" +
                 "<p class=\"card-text\">" + noticia[i].descripcion + "</p>" +
@@ -261,8 +251,8 @@ let mostrar_datosComentario = () => {
                 "<div class=\"comment-footer\">" +
                 "<span class=\"date\">" + Comentario[i].fecha + "</span>" +
                 "</div>" +
-                "<p class=\"m-b-5 m-t-10\">" + Comentario[i].comentario + "</p><hr class= \"mb-2 mt-2\">" +
-                "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-warning btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes"
+                "<p class=\"m-b-5 m-t-10\">" + Comentario[i].comentario + "</p>" +
+                // "<div id=\"mostrarLikes\" class=\"clearfix\"></div><button type=\"button\" class=\"btn btn-warning btn-sm mr-2 btn-circle\"><i class=\"fa fa-heart \"></i></button>" + Comentario[i].likes + " likes"
             "</div>" +
 
                 "</div>"

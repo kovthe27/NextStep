@@ -10,10 +10,13 @@ let mostrarPendientes = () => {
             <td class="title">
                 <a class="link" href="javascript:void(0)">`+lista[i].nombreCentro+`</a>
             </td>
-            <td class="tablesaw-priority-3 tablesaw-toggle-cellvisible">`+lista[i].cedJuridica+`</td>
-            <td class="tablesaw-priority-2 tablesaw-toggle-cellvisible">`+lista[i].fechaRegistro+`</td>
             <td class="tablesaw-priority-1 tablesaw-toggle-cellvisible">`+lista[i].emailCentro+`</td>
             <td class="tablesaw-priority-4 tablesaw-toggle-cellvisible">`+lista[i].estado+`</td>
+            <td>
+                <button type="button" onclick="location.href='javascript:verPerfil(` + lista[i].cedJuridica + `)'" class="btn btn-sm btn-info mr-1 btn-circle">
+                <i class="fas fa-info" ></i>
+            </button>
+             </td>
             <td>
                 <button id="aceptar" data-id ="`+lista[i]._id+`" type="button" class="btn btn-sm btn-success mr-1 btn-circle">
                     <i class="fa fa-check"></i>
@@ -21,10 +24,8 @@ let mostrarPendientes = () => {
                 <button id="rechazar" data-id ="`+lista[i]._id+`" type="button" class="btn btn-sm btn-danger mr-1 btn-circle">
                     <i class="fa fa-times"></i>
                 </button>
-                <button type="button" onclick="location.href='javascript:verPerfil(` + lista[i].cedJuridica + `)'" class="btn btn-sm btn-info mr-1 btn-circle">
-                <i class="fas fa-info" ></i>
-            </button>
-             </td>
+                </td>
+                
         </tr>
         `
             $("#tablaActivar").append(centro);

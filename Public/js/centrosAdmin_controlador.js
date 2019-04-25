@@ -11,7 +11,6 @@ let mostrarTablaCentrosAdmin = () => {
         let nuevoCentro =
             `<tr>
             <td class="title"><a class="link" href="javascript:void(0)">` + listaCentros[i].nombreCentro + `</a></td>
-            <td class="tablesaw-priority-3">` + listaCentros[i].cedJuridica + `</td>
             <td class="tablesaw-priority-1">` + listaCentros[i].emailCentro + `</td>
             <td class="tablesaw-priority-1">` + listaCentros[i].gradoAcademico + `</td>
             

@@ -20,6 +20,9 @@ let registrar_cita = (pcedulaJuridica, pnombre, pfechaCita, phoraCita, pcorreoUs
         type: 'success',
         title: 'La cita fue agregada',
         text: 'Muchas gracias'
+      })
+      .then(function(){
+        window.location= "perfil_Centro-padre.html";
       });
     });
   
