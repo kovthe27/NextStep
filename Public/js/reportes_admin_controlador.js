@@ -101,7 +101,7 @@ let reporte1 = () => {
 
         Chart.defaults.global.defaultFontFamily = "Lato";
         Chart.defaults.global.defaultFontSize = 16;
-
+        Chart.defaults.global.legend.display = false;
         var speedData = {
             labels: annos,
             datasets: [{
@@ -124,7 +124,7 @@ let reporte1 = () => {
 
         var chartOptions = {
             legend: {
-                display: true,
+                display: false,
                 position: 'top',
                 labels: {
                     boxWidth: 80,
@@ -142,7 +142,7 @@ let reporte1 = () => {
                         max: 100
                     }
                 }]
-            },
+            }
         }
 
         var lineChart = new Chart(speedCanvas, {
