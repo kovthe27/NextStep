@@ -261,7 +261,9 @@ request.done(function(res){
         type : 'success',
         title : 'Proceso realizado con éxito',
         text : res.msg
-    }).then(location.reload())
+    }).then(function() {
+      location.reload();
+  })
 
 });
 

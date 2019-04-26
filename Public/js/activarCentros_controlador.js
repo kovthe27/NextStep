@@ -86,7 +86,7 @@ let verCentro = () =>{
 }
 
 document.addEventListener('click', (e) => {
-    if (e.target && e.target.id == 'aceptar') {
+    if (e.target.id == 'aceptar') {
         let idNoticiaAct=document.querySelector('#aceptar').getAttribute('data-id');
         aceptarCentro(idNoticiaAct);
     }

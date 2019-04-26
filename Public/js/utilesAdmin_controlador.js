@@ -61,8 +61,6 @@ let registrarLista = () => {
     let fecha = dd + '/' + mm + '/' + yyyy;
 
     nuevaLista(cedula, nombre, fecha);
-
-    window.location.reload();
 };
 
 construirTabla();

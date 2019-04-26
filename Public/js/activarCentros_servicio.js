@@ -44,7 +44,9 @@ let consultar_listaCentrosAdmin = () => {
             type : 'success',
             title : 'Proceso realizado con éxito',
             text : res.msg,
-        })
+        }).then(function() {
+          location.reload();
+      })
     });
 
     request.fail(function(res){

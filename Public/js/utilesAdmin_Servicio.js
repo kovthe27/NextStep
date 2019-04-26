@@ -84,15 +84,17 @@ let nuevaLista = (pcedula, pnombre, pfecha, p_id) => {
     });
   
     request.done(function (msg) {
-      swal.fire({
+      swal({
         type: 'success',
         title: 'La lista ha sido agregada',
         text: 'Muchas gracias'
-      });
+      }).then(function() {
+        location.reload();
+    });
     });
   
     request.fail(function (jqXHR, textStatus) {
-      swal.fire({
+      swal({
         type: 'error',
         title: 'La lista no pudo ser agregada',
         text: 'Por favor inténtelo de nuevo'
@@ -179,11 +181,9 @@ request.done(function(res){
         type : 'success',
         title : 'Proceso realizado con éxito',
         text : res.msg
-    });
-
-    document.querySelector('#actualizarLista').innerHTML= "";
-    // construirTabla();
-    window.location.reload();
+    }).then(function() {
+      location.reload();
+  })
 
 });
 
