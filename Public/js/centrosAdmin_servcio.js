@@ -211,7 +211,7 @@ let consultar_calificaciones = () =>{
   let lista_Contactos = [];
 
   let request = $.ajax({
-    url: "http://localhost:4000/api/consultar_calificaciones",
+    url: "http://localhost:4000/api/consultar_calificacionesAnnodesc",
     method: "GET",
     data: {
     },

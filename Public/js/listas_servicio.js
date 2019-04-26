@@ -214,10 +214,9 @@ request.done(function(res){
       type : 'success',
       title : 'Proceso realizado con éxito',
       text : res.msg
-  });
-
-  document.querySelector('#actualizarUtilesAdmin').innerHTML= "";
-  window.location.reload();
+  }).then(function() {
+    location.reload();
+})
 
 });
 

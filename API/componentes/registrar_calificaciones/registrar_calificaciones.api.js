@@ -89,4 +89,10 @@ module.exports.consultar_calificacionesAnno = function(req, res) {
         });
 };
 
+module.exports.consultar_calificacionesAnnodesc = function(req, res) {
+    model_calificaciones.find().sort({fecha: 'desc'}).then(
+        function (acercaNosotros) {
+            res.send(acercaNosotros)
+        });
+};
 

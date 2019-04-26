@@ -21,7 +21,7 @@ let mostrar = () => {
                     <div class="card" style="height: 340px;">
                         <div class="el-card-item">
                         <small>Nota `+ listaCalificaciones1[i].calificacion + `</small>
-                            <h1> 0`+ i + `</h1>
+                            <h1> 0`+ pos1 + `</h1>
                             <hr id="orange">
                             <div class="image">
                                 <img src="`+ centro.fotoCentro + `" width="100%" height= "125px" alt="user">
@@ -35,6 +35,7 @@ let mostrar = () => {
                 </div>
         `
             $("#carouselLanding").append(ranking);
+            pos1++;
         }
 
 
@@ -50,7 +51,7 @@ let mostrar = () => {
                         <div class="card" style="height: 340px;">
                             <div class="el-card-item">
                             <small>Nota `+ listaCalificaciones1[i].calificacion + `</small>
-                            <h1> 0`+ i + `</h1>
+                            <h1> 0`+ pos1 + `</h1>
                                 <hr id="orange">
                                 <div class="image">
                                     <img src="`+ centro.fotoCentro + `" width="100%" height= "125px" alt="user">
@@ -64,6 +65,7 @@ let mostrar = () => {
                     </div>
             `
                 $("#carouselLanding1").append(ranking);
+                pos1++;
             }
     }
 

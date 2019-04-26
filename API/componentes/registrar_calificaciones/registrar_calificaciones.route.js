@@ -51,4 +51,11 @@ router.route('/buscar_calificaciones')
             calificaciones_api.consultar_calificacionesAnno(req, res);
         }
     )
+
+    router.route('/consultar_calificacionesAnnodesc')
+    .get(
+        function (req, res) {
+            calificaciones_api.consultar_calificacionesAnnodesc(req, res);
+        }
+    )
 module.exports = router;
