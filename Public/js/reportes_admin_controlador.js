@@ -66,7 +66,8 @@ let reporte1 = () => {
         let mensaje= 
 
         `
-        <p>No hay información disponible para este centro educativo</p>
+        <h2 class="float-left mt-5 mr-5" >No hay información disponible<br> para este centro educativo</h2>
+        <img class="float-left ml-3" src="imgs/info-01.png">
         `
         $("#mensaje").append(mensaje);
     } else {
