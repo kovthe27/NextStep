@@ -16,7 +16,7 @@ let registrar_noticia = (pcedulaJuridica, ptitulo, pfecha, pdescripcion, p_id) =
     });
   
     request.done(function (msg) {
-      swal.fire({
+      swal({
         type: 'success',
         title: 'La noticia fue agregada',
         text: 'Muchas gracias'
@@ -24,7 +24,7 @@ let registrar_noticia = (pcedulaJuridica, ptitulo, pfecha, pdescripcion, p_id) =
     });
   
     request.fail(function (jqXHR, textStatus) {
-      swal.fire({
+      swal({
         type: 'error',
         title: 'La noticia no pudo ser registrada',
         text: 'Por favor inténtelo de nuevo'
