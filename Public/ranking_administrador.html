@@ -36,7 +36,7 @@
 </head>
 
 <body class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
-    <div id="main-wrapper">
+    <div id="">
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
                 <div class="navbar-header">
@@ -179,7 +179,7 @@
                     <div class="form-group col-md-3 float-left">
                         <!-- <label for="txt_centro">Seleccione el centro educativo</label> -->
                         <select id="slt_Tipo" class="form-control" placeholder="Seleccione un centro">
-                            <option value="0">-Seleccione el tipo de ranking-</option>
+                            <!-- <option value="0">-Seleccione el tipo de ranking-</option> -->
                             <option value="1">General</option>
                             <option value="2">Escuelas Públicas</option>
                             <option value="3">Escuelas Privados</option>
@@ -190,7 +190,7 @@
 
                     <div class="input-group mb-3 col-md-3 float-left ml-2">
                         <select id="slt_anno" class="form-control" placeholder="Seleccione un centro">
-                            <option value="0">-Seleccione un año-</option>
+                            <!-- <option value="0">-Seleccione un año-</option> -->
                         </select>
                         <div class="input-group-append">
                             <span class="input-group-text">
@@ -203,9 +203,10 @@
                         <button id="btn_crearRanking" class="btn btn-themecolor mt-0 mb-3">Generar</button>
                     </div>
                     <div class="clearfix"></div>
-                    <div class="card-body">
-                        <div class="table-responsive m-t-20 no-wrap">
-                            <table class="table vm no-th-brd pro-of-month">
+                    <!-- <div class=""> -->
+                        <div class="tab-pane p-20 active">
+                            <table class="table"
+                            >
                                 <thead>
                                     <tr>
                                         <th colspan="2">Posición </th>
@@ -218,16 +219,13 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    <!-- </div> -->
+ 
 
-        </div>
-    </div>
-    </div>
     </div>
     <div id="actualizarEtiquetas" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="vcenter"></div>
     <div id="bgmodal" class="fade"></div>
+    </div>
     </div>
 
     <script src="./assets/node_modules/jquery/jquery.min.js"></script>

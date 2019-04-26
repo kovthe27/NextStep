@@ -24,6 +24,38 @@ let mostrar = () => {
         $("#slt_anno").append(anno);
     }
 
+
+    let anno = "2019";
+    let pos = 1;
+    let listaCalificaciones = consultarCalificaciones();
+    let i = 0; 
+    // let centro = buscarCentro(listaCalificaciones[i].cedulaJuridica);
+    let fecha = listaCalificaciones[i].fecha;
+    let anno1 = fecha.substr(6, 4);
+
+    document.querySelector("#bodyRanking").innerHTML = "";
+    // if (anno1 == anno && centro.gradoAcademico == "General" && centro.tipoCentro == "2019") {
+            for (let i = 0; i < listaCalificaciones.length; i++) {
+                let centro = buscarCentro(listaCalificaciones[i].cedulaJuridica);
+
+                if (anno1 == anno) {
+                    let ranking =
+                        `
+                <tr bounce animated>
+                <td style="width:50px;"><span class="round bg-warning">`+ pos + `</span></td>
+                <td>
+                    <h6>`+ centro.nombreCentro + `</h6><small class="text-muted">` + centro.tipoCentro + `</small>
+                </td>
+                <td><span class="label label-themecolor label-rounded">`+ listaCalificaciones[i].calificacion + `</span></td>
+                <td>`+ centro.distritoCentro + `</td>
+                <td>`+ centro.telCentro + `</td>
+                </tr>
+                `
+                    $("#bodyRanking").append(ranking);
+                    pos++;
+                }
+            // }
+        }
 }
 
 let ranking = () => {

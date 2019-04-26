@@ -22,7 +22,7 @@ let mostrarTablaCentrosAdmin = () => {
             <i class="fa fa-star"></i>
             </button>
             <button type="button" onclick="location.href='javascript:EliminarCentro(` + listaCentros[i].cedJuridica + `)'" class="btn btn-sm btn-danger mr-1 btn-circle">
-                <i class="fas fa-trash"></i>
+            <i class="fas fa-ban"></i>
             </button>
 
                 
