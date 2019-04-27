@@ -175,12 +175,8 @@ let eliminarlFormulario = (pnombre) =>{
           case "No":
             break;
        
-          case "Aceptar":
-            swal("Gotcha!", "Pikachu was caught!", "success");
-            break;
-       
           default:
-          eliminar_formulario(formularioEspecifico[0]._id, "Rechazado");
+          eliminar_formulario(formularioEspecifico[0]._id);
         }
       });
     
