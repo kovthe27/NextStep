@@ -58,6 +58,7 @@ let mostrar = () => {
         }
 }
 
+
 let ranking = () => {
     let tipo = selectTipo.value;
     let anno = selectAnno.value;

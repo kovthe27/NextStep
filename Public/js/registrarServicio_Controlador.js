@@ -83,7 +83,7 @@ let mostrar_datosServicio = () => {
             "<div class=\"col-lg-4 col-md-6 float-left\">" +
             "<div class=\"card\">" +
             "<div class=\"el-card-item card-body\">" +
-            "<h4 class= \"col-md-10 float-left pl-0\" id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h4>" +
+            "<h4 class= \"col-md-10 float-left pl-0  mt-2 mb-3\" id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h4>" +
 
              // dropdown
              "<div class=\"btn-group float-right\">" +
@@ -121,7 +121,7 @@ let mostrar_datosServicio = () => {
             "<div class=\"col-lg-4 col-md-6 float-left\">" +
             "<div class=\"card\">" +
             "<div class=\"el-card-item card-body\">" +
-            "<h4 class= \"col-md-10 float-left pl-0\" id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h4>" +
+            "<h4 class= \"col-md-10  mb-3 float-left mt-2 pl-0\" id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h4>" +
 
             // dropdown
             "<div class=\"btn-group float-right\">" +
@@ -160,7 +160,7 @@ let mostrar_datosServicio = () => {
         "<div class=\"col-lg-4 col-md-6 float-left\">" +
         "<div class=\"card\">" +
         "<div class=\"el-card-item card-body\">" +
-        "<h4 class= \"col-md-10 float-left pl-0\" id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h4>" +
+        "<h4 class= \"col-md-10 float-left mb-3 mt-2 pl-0\" id=\"txt_tituloServicio\">" + servicio[i].titulo + "</h4>" +
 
         // dropdown
         "<div class=\"btn-group float-right\">" +

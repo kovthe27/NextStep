@@ -42,6 +42,8 @@ let mostrarTab1 = () => {
     }
 }
 
+
+
 let reporte1 = () => {
 
     let listaCalificaciones = consultarCalificacionesAnno();
@@ -210,7 +212,7 @@ let reporte2 = () => {
                 `
                 <div class="col-lg-3 mt-4 col-md-6">
                 <div class="card">
-                    <div class="el-card-item bounce animated">
+                    <div class="el-card-item bounce animated" style="height:309px;">
                     <h1>`+ contador + `</h1>
                     <hr id="orange">
                         <div class="el-card-avatar el-overlay-1 image mb-0"> <img src="`+ centro.fotoCentro + `" alt="user" width=100%>
