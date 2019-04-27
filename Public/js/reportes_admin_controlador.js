@@ -159,23 +159,26 @@ let reporte1 = () => {
 // Funciones Tab2
 
 let mostrarTab2 = () => {
-    let listaCentros = consultarCentros();
-    let annos = consultarAnnos();
-    let annosFiltrada = [];
+    let listaCalificaciones = consultarCalificacionesAnno();
+    let annos = [];
 
-    for (let i = 0; i < annos.length; i++) {
-        annosFiltrada.push(annos[i].anno);
+    for (let i = 0; i < listaCalificaciones.length; i++) {
+        let fecha = listaCalificaciones[i].fecha;
+        let anno1 = fecha.substr(6, 4);
+        annos.push(anno1);
     }
-    annosFiltrada = [...new Set(annosFiltrada)];
+    let annosFiltrada = [...new Set(annos)];
 
-    for (let j = 0; j < annosFiltrada.length; j++) {
-        let anno =
+    for (let i = 0; i < annosFiltrada.length; i++) {
+        let centro =
             `
-            <option value="`+ annosFiltrada[j] + `">` + annosFiltrada[j] + `</option>
+            <option value="`+ annosFiltrada[i] + `">` + annosFiltrada[i] + `</option>
         `
-        $("#slt_centro23").append(anno);
+        $("#slt_centro23").append(centro);
     }
 }
+
+// Buscar centro
 
 let buscarCentro = (cedula) => {
     let centro = [];
@@ -188,20 +191,21 @@ let buscarCentro = (cedula) => {
     return centro;
 }
 
+
+// Reporte 2
 let reporte2 = () => {
     document.querySelector("#CentrosUser").innerHTML = "";
     let modalidad = slt_centro21.value;
     let tipo = slt_centro22.value;
     let anno = slt_centro23.value;
 
-    let listaCentros = consultarCentros();
-    let listaRanking = consultarAnnos();
+    let listaRanking = consultarCalificacionesAnno();
 
     let contador = 1;
 
     for (let i = 0; i < listaRanking.length; i++) {
-        let centro = buscarCentro(listaRanking[i].cedula);
-        if (centro.tipoCentro == tipo & centro.gradoAcademico == modalidad & listaRanking[i].anno == anno & contador < 11) {
+        let centro = buscarCentro(listaRanking[i].cedulaJuridica);
+        if (centro.tipoCentro == tipo & centro.gradoAcademico == modalidad & listaRanking[i].fecha.substr(6, 4) == anno & contador < 11) {
             let nuevo =
                 `
                 <div class="col-lg-3 mt-4 col-md-6">
