@@ -36,6 +36,8 @@
 </head>
 
 <body class="fix-header fix-sidebar card-no-border" cz-shortcut-listen="true">
+
+
     <div id="">
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light bg-dark">
@@ -165,6 +167,11 @@
         <!-- Titulo -->
         <div id="main" class="page-wrapper" style="min-height: 900px;">
 
+                <div class="spinner-border float-right" id="spinner" style="position: absolute;
+                top: 50%;left: 50%;" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+
             <div class="container-fluid ">
 
                 <!-- Titulo -->
@@ -252,6 +259,14 @@
     <script src="js/MenuAdmin_Controlador.js"></script>
     <script src="js/reportes_admin_servicio.js"></script>
     <script src="js/ranking_controlador.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+
+    <script>
+        // $('#spinner').hide;
+        setTimeout(function() {
+        $("#spinner").fadeOut(900);
+    },3000);
+    </script>
     
 
 
