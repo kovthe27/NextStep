@@ -85,29 +85,6 @@ let verCentro = () =>{
 
 }
 
-document.addEventListener('click', (e) => {
-    if (e.target.id == 'aceptar') {
-        let idNoticiaAct=document.querySelector('#aceptar').getAttribute('data-id');
-        aceptarCentro(idNoticiaAct);
-    }
-})
-
-document.addEventListener('click', (f) => {
-    if (f.target && f.target.id == 'rechazar') {
-        let idNoticiaAct=document.querySelector('#rechazar').getAttribute('data-id');
-        rechazarCentro(idNoticiaAct);
-    }
-})
-
-
-document.addEventListener('click', (g) => {
-    if (g.target && g.target.id == 'vermas') {
-        let idNoticiaAct=document.querySelector('#vermas').getAttribute('data-id');
-        verCentro(idNoticiaAct);
-    }
-})
-
-
 
 mostrarPendientes();
 
@@ -115,3 +92,26 @@ let verPerfil = (cedulaJuridica) => {
   localStorage.setItem('centroEducativo', JSON.stringify(cedulaJuridica));
   window.location.assign("masInfoCentros_admin.html");
 }
+
+
+document.addEventListener('click', (f) => {
+  if (f.target && f.target.id == 'rechazar') {
+      let idNoticiaAct=document.querySelector('#rechazar').getAttribute('data-id');
+      rechazarCentro(idNoticiaAct);
+  }
+})
+
+
+document.addEventListener('click', (g) => {
+  if (g.target && g.target.id == 'vermas') {
+      let idNoticiaAct=document.querySelector('#vermas').getAttribute('data-id');
+      verCentro(idNoticiaAct);
+  }
+})
+
+document.addEventListener('click', (e) => {
+  if (e.target && (e.target.id == 'aceptar' || e.target.id == '')) {
+      let idNoticiaAct=document.querySelector('#aceptar').getAttribute('data-id');
+      aceptarCentro(idNoticiaAct);
+  }
+})
