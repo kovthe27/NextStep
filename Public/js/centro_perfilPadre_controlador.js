@@ -193,10 +193,10 @@ let mostrar_infoCentro = () => {
                 "<p><i class=\"sl-icon-user\"></i> Contacto: <span>" + acercaNosotros[i].encargado + "</span></p>" +
                 "<p><i class=\"sl-icon-envelope-open\"></i> Correo: <span>" + acercaNosotros[i].correo + "</span></p>" +
                 "<p><i class=\"sl-icon-phone\"></i> Teléfono: <span>" + acercaNosotros[i].telefono + "</span></p>" +
-                "<a href= " + "'" + acercaNosotros[i].facebook + "'" + " class=\"class="btn btn-sm btn-circle pt-2 btn-outline-light text-themecolor float-left mr-1"\"> <i class=\"ti-facebook\"></i></a>" +
-                "<a href= " + "'" + acercaNosotros[i].instagram + "'" + " class=\"class="btn btn-sm btn-circle pt-2 btn-outline-light text-themecolor float-left mr-1"\"> <i class=\"ti-instagram\"></i></a>" +
-                "<a href= " + "'" + acercaNosotros[i].twitter + "'" + "  class=\"class="btn btn-sm btn-circle pt-2 btn-outline-light text-themecolor float-left mr-1"\"> <i class=\"ti-twitter\"></i></a>" +
-                "<a href= " + "'" + acercaNosotros[i].pagina + "'" + " class=\"class="btn btn-sm btn-circle pt-2 btn-outline-light text-themecolor float-left mr-1"\"> <i class=\"ti-world\"></i></a>"
+                "<a href= " + "'" + acercaNosotros[i].facebook + "'" + " class=\"btn btn-sm btn-circle pt-2 btn-outline-light text-themecolor float-left mr-1\"> <i class=\"ti-facebook\"></i></a>" +
+                "<a href= " + "'" + acercaNosotros[i].instagram + "'" + " class=\"btn btn-sm btn-circle pt-2 btn-outline-light text-themecolor float-left mr-1\"> <i class=\"ti-instagram\"></i></a>" +
+                "<a href= " + "'" + acercaNosotros[i].twitter + "'" + "  class=\btn btn-sm btn-circle pt-2 btn-outline-light text-themecolor float-left mr-1\"> <i class=\"ti-twitter\"></i></a>" +
+                "<a href= " + "'" + acercaNosotros[i].pagina + "'" + " class=\"btn btn-sm btn-circle pt-2 btn-outline-light text-themecolor float-left mr-1\"> <i class=\"ti-world\"></i></a>"
             "</div>"
 
             $("#cardInfo").append(card_acercaNosotros)
